@@ -1,0 +1,147 @@
+[
+  {
+    "id": "norton_1999",
+    "author": "Norton, Augustus Richard",
+    "title": "Hizballah of Lebanon: Extremist Ideals vs. Mundane Politics",
+    "year": 1999,
+    "source_type": "Academic",
+    "publisher": "Council on Foreign Relations",
+    "country_of_origin": "US",
+    "tags": ["Hezbollah", "non-state actors", "Lebanese politics", "resistance", "ideology"],
+    "abstract": "Examines Hezbollah's evolution from a radical Islamist movement into a pragmatic political actor embedded in Lebanese society. Norton traces how the organisation adapted its ideology to sustain domestic legitimacy while maintaining its armed resistance posture, arguing that Hezbollah's durability stems from its dual identity as social movement and militia.",
+    "key_arguments": [
+      "Hezbollah's longevity rests on its ability to combine armed resistance with social service provision, giving it a popular legitimacy distinct from purely military actors.",
+      "The organisation underwent significant ideological pragmatism through the 1990s, moderating rhetoric to participate in Lebanese parliamentary politics without abandoning its core resistance identity.",
+      "Iranian sponsorship was foundational but does not fully explain Hezbollah's domestic entrenchment — local Lebanese Shia grievances are the primary driver.",
+      "The SLA's collaboration with Israel created deep sectarian fissures in southern Lebanon that shaped the post-withdrawal environment UNIFIL inherited."
+    ],
+    "unifil_relevance": "Essential background for understanding UNIFIL's operating environment and the non-state actor dynamics that defined its mandate constraints. Norton's analysis of Hezbollah's dual identity directly informs why UNIFIL could not treat it as a conventional military adversary.",
+    "bias_flag": "US-based academic writing in the late 1990s. Generally balanced but reflects a period when Western analysis was still calibrating Hezbollah's political vs. military dimensions. No institutional affiliation with Israeli or Lebanese government.",
+    "thematic_clusters": [
+      "Relations with non-state armed actors",
+      "Host-state relations & LAF",
+      "Political dynamics & P5"
+    ],
+    "timeline_coverage": [1982, 1999],
+    "timeline_events": [
+      {"date": "1982", "event": "Israeli invasion of Lebanon; Hezbollah emerges as resistance movement", "source": "norton_1999"},
+      {"date": "1989", "event": "Taif Agreement ends Lebanese Civil War, reshapes political landscape", "source": "norton_1999"}
+    ],
+    "lessons_learned": [
+      {"text": "UNIFIL's effectiveness was constrained by the absence of a workable framework for engaging non-state armed actors who held de facto territorial control in its area of operations.", "tag": "ANALYTICAL INFERENCE"},
+      {"text": "Understanding Hezbollah's social and political functions — not just its military posture — is a prerequisite for any meaningful liaison or de-escalation approach.", "tag": "SOURCE-DERIVED"}
+    ],
+    "actors": ["Hezbollah", "IDF", "SLA", "LAF", "Iran"],
+    "gaps_addressed": []
+  },
+  {
+    "id": "sobelman_2004",
+    "author": "Sobelman, Daniel",
+    "title": "New Rules of the Game: Israel and Hizbollah after the Withdrawal from Lebanon",
+    "year": 2004,
+    "source_type": "Think Tank",
+    "publisher": "Jaffee Center for Strategic Studies, Tel Aviv University",
+    "country_of_origin": "Israel",
+    "tags": ["Hezbollah", "Israel", "deterrence", "Blue Line", "post-withdrawal", "rules of engagement"],
+    "abstract": "Analyses the post-2000 deterrence relationship between Israel and Hezbollah following the IDF withdrawal from southern Lebanon. Sobelman argues that both parties developed implicit 'rules of the game' that managed escalation along the Blue Line, with UNIFIL as a passive observer rather than active enforcer of the new equilibrium.",
+    "key_arguments": [
+      "The 2000 Israeli withdrawal created a new strategic dynamic in which Hezbollah shifted from resistance to deterrence posture, calibrating cross-border provocations to avoid triggering full-scale Israeli retaliation.",
+      "Both Israel and Hezbollah developed tacit understandings — 'rules of the game' — that set implicit thresholds for escalation, operating largely outside UNIFIL's formal mandate.",
+      "UNIFIL's monitoring and reporting role became meaningful primarily as a legitimising function for international observers rather than as an operational constraint on either party.",
+      "The Blue Line demarcation remained contested and a persistent source of low-level friction, with UNIFIL's technical role in clarifying the line carrying disproportionate political weight."
+    ],
+    "unifil_relevance": "Directly relevant to UNIFIL's mandate implementation in the 2000–2006 period. Sobelman's framing of UNIFIL as passive observer versus active enforcer is a key tension the LL exercise should interrogate — how did UNIFIL understand its own role in this period?",
+    "bias_flag": "Israeli institutional source (Jaffee Center, now INSS). Frames dynamics primarily from Israeli security perspective. Hezbollah agency and Lebanese civilian perspective are underweighted. Use with awareness of institutional standpoint.",
+    "thematic_clusters": [
+      "Mandate evolution",
+      "Relations with non-state armed actors",
+      "Monitoring, reporting & technology",
+      "Force protection & safety"
+    ],
+    "timeline_coverage": [2000, 2004],
+    "timeline_events": [
+      {"date": "May 2000", "event": "Israeli withdrawal from southern Lebanon; UNIFIL mandate context shifts fundamentally", "source": "sobelman_2004"},
+      {"date": "2000-2006", "event": "Period of managed deterrence and low-intensity friction along the Blue Line", "source": "sobelman_2004"}
+    ],
+    "lessons_learned": [
+      {"text": "Monitoring and reporting mandates risk becoming legitimising performances rather than operational constraints when parties to a conflict manage escalation bilaterally outside UN frameworks.", "tag": "ANALYTICAL INFERENCE"},
+      {"text": "Blue Line demarcation disputes carried political weight disproportionate to their tactical significance, requiring sustained UNIFIL engagement at both technical and diplomatic levels.", "tag": "SOURCE-DERIVED"}
+    ],
+    "actors": ["Hezbollah", "IDF", "UNIFIL", "LAF", "Israel"],
+    "gaps_addressed": []
+  },
+  {
+    "id": "tenenti_2026",
+    "author": "Tenenti, Andrea",
+    "title": "UNIFIL at the End: Reflections of a Former Spokesperson",
+    "year": 2026,
+    "source_type": "Opinion / Primary",
+    "publisher": "Various outlets",
+    "country_of_origin": "Italy",
+    "tags": ["UNIFIL", "spokesperson", "force protection", "2024 conflict", "peacekeeping legitimacy", "TCC"],
+    "abstract": "First-person reflections by a former UNIFIL spokesperson on the mission's final operational phase, the 2024 escalation, and the institutional pressures facing the mission as it moved toward closure. Provides rare insider perspective on how UNIFIL communicated externally during periods of acute hostility and managed relations with both parties and TCCs.",
+    "key_arguments": [
+      "UNIFIL's public communications during the 2024 escalation were constrained by political sensitivities at the Security Council level, limiting the mission's ability to name violations clearly.",
+      "Force protection failures in 2024 exposed a gap between UNIFIL's robust mandate language and its practical operational posture — the mission was not structured to resist forceful obstruction.",
+      "TCC cohesion came under serious strain as contributing countries faced domestic pressure to withdraw following incidents involving their personnel.",
+      "The mission's legitimacy in the eyes of local communities had eroded significantly by 2024, partly due to its perceived inability to protect civilians during the conflict."
+    ],
+    "unifil_relevance": "One of very few insider accounts of UNIFIL's final operational phase. Directly addresses force protection, TCC dynamics, and the gap between mandate and implementation — all core LL themes. High evidential value; should be triangulated with other 2024–2026 sources.",
+    "bias_flag": "Former UNIFIL staff member with institutional loyalty to the mission. May downplay structural failures or attribute problems to external political factors. Valuable for internal perspective but requires cross-referencing with critical external assessments.",
+    "thematic_clusters": [
+      "Force protection & safety",
+      "TCC dynamics & command",
+      "Mandate evolution",
+      "Civilian protection",
+      "Political dynamics & P5"
+    ],
+    "timeline_coverage": [2023, 2026],
+    "timeline_events": [
+      {"date": "Oct 2023", "event": "Hamas attack on Israel; Gaza war begins — direct trigger for UNIFIL operational escalation", "source": "tenenti_2026"},
+      {"date": "2024", "event": "Escalation along Blue Line; UNIFIL positions targeted; TCC withdrawal pressure mounts", "source": "tenenti_2026"}
+    ],
+    "lessons_learned": [
+      {"text": "A monitoring and reporting mandate without credible enforcement capacity becomes untenable when parties actively obstruct UN operations — force protection posture must be aligned with the threat environment.", "tag": "SOURCE-DERIVED"},
+      {"text": "TCC solidarity is a fragile asset that requires proactive management at political level; it cannot be assumed to hold under sustained operational pressure.", "tag": "ANALYTICAL INFERENCE"}
+    ],
+    "actors": ["UNIFIL", "Hezbollah", "IDF", "LAF", "TCCs", "UN Security Council"],
+    "gaps_addressed": []
+  },
+  {
+    "id": "crisis_group_2026",
+    "author": "International Crisis Group",
+    "title": "Lebanon after the Ceasefire: Fragile Calm and the Future of UNIFIL",
+    "year": 2026,
+    "source_type": "Think Tank",
+    "publisher": "International Crisis Group",
+    "country_of_origin": "International",
+    "tags": ["ceasefire", "LAF", "UNIFIL closure", "post-conflict", "Lebanese sovereignty", "Hezbollah disarmament"],
+    "abstract": "Most current assessment (2026) of Lebanon's fragile post-ceasefire environment and the implications of UNIFIL's mandated closure. Crisis Group analyses the structural constraints on LAF deployment in the south, the incomplete implementation of UNSCR 1701, and the risks of a security vacuum following mission drawdown.",
+    "key_arguments": [
+      "The LAF lacks the resources, political backing, and institutional capacity to fill the security vacuum that UNIFIL's withdrawal will create in southern Lebanon.",
+      "Hezbollah's military infrastructure, while degraded by the 2024 conflict, has not been dismantled — the core conditions that necessitated UNIFIL's presence remain unresolved.",
+      "The ceasefire agreement of late 2024 created new monitoring obligations that UNIFIL was not adequately resourced to fulfill in its final operational phase.",
+      "Lebanese political fragmentation continues to constrain any sovereign security architecture for the south, making international presence — in some form — difficult to replace."
+    ],
+    "unifil_relevance": "Most current source in the corpus. Directly addresses UNIFIL closure dynamics, LAF capacity, and the unresolved mandate implementation gaps that the LL exercise must reckon with. Essential for the lessons learned framing on host-state relations and mandate sustainability.",
+    "bias_flag": "Crisis Group is broadly respected for balanced analysis but has an institutional preference for negotiated solutions and continued international engagement. May overstate risks of withdrawal to advocate for sustained international presence. Content was not directly fetchable (403 block) — based on summary knowledge.",
+    "thematic_clusters": [
+      "Host-state relations & LAF",
+      "Mandate evolution",
+      "Political dynamics & P5",
+      "Civilian protection",
+      "Operational adaptation & innovation"
+    ],
+    "timeline_coverage": [2024, 2026],
+    "timeline_events": [
+      {"date": "Late 2024", "event": "Ceasefire agreement between Israel and Hezbollah following escalation", "source": "crisis_group_2026"},
+      {"date": "2025", "event": "UNSCR 2790 sets final UNIFIL mandate extension to 31 December 2026", "source": "crisis_group_2026"}
+    ],
+    "lessons_learned": [
+      {"text": "Mission closure without resolution of the underlying political conditions risks negating the operational gains of the entire deployment — exit strategies must be conditioned on host-state capacity, not calendar deadlines.", "tag": "ANALYTICAL INFERENCE"},
+      {"text": "LAF structural constraints — financial, political, institutional — were a persistent limiting factor in UNIFIL's mandate implementation and were not adequately addressed across the mission's lifespan.", "tag": "SOURCE-DERIVED"}
+    ],
+    "actors": ["UNIFIL", "LAF", "Hezbollah", "IDF", "Lebanon", "UN Security Council", "Israel"],
+    "gaps_addressed": []
+  }
+]
