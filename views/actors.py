@@ -67,17 +67,34 @@ ACTOR_PROFILES = {
     },
 }
 
-TYPE_COLORS = {
-    "Non-state armed actor": "#8b1a1a",
-    "State armed forces": "#1a3a5c",
-    "UN Peacekeeping Mission": "#1a5c9c",
-    "Intergovernmental body": "#3a5c1a",
-    "Member States": "#5c3a1a",
-    "Regional power": "#5c1a5c",
-    "State actor": "#1a3a5c",
-    "Host state": "#2a5c4a",
-    "Non-state armed actor (defunct)": "#6a6a6a",
-}
+
+def get_actor_color(actor_name, actor_type):
+    """Color by category: UN=navy, armed groups=red, Israeli=bright blue, member states=green, other=grey."""
+    name_lower = actor_name.lower()
+    type_lower = actor_type.lower()
+    if any(k in name_lower for k in ("israel", "idf")):
+        return "#0ea5e9"   # bright blue — Israeli actors
+    if any(k in name_lower for k in ("unifil", "united nations")) or \
+       any(k in type_lower for k in ("peacekeeping", "intergovernmental")):
+        return "#1a3a5c"   # UN navy
+    if "armed actor" in type_lower or any(k in name_lower for k in ("hezbollah", "hamas", "sla", "amal")):
+        return "#dc2626"   # red — armed groups
+    if any(k in type_lower for k in ("member state", "host state", "state armed")) or \
+       actor_name in ("TCCs", "Lebanon", "LAF"):
+        return "#16a34a"   # green — member states
+    return "#6b7c8d"       # grey
+
+
+def get_actor_category(actor_name, actor_type):
+    color = get_actor_color(actor_name, actor_type)
+    return {
+        "#0ea5e9": "Israeli actors",
+        "#1a3a5c": "UN",
+        "#dc2626": "Armed groups",
+        "#16a34a": "Member states",
+        "#6b7c8d": "Other",
+    }.get(color, "Other")
+
 
 def show():
     sources = load_sources()
@@ -103,59 +120,77 @@ def show():
     if "selected_actor" not in st.session_state:
         st.session_state.selected_actor = None
 
-    col_list, col_detail = st.columns([1, 2])
+    # ── Grid view ─────────────────────────────────────────────────────────────
+    if st.session_state.selected_actor is None:
 
-    with col_list:
-        st.markdown('<div style="font-family:\'Playfair Display\',serif; font-size:1rem; font-weight:600; color:#1a3a5c; margin-bottom:0.8rem;">All Actors</div>', unsafe_allow_html=True)
+        # Colour legend
+        st.markdown("""
+        <div style="display:flex; flex-wrap:wrap; gap:0.3rem 1rem; margin-bottom:1rem; font-size:0.73rem; color:#5a6a7a;">
+            <span><span style="display:inline-block; width:9px; height:9px; border-radius:2px; background:#1a3a5c; margin-right:3px; vertical-align:middle;"></span>UN</span>
+            <span><span style="display:inline-block; width:9px; height:9px; border-radius:2px; background:#dc2626; margin-right:3px; vertical-align:middle;"></span>Armed groups</span>
+            <span><span style="display:inline-block; width:9px; height:9px; border-radius:2px; background:#0ea5e9; margin-right:3px; vertical-align:middle;"></span>Israeli actors</span>
+            <span><span style="display:inline-block; width:9px; height:9px; border-radius:2px; background:#16a34a; margin-right:3px; vertical-align:middle;"></span>Member states</span>
+            <span><span style="display:inline-block; width:9px; height:9px; border-radius:2px; background:#6b7c8d; margin-right:3px; vertical-align:middle;"></span>Other</span>
+        </div>
+        """, unsafe_allow_html=True)
 
-        for actor in all_known:
+        # Compute max source count for progress bar normalisation
+        counts = {a: sum(1 for s in sources if a in s.get("actors", [])) for a in all_known}
+        max_count = max(counts.values(), default=1)
+
+        cols = st.columns(3)
+        for i, actor in enumerate(all_known):
             profile = ACTOR_PROFILES.get(actor, {})
             actor_type = profile.get("type", "Other")
-            color = TYPE_COLORS.get(actor_type, "#888")
-            source_count = sum(1 for s in sources if actor in s.get("actors", []))
-            is_sel = st.session_state.selected_actor == actor
-            bg = "#fdf7ee" if is_sel else "white"
-            border = "#c8952a" if is_sel else color
+            color = get_actor_color(actor, actor_type)
+            category = get_actor_category(actor, actor_type)
+            n = counts[actor]
+            bar_width = max(int((n / max_count) * 100), 4) if max_count else 4
 
-            st.markdown(f"""
-            <div style="background:{bg}; border:1px solid #ddd8cc; border-left:3px solid {border};
-                 border-radius:3px; padding:0.6rem 0.9rem; margin-bottom:0.4rem;">
-                <div style="font-weight:600; font-size:0.9rem; color:#1a3a5c;">{actor}</div>
-                <div style="font-size:0.72rem; color:{color}; margin-top:0.1rem;">{actor_type}</div>
-                <div style="font-size:0.72rem; color:#8a9ab0; margin-top:0.1rem;">{source_count} source{"s" if source_count!=1 else ""} in corpus</div>
-            </div>
-            """, unsafe_allow_html=True)
+            with cols[i % 3]:
+                st.markdown(f"""
+                <div style="background:white; border:1px solid #ddd8cc; border-top:3px solid {color};
+                     border-radius:4px; padding:1rem; margin-bottom:0.8rem; min-height:110px;">
+                    <div style="font-family:'Playfair Display',serif; font-size:1rem; font-weight:600;
+                         color:#1a3a5c; line-height:1.3; margin-bottom:0.3rem;">{actor}</div>
+                    <div style="font-size:0.72rem; font-weight:600; color:{color}; letter-spacing:0.04em;
+                         text-transform:uppercase; margin-bottom:0.4rem;">{category}</div>
+                    <div style="font-size:0.78rem; color:#8a9ab0; margin-bottom:0.5rem;">{n} source{"s" if n!=1 else ""} in corpus</div>
+                    <div style="background:#eef2f7; border-radius:2px; height:4px; width:100%;">
+                        <div style="background:{color}; height:4px; border-radius:2px; width:{bar_width}%;"></div>
+                    </div>
+                </div>
+                """, unsafe_allow_html=True)
+                if st.button("Explore →", key=f"actor_{actor}"):
+                    st.session_state.selected_actor = actor
+                    st.rerun()
 
-            if st.button("View →", key=f"actor_{actor}"):
-                st.session_state.selected_actor = actor
-                st.rerun()
-
-    with col_detail:
+    # ── Detail view ───────────────────────────────────────────────────────────
+    else:
         actor = st.session_state.selected_actor
-        if not actor:
-            st.markdown("""
-            <div style="padding:4rem 2rem; text-align:center; color:#8a9ab0;">
-                <div style="font-size:2rem; margin-bottom:1rem; opacity:0.4;">🏛</div>
-                <div style="font-family:'Playfair Display',serif; font-size:1.1rem; color:#5a6a7a; margin-bottom:0.5rem;">Select an actor to view their profile</div>
-                <div style="font-size:0.85rem;">Profiles include role in UNIFIL context and all linked sources.</div>
-            </div>
-            """, unsafe_allow_html=True)
-        else:
-            profile = ACTOR_PROFILES.get(actor, {})
-            actor_type = profile.get("type", "Other")
-            color = TYPE_COLORS.get(actor_type, "#888")
+        profile = ACTOR_PROFILES.get(actor, {})
+        actor_type = profile.get("type", "Other")
+        color = get_actor_color(actor, actor_type)
+        category = get_actor_category(actor, actor_type)
 
-            if st.button("← Back", key="back_actor"):
-                st.session_state.selected_actor = None
-                st.rerun()
+        if st.button("← Back to all actors"):
+            st.session_state.selected_actor = None
+            st.rerun()
 
-            st.markdown(f"""
-            <div style="margin:0.5rem 0 1.2rem 0;">
-                <div style="font-family:'Playfair Display',serif; font-size:1.6rem; font-weight:700; color:#1a3a5c; margin-bottom:0.3rem;">{actor}</div>
-                <div style="font-size:0.82rem; font-weight:600; color:{color}; letter-spacing:0.04em; text-transform:uppercase;">{actor_type}</div>
-            </div>
-            """, unsafe_allow_html=True)
+        st.markdown(f"""
+        <div style="margin:0.8rem 0 1.5rem 0;">
+            <div style="font-family:'Playfair Display',serif; font-size:1.8rem; font-weight:700;
+                 color:#1a3a5c; margin-bottom:0.3rem;">{actor}</div>
+            <div style="font-size:0.82rem; font-weight:600; color:{color}; letter-spacing:0.04em;
+                 text-transform:uppercase;">{category} · {actor_type}</div>
+        </div>
+        """, unsafe_allow_html=True)
 
+        actor_sources = [s for s in sources if actor in s.get("actors", [])]
+
+        col_profile, col_sources = st.columns([1, 1.6])
+
+        with col_profile:
             if profile.get("full_name") and profile["full_name"] != actor:
                 st.markdown(f'<div style="font-size:0.85rem; color:#5a6a7a; margin-bottom:0.8rem;"><em>{profile["full_name"]}</em></div>', unsafe_allow_html=True)
 
@@ -167,8 +202,14 @@ def show():
                 st.markdown('<div class="detail-section-title">Role in UNIFIL Context</div>', unsafe_allow_html=True)
                 st.markdown(f'<div class="detail-body">{profile["role_in_unifil"]}</div>', unsafe_allow_html=True)
 
-            actor_sources = [s for s in sources if actor in s.get("actors", [])]
-            st.markdown(f'<div class="detail-section-title">Sources ({len(actor_sources)})</div>', unsafe_allow_html=True)
+            co_actors = sorted(set(a for s in actor_sources for a in s.get("actors", []) if a != actor))
+            if co_actors:
+                st.markdown('<div class="detail-section-title">Co-occurs with</div>', unsafe_allow_html=True)
+                co_html = "".join([f'<span class="tag tag-actor">{a}</span>' for a in co_actors])
+                st.markdown(f'<div style="margin-top:0.3rem;">{co_html}</div>', unsafe_allow_html=True)
+
+        with col_sources:
+            st.markdown(f'<div style="font-family:\'Playfair Display\',serif; font-size:1rem; font-weight:600; color:#1a3a5c; margin-bottom:0.8rem;">Sources ({len(actor_sources)})</div>', unsafe_allow_html=True)
 
             if not actor_sources:
                 st.markdown('<div style="font-size:0.85rem; color:#8a9ab0; padding:0.5rem 0;">No sources currently reference this actor directly.</div>', unsafe_allow_html=True)
@@ -177,19 +218,19 @@ def show():
                     clusters = s.get("thematic_clusters", [])[:2]
                     clusters_html = "".join([f'<span class="tag tag-cluster" style="font-size:0.68rem;">{c}</span>' for c in clusters])
                     cov = s.get("timeline_coverage", [])
-                    period_str = f"{cov[0]}–{cov[1]}" if len(cov) == 2 else str(s.get("year",""))
+                    if isinstance(cov, dict):
+                        period_str = f"{cov.get('start','')}–{cov.get('end','')}"
+                    elif isinstance(cov, list) and len(cov) == 2:
+                        period_str = f"{cov[0]}–{cov[1]}"
+                    else:
+                        period_str = str(s.get("year", ""))
                     st.markdown(f"""
-                    <div style="background:white; border:1px solid #ddd8cc; border-left:3px solid #1a3a5c;
+                    <div style="background:white; border:1px solid #ddd8cc; border-left:3px solid {color};
                          border-radius:3px; padding:0.8rem 1rem; margin-bottom:0.6rem;">
-                        <div style="font-family:'Playfair Display',serif; font-size:0.9rem; font-weight:600; color:#1a3a5c; margin-bottom:0.2rem;">{s['title']}</div>
+                        <div style="font-family:'Playfair Display',serif; font-size:0.9rem; font-weight:600;
+                             color:#1a3a5c; margin-bottom:0.2rem;">{s['title']}</div>
                         <div style="font-size:0.78rem; color:#8a9ab0; margin-bottom:0.4rem;">{s['author']} · {s['year']} · covers {period_str}</div>
                         <div style="font-size:0.82rem; color:#3a3a3a; line-height:1.45; margin-bottom:0.5rem;">{s.get('abstract','')[:160]}{'…' if len(s.get('abstract',''))>160 else ''}</div>
                         <div>{clusters_html}</div>
                     </div>
                     """, unsafe_allow_html=True)
-
-            co_actors = sorted(set(a for s in actor_sources for a in s.get("actors", []) if a != actor))
-            if co_actors:
-                st.markdown('<div class="detail-section-title">Co-occurs with</div>', unsafe_allow_html=True)
-                co_html = "".join([f'<span class="tag tag-actor">{a}</span>' for a in co_actors])
-                st.markdown(f'<div style="margin-top:0.3rem;">{co_html}</div>', unsafe_allow_html=True)

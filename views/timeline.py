@@ -27,12 +27,20 @@ KEY_EVENTS = [
 
 EVENT_COLORS = {"mandate": "#1a3a5c", "conflict": "#8b1a1a", "political": "#5c5c1a"}
 
+def parse_coverage(cov):
+    """Return (start, end) tuple from either a list or dict, or None if unavailable."""
+    if isinstance(cov, dict) and "start" in cov and "end" in cov:
+        return cov["start"], cov["end"]
+    if isinstance(cov, list) and len(cov) == 2:
+        return cov[0], cov[1]
+    return None
+
 def get_sources_for_period(sources, year_start, year_end):
     matching = []
     for s in sources:
-        cov = s.get("timeline_coverage", [])
-        if len(cov) == 2:
-            if cov[0] <= year_end and cov[1] >= year_start:
+        pair = parse_coverage(s.get("timeline_coverage", []))
+        if pair:
+            if pair[0] <= year_end and pair[1] >= year_start:
                 matching.append(s)
         else:
             pub = s.get("year", 0)
@@ -51,8 +59,8 @@ def build_density_chart(sources):
         y_end = min(y + bucket_size, MISSION_END)
         count = 0
         for s in sources:
-            cov = s.get("timeline_coverage", [])
-            if len(cov) == 2 and cov[0] <= y_end and cov[1] >= y:
+            pair = parse_coverage(s.get("timeline_coverage", []))
+            if pair and pair[0] <= y_end and pair[1] >= y:
                 count += 1
             elif y <= s.get("year", 0) <= y_end:
                 count += 1
@@ -193,8 +201,8 @@ def show():
             """, unsafe_allow_html=True)
         else:
             for s in showing:
-                cov = s.get("timeline_coverage", [])
-                period_str = f"{cov[0]}–{cov[1]}" if len(cov) == 2 else str(s.get("year", ""))
+                pair = parse_coverage(s.get("timeline_coverage", []))
+                period_str = f"{pair[0]}–{pair[1]}" if pair else str(s.get("year", ""))
                 clusters = s.get("thematic_clusters", [])[:2]
                 clusters_html = "".join([f'<span class="tag tag-cluster" style="font-size:0.68rem;">{c}</span>' for c in clusters])
                 st.markdown(f"""

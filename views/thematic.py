@@ -4,21 +4,6 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 from utils.data_utils import load_sources, get_cluster_coverage, THEMATIC_CLUSTERS
 
-CLUSTER_ICONS = {
-    "Mandate evolution": "📜",
-    "Political dynamics & P5": "🏛",
-    "Liaison & tripartite mechanism": "🤝",
-    "Monitoring, reporting & technology": "📡",
-    "TCC dynamics & command": "🪖",
-    "Host-state relations & LAF": "🇱🇧",
-    "Civilian protection": "🛡",
-    "Force protection & safety": "⚔️",
-    "Operational adaptation & innovation": "⚙️",
-    "Relations with non-state armed actors": "🔫",
-    "De-mining & post-conflict stabilization": "💣",
-    "CIMIC & community relations": "🏘",
-    "DPKO-DPPA integration": "🔗",
-}
 
 def show():
     sources = load_sources()
@@ -50,8 +35,7 @@ def show():
         for i, cluster in enumerate(THEMATIC_CLUSTERS):
             srcs = coverage.get(cluster, [])
             n = len(srcs)
-            icon = CLUSTER_ICONS.get(cluster, "📁")
-            gap_badge = ' <span style="color:#c8952a; font-size:0.72rem;">⚠ thin</span>' if n < 2 else ""
+            gap_badge = ' <span style="color:#c8952a; font-size:0.72rem;">thin</span>' if n < 2 else ""
             strength = min(n / 5.0, 1.0)
             bar_width = max(int(strength * 100), 4)
 
@@ -59,8 +43,7 @@ def show():
                 st.markdown(f"""
                 <div style="background:white; border:1px solid #ddd8cc; border-top:3px solid {'#1a3a5c' if n >= 2 else '#c8952a'};
                      border-radius:4px; padding:1rem; margin-bottom:0.8rem; min-height:110px;">
-                    <div style="font-size:1.3rem; margin-bottom:0.4rem;">{icon}</div>
-                    <div style="font-family:'Playfair Display',serif; font-size:0.88rem; font-weight:600; color:#1a3a5c; 
+                    <div style="font-family:'Playfair Display',serif; font-size:1rem; font-weight:600; color:#1a3a5c;
                          line-height:1.3; margin-bottom:0.5rem;">{cluster}{gap_badge}</div>
                     <div style="font-size:0.78rem; color:#8a9ab0; margin-bottom:0.5rem;">{n} source{"s" if n!=1 else ""}</div>
                     <div style="background:#eef2f7; border-radius:2px; height:4px; width:100%;">
@@ -75,7 +58,6 @@ def show():
         # ── Individual cluster view ───────────────────────────────────────────
         cluster = st.session_state.selected_cluster
         srcs = coverage.get(cluster, [])
-        icon = CLUSTER_ICONS.get(cluster, "📁")
 
         if st.button("← Back to all themes"):
             st.session_state.selected_cluster = None
@@ -83,7 +65,6 @@ def show():
 
         st.markdown(f"""
         <div style="margin:1rem 0 1.5rem 0;">
-            <div style="font-size:2rem; margin-bottom:0.4rem;">{icon}</div>
             <div style="font-family:'Playfair Display',serif; font-size:1.8rem; font-weight:700; color:#1a3a5c;">{cluster}</div>
             <div style="font-size:0.88rem; color:#8a9ab0; margin-top:0.3rem;">{len(srcs)} source{"s" if len(srcs)!=1 else ""} in this cluster</div>
         </div>
@@ -93,7 +74,7 @@ def show():
             st.markdown("""
             <div style="background:#fff8ec; border:1px solid #e6c87a; border-left:3px solid #c8952a; 
                  border-radius:3px; padding:1rem; font-size:0.9rem; color:#5a3a0a;">
-                ⚠️ No sources are currently mapped to this cluster. This is a documented research gap.
+                No sources are currently mapped to this cluster. This is a documented research gap.
             </div>
             """, unsafe_allow_html=True)
             return

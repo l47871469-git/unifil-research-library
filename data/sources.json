@@ -1,147 +1,2216 @@
 [
   {
-    "id": "norton_1999",
-    "author": "Norton, Augustus Richard",
-    "title": "Hizballah of Lebanon: Extremist Ideals vs. Mundane Politics",
-    "year": 1999,
-    "source_type": "Academic",
-    "publisher": "Council on Foreign Relations",
-    "country_of_origin": "US",
-    "tags": ["Hezbollah", "non-state actors", "Lebanese politics", "resistance", "ideology"],
-    "abstract": "Examines Hezbollah's evolution from a radical Islamist movement into a pragmatic political actor embedded in Lebanese society. Norton traces how the organisation adapted its ideology to sustain domestic legitimacy while maintaining its armed resistance posture, arguing that Hezbollah's durability stems from its dual identity as social movement and militia.",
-    "key_arguments": [
-      "Hezbollah's longevity rests on its ability to combine armed resistance with social service provision, giving it a popular legitimacy distinct from purely military actors.",
-      "The organisation underwent significant ideological pragmatism through the 1990s, moderating rhetoric to participate in Lebanese parliamentary politics without abandoning its core resistance identity.",
-      "Iranian sponsorship was foundational but does not fully explain Hezbollah's domestic entrenchment — local Lebanese Shia grievances are the primary driver.",
-      "The SLA's collaboration with Israel created deep sectarian fissures in southern Lebanon that shaped the post-withdrawal environment UNIFIL inherited."
+    "id": "hariri_2004",
+    "author": "Hariri Foundation",
+    "title": "Written Statement on Landmines/Lebanon (E/CN.4/2004/NGO/228)",
+    "source_type": "UN/NGO Statement",
+    "year": 2004,
+    "publisher": "UN Commission on Human Rights",
+    "country_of_origin": "Lebanon",
+    "tags": [
+      "de-mining",
+      "civilian-protection",
+      "host-state",
+      "displacement",
+      "post-conflict"
     ],
-    "unifil_relevance": "Essential background for understanding UNIFIL's operating environment and the non-state actor dynamics that defined its mandate constraints. Norton's analysis of Hezbollah's dual identity directly informs why UNIFIL could not treat it as a conventional military adversary.",
-    "bias_flag": "US-based academic writing in the late 1990s. Generally balanced but reflects a period when Western analysis was still calibrating Hezbollah's political vs. military dimensions. No institutional affiliation with Israeli or Lebanese government.",
     "thematic_clusters": [
-      "Relations with non-state armed actors",
-      "Host-state relations & LAF",
-      "Political dynamics & P5"
+      "De-mining & post-conflict stabilization",
+      "Civilian protection",
+      "Host-state relations & LAF"
     ],
-    "timeline_coverage": [1982, 1999],
-    "timeline_events": [
-      {"date": "1982", "event": "Israeli invasion of Lebanon; Hezbollah emerges as resistance movement", "source": "norton_1999"},
-      {"date": "1989", "event": "Taif Agreement ends Lebanese Civil War, reshapes political landscape", "source": "norton_1999"}
+    "timeline_coverage": [
+      2000,
+      2004
+    ],
+    "actors": [
+      "Hariri Foundation",
+      "Israel",
+      "UNIFIL",
+      "Lebanese government",
+      "displaced civilian communities"
+    ],
+    "abstract": "NGO written statement submitted to the UN Commission on Human Rights documenting the humanitarian impact of landmine contamination in southern Lebanon following Israeli withdrawal. Calls for greater international accountability and resources for mine clearance.",
+    "key_arguments": [
+      "Landmine contamination in southern Lebanon constitutes an ongoing humanitarian emergency disproportionately affecting returning displaced civilians and agricultural communities who cannot safely access or farm their land.",
+      "Israel's provision of mine maps covering only approximately 40% of contaminated areas, with those maps reported as inaccurate or incomplete, constitutes a fundamental accountability gap that the international community has failed to address.",
+      "UNIFIL's de-mining mandate was explicitly limited to clearing its own operational corridors rather than civilian agricultural land, leaving a significant and deliberate protection gap for the local population.",
+      "International funding, including a $50M UAE grant, financed significant clearance work reaching approximately 60,000 mines by 2004, but resources remained wholly insufficient relative to the estimated 130,000\u2013500,000 mines and UXO in the ground.",
+      "At the clearance rates prevailing in 2001, full remediation of southern Lebanon was estimated to require approximately 37 years, with devastating implications for agricultural recovery and civilian return."
+    ],
+    "bias_flag": "The Hariri Foundation is a Lebanese civil society organization with an advocacy mandate; its written statement reflects a victim-centred framing oriented toward maximizing international pressure on Israel and the UN. Factually grounded on humanitarian dimensions but does not engage with political and logistical constraints that limited mine clearance operations. Use as a primary source on civilian impact and humanitarian consequences, cross-referenced with UN operational documents on the actual scope and constraints of UNIFIL's de-mining activities.",
+    "analytical_notes": [
+      "Most useful for the De-mining & post-conflict stabilization cluster \u2014 specifically for documenting the gap between UNIFIL's operational de-mining (corridor clearance) and the broader civilian need (agricultural land and return routes).",
+      "Cross-reference with North-South XXI (2001a and 2001b) which cover the same thematic ground from a slightly earlier vantage point and with similar advocacy framing.",
+      "The $50M UAE grant figure illustrates that the international community's response to mine contamination was largely channelled through bilateral/donor mechanisms rather than UNIFIL's mandate \u2014 relevant to lessons on mandate scope design.",
+      "Interview question: Why was UNIFIL's de-mining mandate limited to operational corridors? Was there any internal DPO discussion of expanding it, and what were the constraints?"
     ],
     "lessons_learned": [
-      {"text": "UNIFIL's effectiveness was constrained by the absence of a workable framework for engaging non-state armed actors who held de facto territorial control in its area of operations.", "tag": "ANALYTICAL INFERENCE"},
-      {"text": "Understanding Hezbollah's social and political functions — not just its military posture — is a prerequisite for any meaningful liaison or de-escalation approach.", "tag": "SOURCE-DERIVED"}
+      {
+        "text": "UNIFIL's de-mining mandate was limited to operational corridors, not civilian land \u2014 a deliberate scope limitation with severe and documented humanitarian consequences for returning displaced populations.",
+        "tag": "SOURCE-DERIVED"
+      },
+      {
+        "text": "Incomplete and inaccurate mine maps provided by withdrawing forces constitute a structural accountability gap that international legal frameworks and mission planning should anticipate and address contractually.",
+        "tag": "ANALYTICAL INFERENCE"
+      }
     ],
-    "actors": ["Hezbollah", "IDF", "SLA", "LAF", "Iran"],
+    "timeline_events": [],
     "gaps_addressed": []
   },
   {
-    "id": "sobelman_2004",
-    "author": "Sobelman, Daniel",
-    "title": "New Rules of the Game: Israel and Hizbollah after the Withdrawal from Lebanon",
-    "year": 2004,
-    "source_type": "Think Tank",
-    "publisher": "Jaffee Center for Strategic Studies, Tel Aviv University",
-    "country_of_origin": "Israel",
-    "tags": ["Hezbollah", "Israel", "deterrence", "Blue Line", "post-withdrawal", "rules of engagement"],
-    "abstract": "Analyses the post-2000 deterrence relationship between Israel and Hezbollah following the IDF withdrawal from southern Lebanon. Sobelman argues that both parties developed implicit 'rules of the game' that managed escalation along the Blue Line, with UNIFIL as a passive observer rather than active enforcer of the new equilibrium.",
-    "key_arguments": [
-      "The 2000 Israeli withdrawal created a new strategic dynamic in which Hezbollah shifted from resistance to deterrence posture, calibrating cross-border provocations to avoid triggering full-scale Israeli retaliation.",
-      "Both Israel and Hezbollah developed tacit understandings — 'rules of the game' — that set implicit thresholds for escalation, operating largely outside UNIFIL's formal mandate.",
-      "UNIFIL's monitoring and reporting role became meaningful primarily as a legitimising function for international observers rather than as an operational constraint on either party.",
-      "The Blue Line demarcation remained contested and a persistent source of low-level friction, with UNIFIL's technical role in clarifying the line carrying disproportionate political weight."
+    "id": "northsouth_2001a",
+    "author": "North-South XXI",
+    "title": "Written Statement on Vulnerable Groups/Lebanon (E/CN.4/2001/NGO/20)",
+    "source_type": "UN/NGO Statement",
+    "year": 2001,
+    "publisher": "UN Commission on Human Rights",
+    "country_of_origin": "Switzerland",
+    "tags": [
+      "de-mining",
+      "civilian-protection",
+      "displacement",
+      "post-conflict",
+      "mandate"
     ],
-    "unifil_relevance": "Directly relevant to UNIFIL's mandate implementation in the 2000–2006 period. Sobelman's framing of UNIFIL as passive observer versus active enforcer is a key tension the LL exercise should interrogate — how did UNIFIL understand its own role in this period?",
-    "bias_flag": "Israeli institutional source (Jaffee Center, now INSS). Frames dynamics primarily from Israeli security perspective. Hezbollah agency and Lebanese civilian perspective are underweighted. Use with awareness of institutional standpoint.",
     "thematic_clusters": [
-      "Mandate evolution",
-      "Relations with non-state armed actors",
-      "Monitoring, reporting & technology",
-      "Force protection & safety"
+      "De-mining & post-conflict stabilization",
+      "Civilian protection"
     ],
-    "timeline_coverage": [2000, 2004],
-    "timeline_events": [
-      {"date": "May 2000", "event": "Israeli withdrawal from southern Lebanon; UNIFIL mandate context shifts fundamentally", "source": "sobelman_2004"},
-      {"date": "2000-2006", "event": "Period of managed deterrence and low-intensity friction along the Blue Line", "source": "sobelman_2004"}
+    "timeline_coverage": [
+      2000,
+      2001
+    ],
+    "actors": [
+      "North-South XXI",
+      "UNIFIL",
+      "Israel",
+      "Lebanese civilian communities",
+      "displaced persons"
+    ],
+    "abstract": "NGO written statement documenting the impact of landmine and UXO contamination on vulnerable groups in southern Lebanon following the May 2000 Israeli withdrawal. Highlights the socioeconomic consequences of mine contamination on farming communities and displaced persons attempting to return.",
+    "key_arguments": [
+      "Estimated 130,000\u2013500,000 mines and UXO remained in southern Lebanon following the May 2000 Israeli withdrawal, with the wide range itself reflecting the inadequacy of available data and the scale of Israeli non-disclosure.",
+      "At clearance rates prevailing in 2001, full clearance was estimated to take approximately 37 years, meaning the generation of Lebanese who lived through the occupation would largely not see its full remediation.",
+      "UNIFIL's mandate explicitly excluded de-mining of civilian agricultural land, limiting the mission's civilian protection contribution in the post-withdrawal period to its own operational corridors \u2014 a gap with severe livelihood consequences.",
+      "Socioeconomic impact was severe and cascading: farmland rendered unusable and displaced persons unable to return created long-term consequences for community recovery, property rights, and local economic reconstruction.",
+      "The humanitarian cost fell disproportionately on the most vulnerable: elderly residents, women-headed households, and subsistence farming families who had no alternative economic base."
+    ],
+    "bias_flag": "North-South XXI is a Swiss-based civil society organization focused on North-South equity; its statement reflects a human rights and victim advocacy orientation. Does not engage with political and logistical constraints on mine clearance operations or the reasons for the limited scope of UNIFIL's de-mining mandate. Use as a primary source on civilian impact, cross-referenced with UN operational documents and sources explaining the mandate scope decisions.",
+    "analytical_notes": [
+      "Provides the most detailed available NGO account of the humanitarian situation immediately following the May 2000 Israeli withdrawal \u2014 a baseline for the post-conflict stabilization cluster.",
+      "The 37-year clearance estimate is a striking data point illustrating the long-tail humanitarian consequences of the occupation; useful for framing discussions of post-conflict stabilization mandate design.",
+      "Cross-reference with Hariri Foundation (2004) for a slightly later update on clearance progress and with Blue Helmets (1996) for UNIFIL's own account of its de-mining activities.",
+      "The source predates the 2006 war and the recontamination of southern Lebanon; its figures should be treated as a pre-2006 baseline only."
     ],
     "lessons_learned": [
-      {"text": "Monitoring and reporting mandates risk becoming legitimising performances rather than operational constraints when parties to a conflict manage escalation bilaterally outside UN frameworks.", "tag": "ANALYTICAL INFERENCE"},
-      {"text": "Blue Line demarcation disputes carried political weight disproportionate to their tactical significance, requiring sustained UNIFIL engagement at both technical and diplomatic levels.", "tag": "SOURCE-DERIVED"}
+      {
+        "text": "When a mission's de-mining mandate is limited to operational corridors, civilian agricultural land and returning displaced populations bear disproportionate residual risk with no international actor responsible for their protection.",
+        "tag": "SOURCE-DERIVED"
+      },
+      {
+        "text": "Post-conflict stabilization planning must incorporate realistic mine clearance timelines as a condition for sustainable civilian return rather than treating clearance as a peripheral activity.",
+        "tag": "ANALYTICAL INFERENCE"
+      }
     ],
-    "actors": ["Hezbollah", "IDF", "UNIFIL", "LAF", "Israel"],
+    "timeline_events": [],
     "gaps_addressed": []
+  },
+  {
+    "id": "northsouth_2001b",
+    "author": "North-South XXI",
+    "title": "Written Statement on Mass Exoduses and Displaced Persons (E/CN.4/2001/NGO/19)",
+    "source_type": "UN/NGO Statement",
+    "year": 2001,
+    "publisher": "UN Commission on Human Rights",
+    "country_of_origin": "Switzerland",
+    "tags": [
+      "civilian-protection",
+      "displacement",
+      "force-protection",
+      "IDF",
+      "escalation"
+    ],
+    "thematic_clusters": [
+      "Civilian protection",
+      "Force protection & safety"
+    ],
+    "timeline_coverage": [
+      1993,
+      2001
+    ],
+    "actors": [
+      "North-South XXI",
+      "IDF",
+      "UNIFIL",
+      "Fijian battalion",
+      "Lebanese civilian population"
+    ],
+    "abstract": "NGO written statement documenting mass civilian displacement in southern Lebanon, with particular focus on the Qana massacre of April 1996 and the broader pattern of civilian casualties during Israeli military operations in UNIFIL's area of operations.",
+    "key_arguments": [
+      "The Qana massacre of 18 April 1996 \u2014 in which IDF shelling killed 106 civilians, including 52 children, sheltering inside a UNIFIL Fijian battalion compound \u2014 represents the most severe single civilian protection failure directly associated with UNIFIL's presence.",
+      "The Van Kappen investigation was initiated by the UN following Qana but was never concluded publicly, with strong evidence that US and Israeli political pressure suppressed its findings \u2014 establishing a pattern of impunity for violations against civilians in UN protection areas.",
+      "The July 1993 Israeli bombardment ('Operation Accountability') resulted in approximately 130 killed, 500 injured, and an estimated 200,000 displaced from the UNIFIL area of operations, yet produced no Security Council response or accountability mechanism.",
+      "UNIFIL's capacity to protect civilians was structurally limited throughout by its mandate, rules of engagement, and the unwillingness of state parties to respect UN facilities or personnel \u2014 creating a systematic protection gap.",
+      "The pattern of mass displacement documented here \u2014 with UNIFIL present but unable to prevent civilian harm \u2014 raises fundamental questions about the conditions under which a peacekeeping presence can claim to provide meaningful civilian protection."
+    ],
+    "bias_flag": "North-South XXI is a civil society organization focused on human rights advocacy; the statement reflects a victim-centred framing oriented toward maximizing international pressure on Israel and the UN. Focuses almost exclusively on Israeli military actions and does not systematically address threats to civilians from non-state armed actors. Use as primary documentation of specific civilian harm events, particularly Qana, cross-referenced with the Blue Helmets official account and sources addressing the full spectrum of threats.",
+    "analytical_notes": [
+      "One of the few sources documenting the suppression of the Van Kappen investigation \u2014 a significant accountability failure with direct relevance to the civilian protection cluster.",
+      "The Qana massacre is documented across multiple sources (Blue Helmets 1996, NGO statements 2001) but no source provides a full concluded investigation \u2014 this gap is itself a lesson learned about UN accountability mechanisms.",
+      "Cross-reference with G\u00f6ksel (2007) for a UNIFIL insider account of the Qana period and its impact on UNIFIL's community relations.",
+      "The July 1993 figures (130 killed, 500 injured, 200,000 displaced) are important for contextualizing civilian harm before the post-2006 period, which dominates the current literature."
+    ],
+    "lessons_learned": [
+      {
+        "text": "The Qana massacre illustrates that UN compounds used as civilian shelters can become targets; force protection and civilian protection mandates can create conflicting obligations that mission planning must address explicitly.",
+        "tag": "SOURCE-DERIVED"
+      },
+      {
+        "text": "The absence of a concluded public investigation into Qana reflects a structural accountability gap for violations committed against civilians in UN protection areas, where P5 political interests can suppress findings indefinitely.",
+        "tag": "ANALYTICAL INFERENCE"
+      }
+    ],
+    "timeline_events": [
+      {
+        "date": "18 Apr 1996",
+        "event": "Qana massacre: IDF shells UNIFIL Fijian HQ sheltering ~800 civilians; 106 killed including 52 children; Van Kappen investigation initiated but suppressed",
+        "source": "northsouth_2001b"
+      },
+      {
+        "date": "Jul 1993",
+        "event": "Operation Accountability: Israeli bombardment of south Lebanon; ~130 killed, 500 injured, ~200,000 displaced from UNIFIL area",
+        "source": "northsouth_2001b"
+      }
+    ],
+    "gaps_addressed": []
+  },
+  {
+    "id": "bluehelmets_1996",
+    "author": "United Nations Department of Public Information",
+    "title": "The Blue Helmets: A Review of United Nations Peace-Keeping (3rd ed.), Chapter 6: UNIFIL",
+    "source_type": "UN Official Publication",
+    "year": 1996,
+    "publisher": "United Nations",
+    "country_of_origin": "International",
+    "tags": [
+      "mandate",
+      "TCC",
+      "force-protection",
+      "civilian-protection",
+      "SLA",
+      "Israeli-withdrawal"
+    ],
+    "thematic_clusters": [
+      "Mandate evolution",
+      "TCC dynamics & command",
+      "Host-state relations & LAF",
+      "Civilian protection",
+      "Force protection & safety",
+      "Operational adaptation & innovation"
+    ],
+    "timeline_coverage": [
+      1978,
+      1996
+    ],
+    "actors": [
+      "UNIFIL",
+      "IDF",
+      "SLA",
+      "PLO",
+      "Lebanese Armed Forces",
+      "Fijian battalion",
+      "Irish battalion",
+      "Norwegian battalion",
+      "Hezbollah",
+      "Amal",
+      "Lebanese government"
+    ],
+    "abstract": "The official UN account of UNIFIL's operational history from establishment in 1978 through 1996. Covers mandate evolution, force composition, relations with parties to the conflict, force protection incidents, and humanitarian activities. Documents the progression from original withdrawal-verification mandate through the post-1982 environment dominated by Israeli occupation and Hezbollah's emergence.",
+    "key_arguments": [
+      "UNIFIL's original mandate contained unresolved contradictions from inception: it was never specified whether the mission was deployed to manage the Israeli withdrawal, the PLO military threat, or the broader Lebanon conflict \u2014 and this ambiguity was never resolved, resurfacing at every subsequent crisis point.",
+      "Lebanese army deployments to the UNIFIL area were repeatedly and forcibly blocked by SLA and Israeli forces in 1978 and 1979, establishing from the mission's earliest days a pattern of host-state incapacity and external interference that persisted for decades.",
+      "IDF firing on UNIFIL positions was at times characterized by UN investigation teams as deliberate and targeted rather than accidental, with UN protests lodged but no enforcement action ever taken \u2014 establishing a pattern of impunity for violations against the force.",
+      "UNIFIL practiced civilian protection informally throughout the occupation years \u2014 providing medical care, escorting farmers to their fields, and interposing between IDF forces and villages \u2014 despite having no formal POC mandate prior to 2006, suggesting that field practice consistently outran mandate language.",
+      "The Force Mobile Reserve, created in 1986\u201387 as a composite rapid reaction unit drawn from multiple national contingents, was an adaptive structural response to persistent force protection failures \u2014 one of UNIFIL's most significant operational innovations and the least documented.",
+      "UNIFIL deployed ground surveillance radar and night-vision equipment from 1979 onwards, representing an early and underrecognized case of technology-enabled monitoring in UN peacekeeping that predates modern ISR discussions by decades."
+    ],
+    "bias_flag": "Official UN Department of Public Information publication, written as institutional history and subject to significant self-justification bias. Consistently presents UNIFIL's limitations as arising from external constraints rather than from internal UN decision-making, command failures, or mandate design errors. Israeli and US actions during the 1982 invasion and at Qana are treated with notable diplomatic restraint. Essential as a primary record of operational history from 1978\u20131996 \u2014 contains factual information unavailable elsewhere \u2014 but should not be used as independent analytical assessment of mandate implementation failures or force effectiveness. Cross-reference with Norton & Schwedler (1993), G\u00f6ksel (2007), and Makdisi (2014).",
+    "analytical_notes": [
+      "Foundational primary source for the 1978\u20131996 period; should be treated as a reference document rather than an analytical source.",
+      "The account of the Force Mobile Reserve (1986\u201387) is the only detailed description of this innovation in the bibliography \u2014 a significant gap given its relevance to force protection lessons.",
+      "The documentation of UNIFIL's informal POC activities (farmer escorts, medical care, interposing) directly supports the analytical inference that UNIFIL's field practice consistently outran its mandate language.",
+      "The description of early technology deployment (radar, night-vision from 1979) is not picked up in any other source and represents a potentially significant early lesson on technology in peacekeeping.",
+      "Cross-reference with G\u00f6ksel (2007) throughout \u2014 G\u00f6ksel provides a ground-level practitioner account of many of the same events described in more sanitized terms here."
+    ],
+    "lessons_learned": [
+      {
+        "text": "Early operational decisions \u2014 HQ placement at Naqura in an Israeli-controlled enclave, logistical dependency on a party to the conflict, and inaccurate compliance certification by the Force Commander \u2014 can structurally compromise a mission's independence and credibility for its entire lifespan.",
+        "tag": "SOURCE-DERIVED"
+      },
+      {
+        "text": "UNIFIL's informal civilian protection activities constituted a significant and sustained contribution that was never formally recognized in mandate language \u2014 the gap between field practice and mandate text warrants systematic documentation to inform future mandate design.",
+        "tag": "ANALYTICAL INFERENCE"
+      },
+      {
+        "text": "The Force Mobile Reserve illustrates that adaptive structural innovation is possible within existing mandate frameworks when operational pressures demand it, without requiring Security Council authorization.",
+        "tag": "SOURCE-DERIVED"
+      }
+    ],
+    "timeline_events": [
+      {
+        "date": "19 Mar 1978",
+        "event": "UNSCR 425/426: UNIFIL established following Israeli Litani Operation",
+        "source": "bluehelmets_1996"
+      },
+      {
+        "date": "13 Jun 1978",
+        "event": "Israel completes formal withdrawal but transfers positions to SLA (Haddad forces), not UNIFIL \u2014 first major mandate failure",
+        "source": "bluehelmets_1996"
+      },
+      {
+        "date": "Jun 1982",
+        "event": "Second Israeli invasion ('Peace for Galilee'): UNIFIL overrun and sidelined; US vetoes UNSC expansion of mandate",
+        "source": "bluehelmets_1996"
+      },
+      {
+        "date": "18 Apr 1996",
+        "event": "Qana massacre: IDF shells UNIFIL Fijian HQ sheltering ~800 civilians; 106 killed including 52 children",
+        "source": "bluehelmets_1996"
+      }
+    ],
+    "gaps_addressed": []
+  },
+  {
+    "id": "orion_2019",
+    "author": "Assaf Orion",
+    "title": "The UN Secretary-General's Periodic Report on Resolution 1701: Somewhat Revealing, Still Mostly Concealing",
+    "source_type": "Think Tank",
+    "year": 2019,
+    "publisher": "Institute for National Security Studies, INSS Insight No. 1154",
+    "country_of_origin": "Israel",
+    "tags": [
+      "monitoring",
+      "hezbollah",
+      "blue-line",
+      "LAF",
+      "1701",
+      "non-state-actors"
+    ],
+    "thematic_clusters": [
+      "Monitoring, reporting & technology",
+      "Relations with non-state armed actors",
+      "Host-state relations & LAF"
+    ],
+    "timeline_coverage": [
+      2018,
+      2019
+    ],
+    "actors": [
+      "UNIFIL",
+      "Hezbollah",
+      "LAF",
+      "IDF",
+      "UN Secretary-General",
+      "Lebanese government"
+    ],
+    "abstract": "Focused on the discovery of Hezbollah cross-border attack tunnels during IDF Operation Northern Shield, this analysis examines the UN Secretary-General's report from early 2019. Orion highlights that while the UN finally acknowledged irrefutable violations of the Blue Line, it remained unable to verify all tunnel locations due to LAF obstruction and 'private property' pretexts. Argues UNIFIL's routine patrols are largely obfuscating the gravity of the security situation.",
+    "key_arguments": [
+      "IDF Operation Northern Shield forced the UN Secretary-General to pivot from treating Israeli reports of tunnel construction as unverified 'allegations' to acknowledging 'concrete facts' regarding 1701 violations \u2014 but only after irrefutable physical evidence was presented that could not be dismissed.",
+      "The 'liquid concrete' incident at Metulla \u2014 in which UN observers witnessed concrete flowing from a Lebanese chicken coop into a tunnel crossing the Blue Line \u2014 provided physical proof of tunnel connections to Lebanese civilian infrastructure, yet the LAF and local 'civilians' still blocked UNIFIL from conducting a full inspection.",
+      "Hezbollah systematically uses populated areas, agricultural land, and declared 'nature reserves' as locations for prohibited military infrastructure, protected from UNIFIL inspection by Lebanese government procrastination in legal proceedings and the 'private property' pretext.",
+      "UNIFIL's high volume of missions \u2014 approximately 14,386 monthly military operations as of 2019 \u2014 creates a false impression of area saturation and comprehensive monitoring while in practice failing to deter or detect major underground engineering projects constructed over years.",
+      "UNIFIL serves as a significant economic engine for Lebanon, employing 500+ local workers and generating substantial local contracting revenue, and Orion argues this economic dependency should be used as leverage to demand compliance with freedom of movement and access requirements."
+    ],
+    "bias_flag": "Assaf Orion is a retired IDF Brigadier General affiliated with INSS, Israel's premier national security think tank with close ties to the Israeli government and military establishment. The analysis strongly aligns with IDF Operation Northern Shield narratives and consistently frames the Lebanese government and LAF as actively complicit in concealing Hezbollah violations rather than as politically constrained actors. The piece calls explicitly for international aid to Lebanon to be conditioned on 1701 compliance \u2014 an Israeli policy advocacy position framed as analytical recommendation. Use for Israeli assessments of UNIFIL monitoring failures and for documented specific incidents (the Majdal Zoun attack, the tunnel discoveries); cross-reference with Crisis Group (2026) and Nerguizian (2014) for more structurally nuanced accounts of LAF motivation.",
+    "analytical_notes": [
+      "The specific monitoring failure documented here \u2014 14,000+ monthly patrols failing to detect multi-year tunnel construction \u2014 is one of the most analytically powerful data points in the corpus for the monitoring cluster.",
+      "The 'input vs. output' accountability gap is the central lesson of the broader Orion corpus (2016, 2017, 2018, 2019) \u2014 well-documented and does not require additional INSS sources to sustain it.",
+      "Cross-reference with Tenenti (2026) for a contrasting UNIFIL insider perspective: Tenenti shows the same reporting framework was used to document 10,000+ Israeli airspace violations, suggesting the issue is enforcement, not documentation.",
+      "The 'private property' loophole is documented across multiple INSS sources and represents a consistent and well-evidenced structural finding that transcends any single source's bias.",
+      "Interview question: What were UNIFIL's internal protocols for responding to 'private property' access denials? Were legal or technical counter-measures ever developed or proposed?"
+    ],
+    "lessons_learned": [
+      {
+        "text": "Irrefutable physical proof is required to shift UN reporting from the 'allegation' phase to the 'fact' phase; photographic evidence or intelligence reports alone are systematically treated as insufficient for verification purposes.",
+        "tag": "SOURCE-DERIVED"
+      },
+      {
+        "text": "The 'private property' pretext represents a critical loophole in the SOFA and mandate framework that allows non-state actors to maintain practical immunity for military infrastructure in populated areas; the UN must develop technical or legal counter-measures rather than accepting it as a structural constraint.",
+        "tag": "ANALYTICAL INFERENCE"
+      },
+      {
+        "text": "A high operational tempo \u2014 measured in numbers of patrols and military operations conducted monthly \u2014 is a systematically misleading metric of monitoring effectiveness if those patrols are routinely denied access to the specific locations where violations are most likely to occur.",
+        "tag": "SOURCE-DERIVED"
+      }
+    ],
+    "timeline_events": [
+      {
+        "date": "04 Dec 2018",
+        "event": "IDF Operation Northern Shield begins; exposes six Hezbollah cross-border attack tunnels crossing the Blue Line into Israel; concludes 13 Jan 2019",
+        "source": "orion_2019"
+      },
+      {
+        "date": "04 Aug 2018",
+        "event": "UNIFIL patrol attacked near Majdal Zoun by approximately 20 armed activists; Lebanese investigation contradicts UN findings; perpetrators unprosecuted as of 2019",
+        "source": "orion_2019"
+      },
+      {
+        "date": "26 Dec 2018",
+        "event": "UN observers witness concrete flowing from a Lebanese chicken coop into a tunnel crossing the Blue Line \u2014 first irrefutable physical proof of tunnel infrastructure",
+        "source": "orion_2019"
+      }
+    ],
+    "gaps_addressed": []
+  },
+  {
+    "id": "allee_2009",
+    "author": "Susan S. Allee",
+    "title": "UN Blue: Interdependence Between UN Peacekeeping and Peacemaking",
+    "source_type": "Academic / Journal Article",
+    "year": 2009,
+    "publisher": "International Peacekeeping, 16(2)",
+    "tags": [
+      "mandate",
+      "political-dynamics",
+      "P5",
+      "peacekeeping-doctrine",
+      "DPKO-DPPA"
+    ],
+    "thematic_clusters": [
+      "Mandate evolution",
+      "Political dynamics & P5",
+      "DPKO-DPPA integration"
+    ],
+    "timeline_coverage": {
+      "start": 1978,
+      "end": 2008
+    },
+    "actors": [
+      "UNIFIL",
+      "DPKO",
+      "DPA/DPPA",
+      "US",
+      "Security Council",
+      "Lebanese government",
+      "UNSCOL"
+    ],
+    "abstract": "Practitioner-academic analysis arguing that the structural separation between UN peacekeeping (DPKO) and peacemaking (DPA) functions has created systematic incoherence in Lebanon. UNIFIL achieved 'negative peace' but not 'positive peace' because it was never paired with a meaningful peacemaking track. Parties exploit coordination gaps between parallel UN actors.",
+    "key_arguments": [
+      "The institutional bifurcation between DPKO and DPA/DPPA created structural incoherence in the UN's Lebanon presence, with multiple parallel UN actors operating under different chains of command and sometimes sending conflicting signals to parties on the ground.",
+      "Parties to the conflict systematically exploit coordination gaps between parallel UN actors in a 'divide and outsmart' dynamic, using inconsistencies between UNIFIL's military posture and UNSCOL's political strategy to minimize pressure on their own compliance.",
+      "UNIFIL achieved 'negative peace' (suppression of open armed conflict) but not 'positive peace' (resolution of underlying causes) \u2014 partly because no meaningful peacemaking track was ever consistently paired with the peacekeeping presence.",
+      "Successful conflict management can paradoxically reduce political pressure to resolve underlying conflict by making the situation tolerable enough that key actors \u2014 including P5 members \u2014 lose urgency around a political settlement.",
+      "UNIFIL's mandate evolution from 1978 through 2006 reflects shifting US policy priorities more than ground security realities, illustrating the Security Council as an instrument of P5 agendas."
+    ],
+    "bias_flag": "Allee writes as a DPKO practitioner-academic, giving her valuable insider knowledge but producing a characteristic bias toward framing UNIFIL's limitations as arising from structural separation rather than from DPKO's own institutional choices. Tends to advocate for greater DPKO-DPPA integration as the primary reform. Should be balanced against sources focusing on political and military constraints external to the UN system.",
+    "analytical_notes": [
+      "The 'negative peace vs. positive peace' framing is useful as an organizing concept for the LL report.",
+      "The DPKO-DPPA integration cluster is thin in the current bibliography \u2014 Allee is the only source directly addressing this structural issue. Priority to seek a DPPA-side account for the interview phase.",
+      "Cross-reference with Tenenti (2026) on the UNIFIL-UNSCOL relationship in 2024\u20132026, and with Crisis Group (2026) on how the political vacuum at UN level has manifested in the current crisis.",
+      "Interview question generated: How would you describe day-to-day coordination between UNIFIL and UNSCOL/DPPA? Were there moments when UNIFIL's operational posture conflicted with UNSCOL's political strategy?"
+    ],
+    "lessons_learned": [
+      {
+        "text": "Structural separation of peacekeeping and peacemaking tracks in the same theater creates information gaps and conflicting messaging that belligerents can systematically exploit \u2014 coherent UN strategy requires either organizational integration or very strong coordination mechanisms.",
+        "tag": "SOURCE-DERIVED"
+      },
+      {
+        "text": "Continuity of presence has stabilizing value even when formal mandate implementation is blocked \u2014 but this stabilizing effect can paradoxically reduce political pressure to resolve underlying conflict, creating a structural disincentive to peacemaking.",
+        "tag": "ANALYTICAL INFERENCE"
+      }
+    ],
+    "timeline_events": []
+  },
+  {
+    "id": "daniel_2015",
+    "author": "Daniel, Williams, and Smith",
+    "title": "Deploying Combined Teams: Lessons from Operational Partnerships in UN Peacekeeping",
+    "source_type": "Think Tank Report",
+    "year": 2015,
+    "publisher": "International Peace Institute (IPI)",
+    "tags": [
+      "TCC",
+      "command-control",
+      "maritime",
+      "peacekeeping-doctrine",
+      "force-protection"
+    ],
+    "thematic_clusters": [
+      "TCC dynamics & command",
+      "Operational adaptation & innovation"
+    ],
+    "timeline_coverage": {
+      "start": 2006,
+      "end": 2014
+    },
+    "actors": [
+      "UNIFIL",
+      "IPI",
+      "European TCCs",
+      "Maritime Task Force",
+      "DPO Office of Military Affairs",
+      "national contingents"
+    ],
+    "abstract": "IPI report analyzing operational partnership models in UN peacekeeping, with UNIFIL as a primary case study. Documents UNIFIL's unique role in hosting more combined team partnerships than any other UN mission, examines TCC motivations, and assesses the risks of ROE and caveat divergence in escalation scenarios.",
+    "key_arguments": [
+      "UNIFIL hosted more operational partnerships than any other UN mission globally \u2014 11 of 41 such partnerships as of 2014 \u2014 reflecting its unique role in re-engaging Western military forces with UN peacekeeping after years of Western disengagement following Somalia and Rwanda.",
+      "TCC motivations for contributing to UNIFIL were diverse and largely non-altruistic: NATO accession signaling for Eastern European states, bilateral relationship management, first-time UN deployment for some Asian TCCs, and national military modernization.",
+      "ROE and caveat divergence represents a structural vulnerability in combined team operations that functions well in stable environments but generates compounding coordination risks in escalation scenarios.",
+      "UNIFIL's Maritime Task Force represents a unique and understudied case of combined team operation at sea, with distinct command, interoperability, and ROE challenges not adequately documented in the literature.",
+      "Operational partnerships require sustained pre-deployment investment in ROE harmonization and in-theater caveat review mechanisms to remain functionally effective."
+    ],
+    "bias_flag": "IPI is a UN-adjacent think tank receiving significant funding from UN member states, maintaining close institutional relationships with the UN Secretariat. Research is generally balanced but reflects an institutional interest in strengthening UN peacekeeping rather than fundamentally questioning its effectiveness. Methodology tends to select for success stories. Should be cross-referenced against more critical perspectives on TCC dynamics.",
+    "analytical_notes": [
+      "The data point that UNIFIL hosted 11 of 41 global combined team partnerships as of 2014 is significant for framing UNIFIL's contribution to UN peacekeeping doctrine development.",
+      "The MTF gap is confirmed here: the report notes the unique character of the maritime component but does not analyze it in depth \u2014 reinforcing MTF as a priority research gap for interviews.",
+      "Cross-reference with Elron (2007) on command challenges of TCC diversity and with Al-Rfouh (2007) on cultural dimensions of TCC-host community relations.",
+      "Interview question generated: How were ROE caveats managed in practice within combined teams? Were there specific escalation scenarios where caveat divergence affected operational outcomes?"
+    ],
+    "lessons_learned": [
+      {
+        "text": "UNIFIL's operational partnership model has been one of the most effective mechanisms in UN peacekeeping for expanding the TCC base and re-engaging Western militaries \u2014 this model warrants systematic documentation as a transferable best practice.",
+        "tag": "SOURCE-DERIVED"
+      },
+      {
+        "text": "TCC caveat divergence on ROE is a structural mission vulnerability that becomes acute in escalation scenarios; pre-deployment ROE harmonization and in-theater caveat review mechanisms should be institutionalized as standard practice.",
+        "tag": "SOURCE-DERIVED"
+      }
+    ],
+    "timeline_events": []
+  },
+  {
+    "id": "elron_2007",
+    "author": "Efrat Elron",
+    "title": "UNIFIL II, Israel, Lebanon, the UN and the International Community",
+    "source_type": "Book Chapter / Research Paper",
+    "year": 2007,
+    "publisher": "NATO Defense College",
+    "tags": [
+      "TCC",
+      "tripartite-mechanism",
+      "maritime",
+      "command-control",
+      "1701",
+      "deterrence"
+    ],
+    "thematic_clusters": [
+      "TCC dynamics & command",
+      "Liaison & tripartite mechanism",
+      "Operational adaptation & innovation"
+    ],
+    "timeline_coverage": {
+      "start": 2006,
+      "end": 2007
+    },
+    "actors": [
+      "UNIFIL",
+      "IDF",
+      "LAF",
+      "European TCCs",
+      "Maritime Task Force",
+      "Strategic Military Cell",
+      "DPKO",
+      "Spanish battalion"
+    ],
+    "abstract": "Analysis of UNIFIL II's post-2006 configuration, examining TCC dynamics, the tripartite mechanism, Maritime Task Force, and rules of engagement. Argues UNIFIL operates as a 'Chapter VI\u00bd' force \u2014 robust enough for self-defense but not enforcement \u2014 and that the tripartite mechanism is the mission's most effective non-kinetic tool.",
+    "key_arguments": [
+      "The tripartite liaison mechanism (IDF-LAF-UNIFIL) is UNIFIL's most critical non-kinetic operational tool, with demonstrable effectiveness in containing tactical frictions before they escalate into broader incidents.",
+      "UNIFIL operates conceptually as a 'Chapter VI\u00bd' force \u2014 neither a traditional consent-based peacekeeping operation nor a Chapter VII enforcement mission \u2014 representing a significant conceptual innovation not formally codified in UN policy documents.",
+      "UNIFIL's Maritime Task Force, with 1,600+ sailors and approximately 15 vessels under German command, constitutes the largest naval contingent in UN history and the only maritime component in any UN peacekeeping operation.",
+      "The DPKO Strategic Military Cell established in 2006 improved HQ-field connectivity but risks adding an unwanted command layer that complicates the Force Commander's operational authority.",
+      "ROE and caveat divergence across UNIFIL's multiple TCC contributors is a structural vulnerability that becomes an acute operational risk in escalation scenarios."
+    ],
+    "bias_flag": "Elron is an Israeli-affiliated researcher writing for a NATO Defense College audience. More analytically balanced than the INSS corpus but framing consistently centers Israeli security concerns and treats UNIFIL's effectiveness primarily through the lens of constraining Hezbollah activity. Strong source on post-2006 force structure, the tripartite mechanism, and the MTF; characterizations of Hezbollah and the LAF should be cross-referenced with Lebanese and neutral sources.",
+    "analytical_notes": [
+      "Elron's 2007 paper is the most detailed available account of UNIFIL II's initial configuration and the tripartite mechanism's early operation \u2014 valuable as a baseline against which subsequent developments can be measured.",
+      "MTF description is the most substantive in the bibliography: 1,600+ sailors, 15 vessels, German command. This is a 2007 baseline; MTF's evolution to 2026 is undocumented and a priority gap for interviews.",
+      "Cross-reference with Asseburg (2009) on MTF effectiveness at interdicting arms smuggling \u2014 Asseburg documents zero detected sea-based smuggling incidents, a significant finding about instrument-mission mismatch.",
+      "The 'Chapter VI\u00bd' framing should be explored in interviews with Force Commanders: was this concept operationally meaningful or primarily rhetorical?"
+    ],
+    "lessons_learned": [
+      {
+        "text": "Enhanced tripartite liaison mechanisms with direct communication channels at multiple command levels demonstrably reduce tactical escalation in contested border environments \u2014 this model warrants documentation as a transferable practice for other missions.",
+        "tag": "SOURCE-DERIVED"
+      },
+      {
+        "text": "TCC safety concerns directly and measurably degrade the quality of UN monitoring; when robust peacekeeping is systematically traded for force protection, the resulting situational awareness gaps undermine the mission's core informational function.",
+        "tag": "SOURCE-DERIVED"
+      }
+    ],
+    "timeline_events": [
+      {
+        "date": "2006-08-11",
+        "event": "SCR 1701 adopted, ending Second Lebanon War; UNIFIL II mandate expansion authorized",
+        "source": "elron_2007"
+      },
+      {
+        "date": "2007-06-24",
+        "event": "Six Spanish UNIFIL soldiers killed by VBIED near al-Khiyam \u2014 deadliest single attack on UNIFIL II",
+        "source": "elron_2007"
+      },
+      {
+        "date": "2015-01-28",
+        "event": "Hezbollah ATGM attack kills two IDF soldiers near Shebaa Farms; Israeli return fire kills one Spanish UNIFIL member",
+        "source": "elron_2007"
+      }
+    ]
+  },
+  {
+    "id": "makdisi_2014",
+    "author": "Karim Makdisi",
+    "title": "Reconsidering the Struggle over UNIFIL in Southern Lebanon",
+    "source_type": "Academic / Journal Article",
+    "year": 2014,
+    "publisher": "Journal of Palestine Studies, 43(4)",
+    "tags": [
+      "mandate",
+      "political-dynamics",
+      "P5",
+      "civilian-protection",
+      "non-state-actors",
+      "host-state"
+    ],
+    "thematic_clusters": [
+      "Mandate evolution",
+      "Political dynamics & P5",
+      "Host-state relations & LAF",
+      "Civilian protection",
+      "Relations with non-state armed actors"
+    ],
+    "timeline_coverage": {
+      "start": 1978,
+      "end": 2014
+    },
+    "actors": [
+      "UNIFIL",
+      "US",
+      "Israel",
+      "Lebanon",
+      "Hezbollah",
+      "Security Council",
+      "France",
+      "Lebanese government"
+    ],
+    "abstract": "Critical scholarly analysis arguing that UNIFIL's mandate has been systematically shaped by US-Israeli political agendas rather than Lebanese security needs. Frames SCR 1701 as a US-driven reframing of UNIFIL under 'war on terror' logic. Argues UNIFIL's genuine legacy lies in community relations rather than formal mandate implementation.",
+    "key_arguments": [
+      "SCR 1701 represents a fundamental political reframing of UNIFIL's purpose \u2014 from interposition between armed parties to active state-building aimed at dismantling Hezbollah's military capacity \u2014 driven by US 'war on terror' logic rather than Lebanese security needs.",
+      "The US has functioned as the primary architect of both SCR 425 (1978) and SCR 1701 (2006), consistently using the Security Council as an instrument of shifting US regional policy rather than as a mechanism for addressing Lebanese security needs.",
+      "UNIFIL's legitimacy and popular acceptance during the Israeli occupation years (1978\u20132000) derived primarily from community presence, humanitarian activities, and consistent impartiality \u2014 Timur G\u00f6ksel: 'UNIFIL's biggest success was its relations with the people.'",
+      "Hezbollah's post-2006 positioning treats UNIFIL as a 'guest' that provides incidental civilian protection while blocking any disarmament interpretation of SCR 1701 \u2014 a relationship of managed tolerance rather than cooperation.",
+      "The Lebanese state's formal legitimization of Hezbollah's armed status creates a structural contradiction at the heart of SCR 1701's operational logic, rendering the mandate's core disarmament objective formally impossible within Lebanese constitutional norms."
+    ],
+    "bias_flag": "Makdisi is a Lebanese scholar at the American University of Beirut writing in the Journal of Palestine Studies, a publication with a consistent editorial orientation sympathetic to Arab and Palestinian positions. His analysis reflects a Lebanese sovereignty and resistance narrative that treats Hezbollah's armed presence as a legitimate response to Israeli occupation and US-Israeli hegemonic projects. Essential counterweight to the INSS corpus; should be read alongside Israeli institutional sources to understand the full axis of contestation.",
+    "analytical_notes": [
+      "Makdisi and Orion/INSS sources represent the two poles of the central analytical contestation in the bibliography: UNIFIL as illegitimate US-Israeli instrument vs. UNIFIL as ineffective but legitimate buffer. The LL report must navigate between these positions.",
+      "The G\u00f6ksel quotation on community relations is confirmed and expanded in G\u00f6ksel's own 2007 interview \u2014 both sources should be cited together on this point.",
+      "Makdisi is the only source directly addressing the political economy of mandate renewal from a critical perspective. Cross-reference with Allee (2009) on structural separation of peacekeeping and peacemaking.",
+      "The 'calculated tolerance' framework for Hezbollah-UNIFIL relations is consistent with Sobelman (2004) and Norton (1999) \u2014 a convergence across sources with quite different orientations that strengthens the analytical finding."
+    ],
+    "lessons_learned": [
+      {
+        "text": "UNIFIL's legitimacy with local communities \u2014 built through sustained presence, humanitarian support, and consistent impartiality during the occupation years \u2014 proved more durable and operationally valuable than its formal mandate achievements, suggesting community relations should be recognized as a core mission function.",
+        "tag": "SOURCE-DERIVED"
+      },
+      {
+        "text": "When a mission's mandate structure assumes a meaningful legal and political distinction between the host state and a non-state armed actor, formal legitimization of that actor by the state does not merely complicate implementation \u2014 it structurally undermines the entire operational logic of the mandate.",
+        "tag": "ANALYTICAL INFERENCE"
+      }
+    ],
+    "timeline_events": []
+  },
+  {
+    "id": "mattelaer_2009",
+    "author": "Alexander Mattelaer",
+    "title": "UNIFIL Operational Strategy: A Three-Pronged Approach",
+    "source_type": "Think Tank Book Chapter",
+    "year": 2009,
+    "publisher": "Egmont Institute",
+    "tags": [
+      "deterrence",
+      "tripartite-mechanism",
+      "CIMIC",
+      "force-protection",
+      "peacekeeping-doctrine",
+      "blue-line"
+    ],
+    "thematic_clusters": [
+      "Liaison & tripartite mechanism",
+      "Operational adaptation & innovation",
+      "CIMIC & community relations",
+      "Force protection & safety"
+    ],
+    "timeline_coverage": {
+      "start": 2006,
+      "end": 2009
+    },
+    "actors": [
+      "UNIFIL",
+      "IDF",
+      "LAF",
+      "European TCCs",
+      "local Lebanese communities",
+      "Belgian contingent"
+    ],
+    "abstract": "Analysis of UNIFIL's post-2006 operational strategy, identifying three core pillars: deterrence through robust presence, liaison through the tripartite mechanism, and CIMIC through local community engagement. Argues UNIFIL's economic footprint and community relations are deliberate strategic assets, not by-products. Identifies the deterrence credibility gap as the mission's central structural tension.",
+    "key_arguments": [
+      "UNIFIL's post-2006 operational strategy rests on three distinct and mutually reinforcing pillars: deterrence through robust military presence along the Blue Line, tactical de-escalation through the tripartite liaison mechanism, and grassroots legitimacy through CIMIC and economic engagement.",
+      "The tripartite mechanism is most effective when deliberately insulated from politically contentious issues \u2014 but this same insulation is precisely what limits its contribution to conflict resolution, leaving core political disputes unaddressed.",
+      "A robust force configured for self-defense but not enforcement creates a fundamental deterrence credibility gap: the force's physical presence implies a deterrence commitment that its ROE do not authorize it to back up, and all parties eventually internalize this.",
+      "CIMIC activities and local economic footprint are not incidental by-products of the mission's presence but deliberately managed strategic assets that generate community goodwill, force protection dividends, and situational awareness contributions.",
+      "Lasting and credible deterrence requires enforcement capacity; UNIFIL's 'Chapter VI\u00bd' posture generates presence and the appearance of deterrence without the credible threat that would make it operationally effective against a determined challenger."
+    ],
+    "bias_flag": "Mattelaer writes from the Egmont Institute, a Belgian/EU-affiliated think tank, bringing a European TCC perspective. The most operationally balanced source in the current corpus \u2014 engages seriously with both genuine contributions and structural limitations without advocacy bias. The European perspective may implicitly prioritize stabilization value and underweight Israeli security concerns about Hezbollah rearmament, but this is a mild orientation rather than a distorting bias.",
+    "analytical_notes": [
+      "Mattelaer's 'three-pronged' framework (deterrence, liaison, CIMIC) is the most analytically useful organizational framework for UNIFIL's operational strategy in the post-2006 period and should be considered as a structuring device for the LL report.",
+      "The deterrence credibility gap identified in 2009 was confirmed by the October 2024 war \u2014 the 15-year arc from Mattelaer's warning to Mizrahi/Levanoni's post-war assessment is itself a significant analytical finding.",
+      "Cross-reference with Orion (2016) on the tripartite mechanism insulation trade-off \u2014 the finding converges across a European and an Israeli source, strengthening its analytical weight.",
+      "The CIMIC as strategic asset argument is supported by Nerguizian (2014) from a completely different analytical tradition \u2014 a convergence that further strengthens the finding."
+    ],
+    "lessons_learned": [
+      {
+        "text": "Tripartite liaison is most effective when insulated from politically contentious issues \u2014 but this same insulation limits its contribution to conflict resolution, and mission design must make this fundamental trade-off explicit rather than treating the mechanism as a general-purpose diplomatic tool.",
+        "tag": "SOURCE-DERIVED"
+      },
+      {
+        "text": "CIMIC and local contracting generate community support that directly contributes to force protection and situational awareness \u2014 these activities should be formally recognized and resourced as core mission functions rather than peripheral welfare activities.",
+        "tag": "SOURCE-DERIVED"
+      },
+      {
+        "text": "A robust force with self-defense-only ROE creates a structural deterrence credibility gap that all parties eventually learn to exploit; mission planning must honestly assess whether presence without enforcement authority constitutes genuine deterrence.",
+        "tag": "SOURCE-DERIVED"
+      }
+    ],
+    "timeline_events": []
+  },
+  {
+    "id": "mizrahi_levanoni_2025",
+    "author": "Orna Mizrahi and Moran Levanoni",
+    "title": "Time to End UNIFIL's Mandate in Southern Lebanon?",
+    "source_type": "Policy Brief (INSS)",
+    "year": 2025,
+    "publisher": "Institute for National Security Studies, INSS Insight No. 1986",
+    "tags": [
+      "mandate",
+      "monitoring",
+      "LAF",
+      "hezbollah",
+      "ceasefire",
+      "1701"
+    ],
+    "thematic_clusters": [
+      "Mandate evolution",
+      "Monitoring, reporting & technology",
+      "Host-state relations & LAF",
+      "Political dynamics & P5"
+    ],
+    "timeline_coverage": {
+      "start": 2024,
+      "end": 2025
+    },
+    "actors": [
+      "UNIFIL",
+      "IDF",
+      "LAF",
+      "Hezbollah",
+      "Quintet Committee",
+      "US",
+      "France",
+      "Israeli government"
+    ],
+    "abstract": "Post-2024 war assessment arguing for termination of UNIFIL's mandate, documenting the comprehensive failure of the mission's monitoring function as revealed by the October 2024 conflict. Documents LAF's post-ceasefire assertiveness and argues the Quintet Committee has superseded the Trilateral Military Mechanism.",
+    "key_arguments": [
+      "The October\u2013November 2024 war revealed tunnel networks, weapons depots, Radwan Force staging areas, and extensive military infrastructure built undetected within UNIFIL's area of operations \u2014 representing a comprehensive and demonstrable failure of the mission's primary monitoring function.",
+      "The Trilateral Military Committee had effectively ceased to function before October 2024 and has been replaced in practice by the Quintet Enforcement Committee (US, France, Israel, Lebanon, UNIFIL), altering the political economy of monitoring by bringing direct state-level political actors into what had been a military-technical format.",
+      "Post-ceasefire LAF deployment has been significantly more assertive than at any previous point in UNIFIL's history: approximately 6,000 troops deployed, with 500+ Hezbollah military positions identified and raided.",
+      "Trump administration pressure on UN funding and broader US policy shift toward Israel introduces a potentially decisive variable into the mandate renewal calculus.",
+      "UNIFIL's substantial economic value to Lebanon \u2014 local employment, LAF support, dollar inflows \u2014 created a structural dependency that may have systematically distorted objective security assessment."
+    ],
+    "bias_flag": "Mizrahi and Levanoni are affiliated with INSS, Israel's premier national security think tank with close ties to the Israeli government and military establishment. The paper explicitly advocates for UNIFIL closure. Its assessment of the LAF's post-2024 assertiveness is notably more generous than earlier INSS characterizations, but the overall framing reflects consistent Israeli institutional positioning. Cross-reference with Tenenti (2026) and Crisis Group (2026) for alternative assessments.",
+    "analytical_notes": [
+      "Most recent INSS source in the corpus \u2014 represents the Israeli institutional position on UNIFIL closure and is essential for documenting the stakeholder landscape.",
+      "LAF post-2024 assertiveness data (6,000 troops, 500+ positions raided) is the most specific available and should be treated as a baseline for assessing durability.",
+      "The Quintet Committee replacing the Trilateral Committee is confirmed by both this source and Tenenti (2026) \u2014 cross-source confirmation strengthens this finding.",
+      "Cross-reference with Crisis Group (2026) which provides a structural analysis of why the LAF cannot sustain confrontation with Hezbollah despite post-ceasefire assertiveness."
+    ],
+    "lessons_learned": [
+      {
+        "text": "UNIFIL's economic value to Lebanon created a structural dependency that may have systematically complicated objective assessment of the mission's security effectiveness \u2014 mission utility must be evaluated on security criteria rather than economic contribution.",
+        "tag": "ANALYTICAL INFERENCE"
+      },
+      {
+        "text": "The collapse of the Trilateral Military Committee before October 2024 was itself an early warning sign of imminent escalation that was not acted upon \u2014 early warning indicators of liaison mechanism erosion should be built into mission review cycles.",
+        "tag": "ANALYTICAL INFERENCE"
+      }
+    ],
+    "timeline_events": [
+      {
+        "date": "2024-10-01",
+        "event": "Israel-Hezbollah war; UNIFIL confined to bases; IDF-UNIFIL serious friction; Hezbollah infrastructure throughout AO fully exposed",
+        "source": "mizrahi_levanoni_2025"
+      },
+      {
+        "date": "2024-11-27",
+        "event": "Israel-Hezbollah ceasefire; Quintet Enforcement Committee (US, France, Israel, Lebanon, UNIFIL) established \u2014 replaces Trilateral Military Committee",
+        "source": "mizrahi_levanoni_2025"
+      },
+      {
+        "date": "2025-01-01",
+        "event": "UNSCR 2790 adopted: final UNIFIL mandate extension to 31 December 2026; closure confirmed",
+        "source": "mizrahi_levanoni_2025"
+      }
+    ]
+  },
+  {
+    "id": "orion_2017a",
+    "author": "Assaf Orion",
+    "title": "At a Crossroads: Israeli Policy on UNIFIL",
+    "source_type": "Policy Brief (INSS)",
+    "year": 2017,
+    "publisher": "Institute for National Security Studies, INSS Insight No. 953",
+    "tags": [
+      "mandate",
+      "monitoring",
+      "hezbollah",
+      "1701",
+      "political-dynamics",
+      "LAF"
+    ],
+    "thematic_clusters": [
+      "Mandate evolution",
+      "Monitoring, reporting & technology",
+      "Political dynamics & P5",
+      "Relations with non-state armed actors"
+    ],
+    "timeline_coverage": {
+      "start": 2006,
+      "end": 2017
+    },
+    "actors": [
+      "UNIFIL",
+      "Israel",
+      "Hezbollah",
+      "LAF",
+      "Lebanese government",
+      "DPKO",
+      "Security Council"
+    ],
+    "abstract": "Analysis of Israeli policy options toward UNIFIL, arguing that the mission's structural mandate weaknesses \u2014 particularly its inability to enforce disarmament and its reliance on host-state consent \u2014 require either fundamental reform or a shift in Israeli engagement strategy.",
+    "key_arguments": [
+      "UNIFIL's reporting frameworks consistently measure inputs \u2014 numbers of patrols, meetings held, kilometers monitored \u2014 rather than security outputs such as changes in the weapons environment or Hezbollah deployment patterns, creating a systematic accountability gap.",
+      "The 'private property' pretext is not an incidental tactical adaptation by Hezbollah but a systematic and institutionalized denial tactic, with Lebanese landowners coached by Hezbollah to formally invoke property rights to block inspections.",
+      "President Aoun's September 2017 declaration that Hezbollah weapons are 'a principal element of Lebanon's defense' formally collapsed the state/non-state distinction underpinning SCR 1701's operational logic.",
+      "Israel faces a genuine strategic dilemma: UNIFIL is simultaneously a source of monitoring information about Hezbollah that Israel values and a constraint on IDF freedom of action that Israel resents.",
+      "UN SG periodic reports employ deliberate legal hedging \u2014 'allegations,' 'reportedly,' 'unable to independently verify' \u2014 to avoid officially acknowledging documented violations, reflecting institutional pressure to avoid confrontational language."
+    ],
+    "bias_flag": "Orion is a retired IDF Brigadier General at INSS with extensive personal history in the Israel-Lebanon security file. The analysis explicitly advocates for stronger Israeli pressure on UNIFIL. The characterization of the Lebanese government as actively complicit in Hezbollah's mandate violations \u2014 rather than politically constrained \u2014 is a consistent INSS framing. Cross-reference with Crisis Group (2026) and Nerguizian (2014) for more structurally nuanced accounts.",
+    "analytical_notes": [
+      "The 'input vs. output' reporting gap argument appears across Orion 2017a, 2018, and 2019 \u2014 a consistent and well-documented finding that transcends the source's advocacy bias.",
+      "The Aoun declaration documented here is also covered in Orion 2017b \u2014 the two pieces together provide the most detailed account of the declaration's implications for UNIFIL's mandate logic.",
+      "Cross-reference with Makdisi (2014) for a contrasting account of why Lebanese actors resist the disarmament interpretation of SCR 1701."
+    ],
+    "lessons_learned": [
+      {
+        "text": "UN reporting frameworks that measure inputs rather than security outcomes create a systematic accountability gap that allows all parties to claim compliance while violating the spirit of mandate requirements.",
+        "tag": "SOURCE-DERIVED"
+      },
+      {
+        "text": "When a host state formally legitimizes a non-state armed actor's weapons as national defense, the mission's mandate logic is structurally undermined regardless of resolution language \u2014 mandate design must include provisions for this scenario.",
+        "tag": "SOURCE-DERIVED"
+      }
+    ],
+    "timeline_events": [
+      {
+        "date": "2017-09-01",
+        "event": "President Aoun publicly declares Hezbollah weapons 'a principal element of Lebanon's defense' \u2014 formally collapses state/non-state distinction underpinning SCR 1701",
+        "source": "orion_2017a"
+      }
+    ]
+  },
+  {
+    "id": "orion_2020",
+    "author": "Assaf Orion",
+    "title": "On the Brink of Escalation: The UNIFIL Mandate Renewal is a Victim of the Beirut Explosion",
+    "source_type": "Policy Brief (INSS)",
+    "year": 2020,
+    "publisher": "Institute for National Security Studies, INSS Insight No. 1380",
+    "tags": [
+      "mandate",
+      "political-dynamics",
+      "P5",
+      "escalation",
+      "monitoring",
+      "ceasefire"
+    ],
+    "thematic_clusters": [
+      "Mandate evolution",
+      "Political dynamics & P5",
+      "Monitoring, reporting & technology"
+    ],
+    "timeline_coverage": {
+      "start": 2020,
+      "end": 2020
+    },
+    "actors": [
+      "UNIFIL",
+      "Security Council",
+      "France",
+      "US",
+      "Lebanon",
+      "Hezbollah",
+      "IDF",
+      "LAF"
+    ],
+    "abstract": "Analysis of SCR 2539 (2020) UNIFIL mandate renewal, arguing that the Beirut port explosion displaced security accountability from the Security Council agenda. France subordinated UNIFIL security concerns to its broader Lebanese political engagement; the resolution sends a 'business as usual' message that enables continued Hezbollah violations.",
+    "key_arguments": [
+      "The Beirut port explosion of 4 August 2020 fundamentally reframed Lebanon in international perception from a security challenge to a humanitarian victim, neutralizing US pressure for UNIFIL security reforms during the August 2020 mandate renewal.",
+      "France systematically subordinated UNIFIL's security mandate to its broader political agenda in Lebanon \u2014 demonstrated by Macron's visits to Beirut, meetings with Hezbollah representatives, and Paris's apparent prioritization of reconstruction engagement over security conditionality.",
+      "SCR 2539's reduction of the UNIFIL force ceiling from 15,000 to 13,000 is in practice meaningless \u2014 current force strength has never reached 13,000 since the 2006 expansion, making it a cosmetic change with no operational significance.",
+      "UNIFIL observed nothing before, during, or after multiple Hezbollah attack attempts on Israeli forces in summer 2020 despite incidents occurring near UN positions \u2014 a documented monitoring failure described only obliquely in the resolution.",
+      "Annual mandate renewals create a predictable and exploitable pattern of P5 diplomatic trading where bilateral agendas systematically override objective security assessments of UNIFIL's contribution."
+    ],
+    "bias_flag": "Orion is a retired IDF Brigadier General at INSS writing against the backdrop of active Hezbollah provocation along the northern border. The analysis is explicitly critical of French Lebanon policy, attributing to France direct responsibility for future escalation. Cross-reference with Makdisi (2014) and Crisis Group (2026) for alternative readings of French Lebanon policy and Lebanese state capacity.",
+    "analytical_notes": [
+      "The 'crisis displacement' mechanism documented here \u2014 major Lebanese humanitarian crisis displacing security accountability during mandate renewal \u2014 is one of the clearest examples in the corpus of political dynamics systematically overriding security assessments.",
+      "Read alongside Tenenti (2026) which documents a parallel displacement dynamic in the 2025 mandate renewal \u2014 the pattern is consistent across multiple renewal cycles.",
+      "The US-France negotiation dynamic (US wanting shorter renewal, France wanting continuation without change) is a recurring pattern across multiple renewal cycles and should be flagged as a structural lesson."
+    ],
+    "lessons_learned": [
+      {
+        "text": "Major humanitarian or political crises affecting the host country systematically displace security accountability from the Security Council agenda during mandate renewals \u2014 review mechanisms must be designed to insulate security benchmarks from this predictable crowding-out dynamic.",
+        "tag": "SOURCE-DERIVED"
+      },
+      {
+        "text": "Annual mandate renewals create exploitable P5 trading dynamics where force ceiling, duration, and conditionality reflect bilateral agendas extending well beyond the mission's security objectives \u2014 shorter renewal cycles with explicit and measurable performance benchmarks could create more meaningful accountability.",
+        "tag": "SOURCE-DERIVED"
+      }
+    ],
+    "timeline_events": [
+      {
+        "date": "2020-08-04",
+        "event": "Beirut port explosion: 218 killed, 7,000+ injured; fundamentally redirects international attention from southern Lebanon security",
+        "source": "orion_2020"
+      },
+      {
+        "date": "2020-08-28",
+        "event": "SCR 2539 adopted; UNIFIL force ceiling reduced from 15,000 to 13,000; mandate renewed for one year without substantive change",
+        "source": "orion_2020"
+      }
+    ]
+  },
+  {
+    "id": "orion_2017b",
+    "author": "Assaf Orion",
+    "title": "Hezbollah and Lebanon, in Aounian Terms",
+    "source_type": "Policy Brief (INSS)",
+    "year": 2017,
+    "publisher": "Institute for National Security Studies, INSS Insight No. 902",
+    "tags": [
+      "hezbollah",
+      "host-state",
+      "mandate",
+      "1701",
+      "political-dynamics",
+      "LAF"
+    ],
+    "thematic_clusters": [
+      "Host-state relations & LAF",
+      "Mandate evolution",
+      "Relations with non-state armed actors"
+    ],
+    "timeline_coverage": {
+      "start": 2016,
+      "end": 2017
+    },
+    "actors": [
+      "Hezbollah",
+      "President Aoun",
+      "Lebanese government",
+      "Israel",
+      "UNIFIL",
+      "LAF"
+    ],
+    "abstract": "Short analysis of the implications of President Aoun's 2017 declaration that Hezbollah's weapons are 'a principal element of Lebanon's defense.' Argues this formally collapses the state/non-state distinction that underpins SCR 1701's architecture and fundamentally undermines UNIFIL's mandate logic.",
+    "key_arguments": [
+      "President Aoun's declaration formally and unprecedentedly legitimizes non-state armed presence that directly contradicts the text and intent of SCR 1701.",
+      "The declaration formally collapses the state/non-state distinction that UNIFIL's entire mandate structure depends upon \u2014 the mission was designed to help the Lebanese state assert sovereignty over non-state armed actors, but the state has now officially endorsed those actors' weapons.",
+      "Lebanon's government has shifted from passive non-implementation of SCR 1701 to active legitimization of violations \u2014 a qualitative escalation in the challenge to UNIFIL's mandate logic.",
+      "The Aounian framing represents a constitutional-political commitment that makes it structurally impossible for any Lebanese government to comply with SCR 1701's disarmament provisions without challenging the governing coalition.",
+      "This development requires a fundamental reassessment of UNIFIL's mandate logic and of the assumptions underlying international engagement with the LAF as a counterweight to Hezbollah."
+    ],
+    "bias_flag": "Orion is a retired IDF Brigadier General at INSS. The analysis frames the Aoun declaration as a watershed requiring fundamental international reassessment, reflecting Israeli government advocacy. Analytically correct that the declaration has structural implications for SCR 1701, but underweights Lebanese domestic political constraints. Cross-reference with Makdisi (2014) and Crisis Group (2026).",
+    "analytical_notes": [
+      "The Aoun declaration is a key structural moment documented across multiple sources (Orion 2017a, 2017b, Makdisi 2014) \u2014 the LL report should treat it as a threshold event when the state/non-state distinction that SCR 1701 depends on was formally eliminated.",
+      "Cross-reference with Crisis Group (2026) where the Lebanese government's 2026 formal ban on Hezbollah military activities represents a partial reversal of the Aounian position \u2014 but without enforcement capacity.",
+      "The structural lesson \u2014 that mandate design must include provisions for host-state legitimization of non-state armed actors \u2014 is one of the most important analytical inferences in the corpus."
+    ],
+    "lessons_learned": [
+      {
+        "text": "Formal host-state legitimization of a non-state armed actor's weapons transforms the problem from passive non-implementation of a mission's mandate into an active structural contradiction between mandate requirements and host-state constitutional-political commitments.",
+        "tag": "SOURCE-DERIVED"
+      },
+      {
+        "text": "Mission mandate design must include explicit provisions for scenarios in which the host state formally endorses mandate violations \u2014 SCR 1701 contained no such provisions and became structurally unimplementable when Lebanon legitimized Hezbollah's weapons.",
+        "tag": "ANALYTICAL INFERENCE"
+      }
+    ],
+    "timeline_events": [
+      {
+        "date": "2017-09-01",
+        "event": "President Aoun publicly defends Hezbollah's right to maintain weapons as Lebanon's strategic deterrent \u2014 formally legitimizes violation of SCR 1701 disarmament provisions",
+        "source": "orion_2017b"
+      }
+    ]
+  },
+  {
+    "id": "orion_2016",
+    "author": "Assaf Orion",
+    "title": "UNIFIL II, Ten Years On: Strong Force, Weak Mandate",
+    "source_type": "Policy Brief (INSS)",
+    "year": 2016,
+    "publisher": "Institute for National Security Studies, INSS Insight No. 844",
+    "tags": [
+      "mandate",
+      "hezbollah",
+      "tripartite-mechanism",
+      "monitoring",
+      "LAF",
+      "1701"
+    ],
+    "thematic_clusters": [
+      "Mandate evolution",
+      "Liaison & tripartite mechanism",
+      "Monitoring, reporting & technology",
+      "Host-state relations & LAF"
+    ],
+    "timeline_coverage": {
+      "start": 2006,
+      "end": 2016
+    },
+    "actors": [
+      "UNIFIL",
+      "Hezbollah",
+      "LAF",
+      "IDF",
+      "Spanish battalion",
+      "Security Council",
+      "Lebanese government"
+    ],
+    "abstract": "Marking the ten-year anniversary of SCR 1701, this analysis evaluates the gap between UNIFIL's stabilized presence and its failure to demilitarize Southern Lebanon. Frames UNIFIL II as a 'strong force' with a 'weak mandate,' successful at tactical de-confliction via the tripartite mechanism but structurally incapable of addressing Hezbollah's massive rearmament.",
+    "key_arguments": [
+      "The tripartite liaison mechanism (IDF-LAF-UNIFIL) is UNIFIL's most critical and most successful non-kinetic operational tool, proven effective in containing tactical frictions before they escalate into armed incidents.",
+      "UNIFIL has fundamentally failed its primary objective under SCR 1701: ensuring an area free of unauthorized weapons between the Blue Line and the Litani River, as Hezbollah has systematically built up its military deployment throughout southern Lebanon while UNIFIL was present.",
+      "The mission operates under a 'Chapter VI' consent-based logic in what is effectively a 'Chapter VII' enforcement environment, relying on a weak Lebanese state effectively held hostage to Hezbollah's combined military power and political influence.",
+      "'Angry citizen' attacks on UNIFIL patrols and the systematic invocation of 'private property' restrictions are not spontaneous local reactions but institutionalized Hezbollah denial tactics with coordination between armed elements and civilian actors.",
+      "UNIFIL's reporting is systematically plagued by 'circumspect legalese' and deliberate information gaps, reflecting a structural tension between professional integrity in reporting violations and the safety of national contingents."
+    ],
+    "bias_flag": "Orion is a retired IDF Brigadier General at INSS marking the tenth anniversary of SCR 1701 with an explicitly critical assessment of UNIFIL's failure to achieve disarmament objectives. Measures UNIFIL's effectiveness primarily by its contribution to preventing Hezbollah rearmament. The 'strong force, weak mandate' framing is analytically useful but reflects an Israeli preference for a more enforcement-oriented UNIFIL. Cross-reference with Mattelaer (2009) and Elron (2007) for more balanced assessments.",
+    "analytical_notes": [
+      "The 'strong force, weak mandate' framing is the most concise articulation of UNIFIL II's structural paradox in the corpus and should be considered as an organizing concept for the LL report section on mandate design.",
+      "Earliest in the INSS corpus to fully articulate the monitoring failure argument; subsequent Orion papers (2018, 2019) refine and update it but the core argument is established here.",
+      "Cross-reference with Mattelaer (2009) whose 'deterrence credibility gap' concept provides the theoretical underpinning for Orion's more empirical argument about mandate weakness."
+    ],
+    "lessons_learned": [
+      {
+        "text": "The tripartite mechanism serves as an essential non-kinetic tool for de-escalation in the absence of a mutually accepted and enforced border, demonstrating that structured military-to-military dialogue can maintain tactical calm even amidst strategic hostility between parties with no political relationship.",
+        "tag": "SOURCE-DERIVED"
+      },
+      {
+        "text": "Reliance on host-state consent for disarmament is structurally insufficient as a mandate implementation strategy when the host state lacks either the political will or coercive military capacity to challenge non-state armed actors \u2014 consent-based mandates require genuine sovereign authority to function.",
+        "tag": "ANALYTICAL INFERENCE"
+      },
+      {
+        "text": "TCC safety concerns directly and measurably degrade the quality of UN monitoring; when robust peacekeeping is systematically traded for force protection, the resulting situational awareness gaps are documented in official reports as absence of violations rather than absence of observation.",
+        "tag": "SOURCE-DERIVED"
+      }
+    ],
+    "timeline_events": [
+      {
+        "date": "2007-07-01",
+        "event": "Six Spanish UNIFIL soldiers killed by VBIED near al-Khiyam \u2014 deadliest single attack on UNIFIL II",
+        "source": "orion_2016"
+      },
+      {
+        "date": "2015-01-01",
+        "event": "Hezbollah ATGM attack kills two IDF soldiers near Shebaa Farms; Israeli return fire kills one Spanish UNIFIL member",
+        "source": "orion_2016"
+      }
+    ]
+  },
+  {
+    "id": "orion_2018",
+    "author": "Assaf Orion",
+    "title": "UNIFIL after Security CouncilResolution 2373: Same Forces, More Reports",
+    "year": 2018,
+    "publisher": "Institute for National SecurityStudies, INSS Insight No.1015",
+    "tags": [
+      "monitoring",
+      "hezbollah",
+      "non-state-actors",
+      "1701",
+      "political-dynamics",
+      "mandate"
+    ],
+    "thematic_clusters": [
+      "Monitoring,reporting & technology",
+      "Mandate evolution",
+      "Relations with non-statearmed actors",
+      "Political dynamics &P5"
+    ],
+    "timeline_coverage": {
+      "start": 2017,
+      "end": 2018
+    },
+    "actors": [
+      "UNIFIL",
+      "Hezbollah",
+      "LAF",
+      "SecurityCouncil",
+      "US",
+      "France",
+      "Green Without Borders",
+      "Lebanesegovernment"
+    ],
+    "abstract": "Analysis of the impact of SCR 2373 (2017),which sought to empower UNIFIL with increased visibility and detailedreporting on 1701 violations. Argues the resolution was a politicalvictory for Israel and the US in keeping Hezbollah's activities on theUN agenda but failed to change the security reality on theground.",
+    "key_arguments": [
+      "SCR 2373 increased UNIFIL's 'visibility'through more frequent patrols, additional reporting appendices, andenhanced monitoring requirements \u00e2\u0080\u0094 but Hezbollah rapidly and effectivelycountered this enhanced visibility by establishing 'Green WithoutBorders,' an environmental NGO that functions as a military front toconduct activities in sensitive areas under civilian cover.",
+      "There is apersistent and structurally produced 'mirage' of implementation in theLebanon file: the LAF acts as a political 'fig leaf' providing theappearance of Lebanese state engagement with SCR 1701 while UNIFILapplies the narrowest possible interpretations of its mandate to avoidconfrontations that would endanger contingents.",
+      "Hezbollahsystematically uses 'private properties' and rugged terrain features assafe havens for military infrastructure, deterring UNIFIL access throughthe orchestrated confiscation of cameras and monitoring equipment frompatrols approaching sensitive sites \u00e2\u0080\u0094 a practiced denialmethodology.",
+      "UNIFIL's force of approximately 10,500 personnel is nolonger operationally justified by its actual security contribution;Orion proposes a gradual reduction to 8,500 troops and a reorientationtoward Blue Line monitoring specifically, reducing the CIMIC and areasaturation function that has failed to deter Hezbollah.",
+      "The presenceof UNIFIL forces in close proximity to Hezbollah military deploymentrepresents a strategic constraint on the IDF's ability to conduct futureoperations against Hezbollah without risking casualties to internationalpeacekeepers \u00e2\u0080\u0094 Orion argues this constraint serves Hezbollah's interestsmore than UNIFIL's mission."
+    ],
+    "bias_flag": "Orion is a retired IDFBrigadier General at INSS analyzing a Security Council resolution thatwas negotiated partly in response to Israeli lobbying. The analysisconsistently frames Hezbollah's adaptive counter-measures as evidence ofbad faith rather than as rational responses to enhanced monitoringpressure. The recommendation to reduce UNIFIL to 8,500 and refocus onBlue Line monitoring reflects an Israeli preference for a more targetedforce that constrains Hezbollah less in future conflict scenarios. Theidentification of 'Green Without Borders' as a Hezbollah military frontis a documented finding that is consistent with other sources but thebroader framing of all Lebanese actors as engaged in deliberatedeception requires cross-referencing with sources sympathetic toLebanese perspectives.",
+    "analytical_notes": [
+      "The 'Green Without Borders'finding is one of the most specific and operationally significantadaptive counter-measures documented in the corpus \u00e2\u0080\u0094 it illustratesHezbollah's sophistication in anticipating and neutralizing monitoringenhancements.",
+      "The convergence between SCR 2373's enhanced reportingrequirements and Hezbollah's adaptive response is a case study in thelimitation of documentation without enforcement \u00e2\u0080\u0094 the same pattern thatTenenti (2026) documents at the strategic level in the post-2024ceasefire period.",
+      "The argument that detailed reporting requirementsserve a political function (keeping the issue on the agenda) even whenthey fail operationally is one of the more nuanced analytical findingsin the INSS corpus and is confirmed by Allee (2009) from a completelydifferent institutional perspective.",
+      "Interview question generated: Howdid UNIFIL leadership respond to the 'Green Without Borders'designation? Were there internal discussions about adapting monitoringapproaches in response?"
+    ],
+    "lessons_learned": [
+      {
+        "text": "The 'visibility'of a peacekeeping force \u00e2\u0080\u0094 measured by patrol frequency and reportingvolume \u00e2\u0080\u0094 does not equate to 'access' or 'effectiveness' if the hoststate provides legal and political cover for non-state actors tomaintain systematically enforced off-limitszones.",
+        "tag": "SOURCE-DERIVED"
+      },
+      {
+        "text": "Detailed reportingrequirements in UN Security Council resolutions can serve a legitimatepolitical function in keeping sensitive issues on the global agenda andmaintaining pressure on parties, even when they demonstrably fail toalter the tactical security situation.",
+        "tag": "ANALYTICALINFERENCE"
+      },
+      {
+        "text": "A massive troop footprint without a mandate forenforcement creates a structural 'hostage' situation for the UN: forceprotection requirements systematically override the mission'sinformation-gathering function, and the presence of peacekeepersparadoxically constrains enforcement options by otherparties.",
+        "tag": "ANALYTICAL INFERENCE"
+      }
+    ],
+    "timeline_events": [
+      {
+        "date": "30Aug 2017",
+        "event": "SCR 2373 adopted; demands more prompt and detailedreporting on 1701 violations from UNIFIL",
+        "source": "orion_2018"
+      },
+      {
+        "date": "Nov2017",
+        "event": "First UNIFIL periodic report following SCR 2373 confirmsno 'verified findings' at any suspected Hezbollah sites despite enhancedmonitoring requirements",
+        "source": "orion_2018"
+      }
+    ],
+    "source_type": "Policy Brief(INSS)"
   },
   {
     "id": "tenenti_2026",
-    "author": "Tenenti, Andrea",
-    "title": "UNIFIL at the End: Reflections of a Former Spokesperson",
+    "author": "Andrea Tenenti",
+    "title": "The Israel-Hezbollah Ceasefire Was Built toFail",
     "year": 2026,
-    "source_type": "Opinion / Primary",
-    "publisher": "Various outlets",
-    "country_of_origin": "Italy",
-    "tags": ["UNIFIL", "spokesperson", "force protection", "2024 conflict", "peacekeeping legitimacy", "TCC"],
-    "abstract": "First-person reflections by a former UNIFIL spokesperson on the mission's final operational phase, the 2024 escalation, and the institutional pressures facing the mission as it moved toward closure. Provides rare insider perspective on how UNIFIL communicated externally during periods of acute hostility and managed relations with both parties and TCCs.",
-    "key_arguments": [
-      "UNIFIL's public communications during the 2024 escalation were constrained by political sensitivities at the Security Council level, limiting the mission's ability to name violations clearly.",
-      "Force protection failures in 2024 exposed a gap between UNIFIL's robust mandate language and its practical operational posture — the mission was not structured to resist forceful obstruction.",
-      "TCC cohesion came under serious strain as contributing countries faced domestic pressure to withdraw following incidents involving their personnel.",
-      "The mission's legitimacy in the eyes of local communities had eroded significantly by 2024, partly due to its perceived inability to protect civilians during the conflict."
+    "publisher": "Al Jazeera, 11 March2026",
+    "tags": [
+      "ceasefire",
+      "monitoring",
+      "civilian-protection",
+      "escalation",
+      "mandate",
+      "displacement"
     ],
-    "unifil_relevance": "One of very few insider accounts of UNIFIL's final operational phase. Directly addresses force protection, TCC dynamics, and the gap between mandate and implementation — all core LL themes. High evidential value; should be triangulated with other 2024–2026 sources.",
-    "bias_flag": "Former UNIFIL staff member with institutional loyalty to the mission. May downplay structural failures or attribute problems to external political factors. Valuable for internal perspective but requires cross-referencing with critical external assessments.",
     "thematic_clusters": [
-      "Force protection & safety",
-      "TCC dynamics & command",
-      "Mandate evolution",
+      "Mandateevolution",
+      "Political dynamics & P5",
+      "Monitoring, reporting &technology",
       "Civilian protection",
-      "Political dynamics & P5"
+      "Force protection &safety"
     ],
-    "timeline_coverage": [2023, 2026],
-    "timeline_events": [
-      {"date": "Oct 2023", "event": "Hamas attack on Israel; Gaza war begins — direct trigger for UNIFIL operational escalation", "source": "tenenti_2026"},
-      {"date": "2024", "event": "Escalation along Blue Line; UNIFIL positions targeted; TCC withdrawal pressure mounts", "source": "tenenti_2026"}
+    "timeline_coverage": {
+      "start": 2024,
+      "end": 2026
+    },
+    "actors": [
+      "UNIFIL",
+      "Israel",
+      "Hezbollah",
+      "LAF",
+      "QuintetCommittee",
+      "US",
+      "France",
+      "Lebanese civilianpopulation"
+    ],
+    "abstract": "Written by UNIFIL's former Spokesperson andChief of Strategic Communications, this op-ed offers a rare insiderperspective on the collapse of the November 2024 ceasefire andresumption of hostilities in March 2026. Argues the ceasefire wasstructurally flawed from the outset \u00e2\u0080\u0094 granting Israel unilateraldiscretion to strike whenever it perceived a threat, with no credibleenforcement mechanism.",
+    "key_arguments": [
+      "The November 2024 ceasefirecontained a structural and built-in imbalance: Israel retained theunilateral right to strike Lebanese territory based on its ownself-assessed threat perception, while the Quintet monitoring mechanismlacked both the authority to independently verify claims and thecapacity to adjudicate violations against any objectivestandard.",
+      "UNIFIL recorded over 10,000 Israeli airspace violations and1,400 military activities inside Lebanese territory between November2024 and end of February 2026, resulting in approximately 400 deaths \u00e2\u0080\u0094making UNIFIL the sole systematic documenter of post-ceasefireviolations by either party, and demonstrating that the monitoringfunction retained value even in the absence of an enforcementmechanism.",
+      "The Quintet monitoring mechanism effectively collapsed whenIsrael stopped attending meetings, leaving no functional internationalmechanism for de-escalation precisely as the situation deteriorated \u00e2\u0080\u0094the Trilateral Military Committee had already ceased functioning sinceOctober 2024.",
+      "SCR 2790 (August 2025) \u00e2\u0080\u0094 UNIFIL's final mandate renewal\u00e2\u0080\u0094 was driven primarily by US pressure rather than security assessment,and leaves southern Lebanon without any international monitoringcapacity as of end-2026, significantly increasing the risk ofmiscalculation during active hostilities.",
+      "Israel's sustainedpost-ceasefire pattern of strikes on civilian infrastructure, thealleged use of white phosphorus, and active prevention of LAFredeployment into border areas collectively suggest a deliberate Israelistrategy to depopulate the border zone and create a de facto bufferregardless of ceasefire terms."
+    ],
+    "bias_flag": "Tenenti served as UNIFIL'sChief of Strategic Communications from 2006 to 2024 \u00e2\u0080\u0094 giving himunparalleled firsthand knowledge of UNIFIL's operations and politicalenvironment, but also a strong institutional loyalty to UNIFIL and deepsympathy for Lebanese civilian and sovereignty concerns. Hischaracterization of Israeli post-ceasefire behavior as a deliberatedepopulation strategy reflects a strong interpretive position thatIsraeli sources would contest. Published in Al Jazeera, which has abroadly Arab/Palestinian editorial orientation that amplifies thesource's existing sympathies. This source is essential for the UNIFILinsider perspective on the 2024\u00e2\u0080\u00932026 period and for specificquantitative data on post-ceasefire violations; all characterizations ofIsraeli intent should be cross-referenced with Israeli sources, and thebroader analytical argument should be triangulated against Crisis Group(2026).",
+    "analytical_notes": [
+      "This is the most current source in thecorpus and the only one written by a UNIFIL insider with directknowledge of the 2024\u00e2\u0080\u00932026 period \u00e2\u0080\u0094 it is uniquely valuable for theclosure and monitoring clusters.",
+      "Tenenti is identified as a potentialinterview target for the oral history component of the LL exercise \u00e2\u0080\u0094 hisaccount of UNIFIL's internal experience during the 2024 war and theceasefire period would be invaluable.",
+      "The quantitative data (10,000+airspace violations, 1,400 military incursions, ~400 deaths) is the onlysystematic post-ceasefire violation count available and should betreated as a primary data source despite the advocacycontext.",
+      "Cross-reference with Mizrahi/Levanoni (2025) for the Israelipost-war assessment of the same period \u00e2\u0080\u0094 the two sources togetherillustrate the diametrically opposed interpretations of what UNIFIL'smonitoring record proves.",
+      "The closure timing argument \u00e2\u0080\u0094 closing amonitoring mission during active hostilities \u00e2\u0080\u0094 is analytically distinctfrom the question of whether UNIFIL should have been renewed, and is themost significant lesson generated by thissource."
     ],
     "lessons_learned": [
-      {"text": "A monitoring and reporting mandate without credible enforcement capacity becomes untenable when parties actively obstruct UN operations — force protection posture must be aligned with the threat environment.", "tag": "SOURCE-DERIVED"},
-      {"text": "TCC solidarity is a fragile asset that requires proactive management at political level; it cannot be assumed to hold under sustained operational pressure.", "tag": "ANALYTICAL INFERENCE"}
+      {
+        "text": "Closing a monitoring missionduring active hostilities removes the only available source ofsystematic international violation documentation precisely whenmiscalculation risk is highest \u00e2\u0080\u0094 the downstream effects on conflictmanagement should be explicitly modeled in closureplanning.",
+        "tag": "SOURCE-DERIVED"
+      },
+      {
+        "text": "Ceasefire agreements thatgrant one party unilateral discretion to determine what constitutes aviolation, without independent verification mechanisms, are structurallyinsufficient as monitoring frameworks and create conditions forsystematicabuse.",
+        "tag": "SOURCE-DERIVED"
+      }
     ],
-    "actors": ["UNIFIL", "Hezbollah", "IDF", "LAF", "TCCs", "UN Security Council"],
-    "gaps_addressed": []
+    "timeline_events": [
+      {
+        "date": "27 Nov2024",
+        "event": "Israel-Hezbollah ceasefire; Quintet monitoring mechanismestablished replacing Trilateral Military Committee",
+        "source": "tenenti_2026"
+      },
+      {
+        "date": "Aug2025",
+        "event": "SCR 2790 adopted; final UNIFIL mandate renewal to 31December 2026 \u00e2\u0080\u0094 driven primarily by US pressure",
+        "source": "tenenti_2026"
+      },
+      {
+        "date": "Feb2026",
+        "event": "Quintet monitoring mechanism collapses; Israel stopsattending meetings; no functional de-escalation mechanismremains",
+        "source": "tenenti_2026"
+      },
+      {
+        "date": "2 Mar 2026",
+        "event": "Hostilities resume betweenIsrael and Hezbollah following assassination of Iranian Supreme LeaderKhamenei",
+        "source": "tenenti_2026"
+      }
+    ],
+    "source_type": "Opinion / Media (UNIFILInsider)"
   },
   {
-    "id": "crisis_group_2026",
+    "id": "crisisgroup_2026",
     "author": "International Crisis Group",
-    "title": "Lebanon after the Ceasefire: Fragile Calm and the Future of UNIFIL",
+    "title": "Where Is the Israel-Hizbollah War Going?",
     "year": 2026,
-    "source_type": "Think Tank",
-    "publisher": "International Crisis Group",
-    "country_of_origin": "International",
-    "tags": ["ceasefire", "LAF", "UNIFIL closure", "post-conflict", "Lebanese sovereignty", "Hezbollah disarmament"],
-    "abstract": "Most current assessment (2026) of Lebanon's fragile post-ceasefire environment and the implications of UNIFIL's mandated closure. Crisis Group analyses the structural constraints on LAF deployment in the south, the incomplete implementation of UNSCR 1701, and the risks of a security vacuum following mission drawdown.",
-    "key_arguments": [
-      "The LAF lacks the resources, political backing, and institutional capacity to fill the security vacuum that UNIFIL's withdrawal will create in southern Lebanon.",
-      "Hezbollah's military infrastructure, while degraded by the 2024 conflict, has not been dismantled — the core conditions that necessitated UNIFIL's presence remain unresolved.",
-      "The ceasefire agreement of late 2024 created new monitoring obligations that UNIFIL was not adequately resourced to fulfill in its final operational phase.",
-      "Lebanese political fragmentation continues to constrain any sovereign security architecture for the south, making international presence — in some form — difficult to replace."
+    "publisher": "InternationalCrisis Group, March2026",
+    "tags": [
+      "hezbollah",
+      "LAF",
+      "displacement",
+      "escalation",
+      "Iran",
+      "host-state"
     ],
-    "unifil_relevance": "Most current source in the corpus. Directly addresses UNIFIL closure dynamics, LAF capacity, and the unresolved mandate implementation gaps that the LL exercise must reckon with. Essential for the lessons learned framing on host-state relations and mandate sustainability.",
-    "bias_flag": "Crisis Group is broadly respected for balanced analysis but has an institutional preference for negotiated solutions and continued international engagement. May overstate risks of withdrawal to advocate for sustained international presence. Content was not directly fetchable (403 block) — based on summary knowledge.",
     "thematic_clusters": [
-      "Host-state relations & LAF",
-      "Mandate evolution",
-      "Political dynamics & P5",
-      "Civilian protection",
-      "Operational adaptation & innovation"
+      "Host-staterelations & LAF",
+      "Relations with non-state armed actors",
+      "Civilianprotection",
+      "Political dynamics &P5"
     ],
-    "timeline_coverage": [2024, 2026],
-    "timeline_events": [
-      {"date": "Late 2024", "event": "Ceasefire agreement between Israel and Hezbollah following escalation", "source": "crisis_group_2026"},
-      {"date": "2025", "event": "UNSCR 2790 sets final UNIFIL mandate extension to 31 December 2026", "source": "crisis_group_2026"}
+    "timeline_coverage": {
+      "start": 2024,
+      "end": 2026
+    },
+    "actors": [
+      "Hezbollah",
+      "LAF",
+      "Lebanesegovernment",
+      "Israel",
+      "Iran",
+      "Amal",
+      "Christian Lebanese Forces",
+      "Sunnicommunities",
+      "displaced Shiitepopulation",
+      "US",
+      "France"
+    ],
+    "abstract": "Crisis Group Q&A analyzing theMarch 2026 resumption of Israel-Hezbollah hostilities followingHezbollah's 2 March rocket fire, itself triggered by the assassinationof Iranian Supreme Leader Khamenei. Examines Israeli militaryobjectives, Lebanon's structural inability to deploy the LAF againstHezbollah, fragile diplomatic off-ramps, and escalating humanitarian andsectarian consequences.",
+    "key_arguments": [
+      "Hezbollah's re-entry into theconflict was widely condemned inside Lebanon as serving Iranian ratherthan Lebanese national interests \u00e2\u0080\u0094 demonstrating that the organization'sdecision was driven by the Iranian imperative following Khamenei'sassassination rather than by Lebanese strategic calculus, and exposingdeep fractures within the Shiite community and between Hezbollah andAmal.",
+      "Lebanon's government issued an unprecedented formal ban onHezbollah's military activities \u00e2\u0080\u0094 the first time any Lebanese governmenthas formally prohibited Hezbollah operations \u00e2\u0080\u0094 but proved structurallyincapable of enforcement, illustrating the enduring and deepening gapbetween Lebanese state legal authority and sovereign enforcementcapacity.",
+      "The LAF faces a compound set of structural constraints thatmake confronting Hezbollah operationally extremely risky independent ofpolitical will: chronically outdated equipment, a near-complete budgetcollapse since 2019 that has forced soldiers into part-time civilianemployment, severely degraded morale and readiness, and an acuteinstitutional risk of sectarian fragmentation along civil-war-era faultlines if ordered to engage Hezbollah.",
+      "Israel is explicitly andpublicly applying what officials call a 'Gaza model' to southern Lebanon\u00e2\u0080\u0094 mass civilian displacement, systematic razing of border villages, andestablishment of a deep buffer zone to the Litani River \u00e2\u0080\u0094 representing aqualitative and unprecedented escalation with no precedent in anyprevious Israel-Lebanon conflict.",
+      "The mass displacement crisis isgenerating sectarian friction with civil war-era dimensions: ChristianLebanese Forces running neighborhood surveillance hotlines, Sunnifamilies and communities actively expelling displaced Shiite families,and Christian district vigilante organizing \u00e2\u0080\u0094 raising the spectre ofinternal civil conflict that Lebanon has not experienced since the1975\u00e2\u0080\u00931990 war."
+    ],
+    "bias_flag": "International Crisis Group is widelyregarded as one of the most rigorously balanced conflict analysisorganizations globally, with no significant institutional bias and amethodology that emphasizes multi-source field research across politicaldivides. The March 2026 Q&A draws on diverse Lebanese interlocutorsacross political affiliations and provides the most structurally nuancedanalysis of Lebanese internal dynamics \u00e2\u0080\u0094 particularly LAF institutionalconstraints \u00e2\u0080\u0094 available in the current corpus. It should be treated asthe primary reference for the current crisis context. The one caveat isthat Crisis Group's commitment to diplomatic balance means it mayunderstate the severity of Hezbollah's violation of SCR 1701 compared toIsraeli sources.",
+    "analytical_notes": [
+      "This is the most credibleavailable source on Lebanese internal political dynamics and LAFstructural constraints in the current crisis \u00e2\u0080\u0094 it should be the primaryreference for the host-state relations and LAF cluster.",
+      "The structuralaccount of LAF incapacity (equipment collapse, part-time wages,sectarian fragmentation risk) is the most granular in the corpus andprovides an important corrective to the INSS characterization of LAF asprimarily complicit rather than structurally incapable.",
+      "The 'Gazamodel' framing is analytically significant \u00e2\u0080\u0094 it describes a qualitativeescalation in Israeli strategy toward Lebanon that has directimplications for civilian protection and for any future UNpresence.",
+      "The sectarian friction data (Christian LF hotlines, Sunniexpulsions of displaced Shiites) is unique to this source in the corpusand opens a new dimension of analysis \u00e2\u0080\u0094 the civilian protectionimplications of displacement-driven sectarian reactivation \u00e2\u0080\u0094 that shouldbe flagged as a gap for further research.",
+      "Cross-reference withSobelman (2004) on Amal-Hezbollah dynamics for historical context on theShiite institutional fracture documentedhere."
     ],
     "lessons_learned": [
-      {"text": "Mission closure without resolution of the underlying political conditions risks negating the operational gains of the entire deployment — exit strategies must be conditioned on host-state capacity, not calendar deadlines.", "tag": "ANALYTICAL INFERENCE"},
-      {"text": "LAF structural constraints — financial, political, institutional — were a persistent limiting factor in UNIFIL's mandate implementation and were not adequately addressed across the mission's lifespan.", "tag": "SOURCE-DERIVED"}
+      {
+        "text": "Host-state capacity for enforcementmust be assessed not just in terms of political will but structuralcapability \u00e2\u0080\u0094 equipment levels, funding, soldier compensation, morale,and sectarian cohesion within the armed forces can be more fundamentallylimiting than political will.",
+        "tag": "SOURCE-DERIVED"
+      },
+      {
+        "text": "Formalgestures of state authority \u00e2\u0080\u0094 issuing legal bans, passing resolutions,making declarations \u00e2\u0080\u0094 without the enforcement capacity to back them upcreate a dangerous credibility gap that both non-state actors andexternal powers systematically exploit.",
+        "tag": "ANALYTICALINFERENCE"
+      },
+      {
+        "text": "Closing a monitoring mission while hostilities areactively escalating and no alternative verification mechanism existscreates a monitoring vacuum precisely when miscalculation risk is at itshighest and when documentation of violations is mostneeded.",
+        "tag": "ANALYTICAL INFERENCE"
+      }
     ],
-    "actors": ["UNIFIL", "LAF", "Hezbollah", "IDF", "Lebanon", "UN Security Council", "Israel"],
-    "gaps_addressed": []
+    "timeline_events": [
+      {
+        "date": "Dec2024",
+        "event": "Fall of Assad regime; Hezbollah loses Syrian overlandresupply route to Iran \u00e2\u0080\u0094 significant strategic setback",
+        "source": "crisisgroup_2026"
+      },
+      {
+        "date": "Jun2025",
+        "event": "12-day US-Israeli war on Iran; Hezbollah stays out,preserving its forces but taking a significant legitimacy hitdomestically",
+        "source": "crisisgroup_2026"
+      },
+      {
+        "date": "28 Feb 2026",
+        "event": "US-Israeli war on Iranresumes and escalates significantly",
+        "source": "crisisgroup_2026"
+      },
+      {
+        "date": "2 Mar2026",
+        "event": "Assassination of Iranian Supreme Leader Khamenei;Hezbollah fires on Israel in response; Lebanese government issuesunprecedented formal ban on Hezbollah military activity",
+        "source": "crisisgroup_2026"
+      },
+      {
+        "date": "11Mar 2026",
+        "event": "Hezbollah fires approximately 200 rockets coordinatedwith Iranian missile barrage; Israel applies 'Gaza model': massdisplacement, razing of border villages, deep buffer zone toLitani",
+        "source": "crisisgroup_2026"
+      }
+    ],
+    "source_type": "ThinkTank Q&A / Conflict Analysis"
+  },
+  {
+    "id": "landau_1980",
+    "author": "David Landau and Adnan Safadi",
+    "title": "Israel's Policy in South Lebanon",
+    "year": 1980,
+    "publisher": "Jerusalem Post (repr.Journal of Palestine Studies, Vol. 9, No. 4, pp.156\u00e2\u0080\u0093158)",
+    "tags": [
+      "SLA",
+      "force-protection",
+      "IDF",
+      "mandate",
+      "non-state-actors",
+      "political-dynamics"
+    ],
+    "thematic_clusters": [
+      "Relationswith non-state armed actors",
+      "Force protection & safety",
+      "Mandateevolution",
+      "Political dynamics &P5"
+    ],
+    "timeline_coverage": {
+      "start": 1978,
+      "end": 1980
+    },
+    "actors": [
+      "Major SaadHaddad",
+      "SLA",
+      "IDF",
+      "Israeli government",
+      "Irish UNIFILcontingent",
+      "UNIFIL",
+      "PLO"
+    ],
+    "abstract": "Jerusalem Post opinion piecechallenging the Israeli government's claim that it cannot control MajorSaad Haddad following his militia's killing of two Irish UNIFIL soldiersin spring 1980. The authors argue that Israel fully controls Haddad andthat the 'cannot control' narrative is a deliberate fiction that iscorroding Israeli military ethics and destroying Israel's internationalcredibility.",
+    "key_arguments": [
+      "Israel's claim of inability to controlMajor Haddad is characterized by the authors as a deliberate politicalfalsehood: Haddad is entirely financially and militarily dependent onIsrael, receiving salaries, weapons, and operational support, making the'cannot control' narrative a calculated diplomatic cover forunconditional proxy support.",
+      "The proxy arrangement is activelycorroding Israeli military culture and institutional ethics \u00e2\u0080\u0094 the'occupation-by-proxy' model is characterized as morally andstrategically unsustainable, producing a situation where Israelimilitary norms are degraded by association with Haddad's irregular andunaccountable force.",
+      "UNIFIL's mandate logic is acknowledged by theauthors: the force cannot in practice distinguish between PLO armedelements and Haddad's de facto forces along the border, and the PLOsystematically uses this symmetry as justification for its ownnon-compliance with UNIFIL \u00e2\u0080\u0094 Israel's proxy policy thus directly anddemonstrably impedes UNIFIL mandate implementation.",
+      "The killing of twoIrish UNIFIL soldiers produced acute and disproportionate diplomaticdamage, particularly with Ireland \u00e2\u0080\u0094 the only state to have establisheddiplomatic relations with Israel since 1973 \u00e2\u0080\u0094 illustrating the specificTCC relationship costs of the Haddad alliance.",
+      "The authors argue thatIsrael has no coherent strategic alternative to the proxy arrangementbut is paying an escalating international price for it \u00e2\u0080\u0094 framing theHaddad policy as a short-term security convenience producing long-termstrategic costs."
+    ],
+    "bias_flag": "Landau and Safadi write from within theIsraeli liberal press (Jerusalem Post) as critics of Likud governmentpolicy toward south Lebanon. This makes the piece valuable as internalIsraeli dissent \u00e2\u0080\u0094 confirming from within the Israeli political systemwhat external UN and Arab sources were alleging about Israeli controlover Haddad. However, the authors are not neutral: their critique ismotivated by concern for Israeli international credibility and militaryethics rather than by concern for Lebanese sovereignty or UNIFIL'smission. The piece was selected and reprinted by the Journal ofPalestine Studies for its critical stance toward Israel \u00e2\u0080\u0094 this framingcontext should be noted when using it. Use as a triangulating sourcethat confirms Israeli proxy control of Haddad from an Israeli source,not as a neutral analysis of the broader mandatesituation.",
+    "analytical_notes": [
+      "This is a rare and valuable source:internal Israeli press criticism from 1980 that confirms, from withinthe Israeli system, that Israel controlled Haddad and that the 'cannotcontrol' narrative was a diplomatic fiction.",
+      "Cross-reference withNorton & Schwedler (1993) which documents the same dynamic from anexternal academic perspective \u00e2\u0080\u0094 the convergence between an Israeliliberal source and an American academic source on this point isanalytically significant.",
+      "The TCC casualties \u00e2\u0086\u0092 bilateral diplomaticfallout mechanism documented here (Irish soldiers killed \u00e2\u0086\u0092 Israeli-Irishrelations damaged) is an early case study in the force protection andTCC dynamics cluster. Cross-reference with Elron (2007) on Spanishcasualties in 2007 for a later iteration of the samedynamic.",
+      "Interview question generated: Were there formalaccountability mechanisms for IDF/SLA attacks on UNIFIL personnel in theearly period? How were diplomatic protests transmitted and what responsewas received?"
+    ],
+    "lessons_learned": [
+      {
+        "text": "When a mission's freedom ofmovement and physical security are contingent on the goodwill of anarmed actor that is controlled by a state party to the conflict,standard diplomatic protests to that state party are structurallyinsufficient \u00e2\u0080\u0094 stronger and more formalized accountability mechanismsare required.",
+        "tag": "ANALYTICAL INFERENCE"
+      },
+      {
+        "text": "TCC casualtiescaused by a state-backed proxy force can produce significant bilateraldiplomatic fallout that affects individual TCCs' political willingnessto sustain contributions, creating a political cost that extends beyondthe immediate securityincident.",
+        "tag": "SOURCE-DERIVED"
+      }
+    ],
+    "timeline_events": [
+      {
+        "date": "Spring1980",
+        "event": "Haddad militia kills two Irish UNIFIL soldiers;significant international outcry and diplomatic damage to Israeli-Irishrelations",
+        "source": "landau_1980"
+      }
+    ],
+    "source_type": "Media /Opinion (Israeli press)"
+  },
+  {
+    "id": "mizrahi_2020",
+    "author": "Orna Mizrahi",
+    "title": "Is a StrategicChange in Lebanon-Israel Relations Possible at the PresentTime?",
+    "year": 2020,
+    "publisher": "Institute forNational Security Studies, INSS Insight No.1390",
+    "tags": [
+      "political-dynamics",
+      "hezbollah",
+      "tripartite-mechanism",
+      "LAF",
+      "host-state",
+      "blue-line"
+    ],
+    "thematic_clusters": [
+      "Politicaldynamics & P5",
+      "Relations with non-state armed actors",
+      "Host-staterelations & LAF",
+      "Liaison & tripartitemechanism"
+    ],
+    "timeline_coverage": {
+      "start": 2000,
+      "end": 2020
+    },
+    "actors": [
+      "Israel",
+      "Lebanon",
+      "Hezbollah",
+      "LAF",
+      "UNIFIL",
+      "US",
+      "France",
+      "Lebanesecivil society"
+    ],
+    "abstract": "Written in October 2020 against the backdropof Lebanon-Israel maritime border negotiations and the Abraham Accords,this INSS brief assesses whether strategic normalization between Israeland Lebanon is achievable. Concludes Hezbollah's entrenched dominancemakes strategic change unlikely, while identifying the post-2006UNIFIL-LAF-IDF liaison committee as a continuous operationalmechanism.",
+    "key_arguments": [
+      "Hezbollah's consolidated role as theprimary veto actor in Lebanese domestic politics is the single mostimportant structural obstacle to any strategic change in Lebanon-Israelrelations \u00e2\u0080\u0094 no internal Lebanese political force and no external actorcan disarm Hezbollah without triggering a military conflict that theLebanese state cannot survive.",
+      "Lebanon's compound crisis in 2020(economic collapse, Beirut explosion, Covid-19, political deadlock) andHezbollah's own significant financial pressures from US sanctionscreated a narrow tactical opening for external pressure \u00e2\u0080\u0094 but theseconditions were insufficient to shift the fundamental strategic balancebetween Hezbollah and the Lebanese state.",
+      "Israel-Lebanon formal andinformal contacts have recurred across decades \u00e2\u0080\u0094 including the 1949armistice, the 1983 May 17 Agreement, the 1993 and 1996 understandings,and the 2000 withdrawal negotiations \u00e2\u0080\u0094 but none have produced durablearrangements, establishing a structural pattern of agreement failurethat reflects the regional political architecture rather than merelytactical diplomatic failures.",
+      "The UNIFIL-LAF-IDF joint militaryliaison committee established post-2006 is identified as a continuousoperational mechanism that has addressed specific border regime issuesand survived multiple crises \u00e2\u0080\u0094 a form of institutional durability thatdistinguishes it from the broader pattern of failed Lebanon-Israelagreements.",
+      "Mizrahi recommends conditioning Western aid andinternational support to Lebanon on a concrete roadmap for resolvingIsrael-Lebanon disputes \u00e2\u0080\u0094 an explicitly Israeli-interest advocacyposition that reveals the article's dual character as policy analysisand diplomatic lobbying."
+    ],
+    "bias_flag": "Mizrahi is affiliated with INSSand writes from within the Israeli national security community. Thepaper frames Lebanon's internal politics primarily through the lens ofIsraeli interests and Hezbollah threat perception, and its policyrecommendations (aid conditionality, Track II pressure) reflect Israeligovernment advocacy positions dressed as analytical conclusions. Thehistorical survey of Lebanon-Israel contact episodes is factuallyuseful, but the interpretation of each episode consistently centersIsraeli strategic preferences. Use for the Israeli perspective on thepolitical environment UNIFIL operated within and for specificdocumentation of the post-2006 tripartite liaison committee; do not useas a neutral analysis of Lebanese sovereignty or Hezbollah's domesticrole.",
+    "analytical_notes": [
+      "The historical survey of failedLebanon-Israel arrangements is a useful data point for the mandateevolution cluster \u00e2\u0080\u0094 it establishes that the pattern of agreement failurepredates 1978 and reflects structural regional political dynamics ratherthan UNIFIL-specific failures.",
+      "The identification of the post-2006tripartite liaison committee as an institutionally durable mechanismthat survived multiple crises is consistent with findings in Elron(2007) and Mattelaer (2009) \u00e2\u0080\u0094 a convergence across sources withdifferent orientations that strengthens the analytical finding.",
+      "TheOctober 2020 maritime border negotiations documented here ultimately ledto the October 2022 Lebanon-Israel maritime border agreement \u00e2\u0080\u0094 animportant post-publication development that should be noted when usingthis source."
+    ],
+    "lessons_learned": [
+      {
+        "text": "The recurrent failure ofLebanon-Israel formal arrangements across decades \u00e2\u0080\u0094 from the 1949armistice through the 1983 agreement and beyond \u00e2\u0080\u0094 suggests thatbilateral agreements unsupported by durable internal Lebanese politicalconsensus and genuine regional buy-in are structurally fragileregardless of their formal terms.",
+        "tag": "SOURCE-DERIVED"
+      },
+      {
+        "text": "Thepost-2006 tripartite liaison committee (UNIFIL/LAF/IDF) represents arare example of an institutionalized channel for border-regimemanagement that survived multiple crises and political disruptions \u00e2\u0080\u0094 itsstructural characteristics and the conditions for its durability meritexamination as a potential model.",
+        "tag": "ANALYTICALINFERENCE"
+      }
+    ],
+    "timeline_events": [
+      {
+        "date": "May 2000",
+        "event": "Israelwithdraws unilaterally from Security Zone; UNIFIL verifies Blue Linedemarcation",
+        "source": "mizrahi_2020"
+      },
+      {
+        "date": "2000",
+        "event": "Lebanon refuses to participate informal UN Blue Line demarcation process \u00e2\u0080\u0094 an early signal of the state'sambivalent attitude toward boundary formalization",
+        "source": "mizrahi_2020"
+      },
+      {
+        "date": "Oct2020",
+        "event": "Launch of formal Lebanon-Israel maritime bordernegotiations under US mediation",
+        "source": "mizrahi_2020"
+      }
+    ],
+    "source_type": "Think Tank (INSS)"
+  },
+  {
+    "id": "nerguizian_2014",
+    "author": "Aram Nerguizian",
+    "title": "US Policy Towards Lebanon & Iran's Response(chapter in Lebanon at the Crossroads)",
+    "year": 2014,
+    "publisher": "Center for Strategic and InternationalStudies(CSIS)",
+    "tags": [
+      "LAF",
+      "host-state",
+      "CIMIC",
+      "non-state-actors",
+      "political-dynamics",
+      "civilian-protection"
+    ],
+    "thematic_clusters": [
+      "Host-staterelations & LAF",
+      "Political dynamics & P5",
+      "CIMIC & communityrelations",
+      "Relations with non-state armedactors"
+    ],
+    "timeline_coverage": {
+      "start": 2006,
+      "end": 2014
+    },
+    "actors": [
+      "LAF",
+      "Hezbollah",
+      "US",
+      "Iran",
+      "UNIFIL",
+      "Lebanesegovernment",
+      "international donors"
+    ],
+    "abstract": "Examines US securityassistance to the LAF from 2006 to 2014. Argues that while US militaryaid exceeded $959 million, it failed to meaningfully shift the balancebetween the LAF and Hezbollah. UNIFIL's community embeddedness isexplicitly cited as the model for sustainable security presence that LAFdeployment should emulate.",
+    "key_arguments": [
+      "Despite over $959 millionin US military assistance between 2006 and 2014, LAF units deployed tosouthern Lebanon remain structurally an expeditionary force operatingwithout barracks, training facilities, or command infrastructure intheir own country's territory \u00e2\u0080\u0094 mirroring UNIFIL's own infrastructurechallenges and illustrating the depth of Lebanese state absence in thesouth.",
+      "The LAF's institutional self-conception as Lebanon'snon-sectarian national institution means it will not confront Hezbollah,which it treats as a legitimate political-sectarian actor representing asubstantial portion of the Lebanese population \u00e2\u0080\u0094 limiting its utility asa security counterweight in ways that are structural rather than merelycontingent.",
+      "Iran's model of support for Hezbollah \u00e2\u0080\u0094 long-term,unconditional, strategically focused, and calibrated to Hezbollah'sspecific military needs \u00e2\u0080\u0094 has systematically and demonstrablyoutperformed the US model of conditional, bureaucratically constrained,process-oriented LAF assistance in terms of actual capabilitydevelopment.",
+      "UNIFIL's decades-long embeddedness in southern Lebanon'ssocio-economic and community life is explicitly and approvingly cited byNerguizian as the benchmark standard that LAF deployment should aspireto \u00e2\u0080\u0094 representing a significant external endorsement, from within the USdefense community, of UNIFIL's CIMIC and community integrationapproach.",
+      "The LAF-UNIFIL coordination during the 2011 Nakba and Naksaprotests \u00e2\u0080\u0094 in which the two forces jointly declared the Blue Line area aclosed military zone and prevented cross-border incursions \u00e2\u0080\u0094 ispresented as a concrete, positive example of effective civil-militarycooperation under unexpected operational pressure along the BlueLine."
+    ],
+    "bias_flag": "Nerguizian is a Lebanese-American analyst at CSISwith deep personal and professional ties to the LAF and the US defenseand foreign policy establishment. The analysis consistently framesLebanese security challenges through the lens of US-Iran competition,treating LAF capacity-building as a proxy for US regional influencerather than as a Lebanese sovereign interest. The framing is stronglypro-LAF and presents Hezbollah primarily as a spoiler to be counteredrather than as a political actor with domestic legitimacy. Use forquantitative data on US military assistance, for the specific 2011 BlueLine coordination episode, and for the UNIFIL-as-CIMIC-model argument \u00e2\u0080\u0094cross-reference with Crisis Group (2026) for a more nuanced structuralaccount of LAF constraints.",
+    "analytical_notes": [
+      "The explicit citationof UNIFIL as the CIMIC model that LAF should emulate is analyticallysignificant: it represents an endorsement from within the US defensecommunity that UNIFIL's community integration approach has strategicvalue.",
+      "The 2011 Nakba/Naksa coordination episode is documented only inthis source and is a valuable positive example of UNIFIL-LAF jointprotocols producing effective outcomes under unpredictable operationalpressure.",
+      "Cross-reference with Nerguizian (2017) for an updatedaccount of the same LAF-Hezbollah dynamic in the context of the 2017Arsal operation \u00e2\u0080\u0094 the two chapters together provide a consistentstructural account of the LAF's deconfliction posture.",
+      "Interviewquestion generated: Can UNIFIL officers who served during the 2011 Nakbaprotests describe the coordination with LAF? Was there a pre-existingprotocol or was it improvised?"
+    ],
+    "lessons_learned": [
+      {
+        "text": "UNIFIL'slong-term embeddedness in southern Lebanon's communities is recognizedexternally \u00e2\u0080\u0094 including by US defense analysts \u00e2\u0080\u0094 as a model forsustainable security presence, suggesting that the accumulated socialcapital has operational and political value that extends significantlybeyond formal mandate tasks.",
+        "tag": "SOURCE-DERIVED"
+      },
+      {
+        "text": "LAFdeployment in the south remains structurally dependent on UNIFILpresence, support, and infrastructure; the relationship is less apartnership of equals than a compensatory arrangement for LAFinfrastructure deficits that UNIFIL's presence has historicallysubstituted for.",
+        "tag": "ANALYTICAL INFERENCE"
+      },
+      {
+        "text": "LAF-UNIFILcoordination during acute and unpredictable incidents (Nakba 2011)demonstrated the operational value of pre-established joint protocolsfor rapid response to civilian-military flashpoints along the Blue Line\u00e2\u0080\u0094 such protocols should be formalized and regularlyexercised.",
+        "tag": "SOURCE-DERIVED"
+      }
+    ],
+    "timeline_events": [
+      {
+        "date": "May2011",
+        "event": "LAF, coordinating with UNIFIL, declares Blue Line area aclosed military zone during Nakba Day protests; prevents cross-bordercivilian incursion",
+        "source": "nerguizian_2014"
+      }
+    ],
+    "source_type": "Think Tank(CSIS)"
+  },
+  {
+    "id": "norton_schwedler_1993",
+    "author": "Augustus Richard Norton and Jillian Schwedler",
+    "title": "(In)security Zones in SouthLebanon",
+    "year": 1993,
+    "publisher": "Journal of Palestine Studies, Vol. 23,No. 1, pp.61\u00e2\u0080\u009379",
+    "tags": [
+      "mandate",
+      "SLA",
+      "IDF",
+      "force-protection",
+      "civilian-protection",
+      "Israeli-withdrawal"
+    ],
+    "thematic_clusters": [
+      "Mandateevolution",
+      "Host-state relations & LAF",
+      "Relations with non-state armedactors",
+      "Force protection & safety",
+      "Civilian protection",
+      "Politicaldynamics &P5"
+    ],
+    "timeline_coverage": {
+      "start": 1978,
+      "end": 1993
+    },
+    "actors": [
+      "UNIFIL",
+      "IDF",
+      "SLA",
+      "PLO",
+      "Amal",
+      "Hezbollah",
+      "Syriangovernment",
+      "Israeli government",
+      "Lebanese government"
+    ],
+    "abstract": "Mapsthe political and military landscape of south Lebanon from the pre-civilwar period through Operation Accountability (July 1993). Assesses UNIFILas largely ineffective, hampered by early operational missteps, aself-disabling use-of-force doctrine, and structural dependency onIsraeli-controlled logistics. Frames south Lebanon as a pawn in theSyria-Israel regional game.",
+    "key_arguments": [
+      "UNIFIL was structurallycompromised from the moment of deployment: the Force Commander falselycertified full Israeli withdrawal in 1978 when Israeli forces merelytransferred positions to the SLA; UNIFIL headquarters was placed in theIsraeli-controlled enclave at Naqura; and supply lines ran throughIsrael \u00e2\u0080\u0094 creating dependencies and leverage asymmetries that persistedfor the mission's entire pre-2006 lifespan.",
+      "UNIFIL's self-limitinguse-of-force doctrine was operationally disabling from the outset \u00e2\u0080\u0094 allbelligerents quickly learned they could coerce UN contingents at lowcost with no consequences, and the 1982 IDF advance through UNIFIL'sentire area of operations without resistance is cited as thedefinitively emblematic failure of this doctrine.",
+      "The Israeli'security zone' was a rational low-cost strategic substitute for a peaceagreement \u00e2\u0080\u0094 Israeli officials explicitly and on record preferred theproxy occupation arrangement to any agreement that would rely on eitherUNIFIL or the LAF for security guarantees.",
+      "South Lebanon's politicaland security fate was determined by the Syria-Israel dyad and broaderregional power dynamics, not by Lebanese sovereignty or UN mandate \u00e2\u0080\u0094 theLebanese government had little genuine autonomous agency over itssouthern territory, and UNIFIL's effectiveness was accordinglycircumscribed by geopolitical constraints beyond its control.",
+      "Civilianpopulations consistently and disproportionately bore the greatest costsof the conflict throughout the 1978\u00e2\u0080\u00931993 period \u00e2\u0080\u0094 a structural patternvisible in casualty data \u00e2\u0080\u0094 while UNIFIL's civilian protection capacitywas minimal given its mandate constraints and force protectionimperative."
+    ],
+    "bias_flag": "Norton is a leading American academicspecialist on Lebanese Shi'a politics (author of Amal and the Shi'a)with deep field experience and research access that gives him unusualanalytical insight into the community dynamics of southern Lebanon. Hisperspective leans toward the Lebanese Shi'i experience and implicitlysympathizes with resistance framing; Israeli security rationales areacknowledged but treated with consistent skepticism. The article ispublished in the Journal of Palestine Studies, which has a systematiceditorial orientation sympathetic to Arab and Palestinian positions.Norton's assessment of UNIFIL is independent of any UN affiliation andis occasionally harsh in ways that official UN documents are not \u00e2\u0080\u0094making it an important corrective to both UN self-assessment and Israeliinstitutional sources. Should be read as authoritative on Lebanesedynamics and structural constraints but cross-referenced with Israelisources on the security rationale for theoccupation.",
+    "analytical_notes": [
+      "This is the most important earlyacademic source for understanding UNIFIL's structural limitations, andNorton's identification of foundational operational failures (falsecertification, HQ placement, supply dependency) provides the analyticalfoundation for many of the findings in later sources.",
+      "The convergencebetween Norton & Schwedler (1993) and G\u00c3\u00b6ksel (2007) on the foundationalerrors \u00e2\u0080\u0094 both from very different positions \u00e2\u0080\u0094 is one of the strongestcross-source validations in the corpus.",
+      "The framing of south Lebanonas a Syria-Israel dyad outcome rather than a Lebanese sovereignty issuehas direct implications for the mandate design cluster \u00e2\u0080\u0094 it suggeststhat UNIFIL's operational effectiveness has always been contingent ongreat power dynamics rather than on mandate strength.",
+      "Cross-referencewith Siklawi (2017) for the Palestinian perspective on the same periodand with Blue Helmets (1996) for the official UN account of eventsNorton describes more critically."
+    ],
+    "lessons_learned": [
+      {
+        "text": "Earlyoperational decisions \u00e2\u0080\u0094 HQ placement in an Israeli-controlled enclave,logistical dependency on a party to the conflict, and inaccuratecompliance certification by the Force Commander \u00e2\u0080\u0094 can structurallycompromise a mission's political independence and operationalcredibility for its entire lifespan, regardless of subsequentreforms.",
+        "tag": "SOURCE-DERIVED"
+      },
+      {
+        "text": "A use-of-force doctrineperceived by all parties as non-credible and non-executable invitessystematic coercion; historical analysis of UNIFIL suggests thatcontingents which demonstrated specific willingness to push back againstcoercion were treated more cautiously by belligerents than those thatconsistently deferred.",
+        "tag": "SOURCE-DERIVED"
+      },
+      {
+        "text": "Where the hoststate lacks genuine sovereign authority over its territory and theconflict is structurally embedded in a regional great-power dynamic, aUN peacekeeping force's leverage is circumscribed regardless of mandatelanguage \u00e2\u0080\u0094 political conditions must accompany or precede operationaleffectiveness.",
+        "tag": "ANALYTICALINFERENCE"
+      }
+    ],
+    "timeline_events": [
+      {
+        "date": "Mar 1978",
+        "event": "IsraeliOperation Litani; UNSCR 425/426; UNIFIL established; Force Commanderfalsely certifies IDF withdrawal",
+        "source": "norton_schwedler_1993"
+      },
+      {
+        "date": "1978\u00e2\u0080\u009379",
+        "event": "UNIFIL HQplaced in Israeli-controlled enclave at Naqura; supply lines run throughIsrael \u00e2\u0080\u0094 structural compromise of mission independence",
+        "source": "norton_schwedler_1993"
+      },
+      {
+        "date": "Jun1982",
+        "event": "IDF advances through UNIFIL area of operations en routeto Beirut; UNIFIL ordered to stand down; no resistanceoffered",
+        "source": "norton_schwedler_1993"
+      },
+      {
+        "date": "Jan 1985",
+        "event": "Israeli cabinet approves stagedwithdrawal; residual 'security zone' established under SLA/Lahadcommand",
+        "source": "norton_schwedler_1993"
+      },
+      {
+        "date": "25\u00e2\u0080\u009331 Jul 1993",
+        "event": "Operation Accountability:Israeli bombardment; approximately 147 Lebanese killed, 350,000displaced; US-brokered ceasefire",
+        "source": "norton_schwedler_1993"
+      }
+    ],
+    "source_type": "Academic / JournalArticle"
+  },
+  {
+    "id": "asseburg_2009",
+    "author": "Muriel Asseburg",
+    "title": "European Conflict Management in the Middle East:Toward a More Effective Approach",
+    "year": 2009,
+    "publisher": "Carnegie Endowment forInternational Peace (Carnegie Middle EastCenter)",
+    "tags": [
+      "mandate",
+      "maritime",
+      "political-dynamics",
+      "host-state",
+      "non-state-actors",
+      "ceasefire"
+    ],
+    "thematic_clusters": [
+      "Mandateevolution",
+      "Political dynamics & P5",
+      "Host-state relations &LAF",
+      "Monitoring, reporting &technology"
+    ],
+    "timeline_coverage": {
+      "start": 2006,
+      "end": 2009
+    },
+    "actors": [
+      "UNIFIL",
+      "EU",
+      "EuropeanTCCs",
+      "Germany",
+      "France",
+      "Italy",
+      "Spain",
+      "Hezbollah",
+      "LAF",
+      "Lebanesegovernment",
+      "Syria",
+      "US"
+    ],
+    "abstract": "Written following a six-monthBeirut residency, this Carnegie paper assesses European conflictmanagement across Lebanon, Syria, and the Palestinian territories.Concludes that while the European backbone of UNIFIL succeeded inmaintaining the ceasefire, it froze rather than resolved the underlyingIsraeli-Lebanese conflict. Provides pointed analysis of MTF UNIFIL'slimited utility.",
+    "key_arguments": [
+      "UNIFIL's reinforced post-2006deployment, led by the European TCC backbone, successfully stabilizedsouthern Lebanon and upheld the cessation of hostilities \u00e2\u0080\u0094 but thisstabilization achievement was fundamentally limited: Hezbollah rearmedoutside UNIFIL's area of operations, arms smuggling across theSyrian-Lebanese border continued unchecked, and key disputes includingShebaa Farms and Ghajar remained unresolved.",
+      "The Maritime Task Forcewas a strategically and operationally misaligned instrument: the actualarms smuggling threat was entirely overland via Syrian transit routes,yet UNIFIL deployed an expensive 15-vessel naval force to interceptsea-based smuggling \u00e2\u0080\u0094 with not a single arms-smuggling incident detectedat sea through August 2008, demonstrating a fundamental mismatch betweeninstrument and threat.",
+      "European border management capacity-buildinginitiatives \u00e2\u0080\u0094 notably the German-led northern border pilot project \u00e2\u0080\u0094failed to produce any measurable security results, with failureattributable primarily to the absence of Lebanese political will, theabsence of government consensus on Hezbollah's weapons, and thestructural complexities of the Syrian-Lebanese borderrelationship.",
+      "European TCC contributors adopted a largelycomplementary and deferential posture toward US Lebanon policy ratherthan asserting independent European leverage, which systematicallyundermined their collective ability to press for conflict resolution onthe Israeli-Syrian track or to engage Syria constructively as astabilizing interlocutor.",
+      "Conflict management in Lebanon structurallycannot succeed without parallel progress on the Israeli-Syrian track;European and US efforts that treated the two tracks as separable wereanalytically and operationally flawed frominception."
+    ],
+    "bias_flag": "Asseburg is affiliated with SWP (GermanInstitute for International and Security Affairs), a think tank thatinforms German and EU foreign policy. The analysis reflects a Europeanpolicy reformer's standpoint \u00e2\u0080\u0094 broadly sympathetic to greater Europeanstrategic autonomy and more assertive European conflict resolutionengagement \u00e2\u0080\u0094 and is implicitly critical of US-led exclusionarydiplomatic approaches that sideline European actors. The paper mayunderweight Israeli security concerns about Hezbollah's rearmament andoverstate the feasibility of engaging Hamas or Syria on Europeandiplomatic terms. Field research was conducted March\u00e2\u0080\u0093August 2008,providing good contemporaneous coverage of the immediate post-2006period but limiting perspective on subsequent developments. Overall acredible and analytically rigorous source that provides the mostsystematic available assessment of the MTF's operationalperformance.",
+    "analytical_notes": [
+      "The MTF assessment \u00e2\u0080\u0094 zero sea-basedarms smuggling incidents detected through August 2008 \u00e2\u0080\u0094 is the mostimportant finding in this source and directly challenges the MTF'soperational rationale. Cross-reference with Elron (2007) and Daniel etal. (2015) for broader MTF context.",
+      "The instrument-mission mismatchlesson (maritime interdiction for an overland smuggling problem) is astrong and specific LL candidate that should be featured prominently inthe operational adaptation cluster.",
+      "Asseburg's identification of theceasefire-vs-resolution distinction predates Allee (2009) by one yearand makes a similar analytical point from a different disciplinarytradition \u00e2\u0080\u0094 both sources should be cited together on thisfinding.",
+      "Interview question generated: What was the internal UNIFIL orEuropean TCC assessment of the MTF's effectiveness at interdicting armssmuggling? Were there discussions about reorienting its mission after2008?"
+    ],
+    "lessons_learned": [
+      {
+        "text": "Ceasefire stabilization and conflictresolution are distinct and separable outcomes; UNIFIL's mandate andEuropean political investment were calibrated for the former whilesystematically neglecting the latter, leaving structural conflicttriggers intact and making renewed hostilities structurallypredictable.",
+        "tag": "SOURCE-DERIVED"
+      },
+      {
+        "text": "MTF UNIFIL's deploymentat sea when the actual arms smuggling threat was entirely overlandillustrates a fundamental instrument-mission mismatch \u00e2\u0080\u0094 consumingsignificant resources and political capital without contributing to themandate objective it was designed toserve.",
+        "tag": "SOURCE-DERIVED"
+      },
+      {
+        "text": "Capacity-building in bordermanagement and security sector reform requires prior political consensusamong all relevant host-state actors; absent that consensus, the mosttechnically competent and well-funded assistance programs will yieldminimal operational results.",
+        "tag": "ANALYTICALINFERENCE"
+      }
+    ],
+    "timeline_events": [
+      {
+        "date": "12 Jul 2006",
+        "event": "Hezbollahcross-border raid kills 9 Israeli soldiers, kidnaps 2; triggers 2006 warand eventual SCR 1701 expansion of UNIFIL",
+        "source": "asseburg_2009"
+      },
+      {
+        "date": "Aug2006",
+        "event": "UNSC Resolution 1701 adopted; UNIFIL reinforced to up to15,000 troops with European TCC backbone",
+        "source": "asseburg_2009"
+      },
+      {
+        "date": "Jul2008",
+        "event": "Israeli-Hezbollah prisoner exchange mediated by Germandiplomat Gerhard Conrad \u00e2\u0080\u0094 significant German bilateralcontribution",
+        "source": "asseburg_2009"
+      }
+    ],
+    "source_type": "Think Tank(Carnegie)"
+  },
+  {
+    "id": "goksel_2007",
+    "author": "Timur G\u00f6ksel",
+    "title": "'Mr. UNIFIL'Reflects on a Quarter Century of Peacekeeping in SouthLebanon",
+    "year": 2007,
+    "publisher": "Journalof Palestine Studies, Vol. 36, No.3",
+    "tags": [
+      "mandate",
+      "CIMIC",
+      "non-state-actors",
+      "TCC",
+      "force-protection",
+      "civilian-protection"
+    ],
+    "thematic_clusters": [
+      "Mandateevolution",
+      "Host-state relations & LAF",
+      "Relations with non-state armedactors",
+      "Liaison & tripartite mechanism",
+      "CIMIC & communityrelations",
+      "TCC dynamics &command"
+    ],
+    "timeline_coverage": {
+      "start": 1978,
+      "end": 2006
+    },
+    "actors": [
+      "UNIFIL",
+      "PLO",
+      "Amal",
+      "Hezbollah",
+      "IDF",
+      "SLA",
+      "Fijianbattalion",
+      "Lebanese civilian communities",
+      "LAF"
+    ],
+    "abstract": "Long-forminterview with UNIFIL's spokesman and senior adviser from 1978 to 2003,conducted November 2006. Offers granular firsthand testimony on UNIFIL'soperational experience across its first quarter century: early mandatefailures, relations with PLO, Amal, and Hezbollah, the 1982 invasion,force protection dilemmas, sulha and local conflict management, and themission's genuine legacy in communityrelations.",
+    "key_arguments": [
+      "UNIFIL's original mandate was structurallyundermined from the outset by a series of specific early operationalconcessions that created path dependencies: granting the PLO an 'IronTriangle' area of autonomous control, allowing Israel's SLA proxy tocontrol a border strip, and accepting a headquarters location at Naqurawith staff effectively living in Israeli territory \u00e2\u0080\u0094 each decisioncompounding the mission's structural leverage deficit.",
+      "The fundamentaland persistent cause of UNIFIL's operational constraints was not themandate text or even the rules of engagement but the complete absence ofthe Lebanese state and army from the south \u00e2\u0080\u0094 G\u00c3\u00b6ksel argues that the'robustness' attributed to the post-2006 force is largely a function ofLAF co-presence rather than of any enhancement in UNIFIL's own mandateor capabilities.",
+      "National contingent behavior consistently andsystematically diverged from UN command authority across UNIFIL'shistory: contingents made unauthorized local deals with armed factions,selectively complied with orders under pressure, and could not be reliedupon for collective action \u00e2\u0080\u0094 a structural weakness that worsened withthe expansion to 29 TCC contributors post-2006.",
+      "UNIFIL's most durable,significant, and genuinely positive contribution across 25 years was notpeacekeeping in the technical sense \u00e2\u0080\u0094 monitoring, reporting, deterring \u00e2\u0080\u0094but its sustained community presence: providing medical services,supporting schools, generating economic activity, and providing a senseof normalcy that helped repopulate a region abandoned by the Lebanesestate.",
+      "Effective liaison with non-state armed actors in the southrequired cultural fluency, mastery of face-saving protocols, and deeppersonal relationships with specific individuals \u00e2\u0080\u0094 not formal proceduresor institutional frameworks \u00e2\u0080\u0094 and G\u00c3\u00b6ksel's accounts of Palestiniandisarmament negotiations and sulha-based reconciliation illustrate thatmission effectiveness often depended entirely on individual knowledge,personal trust, and improvisation rather than transferable institutionalframeworks."
+    ],
+    "bias_flag": "G\u00c3\u00b6ksel spent 24 years as UNIFIL's most seniorpublic face, giving him unparalleled firsthand operational knowledgethat is available through no other source. This same history producesstrong institutional loyalty to the pre-2006 'old UNIFIL' and markedskepticism toward the post-2006 expanded force, which he regards ashaving abandoned the community-based approach in favour of vehicle-basedpatrolling and force protection orientation. His framing is sympatheticto the Shi'a community, notably more balanced on Hezbollah than mostWestern sources, and implicitly critical of both Israel and US policy.The interview was conducted by a researcher with sympathetic framing.Use this source as the primary reference for pre-2006 operationalexperience, CIMIC methodology, and liaison with non-state actors \u00e2\u0080\u0094 itsaccount of these dimensions is unique and irreplaceable \u00e2\u0080\u0094 while treatingits assessments of post-2006 UNIFIL with awareness of the 'old vs. newUNIFIL' framing that reflects G\u00c3\u00b6ksel's institutionalperspective.",
+    "analytical_notes": [
+      "This is among the most analyticallyvaluable sources in the corpus for pre-2006 operational experience \u00e2\u0080\u0094 itprovides ground-level testimony on events that appear in sanitized formin the Blue Helmets (1996) official account.",
+      "The Iron Triangle andborder strip concession narrative should be cross-referenced with Norton& Schwedler (1993) and Blue Helmets (1996) \u00e2\u0080\u0094 there is broad convergenceacross sources on these foundational errors.",
+      "G\u00c3\u00b6ksel's account ofsulha-based reconciliation and individual relationship-dependent liaisonis consistent with the broader finding that UNIFIL's effective liaisondepended on individual knowledge rather than institutional frameworks \u00e2\u0080\u0094relevant to the personnel rotation challenge.",
+      "The famous G\u00c3\u00b6kselquotation ('UNIFIL's biggest success was its relations with the people')is cited by Makdisi (2014) and is confirmed and contextualized here inG\u00c3\u00b6ksel's own words \u00e2\u0080\u0094 both sources should be cited together.",
+      "Interviewtarget: G\u00c3\u00b6ksel himself is a potential interlocutor if available for oralhistory recording given his unique 24-yearperspective."
+    ],
+    "lessons_learned": [
+      {
+        "text": "Early operational concessionsmade under pressure at deployment \u00e2\u0080\u0094 the Iron Triangle, the SLA borderstrip, the Naqura HQ location \u00e2\u0080\u0094 created structural leverage deficitsthat compounded over decades and constrained all subsequent commanders;initial deployment decisions require rigorous political-militaryscrutiny because they tend to become entrenched facts on theground.",
+        "tag": "SOURCE-DERIVED"
+      },
+      {
+        "text": "Effective liaison withnon-state armed actors in complex intra-state environments depended onculturally competent individuals with personal relationships andcommunity authority \u00e2\u0080\u0094 this capability cannot be institutionalizedthrough formal procedures alone and is acutely vulnerable to personnelrotation cycles that eliminate accumulated relationalcapital.",
+        "tag": "SOURCE-DERIVED"
+      },
+      {
+        "text": "Community presence and CIMICengagement were UNIFIL's most sustainable and durable source of locallegitimacy; the post-2006 shift toward force-protection-oriented,vehicle-based patrolling risked eroding this community foundation beforeit had been rebuilt under the new force structure.",
+        "tag": "ANALYTICALINFERENCE"
+      }
+    ],
+    "timeline_events": [
+      {
+        "date": "19 Mar 1978",
+        "event": "UNSCResolution 425 adopted; UNIFIL created with initial six-monthmandate",
+        "source": "goksel_2007"
+      },
+      {
+        "date": "23 Mar 1978",
+        "event": "First UNIFIL troops deploy tosouth Lebanon",
+        "source": "goksel_2007"
+      },
+      {
+        "date": "Jun 1982",
+        "event": "Israeli invasion reachesBeirut; UNIFIL unable to block advance; contingents attempt symbolic butineffective resistance",
+        "source": "goksel_2007"
+      },
+      {
+        "date": "Ashura 1983",
+        "event": "Israeli convoyenters Nabatiya during Ashura procession; triggers Shi'a resistance andclerical fatwa \u00e2\u0080\u0094 identified by G\u00c3\u00b6ksel as a key turning point for armedopposition to the occupation",
+        "source": "goksel_2007"
+      },
+      {
+        "date": "Apr 1996",
+        "event": "IDF shellingkills 100+ civilians sheltering at Fijian UNIFIL HQ, Qana \u00e2\u0080\u0094 G\u00c3\u00b6ksel waspresent during and after the incident",
+        "source": "goksel_2007"
+      },
+      {
+        "date": "May2000",
+        "event": "Israel withdraws from south Lebanon; SLA disbandsovernight; UNIFIL reduced to approximately 2,000troops",
+        "source": "goksel_2007"
+      }
+    ],
+    "source_type": "Academic (Interview)"
+  },
+  {
+    "id": "norton_1999",
+    "author": "Augustus Richard Norton",
+    "title": "Hizballah of Lebanon: Extremist Ideals vs. MundanePolitics",
+    "year": 1999,
+    "publisher": "Council onForeign Relations (Muslim PoliticsProject)",
+    "tags": [
+      "hezbollah",
+      "Iran",
+      "non-state-actors",
+      "host-state",
+      "political-dynamics",
+      "civilian-protection"
+    ],
+    "thematic_clusters": [
+      "Relationswith non-state armed actors",
+      "Political dynamics & P5",
+      "Host-staterelations & LAF",
+      "Civilianprotection"
+    ],
+    "timeline_coverage": {
+      "start": 1982,
+      "end": 1999
+    },
+    "actors": [
+      "Hezbollah",
+      "Iran",
+      "Syria",
+      "Amal",
+      "Lebanesegovernment",
+      "Shi'acommunity",
+      "Pasdaran",
+      "Nasrallah",
+      "Tufayli"
+    ],
+    "abstract": "Norton arguesthat Hizballah has undergone significant political pragmatization sincethe late 1980s, evolving from an Iran-backed revolutionary movement intoLebanon's most effective political party with broad Shi'i constituency,extensive social services, and growing parliamentarypresence.",
+    "key_arguments": [
+      "Hizballah's participation in the 1992parliamentary elections marked a strategic pivot from revolutionarymovement to political actor, reflecting the organization'sresponsiveness to a Shi'i middle class constituency that had no appetitefor an Islamic republic and wanted representation, services, andstability.",
+      "The organization exhibits deliberate 'calculated ambiguity'on its post-Israeli-withdrawal behavior toward Israel \u00e2\u0080\u0094 strategicallysignaling potential restraint without making formal commitment \u00e2\u0080\u0094 as amechanism for simultaneously managing domestic Lebanese pressure, Syrianstrategic imperatives, and Iranian sponsorship expectations.",
+      "Iran'smaterial and organizational support for Hizballah has becomeincreasingly conditional and declining in intensity since Khomeini'sdeath in 1989; by 1998 the active Pasdaran contingent in Lebanon hadeffectively withdrawn, signaling the end of the active revolution-exportphase in Hizballah's relationship with Tehran.",
+      "Hizballah's extensivesocial base \u00e2\u0080\u0094 operating hospitals, schools, pension funds, andreconstruction services \u00e2\u0080\u0094 constitutes a parallel governance structurethat sustains organizational loyalty and popular legitimacy independentof its resistance military role, making it far more than a guerrillaorganization.",
+      "The Tufayli 'revolt of the hungry' in 1997, in which aformer Hizballah Secretary-General launched an internal insurgencyagainst the organization's leadership, illustrates the severe internalfissuring that occurs when pragmatic political accommodation isperceived by the base as betrayal of revolutionary and socioeconomiccommitments."
+    ],
+    "bias_flag": "Norton is one of the foremost academicanalysts of Lebanese Shi'a politics in the Western academy, withextraordinary field access built over decades of research; his analysisof Hizballah's internal dynamics is more sophisticated and nuanced thanvirtually any other Western source. His framing leans toward anengagement-over-containment policy preference and gives Hizballah'sdomestic legitimacy claims more analytical weight than Israeli or USsecurity sources would. The paper was written before the 2000 Israeliwithdrawal and the 2006 war, which tested and in some respectsconfounded his inferences about Hizballah's post-occupation restrainttrajectory. Use as the foundational reference for understandingHizballah's internal organizational dynamics, its relationship with theLebanese Shi'i community, and its political evolution \u00e2\u0080\u0094 cross-referencewith Sobelman (2004) and Crisis Group (2026) for post-withdrawalupdates.",
+    "analytical_notes": [
+      "This source, together with Sobelman(2004), provides the most complete available account of Hizballah'sorganizational evolution from 1982 to the early 2000s \u00e2\u0080\u0094 essentialcontext for understanding UNIFIL's operating environment.",
+      "The'calculated ambiguity' framework for Hizballah's post-withdrawal postureis consistent with the 'rules of the game' framework in Sobelman (2004)\u00e2\u0080\u0094 a convergence across sources that strengthens both analyticalfindings.",
+      "The Higgins kidnapping (1988) is documented here as anexample of splinter group action that triggers major escalation \u00e2\u0080\u0094relevant to the force protection cluster as an earlyprecedent.",
+      "Cross-reference with Crisis Group (2026) on the 2026Amal-Hizballah split \u00e2\u0080\u0094 an important update to the intra-Shi'i dynamicsNorton describes, and evidence that the organizational evolution Nortontraced has not been linear."
+    ],
+    "lessons_learned": [
+      {
+        "text": "Hizballah'stolerance of UNIFIL's presence is instrumentally rational rather thanprincipled \u00e2\u0080\u0094 it is contingent on UNIFIL not challenging theorganization's resistance role or threatening its Shi'i constituency,and would not survive a serious UNIFIL enforcementattempt.",
+        "tag": "SOURCE-DERIVED"
+      },
+      {
+        "text": "The 1988 Higgins kidnappingillustrates how actions by splinter groups or rogue elements, ratherthan Hizballah's core leadership, can trigger major escalations thatcompromise host-state cooperation, endanger UN personnel, and damage thebroader missionposture.",
+        "tag": "SOURCE-DERIVED"
+      },
+      {
+        "text": "Post-withdrawal politicaldynamics in the south favored Hizballah consolidation rather thandemilitarization \u00e2\u0080\u0094 mission planning should not assume that resistancemilitary structures dissolve or weaken with the end of occupation; theyadapt and frequently strengthen.",
+        "tag": "ANALYTICALINFERENCE"
+      }
+    ],
+    "timeline_events": [
+      {
+        "date": "Feb 1988",
+        "event": "Kidnappingof Col. Higgins (UNTSO/UNIFIL liaison officer) \u00e2\u0080\u0094 significant escalationwith impact on UNIFIL-LAF-Amaldynamics",
+        "source": "norton_1999"
+      },
+      {
+        "date": "1992",
+        "event": "Hizballah participates in Lebaneseparliamentary elections for the first time, winning 12 seats \u00e2\u0080\u0094 strategicpivot to political actor",
+        "source": "norton_1999"
+      },
+      {
+        "date": "Apr 1996",
+        "event": "Israeli OperationGrapes of Wrath; Qana massacre (approximately 100+ civilians killed atUNIFIL compound)",
+        "source": "norton_1999"
+      }
+    ],
+    "source_type": "Think Tank (CFR)"
+  },
+  {
+    "id": "siklawi_2017",
+    "author": "Rami Siklawi",
+    "title": "ThePalestinian Resistance Movement in Lebanon 1967\u00e2\u0080\u009382: Survival,Challenges, and Opportunities",
+    "year": 2017,
+    "publisher": "Arab Studies Quarterly, Vol. 39, No.3, PlutoJournals",
+    "tags": [
+      "non-state-actors",
+      "host-state",
+      "civilian-protection",
+      "mandate",
+      "displacement",
+      "SLA"
+    ],
+    "thematic_clusters": [
+      "Relationswith non-state armed actors",
+      "Host-state relations & LAF",
+      "Civilianprotection",
+      "Mandateevolution"
+    ],
+    "timeline_coverage": {
+      "start": 1967,
+      "end": 1982
+    },
+    "actors": [
+      "PLO",
+      "Fateh",
+      "Amal",
+      "IDF",
+      "Lebanesegovernment",
+      "Lebanese Armed Forces",
+      "Syrian government",
+      "Maronitemilitias",
+      "Hezbollah (emerging)",
+      "UNIFIL",
+      "Lebanese Shi'acommunity"
+    ],
+    "abstract": "Siklawi traces the Palestinian resistancemovement's evolution in Lebanon from its post-1967 entrenchment throughits forced evacuation following the 1982 Israeli invasion. Argues thePLO's Lebanese sanctuary, formalized by the 1969 Cairo Agreement,enabled a de facto state-within-a-state, but mounting Lebaneseopposition, Israeli collective punishment, and PLO-Amal conflictprogressively eroded the Palestinian position.",
+    "key_arguments": [
+      "The1969 Cairo Agreement between the Lebanese government and the PLOformally legitimized Palestinian armed operations from Lebaneseterritory, creating a structural and irresolvable conflict betweenPalestinian autonomous military presence and Lebanese sovereignty thatdestabilized the south and invited repeated cycles of Israeli collectivereprisal against Lebanese civilian communities.",
+      "Israel's systematiccollective punishment of southern Lebanese villages beginning in 1968 \u00e2\u0080\u0094targeting civilian infrastructure and communities to turn the localShi'i population against Palestinian fida'iyin \u00e2\u0080\u0094 was a deliberate andultimately successful counter-insurgency strategy that directly fueledAmal's post-1978 growth and reshaped the entire political landscapeUNIFIL was deployed into.",
+      "The PLO's 'Fakhani Republic' \u00e2\u0080\u0094 financiallyautonomous through Arab state support and internationally recognized asthe sole legitimate representative of the Palestinian people \u00e2\u0080\u0094represented a parallel governance structure that was politicallyirremovable by any Lebanese government yet strategically vulnerable tooverwhelming Israeli military force.",
+      "The 1982 Israeli invasion waspremeditated and coordinated with Maronite Phalangist forces well beforethe Abu Nidal assassination attempt on the Israeli ambassador in London;the assassination attempt served as a diplomatic pretext rather than agenuine cause, and the invasion's objectives extended far beyondexpelling the PLO.",
+      "The PLO's 1982 expulsion paradoxically transferredsignificant armed capacity, organizational experience, and politicalspace to the Lebanese Shi'i resistance, giving Hizballah a structuraladvantage in filling the military vacuum in the south and establishingthe organizational foundations for its subsequentdominance."
+    ],
+    "bias_flag": "Siklawi is a Beirut-based independentPalestinian scholar writing in Arab Studies Quarterly, a publicationwith a broadly sympathetic orientation toward Palestinian and Arabperspectives. Israeli military actions throughout the article areconsistently characterized using terms like 'terrorism' and'aggression,' while Palestinian armed operations receive substantiallymore neutral descriptive treatment. The analysis is valuable for itsdetailed account of the PLO's internal dynamics, the Cairo Agreement'simplications, and the PLO-Amal conflict \u00e2\u0080\u0094 all important forunderstanding UNIFIL's early operating environment \u00e2\u0080\u0094 but its framing ofIsraeli actions and its casualty figures should be cross-referenced withIsraeli and neutral academic sources. Use primarily for chronologicalaccuracy and Lebanese internal dynamics rather than forcharacterizations of Israeli militaryconduct.",
+    "analytical_notes": [
+      "Siklawi provides the most detailedavailable account of the PLO-Amal conflict in the south (1978\u00e2\u0080\u00931982),which was a significant component of UNIFIL's early operatingenvironment that receives only passing treatment in most UNIFIL-focusedsources.",
+      "The UNIFIL interposition role at Hanawayya (1982) \u00e2\u0080\u0094separating Amal and DFLP fighters \u00e2\u0080\u0094 documented with a direct G\u00c3\u00b6kselquotation is valuable corroboration of UNIFIL's early multi-actorinterposition function from a non-UNIFIL source.",
+      "The Cairo Agreementas the legal foundation for PLO armed presence is directly relevant tothe mandate evolution cluster \u00e2\u0080\u0094 it established the precedent ofinternational legitimization of non-state armed presence in Lebanon thatHezbollah later exploited.",
+      "Cross-reference with Norton & Schwedler(1993) for a more analytically balanced account of the same period, andwith G\u00c3\u00b6ksel (2007) for UNIFIL's ground-level experience of the PLO-Amaldynamic."
+    ],
+    "lessons_learned": [
+      {
+        "text": "UNIFIL's earliest operationalchallenge was interposition among Lebanese and Palestinian non-statearmed actors engaged in intra-communal conflict \u00e2\u0080\u0094 not solely along theBlue Line between states \u00e2\u0080\u0094 suggesting that the force'smandate-versus-reality gap predates 2006 and is structural rather thancontingent.",
+        "tag": "SOURCE-DERIVED"
+      },
+      {
+        "text": "The transfer of armedcapacity from the expelled PLO to Hizballah post-1982 illustrates thestructural dynamic by which military vacuums in the south are filledrapidly by successor actors with superior organizational capacity \u00e2\u0080\u0094UNIFIL planning in any future scenario must account for thispattern.",
+        "tag": "ANALYTICALINFERENCE"
+      }
+    ],
+    "timeline_events": [
+      {
+        "date": "Nov 1969",
+        "event": "CairoAgreement signed; PLO armed presence in Lebanon formally legitimized \u00e2\u0080\u0094establishes precedent of international/host-state endorsement ofnon-state armed presence",
+        "source": "siklawi_2017"
+      },
+      {
+        "date": "Sep 1970",
+        "event": "Black September:PLO expelled from Jordan, relocates headquarters toLebanon",
+        "source": "siklawi_2017"
+      },
+      {
+        "date": "Apr 1975",
+        "event": "Ayn al-Rummana bus ambush byPhalangists: Lebanese Civil War begins",
+        "source": "siklawi_2017"
+      },
+      {
+        "date": "Aug1976",
+        "event": "Fall of Tal al-Zat'ar after 53-day siege: approximately3,000 killed; PLO position in Lebanon significantlyweakened",
+        "source": "siklawi_2017"
+      },
+      {
+        "date": "Mar 1978",
+        "event": "Israeli Litani Operation; UNIFILcreated; 1978 invasion strengthens Amal's position in the south at PLO'sexpense",
+        "source": "siklawi_2017"
+      },
+      {
+        "date": "Jun 1982",
+        "event": "Israeli invasion 'Peace forGalilee'; siege of West Beirut; PLO evacuation under HabibPlan",
+        "source": "siklawi_2017"
+      },
+      {
+        "date": "Sep 1982",
+        "event": "Sabra and Shatilla massacre:approximately 1,000+ killed by Phalangist forces with Israelifacilitation",
+        "source": "siklawi_2017"
+      }
+    ],
+    "source_type": "Academic / JournalArticle"
+  },
+  {
+    "id": "sobelman_2004",
+    "author": "Daniel Sobelman",
+    "title": "New Rulesof the Game: Israel and Hizbollah after the Withdrawal from Lebanon(Chapters 1, 7 & Conclusion)",
+    "year": 2004,
+    "publisher": "Institute for National Security Studies(INSS), TelAviv",
+    "tags": [
+      "hezbollah",
+      "deterrence",
+      "non-state-actors",
+      "host-state",
+      "Iran",
+      "escalation"
+    ],
+    "thematic_clusters": [
+      "Relationswith non-state armed actors",
+      "Mandate evolution",
+      "Political dynamics &P5",
+      "Host-state relations & LAF",
+      "Force protection & safety",
+      "CIMIC &communityrelations"
+    ],
+    "timeline_coverage": {
+      "start": 1989,
+      "end": 2004
+    },
+    "actors": [
+      "Hezbollah",
+      "Israel",
+      "Iran",
+      "Syria",
+      "Amal",
+      "LAF",
+      "Lebanesegovernment",
+      "Shi'acommunity",
+      "Pasdaran",
+      "Nasrallah",
+      "Tufayli"
+    ],
+    "abstract": "Written fouryears after the IDF withdrawal, Sobelman examines Hizballah's'Lebanonization' \u00e2\u0080\u0094 its strategic shift from Iranian-backed revolutionarymovement to integrated Lebanese political actor \u00e2\u0080\u0094 and its consolidationof a parallel welfare state. The conclusion synthesizes the post-2000Israel-Hizballah dynamic as one of managed brinkmanship within aninformal, mutually recognized framework ofrestraint.",
+    "key_arguments": [
+      "Hizballah's post-Ta'if politicaltrajectory is one of deliberate strategic 'opening up' (infitah) \u00e2\u0080\u0094participation in successive elections (1992, 1996, 2000), formalrebranding from 'Islamic Revolution' to 'Islamic Resistance,' andNasrallah's 2002 attendance at the Francophonie summit \u00e2\u0080\u0094 all signalingpolitical normalization without any doctrinal revision of theorganization's fundamental position on Israel.",
+      "Hizballah's socialwelfare infrastructure \u00e2\u0080\u0094 including the Martyr's Agency, Jihad al-Binaa'construction organization, the Islamic Health Organization, andextensive education networks \u00e2\u0080\u0094 functions as an organizational safety netthat sustains population loyalty and institutional legitimacyindependent of military activity, and expanded rapidly into formerlyIDF-controlled territory in southern Lebanon post-2000.",
+      "Hizballahactively and demonstrably calibrates its military operations to Lebaneseeconomic rhythms, explicitly deferring attacks during tourist seasonsand directly referencing investor confidence as a constraint onoperational timing \u00e2\u0080\u0094 demonstrating sophisticated cost-benefitcalculation that is directly relevant to understanding when and why thesouthern front remains quiet.",
+      "A system of mutual, informallynegotiated 'rules of the game' governs the post-2000 border \u00e2\u0080\u0094 bothIsrael and Hizballah have internalized specific red lines, and Hizballahtreats their violation (such as the October 2003 IAF strike in Syria) asa legitimating trigger for potential escalatory response withinunderstood parameters.",
+      "Iran plays a structurally dual and oftencontradictory role: simultaneously encouraging and funding theresistance and acting as a strategic restraining force when escalationrisks harming Iranian regional interests \u00e2\u0080\u0094 illustrated concretely byIranian FM Kharazi's 2002 and President Khatami's 2003 direct calls forHizballah restraint in Beirut.",
+      "Had Israel withdrawn from Lebanon atthe end of the civil war in 1990 rather than in 2000, Hizballah wouldhave found it considerably harder to build its military capacity \u00e2\u0080\u0094 thecontinued Israeli occupation through the 1990s was the principalstructural enabler of Hizballah's sustained armament rather than Iraniansponsorship alone."
+    ],
+    "bias_flag": "Sobelman writes from within the INSSanalytical tradition and consistently frames Hizballah's restraint astactical and instrumentally motivated rather than structural orprincipled \u00e2\u0080\u0094 attributing more causal weight to Israeli deterrence thanto Lebanese domestic political constraints or Hizballah's ownorganizational calculations. The conclusion's 'rules of the game'framework is analytically sophisticated and has proven highlyinfluential, but it was written before the 2006 war demonstrated thatthese informal rules could break down catastrophically under certaintrigger conditions. Cross-reference with Norton (1999) for acomplementary analysis of Hizballah's domestic legitimacy dynamics, andwith Crisis Group (2026) for evidence that the organizational evolutionSobelman described has been severely disrupted by the 2023\u00e2\u0080\u00932026conflict.",
+    "analytical_notes": [
+      "The 'rules of the game' framework is oneof the most important analytical contributions in the corpus forunderstanding UNIFIL's operating environment between 2000 and 2006 \u00e2\u0080\u0094 itexplains why the southern front remained relatively quiet despiteunderlying military tensions and what UNIFIL's monitoring and liaisonfunctions were actually reinforcing.",
+      "Sobelman's observation that theIsraeli occupation through the 1990s was the principal enabler ofHizballah's armament is a significant historical counterfactual withdirect implications for understanding the security environment UNIFIL IIinherited in 2006.",
+      "Cross-reference with Crisis Group (2026) on the2026 Amal-Hizballah split and Hizballah's weakened domestic position \u00e2\u0080\u0094the dynamics Sobelman describes have been fundamentally disrupted, buthis analytical framework remains useful for understanding the baselinefrom which the disruption occurred.",
+      "The tourist-season operationalpause and investor-confidence calculus documented here should beexplored in interviews as an early-warning indicator framework: UNIFILliaison officers may have had visibility into these operational pauseswithout formally recognizing them as early-warningsignals."
+    ],
+    "lessons_learned": [
+      {
+        "text": "Hizballah's documented practiceof timing military operations around Lebanese economic cycles anddomestic political considerations demonstrates that escalation on thesouthern front is rarely impulsive \u00e2\u0080\u0094 UNIFIL liaison mechanisms couldusefully incorporate awareness of domestic Lebanese political cycles asstructured early-warning inputs.",
+        "tag": "SOURCE-DERIVED"
+      },
+      {
+        "text": "Theinformal 'rules of the game' framework governing the Israel-Hizballahborder after 2000 was inherently fragile and contingent on both partiescontinuously perceiving escalation as contrary to their interests \u00e2\u0080\u0094UNIFIL's monitoring and liaison roles were most operationally valuableprecisely when they helped signal, reinforce, and communicate theboundaries of this informal restraint architecture.",
+        "tag": "ANALYTICALINFERENCE"
+      },
+      {
+        "text": "Israel's decade-long occupation after Ta'if was theprincipal structural driver of Hizballah's military build-up throughoutthe 1990s \u00e2\u0080\u0094 this establishes that prolonged unresolved territorialoccupation or dispute functions as a structural enabler of non-statearmed actor capacity regardless of ceasefire agreements or monitoringpresence.",
+        "tag": "SOURCE-DERIVED"
+      },
+      {
+        "text": "Hizballah's post-withdrawalexpansion of social services and governance functions into UNIFIL's areaof operations created population dependencies and organizationalembeddedness that meant UNIFIL was operating in a space where anon-state actor functioned as the de facto governance provider \u00e2\u0080\u0094creating complex community-level dynamics that CIMIC activities had tonavigate rather than ignore.",
+        "tag": "ANALYTICALINFERENCE"
+      }
+    ],
+    "timeline_events": [
+      {
+        "date": "May 2000",
+        "event": "IDFunilateral withdrawal from south Lebanon; SLA collapses; Hizballahrapidly expands social infrastructure into formerly occupiedterritory",
+        "source": "sobelman_2004"
+      },
+      {
+        "date": "Oct 2000",
+        "event": "Three IDF soldiers kidnapped atShab'a Farms \u00e2\u0080\u0094 first major post-withdrawal test of the 'rules of thegame'",
+        "source": "sobelman_2004"
+      },
+      {
+        "date": "Sep 2001",
+        "event": "First local elections in southLebanon in 38 years; Amal-Hizballah electoral pact wins 90 of 115municipal councils",
+        "source": "sobelman_2004"
+      },
+      {
+        "date": "Apr 2002",
+        "event": "Mt. Dov escalation;Iranian FM Kharazi urges Hizballah restraint in Beirut \u00e2\u0080\u0094 documentsIranian dual restraint role",
+        "source": "sobelman_2004"
+      },
+      {
+        "date": "Oct 2003",
+        "event": "IAF strikesSyrian territory (Palestinian camp near Damascus) \u00e2\u0080\u0094 first such strike in30 years; tests 'rules of the game'threshold",
+        "source": "sobelman_2004"
+      }
+    ],
+    "source_type": "Think Tank(INSS)"
+  },
+  {
+    "id": "nerguizian_2017",
+    "author": "Aram Nerguizian",
+    "title": "Hezbollah,the LAF and the Power of Perception (chapter in The Lebanese ArmedForces, Hezbollah and the Race to Defeat ISIS)",
+    "year": 2017,
+    "publisher": "Center for Strategic and InternationalStudies(CSIS)",
+    "tags": [
+      "LAF",
+      "hezbollah",
+      "monitoring",
+      "host-state",
+      "blue-line",
+      "non-state-actors"
+    ],
+    "thematic_clusters": [
+      "Host-staterelations & LAF",
+      "Relations with non-state armed actors",
+      "Monitoring,reporting & technology",
+      "Political dynamics &P5"
+    ],
+    "timeline_coverage": {
+      "start": 2017,
+      "end": 2017
+    },
+    "actors": [
+      "Hezbollah",
+      "LAF",
+      "UNIFIL",
+      "Lebanesegovernment",
+      "Iran",
+      "US",
+      "Jabhat al-Nusra",
+      "ISIS"
+    ],
+    "abstract": "AnalyzesHezbollah's July 2017 military operation against Jabhat al-Nusra in theArsal border area, focusing on how Hezbollah systematically exploitedthe operation to shape perceptions of its military primacy whileundermining LAF credibility at home and abroad. Includes a significantdocumented example of Hezbollah staging a presence near UNIFILheadquarters during a Blue Line tour.",
+    "key_arguments": [
+      "Iran andHezbollah deliberately calibrate their tolerance for LAF capabilitydevelopment: they actively want the LAF to remain strong enough tomaintain basic internal stability and manage Lebanon's sectariantensions, but not strong enough to develop the institutional capacity,political mandate, or operational confidence to assert a genuinemonopoly on the use of force in Lebanese territory.",
+      "The LAF maintaineda strict deconfliction policy during the Arsal operation \u00e2\u0080\u0094 explicitlynot coordination with Hezbollah \u00e2\u0080\u0094 comparable in structure to US-Russiamilitary deconfliction in Syria; however, Hezbollah systematically andsuccessfully cultivated the false perception of operational collusion todamage the LAF's standing with international donors and Westerngovernments.",
+      "Hezbollah's information operations against UNIFIL and theLAF included a specific and documented incident: staging thephotographed presence of Hezbollah fighters near UNIFIL headquartersduring a scheduled Blue Line liaison tour in April 2017, deliberatelyembarrassing both the Government of Lebanon and LAF personnel anddemonstrating that UNIFIL's physical footprint can be used as a stagefor hostile information operations.",
+      "By initiating the JAN operationagainst Arsal entirely independently and without coordination with theLAF, Hezbollah strategically preempted any possible LAF offensivemandate, forcing the LAF into a passive defensive posture that damagedits domestic and international image regardless of the operational logicbehind that posture.",
+      "Hezbollah's deliberate post-ceasefirecontinuation of territorial presence in the Arsal area directly delayedLAF operational planning for eventual operations against ISIS,illustrating how Hezbollah uses tactical military action tosystematically shape the strategic environment at the LAF'sexpense."
+    ],
+    "bias_flag": "Nerguizian is a Lebanese-American analyst atCSIS with deep institutional ties to both the LAF and the US defensecommunity. The analysis is strongly pro-LAF in orientation and framesHezbollah primarily as a deliberate spoiler seeking to undermineLebanon's legitimate security institutions. The paper's core argument \u00e2\u0080\u0094that Hezbollah deliberately cultivated a false perception of LAFcollusion \u00e2\u0080\u0094 is analytically plausible and well-documented in itsspecifics but reflects a perspective that assumes LAF-Hezbollah tensionas the default rather than examining the political logic that makes bothactors coexist. Use for the specific documented incidents (particularlythe April 2017 Blue Line staging) and for thedeconfliction-vs-coordination analytical distinction; cross-referencewith Crisis Group (2026) and Sobelman (2004) for broader accounts ofHezbollah's domestic strategic calculus.",
+    "analytical_notes": [
+      "The April2017 UNIFIL HQ staging incident is the most specific and operationallyconcrete documented example in the corpus of Hezbollah deliberatelyexploiting UNIFIL's physical presence and scheduled activities forinformation operations purposes \u00e2\u0080\u0094 a distinct and underexploredvulnerability category.",
+      "The deconfliction-vs-coordination distinctionis analytically important for the LL exercise: UNIFIL itself faces asimilar perception challenge in how its interactions with Hezbollah arecharacterized, and the Nerguizian analysis provides a useful frameworkfor thinking about this.",
+      "Cross-reference with Nerguizian (2014) forthe broader LAF-UNIFIL relationship context \u00e2\u0080\u0094 together the two chaptersprovide a consistent structural account of LAF constraints across adecade.",
+      "Interview question generated: Were UNIFIL leadership aware ofthe April 2017 staging incident in real time? What was the response andwere any access management changes made to Blue Line tour protocolsafterward?"
+    ],
+    "lessons_learned": [
+      {
+        "text": "UNIFIL's physical footprint andpublicly scheduled operational activities \u00e2\u0080\u0094 including Blue Line liaisontours \u00e2\u0080\u0094 can be deliberately exploited by non-state armed actors forinformation operations targeting the LAF and international audiences;access management and public communication protocols around UNIFILactivities require systematic coordination with the LAF to reducevulnerability to stagedincidents.",
+        "tag": "SOURCE-DERIVED"
+      },
+      {
+        "text": "The LAF's deconflictionposture vis-\u00c3\u00a0-vis Hezbollah \u00e2\u0080\u0094 which is operationally sound andinstitutionally necessary \u00e2\u0080\u0094 is perceptually costly in ways that damagethe LAF's international standing; UNIFIL must independently andproactively maintain its own narrative clarity about the distinctionbetween deconfliction and coordination to avoid being swept into thesame perception trap.",
+        "tag": "ANALYTICALINFERENCE"
+      }
+    ],
+    "timeline_events": [
+      {
+        "date": "Apr 2017",
+        "event": "Hezbollahfighters deliberately photographed near UNIFIL headquarters during ascheduled Blue Line liaison tour \u00e2\u0080\u0094 documented information operationagainst both UNIFIL and LAF",
+        "source": "nerguizian_2017"
+      },
+      {
+        "date": "21\u00e2\u0080\u009327 Jul2017",
+        "event": "Hezbollah launches unilateral military operation againstJabhat al-Nusra in Arsal border area; LAF adopts strict deconflictionposture; ceasefire declared 27 July",
+        "source": "nerguizian_2017"
+      }
+    ],
+    "source_type": "Think Tank(CSIS)"
+  },
+  {
+    "id": "alrfouh_2007",
+    "author": "Faysal O. Al-Rfouh",
+    "title": "The Culture of Peace and Peacekeeping Operations:Middle East Case Study (chapter in Cultural Challenges in MilitaryOperations)",
+    "year": 2007,
+    "publisher": "NATO DefenseCollege",
+    "tags": [
+      "TCC",
+      "CIMIC",
+      "peacekeeping-doctrine",
+      "civilian-protection",
+      "mandate",
+      "deterrence"
+    ],
+    "thematic_clusters": [
+      "TCCdynamics & command",
+      "CIMIC & community relations",
+      "Civilianprotection",
+      "Mandate evolution",
+      "Operational adaptation &innovation"
+    ],
+    "timeline_coverage": {
+      "start": 1978,
+      "end": 2007
+    },
+    "actors": [
+      "UNIFIL",
+      "EuropeanTCCs",
+      "Arab TCCs",
+      "NATO",
+      "local Lebanesecommunities",
+      "Hezbollah",
+      "LAF"
+    ],
+    "abstract": "A chapter from a NATODefense College volume on cultural challenges in military operations.Surveys UN peacekeeping doctrine evolution and UNIFIL's role before andafter 2006. Central argument: cultural interoperability is anunderappreciated operational challenge. First Arab-world perspective inthe bibliography.",
+    "key_arguments": [
+      "Cultural mismatch between thebackgrounds, linguistic competencies, and religious frameworks ofpeacekeeping contingents and the communities they operate among is astructural and systematically underaddressed challenge to missioneffectiveness that receives far less attention in mission planning thantactical and logistical preparation.",
+      "Impartiality is increasinglydifficult for peacekeeping forces to maintain and credibly demonstratein complex intra-state conflicts where multiple armed parties activelyseek to manipulate UN presence for tactical advantage \u00e2\u0080\u0094 a challenge thatis particularly acute in Lebanon where parties have decades ofexperience exploiting UNIFIL's presence.",
+      "UNIFIL is assessed as havingexercised a genuine deterrent effect on the timing and intensity of the2006 war \u00e2\u0080\u0094 its physical presence in southern Lebanon is argued to havedelayed the outbreak of full-scale conflict, suggesting that even aconstrained peacekeeping force generates latent deterrent value that isdifficult to quantify but operationally real.",
+      "The 1978\u00e2\u0080\u00932006pre-expansion period is characterized as demonstrating the inherentlimits of monitoring-only peacekeeping in a politically sensitiveenvironment with restricted mandate and inadequate resources \u00e2\u0080\u0094particularly given Hezbollah's unconstrained arms build-up during thisperiod.",
+      "Lasting and durable peace in the region requires acomprehensive multi-track political, security, and development approach;UNIFIL and similar international presences are identified as necessarybut structurally insufficient instruments in the absence of genuinepolitical progress."
+    ],
+    "bias_flag": "Al-Rfouh is a Jordanian scholar andformer government minister writing for a NATO Defense College audience \u00e2\u0080\u0094an unusual combination that produces a perspective reflecting Arab-worldpolitical sensibilities filtered through a Western multilateralinstitutional framework. The analysis attributes regional instabilityprimarily to Israeli policy choices in ways that Western sourcestypically hedge, and advocates for preferential deployment ofMuslim-majority TCCs to Middle East missions based on culturalcompatibility arguments. The chapter is not peer-reviewed and the TCCcomposition recommendations reflect advocacy rather than systematicevidence. Despite these limitations, it represents the only Arab-worldperspective currently in the bibliography and its arguments aboutcultural interoperability are substantively important for the TCCdynamics and CIMIC clusters. Use with awareness of its advocacycharacter.",
+    "analytical_notes": [
+      "This is the only Arab-world perspectivecurrently in the bibliography \u00e2\u0080\u0094 an important gap this source partiallyfills. European TCC perspectives (France, Italy, Spain) remain entirelyabsent.",
+      "The cultural interoperability argument is underexplored in therest of the corpus and represents a genuine analytical contribution tothe TCC dynamics cluster. Cross-reference with G\u00c3\u00b6ksel (2007) whoseaccount of sulha-based liaison methodology implicitly confirms theimportance of cultural competence.",
+      "The deterrence assessment \u00e2\u0080\u0094 UNIFILpresence in 2006 delayed conflict outbreak \u00e2\u0080\u0094 is a data point that shouldbe explored in interviews with Force Commanders from the 2006period.",
+      "Interview question generated: Did UNIFIL have any formalpre-deployment cultural training program? How did contingents with noprior Middle East experience adapt to the operationalenvironment?"
+    ],
+    "lessons_learned": [
+      {
+        "text": "Cultural and religiousfamiliarity between peacekeeping contingents and the communities theyoperate among affects operational effectiveness and the maintenance oflocal consent; pre-deployment cultural and linguistic trainingrepresents a documented and systematically underprioritized gap in UNpeacekeeping preparation.",
+        "tag": "SOURCE-DERIVED"
+      },
+      {
+        "text": "UNIFIL'sphysical presence in southern Lebanon in 2006 is assessed by this sourceas having exercised a genuine deterrent effect on the timing andintensity of the conflict \u00e2\u0080\u0094 suggesting that even a constrainedpeacekeeping force with limited enforcement authority generates latentdeterrent value that is difficult to quantify but operationally real andworth preserving in mandatedesign.",
+        "tag": "SOURCE-DERIVED"
+      }
+    ],
+    "timeline_events": [],
+    "source_type": "Think Tank / NATO DefenseCollege"
   }
 ]

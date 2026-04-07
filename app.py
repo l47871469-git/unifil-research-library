@@ -252,6 +252,32 @@ html, body, [class*="css"] {
     padding-right: 0.3rem;
 }
 
+/* 2-column card grid */
+.source-grid-container {
+    max-height: 72vh;
+    overflow-y: auto;
+    padding-right: 0.3rem;
+}
+
+/* Sticky detail panel */
+/* Full-height white background on the detail column.
+   :has() targets the stColumn that contains our wrapper, so only
+   this column gets the background — not the card-grid column. */
+[data-testid="stHorizontalBlock"]:has(.detail-sticky-wrapper) > [data-testid="stColumn"]:last-child {
+    background: #ffffff;
+    border-left: 2px solid #dde3ea;
+    min-height: 100vh;
+    padding: 0.5rem 1.2rem 2rem 1.4rem;
+}
+
+.detail-sticky-wrapper {
+    position: sticky;
+    top: 60px;
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+    padding-right: 0.2rem;
+}
+
 /* Streamlit overrides */
 .stButton > button {
     background: #1a3a5c;
@@ -294,7 +320,7 @@ with st.sidebar:
     
     page = st.radio(
         "Navigate",
-        ["Source Library", "Thematic Navigator", "Timeline", "Actors Index", "Lessons Log", "Mind Map", "Gaps Register"],
+        ["Source Library", "Thematic Navigator", "Actors Index", "Timeline", "Lessons Log", "Mind Map", "Gaps Register"],
         label_visibility="collapsed"
     )
     
@@ -308,11 +334,11 @@ if page == "Source Library":
 elif page == "Thematic Navigator":
     from views.thematic import show
     show()
-elif page == "Timeline":
-    from views.timeline import show
-    show()
 elif page == "Actors Index":
     from views.actors import show
+    show()
+elif page == "Timeline":
+    from views.timeline import show
     show()
 elif page == "Lessons Log":
     from views.lessons import show
