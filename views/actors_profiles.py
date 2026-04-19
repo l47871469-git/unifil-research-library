@@ -1,0 +1,254 @@
+import json
+import streamlit as st
+from pathlib import Path
+
+DATA_PATH = Path(__file__).parent.parent / "data" / "actors_profiles.json"
+
+ALPHABET = list("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+
+
+def first_sentence(text):
+    if not text:
+        return ""
+    for sep in (". ", "! ", "? "):
+        idx = text.find(sep)
+        if idx != -1:
+            return text[: idx + 1]
+    return text[:160] + ("…" if len(text) > 160 else "")
+
+
+def show():
+    actors = json.loads(DATA_PATH.read_text(encoding="utf-8"))
+    actors_sorted = sorted(actors, key=lambda x: x["name"].upper())
+
+    # Group by first letter
+    by_letter: dict[str, list] = {}
+    for a in actors_sorted:
+        letter = a["name"][0].upper()
+        by_letter.setdefault(letter, []).append(a)
+    letters_with_actors = set(by_letter.keys())
+
+    # ── Page-scoped CSS ───────────────────────────────────────────────────────
+    st.markdown("""
+    <style>
+    /* Expanders styled as minimal cards */
+    div[data-testid="stExpander"] {
+        background: white !important;
+        border: 1px solid #ddd8cc !important;
+        border-left: 3px solid #c8d4e0 !important;
+        border-radius: 4px !important;
+        margin-bottom: 0.55rem !important;
+        box-shadow: none !important;
+        transition: border-left-color 0.12s ease;
+    }
+    div[data-testid="stExpander"]:has(details[open]) {
+        border-left-color: #1a3a5c !important;
+    }
+    /* Expander summary row */
+    div[data-testid="stExpander"] summary {
+        padding: 0.75rem 1rem !important;
+        gap: 0.5rem !important;
+    }
+    div[data-testid="stExpander"] summary:hover {
+        background: #fafaf7 !important;
+    }
+    /* Expander label text — actor name */
+    div[data-testid="stExpander"] summary span[data-testid="stExpanderToggleIcon"] ~ p,
+    div[data-testid="stExpander"] summary p {
+        font-family: 'Playfair Display', serif !important;
+        font-size: 0.95rem !important;
+        font-weight: 700 !important;
+        color: #1a3a5c !important;
+        margin: 0 !important;
+    }
+    /* Expander body padding */
+    div[data-testid="stExpander"] > details > div[data-testid="stExpanderDetails"] {
+        padding: 0 1rem 0.9rem 1rem !important;
+    }
+    /* Letter divider */
+    .ap-letter {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: #1a3a5c;
+        border-bottom: 2px solid #ddd8cc;
+        padding-bottom: 0.15rem;
+        margin: 1.4rem 0 0.75rem 0;
+        opacity: 0.9;
+    }
+    /* A–Z index */
+    .ap-index {
+        position: sticky;
+        top: 60px;
+        padding-top: 0.5rem;
+    }
+    .ap-index-label {
+        font-size: 0.62rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: #8a9ab0;
+        font-weight: 600;
+        text-align: center;
+        margin-bottom: 0.6rem;
+    }
+    .ap-index a {
+        display: block;
+        text-align: center;
+        font-size: 0.78rem;
+        font-weight: 600;
+        color: #1a3a5c;
+        text-decoration: none;
+        padding: 0.18rem 0;
+        border-radius: 3px;
+        letter-spacing: 0.02em;
+        line-height: 1.4;
+    }
+    .ap-index a:hover {
+        background: rgba(26,58,92,0.08);
+    }
+    .ap-index .ap-dim {
+        display: block;
+        text-align: center;
+        font-size: 0.78rem;
+        color: #d4dbe4;
+        padding: 0.18rem 0;
+        line-height: 1.4;
+        cursor: default;
+        user-select: none;
+    }
+    /* Snippet inside expander */
+    .ap-snippet {
+        font-size: 0.83rem;
+        color: #5a6a7a;
+        line-height: 1.5;
+        font-style: italic;
+        margin-bottom: 0.75rem;
+        padding-bottom: 0.75rem;
+        border-bottom: 1px solid #eeebe4;
+    }
+    .ap-cat-label {
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+        color: #8a9ab0;
+        font-weight: 600;
+        margin-bottom: 0.4rem;
+    }
+    .ap-full-desc {
+        font-size: 0.88rem;
+        color: #2a2a2a;
+        line-height: 1.6;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
+    # ── Header ────────────────────────────────────────────────────────────────
+    st.markdown("""
+    <div class="library-header">
+        <div>
+            <p class="library-subtitle">UN DPO · Policy & Best Practices Service</p>
+            <h1 class="library-title">Actor Profiles</h1>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+
+    n_cats = len(set(a["category"] for a in actors))
+    st.markdown(f"""
+    <div class="metric-row">
+        <div class="metric-card">
+            <div class="metric-number">{len(actors)}</div>
+            <div class="metric-label">Actors profiled</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-number">{n_cats}</div>
+            <div class="metric-label">Categories</div>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+
+    # ── Search ────────────────────────────────────────────────────────────────
+    search = st.text_input(
+        "Search",
+        placeholder="Search by name or description…",
+        key="ap3_search",
+        label_visibility="collapsed",
+    )
+
+    st.markdown('<div style="margin-top:0.5rem;"></div>', unsafe_allow_html=True)
+
+    # ── Two-column layout: index | content ────────────────────────────────────
+    col_index, col_main = st.columns([0.65, 5.35])
+
+    # ── A–Z sticky index ──────────────────────────────────────────────────────
+    with col_index:
+        index_html = '<div class="ap-index"><div class="ap-index-label">A–Z</div>'
+        for letter in ALPHABET:
+            if letter in letters_with_actors:
+                index_html += f'<a href="#ap-{letter}">{letter}</a>'
+            else:
+                index_html += f'<span class="ap-dim">{letter}</span>'
+        index_html += "</div>"
+        st.markdown(index_html, unsafe_allow_html=True)
+
+    # ── Main content ──────────────────────────────────────────────────────────
+    with col_main:
+        is_searching = bool(search.strip())
+
+        if is_searching:
+            q = search.strip().lower()
+            results = [
+                a for a in actors_sorted
+                if q in a["name"].lower() or q in a.get("description", "").lower()
+            ]
+            count = len(results)
+            st.markdown(
+                f'<div style="font-size:0.82rem;color:#6b7c8d;margin-bottom:0.9rem;'
+                f'letter-spacing:0.04em;text-transform:uppercase;">'
+                f'{count} result{"s" if count != 1 else ""} for &ldquo;{search.strip()}&rdquo;</div>',
+                unsafe_allow_html=True,
+            )
+            if results:
+                _render_grid(results)
+            else:
+                st.markdown(
+                    '<div style="padding:2rem;text-align:center;color:#8a9ab0;">No actors found.</div>',
+                    unsafe_allow_html=True,
+                )
+        else:
+            st.markdown(
+                f'<div style="font-size:0.82rem;color:#6b7c8d;margin-bottom:0.5rem;'
+                f'letter-spacing:0.04em;text-transform:uppercase;">{len(actors)} actors</div>',
+                unsafe_allow_html=True,
+            )
+            for letter in ALPHABET:
+                if letter not in by_letter:
+                    continue
+                st.markdown(
+                    f'<div id="ap-{letter}" class="ap-letter">{letter}</div>',
+                    unsafe_allow_html=True,
+                )
+                _render_grid(by_letter[letter])
+
+
+def _render_grid(actor_list: list):
+    """Render actors in a 2-column expander grid."""
+    for i in range(0, len(actor_list), 2):
+        pair = actor_list[i: i + 2]
+        cols = st.columns(2, gap="small")
+        for ci, actor in enumerate(pair):
+            with cols[ci]:
+                _render_card(actor)
+
+
+def _render_card(actor: dict):
+    """Single actor card as a styled expander (no button required)."""
+    name = actor["name"]
+    cat = actor.get("category", "")
+    full = actor.get("description", "")
+
+    with st.expander(name):
+        st.markdown(
+            f'<div class="ap-cat-label">{cat}</div>'
+            f'<div class="ap-full-desc">{full}</div>',
+            unsafe_allow_html=True,
+        )

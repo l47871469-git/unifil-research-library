@@ -3,7 +3,9 @@
     "id": "gap_001",
     "title": "European TCC Perspectives",
     "description": "No sources from European TCC national perspectives (France, Italy, Spain). Their motivations, constraints, and national caveats are undocumented in the current corpus.",
-    "thematic_clusters": ["TCC dynamics & command"],
+    "thematic_clusters": [
+      "TCC dynamics & command"
+    ],
     "status": "Open",
     "source": "Manual",
     "added_by": "Leo",
@@ -13,7 +15,9 @@
     "id": "gap_002",
     "title": "Maritime Task Force Documentation",
     "description": "UNIFIL's Maritime Task Force is the UN's only naval peacekeeping component. Dedicated documentation on its operations, mandate interpretation, and lessons is absent from the corpus.",
-    "thematic_clusters": ["Operational adaptation & innovation"],
+    "thematic_clusters": [
+      "Operational adaptation & innovation"
+    ],
     "status": "Open",
     "source": "Manual",
     "added_by": "Leo",
@@ -23,7 +27,11 @@
     "id": "gap_003",
     "title": "Lebanese and Arab Perspectives",
     "description": "The corpus is heavily weighted toward Israeli institutional sources and Western academic analysis. Lebanese, Arab, and Shia community perspectives on UNIFIL are significantly underrepresented.",
-    "thematic_clusters": ["Host-state relations & LAF", "Civilian protection", "CIMIC & community relations"],
+    "thematic_clusters": [
+      "Host-state relations & LAF",
+      "Civilian protection",
+      "CIMIC & community relations"
+    ],
     "status": "Open",
     "source": "Manual",
     "added_by": "Leo",
@@ -33,10 +41,51 @@
     "id": "gap_004",
     "title": "UNIFIL Internal Primary Sources",
     "description": "SG reports, Force Commander assessments, and internal UNIFIL policy documents are largely absent. These would provide the institutional voice of the mission itself.",
-    "thematic_clusters": ["Mandate evolution", "DPKO-DPPA integration"],
+    "thematic_clusters": [
+      "Mandate evolution",
+      "DPKO-DPPA integration"
+    ],
     "status": "Open",
     "source": "Manual",
     "added_by": "Leo",
     "date_added": "2026-04-01"
+  },
+  {
+    "id": "gap_8b1e6825",
+    "title": "Freedom of Movement of UNIFIL ",
+    "description": "Many sources mention lack of freedom of movement of the mission. Would be interesting to hear UN perspective on how this was handled and how much it affected mandate implementaiton ",
+    "thematic_clusters": [
+      "Host-state relations & LAF",
+      "Relations with non-state armed actors"
+    ],
+    "status": "Open",
+    "source": "Manual",
+    "added_by": "Leo",
+    "date_added": "2026-04-16"
+  },
+  {
+    "id": "gap_8ac3f737",
+    "title": "Freedom of Movement of UNIFIL ",
+    "description": "Many sources mention lack of freedom of movement of the mission. Would be interesting to hear UN perspective on how this was handled and how much it affected mandate implementaiton ",
+    "thematic_clusters": [
+      "Host-state relations & LAF",
+      "Relations with non-state armed actors"
+    ],
+    "status": "Open",
+    "source": "Manual",
+    "added_by": "Leo",
+    "date_added": "2026-04-16"
+  },
+  {
+    "id": "gap_04e3a1d2",
+    "title": "Quality of Peacekeepers",
+    "description": "Assaf Orion (2016) points to diffence in quality of troops of UNIFIL I and UNIFIL II. \n\nWorth exploring more ",
+    "thematic_clusters": [
+      "TCC dynamics & command"
+    ],
+    "status": "Open",
+    "source": "Manual",
+    "added_by": "Leo",
+    "date_added": "2026-04-17"
   }
 ]

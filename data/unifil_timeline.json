@@ -1,0 +1,164 @@
+[
+  {
+    "date": "1969",
+    "event": "Cairo Agreement",
+    "category": "Lebanese politics",
+    "description": "The Cairo Agreement legitimises the Palestinian armed presence in Lebanon following clashes with the Lebanese army. It enables the growth of a Palestinian state-within-a-state in the south."
+  },
+  {
+    "date": "1970",
+    "event": "Black September – PLO expelled from Jordan",
+    "category": "Regional-International",
+    "description": "Civil war in Jordan results in the expulsion of PLO forces, accelerating their consolidation in southern Lebanon. This significantly increases cross-border tensions with Israel."
+  },
+  {
+    "date": "1978-03",
+    "event": "Operation Litani",
+    "category": "Israel-Lebanon",
+    "description": "Israel invades and occupies South Lebanon up to the Litani River in response to PLO cross-border attacks. The operation marks the beginning of prolonged Israeli military engagement in Lebanese territory."
+  },
+  {
+    "date": "1978-03-19",
+    "event": "UNSC Resolution 425 – UNIFIL established",
+    "category": "UNIFIL",
+    "description": "The Security Council passes Resolution 425 (with abstentions from Czechoslovakia and the USSR), calling for Israeli withdrawal and establishing UNIFIL. The mission is mandated to confirm withdrawal, restore peace, and assist Lebanon in reasserting authority in the south."
+  },
+  {
+    "date": "1978-03-23",
+    "event": "First UNIFIL troops arrive",
+    "category": "UNIFIL",
+    "description": "The first contingent of UNIFIL peacekeepers deploys to southern Lebanon just days after Resolution 425. The force begins operating in an area still contested between Israeli forces and armed Palestinian groups."
+  },
+  {
+    "date": "1978-10",
+    "event": "Israeli withdrawal – SLA handover",
+    "category": "Israel-Lebanon",
+    "description": "Israel withdraws its forces under US pressure but transfers the border zone to the right-wing South Lebanon Army (SLA) auxiliary. Israel is widely regarded as retaining effective control, leading to repeated renewal of UNIFIL's mandate."
+  },
+  {
+    "date": "1981-07",
+    "event": "PLO–Israel ceasefire (Habib)",
+    "category": "Israel-Lebanon",
+    "description": "Intensifying cross-border exchanges between the PLO and Israel prompt US Ambassador Philip Habib to broker a ceasefire. The agreement holds temporarily but is later used by Israel as a pretext for the 1982 invasion."
+  },
+  {
+    "date": "1982-06",
+    "event": "Operation Peace for Galilee",
+    "category": "Israel-Lebanon",
+    "description": "Following the wounding of Israeli Ambassador Argov in London by Abu Nidal gunmen (Iraqi-linked, not PLO), Israel launches its second invasion of Lebanon, advancing as far as Beirut. The invasion dramatically expands Israel's occupation and reshapes the Lebanese political landscape."
+  },
+  {
+    "date": "1982-10",
+    "event": "Israeli partial withdrawal from Beirut",
+    "category": "Israel-Lebanon",
+    "description": "Israel pulls back from the Beirut region but retains occupation of the entire south up to the Awwali River north of Sidon. Full occupation of the south continues for a further three years."
+  },
+  {
+    "date": "1983-05-17",
+    "event": "Israel-Lebanon 'peace' accord",
+    "category": "Israel-Lebanon",
+    "description": "A US-brokered accord between Israel and Lebanon is signed but quickly collapses. Syria, whose consent was not sought, effectively vetoes the agreement."
+  },
+  {
+    "date": "1983-10",
+    "event": "Beirut barracks bombing",
+    "category": "Hezbollah",
+    "description": "A Hezbollah-linked suicide bombing destroys the US Marine barracks in Beirut, killing over 240 Marines. The attack is one of the deadliest single-day losses for the US military since World War II."
+  },
+  {
+    "date": "1983",
+    "event": "Ashura incident – fatwa for defensive jihad",
+    "category": "Hezbollah",
+    "description": "Israeli forces violate the sanctity of Ashura, prompting senior Sunni and Shia clerics to issue a fatwa declaring a defensive jihad against the occupation. The incident radicalises previously moderate religious figures in the region."
+  },
+  {
+    "date": "1985",
+    "event": "Hezbollah Open Letter",
+    "category": "Hezbollah",
+    "description": "Hezbollah publishes its founding ideological manifesto, the 'Open Letter,' formally articulating its goals, identity, and resistance posture. The document establishes the organisation's ideological framework for decades to come."
+  },
+  {
+    "date": "1985-06",
+    "event": "Israeli phased withdrawal – security belt retained",
+    "category": "Israel-Lebanon",
+    "description": "Israel completes a phased withdrawal from most of southern Lebanon but retains a 10–20 km 'security belt' along the border, including a salient around Jizzin — roughly 10% of Lebanese territory. The SLA continues to administer the zone under Israeli direction."
+  },
+  {
+    "date": "1985",
+    "event": "War of the Camps begins",
+    "category": "Lebanese politics",
+    "description": "Amal launches a siege of Palestinian refugee camps in Beirut and the south, initiating the so-called 'War of the Camps.' The conflict lasts approximately two years and deepens sectarian and factional divisions."
+  },
+  {
+    "date": "1988",
+    "event": "Amal–Hezbollah hostilities begin",
+    "category": "Hezbollah",
+    "description": "Armed clashes break out between Amal and Hezbollah, reflecting growing competition for Shia political and military dominance in Lebanon. The conflict is eventually resolved by the 1990 Damascus Accord."
+  },
+  {
+    "date": "1988",
+    "event": "Kidnapping of Lt. Col. William Higgins",
+    "category": "UNIFIL",
+    "description": "Lt. Col. William Higgins, serving with the UN Observer Group Lebanon, is kidnapped by the Amal splinter group 'Believer's Resistance' led by Mustafa Dirani, with suspected Hezbollah sympathies. Higgins is later killed; responsibility is attributed to the 'Revolutionary Justice Organization.'"
+  },
+  {
+    "date": "1989",
+    "event": "Ta'if Agreement",
+    "category": "Lebanese politics",
+    "description": "The Ta'if Agreement ends Lebanon's civil war and mandates disarmament of all militias including Amal. Amal's entry into formal politics causes its militant cadres to migrate toward Hezbollah, strengthening the latter."
+  },
+  {
+    "date": "1990",
+    "event": "Damascus Accord – Amal–Hezbollah peace",
+    "category": "Regional-International",
+    "description": "Iran and Syria sponsor the Damascus Accord, ending two years of armed hostilities between Amal and Hezbollah. The agreement consolidates Hezbollah's position as the dominant Shia armed movement."
+  },
+  {
+    "date": "1993-07-25",
+    "event": "Operation Accountability",
+    "category": "Israel-Lebanon",
+    "description": "Israel launches Operation Accountability on 25 July, targeting Hezbollah bases north of the security zone with the aim of curtailing guerrilla operations. A US-brokered ceasefire is reached on 31 July through Secretary of State Warren Christopher."
+  },
+  {
+    "date": "1996",
+    "event": "Operation Grapes of Wrath",
+    "category": "Israel-Lebanon",
+    "description": "Israel conducts Operation Grapes of Wrath against Hezbollah in southern Lebanon, the third major Israeli military campaign aimed at pressuring the Lebanese population against the group. The operation ends with a US-brokered understanding similar to the 1993 ceasefire."
+  },
+  {
+    "date": "1997-07-04",
+    "event": "Tufayli 'revolt of the hungry'",
+    "category": "Hezbollah",
+    "description": "Former Hezbollah Secretary-General Sheikh Subhi Tufayli launches a populist initiative demanding jobs, crop subsidies, free education, utilities, and state pensions for resistance fighters. The move represents a direct challenge to both Hezbollah's leadership and state authority."
+  },
+  {
+    "date": "1998-01",
+    "event": "Tufayli expelled from Hezbollah",
+    "category": "Hezbollah",
+    "description": "After months of defiance, Tufayli attempts to disrupt Hezbollah's Jerusalem Day commemoration in Baalbek and is expelled from the organisation within 24 hours. The episode underscores Hezbollah's intolerance of internal dissent."
+  },
+  {
+    "date": "2000-05",
+    "event": "Israeli full withdrawal from south Lebanon",
+    "category": "Israel-Lebanon",
+    "description": "Israel withdraws completely from south Lebanon and the SLA is disbanded, ending 22 years of occupation. UNIFIL remains deployed as the Lebanese government has still not restored effective authority over the area."
+  },
+  {
+    "date": "2004-09",
+    "event": "UNSC Resolution 1559",
+    "category": "Regional-International",
+    "description": "The Security Council passes Resolution 1559, calling for the withdrawal of all foreign forces from Lebanon and the dismantling of all militias. The resolution is widely understood as targeting both Syrian presence and Hezbollah's armed wing."
+  },
+  {
+    "date": "2005",
+    "event": "Syrian military withdrawal from Lebanon",
+    "category": "Regional-International",
+    "description": "Syria completes its military withdrawal from Lebanon following massive domestic and international pressure in the wake of the Hariri assassination. The withdrawal ends nearly three decades of Syrian military presence."
+  },
+  {
+    "date": "2006-07",
+    "event": "July 2006 Israel-Lebanon War",
+    "category": "Israel-Lebanon",
+    "description": "Israel launches a major military campaign against Lebanon primarily targeting Hezbollah, following the capture of two Israeli soldiers. The war results in UNSC Resolution 1701 and a significantly expanded UNIFIL mandate."
+  }
+]

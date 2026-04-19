@@ -117,7 +117,7 @@ def show():
              color:#1a3a5c; margin-bottom:0.8rem;">Add a Gap Manually</div>
         """, unsafe_allow_html=True)
 
-        with st.form("add_gap_form"):
+        with st.form("add_gap_form", clear_on_submit=True):
             gap_title = st.text_input("Gap title *", placeholder="e.g. Civilian perspectives from South Lebanon")
             gap_desc = st.text_area("Description *", placeholder="Describe what is missing and why it matters…", height=100)
             gap_clusters = st.multiselect("Related thematic clusters", THEMATIC_CLUSTERS)

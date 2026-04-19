@@ -35,6 +35,50 @@ def save_source(updated):
     DATA_PATH.write_text(json.dumps(sources, indent=2, ensure_ascii=False), encoding="utf-8")
 
 
+def _tag_input(label, sid, field_key, initial_items):
+    """
+    Tag/cluster editor: st.multiselect (remove via ×) + st.form (add new).
+
+    Session-state keys:
+      e_{field_key}_opts_{sid}  – available options (initial + user-added)
+      e_{field_key}_ms_{sid}    – current selection (managed by multiselect)
+    """
+    opts_key = f"e_{field_key}_opts_{sid}"
+    ms_key   = f"e_{field_key}_ms_{sid}"
+
+    if opts_key not in st.session_state:
+        st.session_state[opts_key] = list(initial_items)
+    if ms_key not in st.session_state:
+        st.session_state[ms_key] = list(st.session_state[opts_key])
+
+    st.markdown(
+        f'<div style="font-size:0.85rem;font-weight:600;color:#1a3a5c;'
+        f'border-bottom:1px solid #ddd8cc;padding-bottom:0.25rem;'
+        f'margin:1rem 0 0.4rem 0;">{label}</div>',
+        unsafe_allow_html=True,
+    )
+
+    st.multiselect(
+        label,
+        options=st.session_state[opts_key],
+        key=ms_key,
+        label_visibility="collapsed",
+    )
+
+    with st.form(key=f"add_{field_key}_{sid}", clear_on_submit=True):
+        new_val = st.text_input("Add", placeholder="Type and press Enter to add…", label_visibility="collapsed")
+        if st.form_submit_button("Add"):
+            item = new_val.strip()
+            if item:
+                if item not in st.session_state[opts_key]:
+                    st.session_state[opts_key].append(item)
+                if item not in st.session_state[ms_key]:
+                    st.session_state[ms_key] = list(st.session_state[ms_key]) + [item]
+                st.rerun()
+
+    return list(st.session_state.get(ms_key, []))
+
+
 def render_source_edit(s, all_tags):
     sid = s["id"]
 
@@ -53,13 +97,54 @@ def render_source_edit(s, all_tags):
 
     abstract = st.text_area("Abstract", value=s.get("abstract", ""), height=130, key=f"e_abstract_{sid}")
 
-    # Tags — multiselect from known list, current tags always included as options
-    tag_options = sorted(set(all_tags) | set(s.get("tags", [])))
-    tags = st.multiselect("Tags", options=tag_options, default=s.get("tags", []), key=f"e_tags_{sid}")
+    # Key arguments — pre-init all keys before rendering so rerun never resets them
+    st.markdown('<div style="font-size:0.85rem; font-weight:600; color:#1a3a5c; border-bottom:1px solid #ddd8cc; padding-bottom:0.25rem; margin:1rem 0 0.6rem 0;">Key Arguments</div>', unsafe_allow_html=True)
+    args_count_key = f"e_args_count_{sid}"
+    existing_args = s.get("key_arguments", [])
+    if args_count_key not in st.session_state:
+        st.session_state[args_count_key] = max(len(existing_args), 1)
+    n_args = st.session_state[args_count_key]
+    for ai in range(n_args):
+        k = f"e_arg_{sid}_{ai}"
+        if k not in st.session_state:
+            st.session_state[k] = existing_args[ai] if ai < len(existing_args) else ""
+    for ai in range(n_args):
+        nc, tc = st.columns([0.35, 9])
+        with nc:
+            st.markdown(f'<div style="font-size:0.78rem;color:#8a9ab0;padding-top:0.7rem;text-align:right;">{ai + 1}</div>', unsafe_allow_html=True)
+        with tc:
+            st.text_area(f"Argument {ai + 1}", key=f"e_arg_{sid}_{ai}", height=80, label_visibility="collapsed")
+    mc1, mc2, mc3, mc4 = st.columns([0.35, 2.4, 1.5, 1.5])
+    with mc1:
+        pass
+    with mc2:
+        if st.button("+ Add argument", key=f"e_addarg_{sid}"):
+            st.session_state[args_count_key] = n_args + 1
+            st.session_state[f"e_arg_{sid}_{n_args}"] = ""
+            st.rerun()
+    if n_args > 1:
+        with mc3:
+            arg_from = st.number_input("From", min_value=1, max_value=n_args, step=1, key=f"e_arg_from_{sid}", label_visibility="collapsed")
+        with mc4:
+            arg_to = st.number_input("To position", min_value=1, max_value=n_args, step=1, key=f"e_arg_to_{sid}", label_visibility="collapsed")
+        st.markdown('<div style="font-size:0.72rem;color:#8a9ab0;margin:-0.4rem 0 0.3rem 0;">Move item [from] → [to position]</div>', unsafe_allow_html=True)
+        if st.button("Move", key=f"e_arg_move_{sid}"):
+            fi, ti_ = int(arg_from) - 1, int(arg_to) - 1
+            if fi != ti_:
+                vals = [st.session_state[f"e_arg_{sid}_{i}"] for i in range(n_args)]
+                item = vals.pop(fi)
+                vals.insert(ti_, item)
+                for i in range(n_args):
+                    del st.session_state[f"e_arg_{sid}_{i}"]
+                for i, v in enumerate(vals):
+                    st.session_state[f"e_arg_{sid}_{i}"] = v
+                st.rerun()
+
+    # Tags
+    tags = _tag_input("Tags", sid, "tags", s.get("tags", []))
 
     # Thematic clusters
-    cluster_defaults = [c for c in s.get("thematic_clusters", []) if c in THEMATIC_CLUSTERS]
-    thematic_clusters = st.multiselect("Thematic clusters", options=THEMATIC_CLUSTERS, default=cluster_defaults, key=f"e_clusters_{sid}")
+    thematic_clusters = _tag_input("Thematic Clusters", sid, "clusters", s.get("thematic_clusters", []))
 
     # Actors — comma-separated free text
     actors_raw = st.text_area(
@@ -79,25 +164,77 @@ def render_source_edit(s, all_tags):
         key=f"e_notes_{sid}"
     )
 
-    # Lessons learned
+    # Lessons learned — pre-init all keys before rendering
     st.markdown('<div style="font-size:0.85rem; font-weight:600; color:#1a3a5c; border-bottom:1px solid #ddd8cc; padding-bottom:0.25rem; margin:1rem 0 0.6rem 0;">Lessons Learned</div>', unsafe_allow_html=True)
     lessons_in = s.get("lessons_learned", [])
-    edited_lessons = []
+    n_lessons = len(lessons_in)
+    tag_opts = ["SOURCE-DERIVED", "ANALYTICAL INFERENCE"]
     for li, lesson in enumerate(lessons_in):
-        lc1, lc2 = st.columns([3, 1])
+        tk = f"e_ll_text_{sid}_{li}"
+        gk = f"e_ll_tag_{sid}_{li}"
+        if tk not in st.session_state:
+            st.session_state[tk] = lesson.get("text", "")
+        if gk not in st.session_state:
+            st.session_state[gk] = lesson.get("tag", "SOURCE-DERIVED")
+    for li in range(n_lessons):
+        nc, lc1, lc2 = st.columns([0.35, 3, 1.2])
+        with nc:
+            st.markdown(f'<div style="font-size:0.78rem;color:#8a9ab0;padding-top:0.6rem;text-align:right;">{li + 1}</div>', unsafe_allow_html=True)
         with lc1:
-            ll_text = st.text_area(f"Lesson {li + 1}", value=lesson.get("text", ""), height=72, key=f"e_ll_text_{sid}_{li}", label_visibility="collapsed")
+            st.text_area(f"Lesson {li + 1}", key=f"e_ll_text_{sid}_{li}", height=72, label_visibility="collapsed")
         with lc2:
-            tag_opts = ["SOURCE-DERIVED", "ANALYTICAL INFERENCE"]
-            current_tag = lesson.get("tag", "SOURCE-DERIVED")
-            tag_idx = tag_opts.index(current_tag) if current_tag in tag_opts else 0
-            ll_tag = st.selectbox(f"Tag {li + 1}", tag_opts, index=tag_idx, key=f"e_ll_tag_{sid}_{li}", label_visibility="collapsed")
-        edited_lessons.append({"text": ll_text, "tag": ll_tag})
+            st.selectbox(f"Tag {li + 1}", tag_opts, key=f"e_ll_tag_{sid}_{li}", label_visibility="collapsed")
+    if n_lessons > 1:
+        lm1, lm2, lm3, lm4 = st.columns([0.35, 2.4, 1.5, 1.5])
+        with lm1:
+            pass
+        with lm2:
+            ll_from = st.number_input("From", min_value=1, max_value=n_lessons, step=1, key=f"e_ll_from_{sid}", label_visibility="collapsed")
+        with lm3:
+            ll_to = st.number_input("To position", min_value=1, max_value=n_lessons, step=1, key=f"e_ll_to_{sid}", label_visibility="collapsed")
+        with lm4:
+            st.markdown('<div style="padding-top:0.35rem;"></div>', unsafe_allow_html=True)
+            if st.button("Move", key=f"e_ll_move_{sid}"):
+                fi, ti_ = int(ll_from) - 1, int(ll_to) - 1
+                if fi != ti_:
+                    texts = [st.session_state[f"e_ll_text_{sid}_{i}"] for i in range(n_lessons)]
+                    tags  = [st.session_state[f"e_ll_tag_{sid}_{i}"]  for i in range(n_lessons)]
+                    txt_item = texts.pop(fi); tags_item = tags.pop(fi)
+                    texts.insert(ti_, txt_item); tags.insert(ti_, tags_item)
+                    for i in range(n_lessons):
+                        del st.session_state[f"e_ll_text_{sid}_{i}"]
+                        del st.session_state[f"e_ll_tag_{sid}_{i}"]
+                    for i in range(n_lessons):
+                        st.session_state[f"e_ll_text_{sid}_{i}"] = texts[i]
+                        st.session_state[f"e_ll_tag_{sid}_{i}"]  = tags[i]
+                    st.rerun()
+        st.markdown('<div style="font-size:0.72rem;color:#8a9ab0;margin:-0.4rem 0 0.3rem 0;">Move lesson [from] → [to position]</div>', unsafe_allow_html=True)
+
+    # Timeline events
+    st.markdown('<div style="font-size:0.85rem; font-weight:600; color:#1a3a5c; border-bottom:1px solid #ddd8cc; padding-bottom:0.25rem; margin:1rem 0 0.6rem 0;">Timeline Events</div>', unsafe_allow_html=True)
+    te_count_key = f"e_te_count_{sid}"
+    timeline_in = s.get("timeline_events", [])
+    if te_count_key not in st.session_state:
+        st.session_state[te_count_key] = max(len(timeline_in), 1)
+    n_te = st.session_state[te_count_key]
+    edited_timeline = []
+    for ti in range(n_te):
+        tc1, tc2 = st.columns([1, 3])
+        with tc1:
+            default_date = timeline_in[ti].get("date", "") if ti < len(timeline_in) else ""
+            te_date = st.text_input(f"Date {ti + 1}", value=default_date, placeholder="e.g. 2006-08", key=f"e_te_date_{sid}_{ti}", label_visibility="collapsed")
+        with tc2:
+            default_event = timeline_in[ti].get("event", "") if ti < len(timeline_in) else ""
+            te_event = st.text_input(f"Event {ti + 1}", value=default_event, placeholder="Event description…", key=f"e_te_event_{sid}_{ti}", label_visibility="collapsed")
+        edited_timeline.append({"date": te_date, "event": te_event})
+    if st.button("+ Add event", key=f"e_addte_{sid}"):
+        st.session_state[te_count_key] = n_te + 1
+        st.rerun()
 
     st.markdown('<div style="margin-top:1rem;"></div>', unsafe_allow_html=True)
     btn_col1, btn_col2, _ = st.columns([1, 1, 2])
     with btn_col1:
-        save_clicked = st.button("💾 Save changes", key=f"e_save_{sid}")
+        save_clicked = st.button("💾 Save", key=f"e_save_{sid}")
     with btn_col2:
         cancel_clicked = st.button("Cancel", key=f"e_cancel_{sid}")
 
@@ -108,19 +245,51 @@ def render_source_edit(s, all_tags):
         updated["year"] = int(year)
         updated["source_type"] = source_type
         updated["abstract"] = abstract
-        updated["tags"] = tags
-        updated["thematic_clusters"] = thematic_clusters
+        updated["key_arguments"] = [
+            st.session_state[f"e_arg_{sid}_{i}"].strip()
+            for i in range(st.session_state.get(f"e_args_count_{sid}", 0))
+            if st.session_state.get(f"e_arg_{sid}_{i}", "").strip()
+        ]
+        updated["tags"] = sorted(set(tags))
+        updated["thematic_clusters"] = list(dict.fromkeys(thematic_clusters))
         updated["actors"] = [a.strip() for a in actors_raw.split(",") if a.strip()]
         updated["bias_flag"] = bias_flag
         updated["analytical_notes"] = [ln.strip() for ln in notes_raw.splitlines() if ln.strip()]
-        updated["lessons_learned"] = [l for l in edited_lessons if l["text"].strip()]
+        updated["lessons_learned"] = [
+            {"text": st.session_state[f"e_ll_text_{sid}_{i}"], "tag": st.session_state[f"e_ll_tag_{sid}_{i}"]}
+            for i in range(len(s.get("lessons_learned", [])))
+            if st.session_state.get(f"e_ll_text_{sid}_{i}", "").strip()
+        ]
+        updated["timeline_events"] = [e for e in edited_timeline if e["event"].strip()]
         save_source(updated)
         st.session_state.editing_source_id = None
+        n_a = st.session_state.pop(f"e_args_count_{sid}", 0)
+        for i in range(n_a):
+            st.session_state.pop(f"e_arg_{sid}_{i}", None)
+        n_l = len(s.get("lessons_learned", []))
+        for i in range(n_l):
+            st.session_state.pop(f"e_ll_text_{sid}_{i}", None)
+            st.session_state.pop(f"e_ll_tag_{sid}_{i}", None)
+        st.session_state.pop(f"e_te_count_{sid}", None)
+        for _fk in ("tags", "clusters"):
+            st.session_state.pop(f"e_{_fk}_opts_{sid}", None)
+            st.session_state.pop(f"e_{_fk}_ms_{sid}", None)
         st.success("Saved.")
         st.rerun()
 
     if cancel_clicked:
         st.session_state.editing_source_id = None
+        n_a = st.session_state.pop(f"e_args_count_{sid}", 0)
+        for i in range(n_a):
+            st.session_state.pop(f"e_arg_{sid}_{i}", None)
+        n_l = len(s.get("lessons_learned", []))
+        for i in range(n_l):
+            st.session_state.pop(f"e_ll_text_{sid}_{i}", None)
+            st.session_state.pop(f"e_ll_tag_{sid}_{i}", None)
+        st.session_state.pop(f"e_te_count_{sid}", None)
+        for _fk in ("tags", "clusters"):
+            st.session_state.pop(f"e_{_fk}_opts_{sid}", None)
+            st.session_state.pop(f"e_{_fk}_ms_{sid}", None)
         st.rerun()
 
 
@@ -132,12 +301,22 @@ def render_source_detail(s):
     </div>
     """, unsafe_allow_html=True)
 
-    clusters_html = "".join([f'<span class="tag tag-cluster">{c}</span>' for c in s.get('thematic_clusters', [])])
-    st.markdown(f'<div style="margin-bottom:0.8rem;">{clusters_html}</div>', unsafe_allow_html=True)
+    clusters = s.get('thematic_clusters', [])
+    if clusters:
+        st.markdown('<div class="detail-section-title">Themes</div>', unsafe_allow_html=True)
+        clusters_html = "".join([f'<span class="tag tag-cluster">{c}</span>' for c in clusters])
+        st.markdown(f'<div style="margin-bottom:0.8rem;">{clusters_html}</div>', unsafe_allow_html=True)
 
     tags_html = "".join([f'<span class="tag">{t}</span>' for t in s.get('tags', [])])
     if tags_html:
+        st.markdown('<div class="detail-section-title">Tags</div>', unsafe_allow_html=True)
         st.markdown(f'<div style="margin-bottom:1rem;">{tags_html}</div>', unsafe_allow_html=True)
+
+    actors = s.get("actors", [])
+    if actors:
+        st.markdown('<div class="detail-section-title">Key Actors</div>', unsafe_allow_html=True)
+        actors_html = "".join([f'<span class="tag tag-actor">{a}</span>' for a in actors])
+        st.markdown(f'<div style="margin-bottom:1rem;">{actors_html}</div>', unsafe_allow_html=True)
 
     st.markdown('<div class="detail-section-title">Abstract</div>', unsafe_allow_html=True)
     st.markdown(f'<div class="detail-body">{s.get("abstract","")}</div>', unsafe_allow_html=True)
@@ -145,9 +324,6 @@ def render_source_detail(s):
     st.markdown('<div class="detail-section-title">Key Arguments</div>', unsafe_allow_html=True)
     for arg in s.get("key_arguments", []):
         st.markdown(f'<div class="detail-body" style="padding-left:1rem; border-left:2px solid #c8d4e0; margin-bottom:0.5rem;">— {arg}</div>', unsafe_allow_html=True)
-
-    st.markdown('<div class="detail-section-title">Relevance to UNIFIL LL Exercise</div>', unsafe_allow_html=True)
-    st.markdown(f'<div class="detail-body">{s.get("unifil_relevance","")}</div>', unsafe_allow_html=True)
 
     if s.get("bias_flag"):
         st.markdown('<div class="detail-section-title">Bias Assessment</div>', unsafe_allow_html=True)
@@ -183,12 +359,6 @@ def render_source_detail(s):
             </div>
             """, unsafe_allow_html=True)
 
-    actors = s.get("actors", [])
-    if actors:
-        st.markdown('<div class="detail-section-title">Key Actors</div>', unsafe_allow_html=True)
-        actors_html = "".join([f'<span class="tag tag-actor">{a}</span>' for a in actors])
-        st.markdown(f'<div>{actors_html}</div>', unsafe_allow_html=True)
-
     coverage = s.get("timeline_coverage", [])
     if isinstance(coverage, dict):
         cov_start, cov_end = coverage.get("start", ""), coverage.get("end", "")
@@ -213,7 +383,6 @@ def show():
     st.markdown("""
     <div class="library-header">
         <div>
-            <p class="library-subtitle">UN DPO · Policy & Best Practices Service</p>
             <h1 class="library-title">UNIFIL Research Library</h1>
         </div>
     </div>
@@ -233,13 +402,42 @@ def show():
     </div>
     """, unsafe_allow_html=True)
 
-    # ── Horizontal filter bar ─────────────────────────────────────────────────
+    # ── Detail view (full page) ──────────────────────────────────────────────
+    if st.session_state.selected_source_id:
+        selected = next((s for s in sources if s["id"] == st.session_state.selected_source_id), None)
+        if not selected:
+            st.session_state.selected_source_id = None
+            st.rerun()
+
+        is_editing = st.session_state.editing_source_id == selected["id"]
+
+        hc1, hc2, _ = st.columns([1, 1, 6])
+        with hc1:
+            if st.button("← Back", key="back_to_grid"):
+                st.session_state.selected_source_id = None
+                st.session_state.editing_source_id = None
+                st.rerun()
+        with hc2:
+            if not is_editing:
+                if st.button("✎ Edit", key="edit_detail"):
+                    st.session_state.editing_source_id = selected["id"]
+                    st.rerun()
+
+        st.markdown('<hr class="section-divider">', unsafe_allow_html=True)
+
+        if is_editing:
+            render_source_edit(selected, all_tags)
+        else:
+            render_source_detail(selected)
+
+        return  # skip card grid entirely
+
+    # ── Filter bar (only shown on grid view) ─────────────────────────────────
     year_min = min(all_years) if all_years else 1978
     year_max = max(all_years) if all_years else 2026
 
     with st.container():
-        st.markdown('<div style="background:#f4f1eb; border:1px solid #ddd8cc; border-radius:4px; padding:0.75rem 1rem 0.5rem 1rem; margin-bottom:0.5rem;">', unsafe_allow_html=True)
-        fc = st.columns([2.2, 1.4, 1.2, 1.2, 1.4, 2.0, 0.65])
+        fc = st.columns([2.2, 1.4, 1.2, 1.2, 1.4, 2.0, 0.95])
         with fc[0]:
             st.markdown('<div style="font-size:0.72rem; color:#6b7c8d; margin-bottom:0.2rem; font-weight:500;">SEARCH</div>', unsafe_allow_html=True)
             search = st.text_input("search", placeholder="Titles, authors, tags…", key="search", label_visibility="collapsed")
@@ -265,7 +463,6 @@ def show():
                     if k in st.session_state:
                         del st.session_state[k]
                 st.rerun()
-        st.markdown('</div>', unsafe_allow_html=True)
 
     filtered = filter_sources(
         sources,
@@ -289,84 +486,37 @@ def show():
     </div>
     """, unsafe_allow_html=True)
 
-    col_results, col_detail = st.columns([3.2, 2.4])
+    # ── Card grid ────────────────────────────────────────────────────────────
+    st.markdown(f'<div style="font-size:0.82rem; color:#6b7c8d; margin-bottom:0.6rem; letter-spacing:0.04em; text-transform:uppercase;">{len(filtered)} source{"s" if len(filtered)!=1 else ""} found</div>', unsafe_allow_html=True)
 
-    with col_results:
-        st.markdown(f'<div style="font-size:0.82rem; color:#6b7c8d; margin-bottom:0.6rem; letter-spacing:0.04em; text-transform:uppercase;">{len(filtered)} source{"s" if len(filtered)!=1 else ""} found</div>', unsafe_allow_html=True)
+    for i in range(0, len(filtered), 2):
+        left_s = filtered[i]
+        right_s = filtered[i + 1] if i + 1 < len(filtered) else None
 
-        st.markdown('<div class="source-grid-container">', unsafe_allow_html=True)
+        grid_cols = st.columns(2, gap="small")
 
-        for i in range(0, len(filtered), 2):
-            left_s = filtered[i]
-            right_s = filtered[i + 1] if i + 1 < len(filtered) else None
+        for col_idx, s in enumerate([left_s, right_s]):
+            if s is None:
+                continue
+            with grid_cols[col_idx]:
+                border_color = get_type_border_color(s.get("source_type", ""))
+                abstract_preview = s.get("abstract", "")[:110] + "…" if len(s.get("abstract", "")) > 110 else s.get("abstract", "")
+                clusters_html = "".join([
+                    f'<span style="display:inline-block; background:#1a3a5c; color:#e8e0d0; border-radius:2px; font-size:0.68rem; padding:0.1rem 0.4rem; margin:0.1rem;">{c}</span>'
+                    for c in s.get("thematic_clusters", [])[:2]
+                ])
 
-            grid_cols = st.columns(2, gap="small")
+                st.markdown(f"""
+                <div class="source-card" style="border-left-color:{border_color}; height:100%; min-height:160px;">
+                    <div class="source-card-title" style="font-size:0.92rem;">{s['title']}</div>
+                    <div class="source-card-meta">{s['author']} · {s['year']}</div>
+                    <div class="source-card-meta" style="margin-bottom:0.4rem;">{s.get('source_type','')}</div>
+                    <div class="source-card-abstract">{abstract_preview}</div>
+                    <div style="margin-top:0.5rem;">{clusters_html}</div>
+                </div>
+                """, unsafe_allow_html=True)
 
-            for col_idx, s in enumerate([left_s, right_s]):
-                if s is None:
-                    continue
-                with grid_cols[col_idx]:
-                    is_selected = st.session_state.selected_source_id == s["id"]
-                    border_color = "#c8952a" if is_selected else get_type_border_color(s.get("source_type", ""))
-                    bg_color = "#fdf7ee" if is_selected else "white"
-
-                    abstract_preview = s.get("abstract", "")[:110] + "…" if len(s.get("abstract", "")) > 110 else s.get("abstract", "")
-                    clusters_html = "".join([
-                        f'<span style="display:inline-block; background:#1a3a5c; color:#e8e0d0; border-radius:2px; font-size:0.68rem; padding:0.1rem 0.4rem; margin:0.1rem;">{c}</span>'
-                        for c in s.get("thematic_clusters", [])[:2]
-                    ])
-
-                    st.markdown(f"""
-                    <div class="source-card" style="border-left-color:{border_color}; background:{bg_color}; height:100%; min-height:160px;">
-                        <div class="source-card-title" style="font-size:0.92rem;">{s['title']}</div>
-                        <div class="source-card-meta">{s['author']} · {s['year']}</div>
-                        <div class="source-card-meta" style="margin-bottom:0.4rem;">{s.get('source_type','')}</div>
-                        <div class="source-card-abstract">{abstract_preview}</div>
-                        <div style="margin-top:0.5rem;">{clusters_html}</div>
-                    </div>
-                    """, unsafe_allow_html=True)
-
-                    if st.button("Open →", key=f"btn_{s['id']}"):
-                        st.session_state.selected_source_id = s["id"]
-                        st.session_state.editing_source_id = None
-                        st.rerun()
-
-        st.markdown('</div>', unsafe_allow_html=True)
-
-    with col_detail:
-        st.markdown('<div class="detail-sticky-wrapper">', unsafe_allow_html=True)
-
-        if st.session_state.selected_source_id:
-            selected = next((s for s in sources if s["id"] == st.session_state.selected_source_id), None)
-            if selected:
-                is_editing = st.session_state.editing_source_id == selected["id"]
-
-                # Header row: Close | Edit (or just Close in edit mode)
-                hc1, hc2 = st.columns([1, 1])
-                with hc1:
-                    if st.button("✕ Close", key="close_detail"):
-                        st.session_state.selected_source_id = None
-                        st.session_state.editing_source_id = None
-                        st.rerun()
-                with hc2:
-                    if not is_editing:
-                        if st.button("✎ Edit", key="edit_detail"):
-                            st.session_state.editing_source_id = selected["id"]
-                            st.rerun()
-
-                st.markdown('<hr class="section-divider">', unsafe_allow_html=True)
-
-                if is_editing:
-                    render_source_edit(selected, all_tags)
-                else:
-                    render_source_detail(selected)
-        else:
-            st.markdown("""
-            <div style="padding: 4rem 2rem; text-align:center; color:#8a9ab0;">
-                <div style="font-size:2.5rem; margin-bottom:1rem; opacity:0.4;">📄</div>
-                <div style="font-family:'Playfair Display',serif; font-size:1.1rem; color:#5a6a7a; margin-bottom:0.5rem;">Select a source to view its full record</div>
-                <div style="font-size:0.85rem;">Use the filters on the left to narrow your search,<br>then click <em>Open →</em> on any source.</div>
-            </div>
-            """, unsafe_allow_html=True)
-
-        st.markdown('</div>', unsafe_allow_html=True)
+                if st.button("Open →", key=f"btn_{s['id']}"):
+                    st.session_state.selected_source_id = s["id"]
+                    st.session_state.editing_source_id = None
+                    st.rerun()

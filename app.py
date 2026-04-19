@@ -252,30 +252,11 @@ html, body, [class*="css"] {
     padding-right: 0.3rem;
 }
 
-/* 2-column card grid */
+/* Card grid */
 .source-grid-container {
-    max-height: 72vh;
+    max-height: 80vh;
     overflow-y: auto;
     padding-right: 0.3rem;
-}
-
-/* Sticky detail panel */
-/* Full-height white background on the detail column.
-   :has() targets the stColumn that contains our wrapper, so only
-   this column gets the background — not the card-grid column. */
-[data-testid="stHorizontalBlock"]:has(.detail-sticky-wrapper) > [data-testid="stColumn"]:last-child {
-    background: #ffffff;
-    border-left: 2px solid #dde3ea;
-    min-height: 100vh;
-    padding: 0.5rem 1.2rem 2rem 1.4rem;
-}
-
-.detail-sticky-wrapper {
-    position: sticky;
-    top: 60px;
-    max-height: calc(100vh - 80px);
-    overflow-y: auto;
-    padding-right: 0.2rem;
 }
 
 /* Streamlit overrides */
@@ -320,12 +301,22 @@ with st.sidebar:
     
     page = st.radio(
         "Navigate",
-        ["Source Library", "Thematic Navigator", "Actors Index", "Timeline", "Lessons Log", "Mind Map", "Gaps Register"],
+        [
+            "Source Library",
+            "Thematic Navigator",
+            "Actors Index",
+            "Actor Profiles",
+            "Mind Map",
+            "Sources Timeline",
+            "Event Timeline",
+            "Lessons Log",
+            "Gaps Register",
+            "UNIFIL Mandates",
+        ],
         label_visibility="collapsed"
     )
     
     st.markdown('<hr style="border-color:rgba(232,224,208,0.2); margin:1rem 0;">', unsafe_allow_html=True)
-    st.markdown('<div style="font-size:0.72rem; opacity:0.5; text-align:center; letter-spacing:0.05em;">UN DPO · PBPS · KMG<br>UNIFIL Lessons Learned 2026</div>', unsafe_allow_html=True)
 
 # ── Page routing ──────────────────────────────────────────────────────────────
 if page == "Source Library":
@@ -337,15 +328,24 @@ elif page == "Thematic Navigator":
 elif page == "Actors Index":
     from views.actors import show
     show()
-elif page == "Timeline":
-    from views.timeline import show
-    show()
-elif page == "Lessons Log":
-    from views.lessons import show
+elif page == "Actor Profiles":
+    from views.actors_profiles import show
     show()
 elif page == "Mind Map":
     from views.mindmap import show
     show()
+elif page == "Sources Timeline":
+    from views.timeline import show
+    show()
+elif page == "Event Timeline":
+    from views.timeline_events import show
+    show()
+elif page == "Lessons Log":
+    from views.lessons import show
+    show()
 elif page == "Gaps Register":
     from views.gaps import show
+    show()
+elif page == "UNIFIL Mandates":
+    from views.mandates import show
     show()
