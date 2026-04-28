@@ -41,6 +41,11 @@ def save_gaps(gaps):
     with open(path, "w", encoding="utf-8") as f:
         json.dump(gaps, f, indent=2, ensure_ascii=False)
 
+def save_sources(sources):
+    path = DATA_DIR / "sources.json"
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(sources, f, indent=2, ensure_ascii=False)
+
 def get_all_tags(sources):
     tags = set()
     for s in sources:

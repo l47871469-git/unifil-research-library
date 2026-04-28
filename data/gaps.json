@@ -6,7 +6,7 @@
     "thematic_clusters": [
       "TCC dynamics & command"
     ],
-    "status": "Open",
+    "status": "Being addressed",
     "source": "Manual",
     "added_by": "Leo",
     "date_added": "2026-04-01"
@@ -64,19 +64,6 @@
     "date_added": "2026-04-16"
   },
   {
-    "id": "gap_8ac3f737",
-    "title": "Freedom of Movement of UNIFIL ",
-    "description": "Many sources mention lack of freedom of movement of the mission. Would be interesting to hear UN perspective on how this was handled and how much it affected mandate implementaiton ",
-    "thematic_clusters": [
-      "Host-state relations & LAF",
-      "Relations with non-state armed actors"
-    ],
-    "status": "Open",
-    "source": "Manual",
-    "added_by": "Leo",
-    "date_added": "2026-04-16"
-  },
-  {
     "id": "gap_04e3a1d2",
     "title": "Quality of Peacekeepers",
     "description": "Assaf Orion (2016) points to diffence in quality of troops of UNIFIL I and UNIFIL II. \n\nWorth exploring more ",
@@ -87,5 +74,29 @@
     "source": "Manual",
     "added_by": "Leo",
     "date_added": "2026-04-17"
+  },
+  {
+    "id": "gap_be8c263e",
+    "title": "Force Mobile Reserve",
+    "description": "Described as a key innovation of UNIFIL for force protection ",
+    "thematic_clusters": [
+      "Force protection & safety"
+    ],
+    "status": "Open",
+    "source": "Manual",
+    "added_by": "Leo",
+    "date_added": "2026-04-28"
+  },
+  {
+    "id": "gap_2a618c77",
+    "title": "ISR",
+    "description": "Some sources indicate UNIFIL as a pioneer in usage of surveillance ground radar and night goggles, starting from the inception of the mission and anticipating ISR debates by decades. \n",
+    "thematic_clusters": [
+      "Monitoring, reporting & technology"
+    ],
+    "status": "Open",
+    "source": "Manual",
+    "added_by": "Leo",
+    "date_added": "2026-04-28"
   }
 ]

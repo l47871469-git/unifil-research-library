@@ -15,6 +15,26 @@
     "description": "UN body established in 1949 to monitor armistice lines in the Middle East. Parent organization of the UN Observer Group Lebanon."
   },
   {
+    "name": "Tripartite Liaison Mechanism",
+    "category": "UN",
+    "description": "Three-way military coordination body linking UNIFIL, the IDF, and the Lebanese Armed Forces (LAF), operating through real-time communications and monthly meetings at the UN base in Naqoura. Focused on Blue Line marking, infrastructure problem-solving, and de-escalation; credited as a critical non-kinetic tool for preventing conflict flare-ups, transmitting messages between parties, and maintaining calm on the ground."
+  },
+  {
+    "name": "Lebanon Independent Border Assessment Team (LIBAT)",
+    "category": "UN",
+    "description": "Mission dispatched by the UN Secretary-General in June 2007 to assess Lebanon's border security. Found it insufficient to prevent arms smuggling; a 2008 follow-up mission registered no significant progress, confirming the weapons embargo had not been effectively enforced."
+  },
+  {
+    "name": "Maritime Task Force UNIFIL (MTF UNIFIL)",
+    "category": "UN",
+    "description": "UNIFIL naval component tasked with monitoring Lebanon's territorial waters, securing the coastline, and preventing arms smuggling. Operates at the request of the Lebanese government; boarding of suspicious vessels, confiscation, and arrests are restricted to the Lebanese navy and customs, significantly limiting its interdiction capacity."
+  },
+  {
+    "name": "Strategic Military Cell (SMC)",
+    "category": "UN",
+    "description": "Ad hoc cell established within the UN Department of Peacekeeping Operations in New York in 2006 to support UNIFIL II. Tasked with providing DPKO with a pool of military experts, strengthening links between New York and the field, and engaging key troop-contributing countries in strategic military planning."
+  },
+  {
     "name": "Brian Urquhart",
     "category": "UN",
     "description": "Head of UN peacekeeping operations during the early UNIFIL period. Key figure in managing UN peacekeeping policy in Lebanon."
@@ -23,6 +43,36 @@
     "name": "Emmanuel Erskine",
     "category": "UN",
     "description": "Commander of UNIFIL during the Israeli occupation period post-1982. Oversaw UNIFIL's shift to humanitarian and relief functions."
+  },
+  {
+    "name": "Alain Pellegrini",
+    "category": "UN",
+    "description": "French General; UNIFIL Commander 2004–February 2007. Continued in post when the mandate was enhanced and the mission renamed UNIFIL II in 2006."
+  },
+  {
+    "name": "Claudio Graziano",
+    "category": "UN",
+    "description": "Italian General; UNIFIL Commander February 2007–January 2010. Based at UNIFIL HQ in Naqoura."
+  },
+  {
+    "name": "Alberto Asarta Cuevas",
+    "category": "UN",
+    "description": "Spanish General; UNIFIL Commander 2010–2012."
+  },
+  {
+    "name": "Paolo Serra",
+    "category": "UN",
+    "description": "Italian General; UNIFIL Commander from 2012 (as of source date). Also referenced as Commander of UNIFIL II."
+  },
+  {
+    "name": "Giovanni Ridinò",
+    "category": "UN",
+    "description": "Italian General appointed head of the Strategic Military Cell (SMC) within DPKO New York in 2006, supporting the enhanced UNIFIL II mandate."
+  },
+  {
+    "name": "Giuseppe Guglietta",
+    "category": "UN",
+    "description": "Italian Captain appointed Deputy Director of the Strategic Military Cell (SMC) in 2007. Tasked with supporting DPKO with military experts, linking New York to the field, and engaging key TCCs in strategic planning."
   },
   {
     "name": "Javier Pérez de Cuéllar",
@@ -38,6 +88,21 @@
     "name": "William Higgins",
     "category": "UN",
     "description": "U.S. Marine Lieutenant Colonel serving as head of the UN Observer Group Lebanon. Kidnapped in 1988 and killed by the Believer's Resistance, an Amal splinter group with Hezbollah ties."
+  },
+  {
+    "name": "Franco Angioni",
+    "category": "UN",
+    "description": "Italian General; Commander of ITALCON, the Italian contingent within the Multinational Force (MNF) in Lebanon, 1982–1984. Oversaw the evacuation of Palestinian fighters and Syrian soldiers from besieged Beirut."
+  },
+  {
+    "name": "Guglielmo Luigi Miglietta",
+    "category": "UN",
+    "description": "Italian General; former Commander of the Italian UNIFIL base in Chamaa. Exact dates of service not specified in source."
+  },
+  {
+    "name": "Vasco Angelotti",
+    "category": "UN",
+    "description": "Italian General; former Commander of the Italian UNIFIL base in Chamaa. Exact dates of service not specified in source."
   },
   {
     "name": "PLO (Palestine Liberation Organization)",
@@ -95,6 +160,11 @@
     "description": "Joint forces of the PLO and the Lebanese National Movement, led by Druze leader Kamal Junblat. Held key positions in the south, particularly in Tyre and the Rashidiyya camp."
   },
   {
+    "name": "ITALCON",
+    "category": "Armed groups",
+    "description": "Italian military contingent deployed as part of the Multinational Force (MNF) in Lebanon, 1982–1984, comprising approximately 500 soldiers. Tasked with the evacuation of 12,000 Palestinian fighters and 3,000 Syrian soldiers from besieged Beirut; later reconstituted as part of MNF II following the Sabra and Shatila massacres."
+  },
+  {
     "name": "Menachem Begin",
     "category": "Israeli actors",
     "description": "Israeli Prime Minister at the time of the 1982 invasion of Lebanon (Operation Peace for Galilee). Key decision-maker alongside Defense Minister Ariel Sharon."
@@ -142,7 +212,17 @@
   {
     "name": "France",
     "category": "Member states",
-    "description": "Contributor to both UNIFIL and the Multinational Force (MNF) in 1982. Attempted to push a UN Security Council resolution for a stronger, unified UN force covering both southern Lebanon and Beirut, which was vetoed by the Soviet Union."
+    "description": "Contributor to both UNIFIL and the Multinational Force (MNF) in 1982, and a leading European TCC under the 1701 mandate. Attempted to push a UN Security Council resolution for a stronger, unified UN force covering both southern Lebanon and Beirut, which was vetoed by the Soviet Union."
+  },
+  {
+    "name": "Italy",
+    "category": "Member states",
+    "description": "Major TCC contributor to both the MNF (1982–1984) and UNIFIL II under the 1701 mandate, providing multiple Force Commanders including Graziano and Serra. Deployed ITALCON for the evacuation of Palestinian fighters from Beirut in 1982 and consistently one of the largest European contributors to UNIFIL."
+  },
+  {
+    "name": "Spain",
+    "category": "Member states",
+    "description": "European TCC contributor to UNIFIL under the 1701 mandate. Provided Force Commander General Alberto Asarta Cuevas (2010–2012); among the leading European troop contributors alongside France and Italy."
   },
   {
     "name": "Egypt",
@@ -155,9 +235,14 @@
     "description": "Established as one of the two main regional political players in Lebanon by the 1989 Taif Accord, alongside Syria."
   },
   {
+    "name": "European Union (EU)",
+    "category": "Member states",
+    "description": "Backbone of UNIFIL's TCC framework under the 1701 mandate, with two-thirds of international troops in southern Lebanon being European (Italy, France, Spain) as of 2009. Lebanon's main trading partner and largest donor as of 2009."
+  },
+  {
     "name": "Multinational Force (MNF)",
     "category": "Member states",
-    "description": "U.S.-led force comprising American, French, and Italian troops established in August 1982 at Lebanon's request, without UNSC authorization. Mandated to supervise PLO withdrawal and restore Lebanese sovereignty in Beirut; doubled in size after the Sabra and Shatila massacres to serve as an interposition force."
+    "description": "U.S.-led force comprising American, French, and Italian troops established in August 1982 at Lebanon's request, without UNSC authorization. Mandated to supervise PLO withdrawal and restore Lebanese sovereignty in Beirut; doubled in size after the Sabra and Shatila massacres to serve as an interposition force (MNF II)."
   },
   {
     "name": "Arab Deterrent Force (ADF)",
@@ -166,7 +251,7 @@
   },
   {
     "name": "Arab League",
-    "category": "Member states",
+    "category": "Other",
     "description": "Pan-Arab intergovernmental body that established the Arab Deterrent Force in November 1978. Sought to help Lebanon restore authority over its territory."
   },
   {
@@ -261,7 +346,7 @@
   },
   {
     "name": "Yasser Arafat",
-    "category": "Other",
+    "category": "Palestine",
     "description": "Chairman of the PLO and overall interlocutor for all Palestinian factions and their Lebanese allies prior to UNIFIL II. Key figure in Palestinian armed operations launched from southern Lebanon."
   },
   {

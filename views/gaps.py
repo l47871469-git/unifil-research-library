@@ -28,7 +28,7 @@ def show():
 
     st.markdown("""
     <div style="font-size:0.9rem; color:#5a6a7a; margin-bottom:1.5rem; max-width:640px;">
-        This register tracks known gaps in the research corpus — both those identified manually 
+        This register tracks known gaps in the research corpus — both those identified manually
         and those inferred automatically from thematic cluster coverage. Use it to guide future source collection.
     </div>
     """, unsafe_allow_html=True)
@@ -55,43 +55,97 @@ def show():
     </div>
     """, unsafe_allow_html=True)
 
+    st.markdown("""
+    <style>
+    [data-testid="stHorizontalBlock"] { gap: 0rem !important; }
+    </style>
+    """, unsafe_allow_html=True)
+
     col_gaps, col_add = st.columns([2, 1])
 
     with col_gaps:
-        # Manual gaps
         st.markdown('<div style="font-family:\'Playfair Display\',serif; font-size:1.1rem; font-weight:600; color:#1a3a5c; margin-bottom:0.8rem;">Identified Gaps</div>', unsafe_allow_html=True)
 
         for g in manual_gaps:
+            gap_id = g["id"]
+            edit_key = f"gap_editing_{gap_id}"
             status = g.get("status", "Open")
-            status_color = STATUS_COLORS.get(status, "#888")
-            clusters_html = "".join([f'<span class="tag tag-cluster" style="font-size:0.7rem;">{c}</span>' for c in g.get("thematic_clusters", [])])
 
-            st.markdown(f"""
-            <div class="gap-card">
-                <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.4rem;">
-                    <div class="gap-title">{g['title']}</div>
-                    <span style="font-size:0.75rem; font-weight:600; color:{status_color}; white-space:nowrap; margin-left:1rem;">{status}</span>
+            if st.session_state.get(edit_key):
+                with st.form(f"gap_edit_form_{gap_id}"):
+                    st.markdown(f'<div style="font-size:0.78rem; font-weight:600; color:#1a3a5c; margin-bottom:0.5rem; text-transform:uppercase; letter-spacing:0.06em;">Editing gap</div>', unsafe_allow_html=True)
+                    new_title = st.text_input("Gap title", value=g['title'], key=f"gap_edit_title_{gap_id}")
+                    new_desc = st.text_area("Description", value=g.get('description', ''), height=100, key=f"gap_edit_desc_{gap_id}")
+                    new_clusters = st.multiselect(
+                        "Related thematic clusters", THEMATIC_CLUSTERS,
+                        default=g.get('thematic_clusters', []),
+                        key=f"gap_edit_clusters_{gap_id}"
+                    )
+                    new_status = st.selectbox(
+                        "Status", ["Open", "Being addressed", "Filled"],
+                        index=["Open", "Being addressed", "Filled"].index(status),
+                        key=f"gap_edit_status_{gap_id}"
+                    )
+                    col_save, col_cancel, _ = st.columns([1, 1, 3])
+                    with col_save:
+                        save_clicked = st.form_submit_button("Save")
+                    with col_cancel:
+                        cancel_clicked = st.form_submit_button("Cancel")
+
+                if save_clicked:
+                    for gap in manual_gaps:
+                        if gap["id"] == gap_id:
+                            gap["title"] = new_title
+                            gap["description"] = new_desc
+                            gap["thematic_clusters"] = new_clusters
+                            gap["status"] = new_status
+                            break
+                    save_gaps(manual_gaps)
+                    st.session_state[edit_key] = False
+                    st.rerun()
+                if cancel_clicked:
+                    st.session_state[edit_key] = False
+                    st.rerun()
+            else:
+                status_color = STATUS_COLORS.get(status, "#888")
+                clusters_html = "".join([f'<span class="tag tag-cluster" style="font-size:0.7rem;">{c}</span>' for c in g.get("thematic_clusters", [])])
+
+                st.markdown(f"""
+                <div class="gap-card">
+                    <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.4rem;">
+                        <div class="gap-title">{g['title']}</div>
+                        <span style="font-size:0.75rem; font-weight:600; color:{status_color}; white-space:nowrap; margin-left:1rem;">{status}</span>
+                    </div>
+                    <div class="gap-desc">{g.get('description','')}</div>
+                    <div style="margin-top:0.6rem;">{clusters_html}</div>
+                    <div style="font-size:0.72rem; color:#aaa; margin-top:0.4rem;">Added by {g.get('added_by','—')} · {g.get('date_added','')}</div>
                 </div>
-                <div class="gap-desc">{g.get('description','')}</div>
-                <div style="margin-top:0.6rem;">{clusters_html}</div>
-                <div style="font-size:0.72rem; color:#aaa; margin-top:0.4rem;">Added by {g.get('added_by','—')} · {g.get('date_added','')}</div>
-            </div>
-            """, unsafe_allow_html=True)
+                """, unsafe_allow_html=True)
 
-            # Status update
-            new_status = st.selectbox(
-                f"Update status",
-                ["Open", "Being addressed", "Filled"],
-                index=["Open", "Being addressed", "Filled"].index(status),
-                key=f"status_{g['id']}",
-                label_visibility="collapsed"
-            )
-            if new_status != status:
-                for gap in manual_gaps:
-                    if gap["id"] == g["id"]:
-                        gap["status"] = new_status
-                save_gaps(manual_gaps)
-                st.rerun()
+                col_status, col_edit, col_del = st.columns([5.5, 0.8, 0.7])
+                with col_status:
+                    new_status = st.selectbox(
+                        "Update status",
+                        ["Open", "Being addressed", "Filled"],
+                        index=["Open", "Being addressed", "Filled"].index(status),
+                        key=f"status_{gap_id}",
+                        label_visibility="collapsed"
+                    )
+                    if new_status != status:
+                        for gap in manual_gaps:
+                            if gap["id"] == gap_id:
+                                gap["status"] = new_status
+                        save_gaps(manual_gaps)
+                        st.rerun()
+                with col_edit:
+                    if st.button("Edit", key=f"gap_edit_btn_{gap_id}"):
+                        st.session_state[edit_key] = True
+                        st.rerun()
+                with col_del:
+                    if st.button("🗑", key=f"gap_del_btn_{gap_id}"):
+                        manual_gaps = [g for g in manual_gaps if g["id"] != gap_id]
+                        save_gaps(manual_gaps)
+                        st.rerun()
 
         # Auto-inferred gaps
         if auto_gaps:
@@ -113,7 +167,7 @@ def show():
 
     with col_add:
         st.markdown("""
-        <div style="font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:600; 
+        <div style="font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:600;
              color:#1a3a5c; margin-bottom:0.8rem;">Add a Gap Manually</div>
         """, unsafe_allow_html=True)
 

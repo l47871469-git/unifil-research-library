@@ -6,6 +6,8 @@ DATA_PATH = Path(__file__).parent.parent / "data" / "actors_profiles.json"
 
 ALPHABET = list("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
 
+BASE_CATEGORIES = ["Palestine", "UN", "Israel", "Lebanon", "Non-state armed actors", "Other"]
+
 
 def first_sentence(text):
     if not text:
@@ -20,13 +22,7 @@ def first_sentence(text):
 def show():
     actors = json.loads(DATA_PATH.read_text(encoding="utf-8"))
     actors_sorted = sorted(actors, key=lambda x: x["name"].upper())
-
-    # Group by first letter
-    by_letter: dict[str, list] = {}
-    for a in actors_sorted:
-        letter = a["name"][0].upper()
-        by_letter.setdefault(letter, []).append(a)
-    letters_with_actors = set(by_letter.keys())
+    all_categories = sorted(set(BASE_CATEGORIES) | set(a.get("category", "") for a in actors if a.get("category")))
 
     # ── Page-scoped CSS ───────────────────────────────────────────────────────
     st.markdown("""
@@ -166,13 +162,32 @@ def show():
     </div>
     """, unsafe_allow_html=True)
 
-    # ── Search ────────────────────────────────────────────────────────────────
-    search = st.text_input(
-        "Search",
-        placeholder="Search by name or description…",
-        key="ap3_search",
-        label_visibility="collapsed",
-    )
+    # ── Search + category filter ──────────────────────────────────────────────
+    col_search, col_cat = st.columns([2, 1])
+    with col_search:
+        search = st.text_input(
+            "Search",
+            placeholder="Search by name or description…",
+            key="ap3_search",
+            label_visibility="collapsed",
+        )
+    with col_cat:
+        cat_filter = st.multiselect(
+            "Category",
+            all_categories,
+            key="ap3_cat",
+            label_visibility="collapsed",
+            placeholder="Filter by category…",
+        )
+
+    # Apply category filter first, then build A-Z grouping from result
+    actors_base = [a for a in actors_sorted if a.get("category") in cat_filter] if cat_filter else actors_sorted
+
+    by_letter: dict[str, list] = {}
+    for a in actors_base:
+        letter = a["name"][0].upper()
+        by_letter.setdefault(letter, []).append(a)
+    letters_with_actors = set(by_letter.keys())
 
     st.markdown('<div style="margin-top:0.5rem;"></div>', unsafe_allow_html=True)
 
@@ -197,7 +212,7 @@ def show():
         if is_searching:
             q = search.strip().lower()
             results = [
-                a for a in actors_sorted
+                a for a in actors_base
                 if q in a["name"].lower() or q in a.get("description", "").lower()
             ]
             count = len(results)
@@ -208,18 +223,26 @@ def show():
                 unsafe_allow_html=True,
             )
             if results:
-                _render_grid(results)
+                _render_grid(results, all_categories)
             else:
                 st.markdown(
                     '<div style="padding:2rem;text-align:center;color:#8a9ab0;">No actors found.</div>',
                     unsafe_allow_html=True,
                 )
         else:
+            count_label = f"{len(actors_base)} actor{'s' if len(actors_base) != 1 else ''}"
+            if cat_filter:
+                count_label += f" · {', '.join(cat_filter)}"
             st.markdown(
                 f'<div style="font-size:0.82rem;color:#6b7c8d;margin-bottom:0.5rem;'
-                f'letter-spacing:0.04em;text-transform:uppercase;">{len(actors)} actors</div>',
+                f'letter-spacing:0.04em;text-transform:uppercase;">{count_label}</div>',
                 unsafe_allow_html=True,
             )
+            if not actors_base:
+                st.markdown(
+                    '<div style="padding:2rem;text-align:center;color:#8a9ab0;">No actors in this category.</div>',
+                    unsafe_allow_html=True,
+                )
             for letter in ALPHABET:
                 if letter not in by_letter:
                     continue
@@ -227,28 +250,66 @@ def show():
                     f'<div id="ap-{letter}" class="ap-letter">{letter}</div>',
                     unsafe_allow_html=True,
                 )
-                _render_grid(by_letter[letter])
+                _render_grid(by_letter[letter], all_categories)
 
 
-def _render_grid(actor_list: list):
+def save_actors(actors):
+    DATA_PATH.write_text(json.dumps(actors, indent=2, ensure_ascii=False), encoding="utf-8")
+
+
+def _render_grid(actor_list: list, all_categories: list):
     """Render actors in a 2-column expander grid."""
     for i in range(0, len(actor_list), 2):
         pair = actor_list[i: i + 2]
         cols = st.columns(2, gap="small")
         for ci, actor in enumerate(pair):
             with cols[ci]:
-                _render_card(actor)
+                _render_card(actor, all_categories)
 
 
-def _render_card(actor: dict):
-    """Single actor card as a styled expander (no button required)."""
+def _render_card(actor: dict, all_categories: list):
+    """Single actor card as a styled expander with inline edit."""
     name = actor["name"]
     cat = actor.get("category", "")
     full = actor.get("description", "")
+    edit_key = f"ap_editing_{name}"
 
     with st.expander(name):
-        st.markdown(
-            f'<div class="ap-cat-label">{cat}</div>'
-            f'<div class="ap-full-desc">{full}</div>',
-            unsafe_allow_html=True,
-        )
+        if st.session_state.get(edit_key):
+            cat_options = sorted(set(all_categories + ([cat] if cat and cat not in all_categories else [])))
+            with st.form(f"ap_edit_form_{name}"):
+                new_desc = st.text_area("Description", value=full, height=130, key=f"ap_desc_{name}")
+                new_cat = st.selectbox(
+                    "Category",
+                    cat_options,
+                    index=cat_options.index(cat) if cat in cat_options else 0,
+                    key=f"ap_cat_{name}",
+                )
+                col_save, col_cancel, _ = st.columns([1, 1, 3])
+                with col_save:
+                    save_clicked = st.form_submit_button("Save")
+                with col_cancel:
+                    cancel_clicked = st.form_submit_button("Cancel")
+
+            if save_clicked:
+                actors = json.loads(DATA_PATH.read_text(encoding="utf-8"))
+                for a in actors:
+                    if a["name"] == name:
+                        a["description"] = new_desc
+                        a["category"] = new_cat
+                        break
+                save_actors(actors)
+                st.session_state[edit_key] = False
+                st.rerun()
+            if cancel_clicked:
+                st.session_state[edit_key] = False
+                st.rerun()
+        else:
+            st.markdown(
+                f'<div class="ap-cat-label">{cat}</div>'
+                f'<div class="ap-full-desc">{full}</div>',
+                unsafe_allow_html=True,
+            )
+            if st.button("Edit", key=f"ap_edit_btn_{name}"):
+                st.session_state[edit_key] = True
+                st.rerun()

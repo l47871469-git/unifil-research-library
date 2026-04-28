@@ -2,12 +2,12 @@ import streamlit as st
 import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent))
-from utils.data_utils import load_sources, THEMATIC_CLUSTERS
+from utils.data_utils import load_sources, save_sources, THEMATIC_CLUSTERS
 
 def get_all_lessons(sources, clusters=None, tag_filter=None, search=None):
     lessons = []
     for s in sources:
-        for l in s.get("lessons_learned", []):
+        for idx, l in enumerate(s.get("lessons_learned", [])):
             text = l.get("text", "")
             tag = l.get("tag", "")
             source_clusters = s.get("thematic_clusters", [])
@@ -22,6 +22,7 @@ def get_all_lessons(sources, clusters=None, tag_filter=None, search=None):
             lessons.append({
                 "text": text,
                 "tag": tag,
+                "lesson_idx": idx,
                 "source_id": s.get("id", ""),
                 "source_title": s.get("title", ""),
                 "source_author": s.get("author", ""),
@@ -116,7 +117,6 @@ def show():
     )
 
     if view_mode == "By theme":
-        # Group lessons by thematic cluster
         cluster_lessons = {c: [] for c in THEMATIC_CLUSTERS}
         untagged = []
         for l in filtered:
@@ -141,27 +141,30 @@ def show():
             """, unsafe_allow_html=True)
 
             for l in lessons:
-                render_lesson_card(l)
+                render_lesson_card(l, sources)
 
         if untagged:
             st.markdown('<div style="font-family:\'Playfair Display\',serif; font-size:1rem; font-weight:600; color:#8a9ab0; margin:1.5rem 0 0.8rem 0;">Other</div>', unsafe_allow_html=True)
             for l in untagged:
-                render_lesson_card(l)
+                render_lesson_card(l, sources)
 
     else:
-        # Flat list
         if not filtered:
             st.markdown('<div style="font-size:0.9rem; color:#8a9ab0; padding:2rem 0;">No lessons match the current filters.</div>', unsafe_allow_html=True)
         for l in filtered:
-            render_lesson_card(l)
+            render_lesson_card(l, sources)
 
 
-def render_lesson_card(l):
+def render_lesson_card(l, sources):
     tag = l.get("tag", "")
     is_sd = tag == "SOURCE-DERIVED"
     tag_class = "tag-lesson-sd" if is_sd else "tag-lesson-ai"
     border_color = "#9ac99a" if is_sd else "#c99a8a"
     bg_color = "#f8fdf8" if is_sd else "#fdf8f6"
+    source_id = l.get("source_id", "")
+    lesson_idx = l.get("lesson_idx", 0)
+    card_key = f"{source_id}_{lesson_idx}"
+    edit_key = f"ll_editing_{card_key}"
 
     clusters_html = "".join([
         f'<span class="tag tag-cluster" style="font-size:0.68rem;">{c}</span>'
@@ -170,7 +173,7 @@ def render_lesson_card(l):
 
     st.markdown(f"""
     <div style="background:{bg_color}; border:1px solid #e0dbd2; border-left:3px solid {border_color};
-         border-radius:3px; padding:0.9rem 1.1rem; margin-bottom:0.6rem;">
+         border-radius:3px; padding:0.9rem 1.1rem; margin-bottom:0.3rem;">
         <div style="margin-bottom:0.5rem;">
             <span class="tag {tag_class}">{tag}</span>
         </div>
@@ -185,3 +188,47 @@ def render_lesson_card(l):
         </div>
     </div>
     """, unsafe_allow_html=True)
+
+    if st.session_state.get(edit_key):
+        with st.form(f"ll_edit_form_{card_key}"):
+            new_text = st.text_area("Lesson text", value=l['text'], height=100, key=f"ll_edit_text_{card_key}")
+            new_tag = st.selectbox(
+                "Type",
+                ["SOURCE-DERIVED", "ANALYTICAL INFERENCE"],
+                index=0 if tag == "SOURCE-DERIVED" else 1,
+                key=f"ll_edit_tag_{card_key}"
+            )
+            col_save, col_cancel, _ = st.columns([1, 1, 4])
+            with col_save:
+                save_clicked = st.form_submit_button("Save")
+            with col_cancel:
+                cancel_clicked = st.form_submit_button("Cancel")
+
+        if save_clicked:
+            for s in sources:
+                if s.get("id") == source_id:
+                    s["lessons_learned"][lesson_idx]["text"] = new_text
+                    s["lessons_learned"][lesson_idx]["tag"] = new_tag
+                    break
+            save_sources(sources)
+            st.session_state[edit_key] = False
+            st.rerun()
+        if cancel_clicked:
+            st.session_state[edit_key] = False
+            st.rerun()
+    else:
+        _, col_edit, col_del = st.columns([7, 1.2, 0.8])
+        with col_edit:
+            if st.button("Edit", key=f"ll_edit_btn_{card_key}"):
+                st.session_state[edit_key] = True
+                st.rerun()
+        with col_del:
+            if st.button("🗑", key=f"ll_del_btn_{card_key}"):
+                for s in sources:
+                    if s.get("id") == source_id:
+                        del s["lessons_learned"][lesson_idx]
+                        break
+                save_sources(sources)
+                st.rerun()
+
+    st.markdown('<div style="height:4px;"></div>', unsafe_allow_html=True)
