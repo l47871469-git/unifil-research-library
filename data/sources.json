@@ -24,7 +24,7 @@
       "Israel",
       "UNIFIL",
       "Lebanese government",
-      "displaced civilian communities"
+      "Lebanese communities"
     ],
     "abstract": "NGO written statement submitted to the UN Commission on Human Rights documenting the humanitarian impact of landmine contamination in southern Lebanon following Israeli withdrawal. Calls for greater international accountability and resources for mine clearance.",
     "key_arguments": [
@@ -79,7 +79,7 @@
     "actors": [
       "UNIFIL",
       "Israel",
-      "Lebanese civilian communities"
+      "Lebanese communities"
     ],
     "abstract": "NGO written statement documenting the impact of landmine and UXO contamination on vulnerable groups in southern Lebanon following the May 2000 Israeli withdrawal. Highlights the socioeconomic consequences of mine contamination on farming communities and displaced persons attempting to return.",
     "key_arguments": [
@@ -133,11 +133,10 @@
       2001
     ],
     "actors": [
-      "North-South XXI",
       "IDF",
       "UNIFIL",
-      "Fijian battalion",
-      "Lebanese civilian population"
+      "Fiji",
+      "Lebanese communities"
     ],
     "abstract": "NGO written statement documenting mass civilian displacement in southern Lebanon, with particular focus on the Qana massacre of April 1996 and the broader pattern of civilian casualties during Israeli military operations in UNIFIL's area of operations.",
     "key_arguments": [
@@ -211,10 +210,10 @@
       "IDF",
       "SLA",
       "PLO",
-      "Lebanese Armed Forces",
-      "Fijian battalion",
-      "Irish battalion",
-      "Norwegian battalion",
+      "LAF",
+      "Fiji",
+      "Ireland",
+      "Norway",
       "Hezbollah",
       "Amal",
       "Lebanese government"
@@ -371,8 +370,8 @@
     },
     "actors": [
       "UNIFIL",
-      "DPO",
-      "DPPA",
+      "DPKO/DPO",
+      "DPO/DPPA",
       "US",
       "Security Council",
       "Lebanese government",
@@ -427,7 +426,7 @@
       "end": 2014
     },
     "actors": [
-      "TCC"
+      "TCCs"
     ],
     "abstract": "IPI report analyzing operational partnership models in UN peacekeeping, with UNIFIL as a primary case study. Documents UNIFIL's unique role in hosting more combined team partnerships than any other UN mission, examines TCC motivations, and assesses the risks of ROE and caveat divergence in escalation scenarios.",
     "key_arguments": [
@@ -484,7 +483,7 @@
       "IDF",
       "LAF",
       "European TCCs",
-      "Maritime Task Force",
+      "MTF",
       "Strategic Military Cell"
     ],
     "abstract": "Analysis of UNIFIL II's post-2006 configuration, examining TCC dynamics, the tripartite mechanism, Maritime Task Force, and rules of engagement. Argues UNIFIL operates as a 'Chapter VI½' force (robust enough for self-defense but not enforcement) and that the tripartite mechanism is the mission's most effective non-kinetic tool.",
@@ -622,8 +621,8 @@
       "IDF",
       "LAF",
       "European TCCs",
-      "local Lebanese communities",
-      "Belgian contingent"
+      "Lebanese communities",
+      "Belgium"
     ],
     "abstract": "Analysis of UNIFIL's post-2006 operational strategy, identifying three core pillars: deterrence through robust presence, liaison through the tripartite mechanism, and CIMIC through local community engagement. Argues UNIFIL's economic footprint and community relations are deliberate strategic assets, not by-products. Identifies the deterrence credibility gap as the mission's central structural tension.",
     "key_arguments": [
@@ -686,10 +685,10 @@
       "IDF",
       "LAF",
       "Hezbollah",
-      "Quintet Committee",
+      "Quintet monitoring mechanism",
       "US",
       "France",
-      "Israeli government"
+      "Israel"
     ],
     "abstract": "Post-2024 war assessment arguing for termination of UNIFIL's mandate, documenting the comprehensive failure of the mission's monitoring function as revealed by the October 2024 conflict. Documents LAF's post-ceasefire assertiveness and argues the Quintet Committee has superseded the Trilateral Military Mechanism.",
     "key_arguments": [
@@ -765,8 +764,8 @@
       "Hezbollah",
       "LAF",
       "Lebanese government",
-      "DPKO",
-      "Security Council"
+      "DPKO/DPO",
+      "UN Security Council"
     ],
     "abstract": "Analysis of Israeli policy options toward UNIFIL, arguing that the mission's structural mandate weaknesses — particularly its inability to enforce disarmament and its reliance on host-state consent — require either fundamental reform or a shift in Israeli engagement strategy.",
     "key_arguments": [
@@ -896,7 +895,6 @@
     },
     "actors": [
       "Hezbollah",
-      "President Aoun",
       "Lebanese government",
       "Israel",
       "UNIFIL",
@@ -1178,13 +1176,10 @@
     "actors": [
       "Hezbollah",
       "LAF",
-      "Lebanesegovernment",
+      "Lebanese government",
       "Israel",
       "Iran",
-      "Amal",
-      "Christian Lebanese Forces",
-      "Sunnicommunities",
-      "displaced Shiitepopulation",
+      "Lebanese Shi'a community",
       "US",
       "France"
     ],
@@ -1332,7 +1327,8 @@
     "actors": [
       "Lebanon",
       "Hezbollah",
-      "UNIFIL-LAF-IDF tripartite liaison committee"
+      "Israel",
+      "Trilateral Military Committee"
     ],
     "abstract": "Written in October 2020 against the backdrop of Lebanon-Israel maritime border negotiations and the Abraham Accords, this brief assesses whether strategic normalization between Israel and Lebanon is achievable. Concludes Hezbollah's entrenched dominance makes strategic change unlikely, while identifying the post-2006 UNIFIL-LAF-IDF liaison committee as a continuous operational mechanism.",
     "key_arguments": [
@@ -1571,7 +1567,7 @@
     "actors": [
       "MTF",
       "EU",
-      "TCC"
+      "TCCs"
     ],
     "abstract": "Written following a six-month Beirut residency, this Carnegie paper assesses European conflict management across Lebanon, Syria, and the Palestinian territories. Concludes that while the European backbone of UNIFIL succeeded in maintaining the ceasefire, it froze rather than resolved the underlying Israeli-Lebanese conflict. Provides pointed analysis of Maritime Task Force (MTF) limited utility.",
     "key_arguments": [
@@ -1653,7 +1649,7 @@
       "Hezbollah",
       "IDF",
       "SLA",
-      "Lebanese civilian communities",
+      "Lebanese communities",
       "LAF"
     ],
     "abstract": "Long-form interview with UNIFIL's spokesman and senior adviser from 1978 to 2003, conducted November 2006. Offers granular firsthand testimony on UNIFIL's operational experience across its first quarter century: early mandate failures, relations with PLO, Amal, and Hezbollah, the 1982 invasion, force protection dilemmas, sulha and local conflict management, and the mission's genuine legacy in community relations.",
@@ -1739,14 +1735,10 @@
     },
     "actors": [
       "Hezbollah",
-      "Iran",
-      "Syria",
-      "Amal",
       "Lebanese government",
-      "Shi'a community",
-      "Pasdaran",
-      "Nasrallah",
-      "Tufayli"
+      "Lebanese Shi'a community",
+      "Iran",
+      "Syria"
     ],
     "abstract": "Norton argues that Hizballah has undergone significant political pragmatization since the late 1980s, evolving from an Iran-backed revolutionary movement into Lebanon's most effective political party with broad Shi'i constituency, extensive social services, and growing parliamentary presence.",
     "key_arguments": [
@@ -1819,16 +1811,10 @@
     },
     "actors": [
       "PLO",
-      "Fateh",
       "Amal",
       "IDF",
       "Lebanese government",
-      "Lebanese Armed Forces",
-      "Syrian government",
-      "Maronite militias",
-      "Hezbollah (emerging)",
-      "UNIFIL",
-      "Lebanese Shi'a community"
+      "LAF"
     ],
     "abstract": "Siklawi traces the Palestinian resistance movement's evolution in Lebanon from its post-1967 entrenchment through its forced evacuation following the 1982 Israeli invasion. Argues the PLO's Lebanese sanctuary, formalized by the 1969 Cairo Agreement, enabled a de facto state-within-a-state, but mounting Lebanese opposition, Israeli collective punishment, and PLO-Amal conflict progressively eroded the Palestinian position.",
     "key_arguments": [
@@ -1921,8 +1907,7 @@
       "Amal",
       "LAF",
       "Lebanese government",
-      "Shi'a communities",
-      "Pasdaran",
+      "Lebanese Shi'a community",
       "Nasrallah",
       "Tufayli"
     ],
@@ -2106,7 +2091,7 @@
     "source_type": "Think Tank"
   },
   {
-    "id": 31,
+    "id": "duran_bueno_2024",
     "author": "Durán, Marién and Alberto Bueno",
     "title": "Gaining Local Legitimacy in Stabilization Operations: The Spanish Peacekeepers Case in Lebanon-UNIFIL II",
     "type": "Academic / Journal Article",
@@ -2114,11 +2099,11 @@
     "publisher": "Journal of International Peacekeeping (pre-print)",
     "tags": [
       "CIMIC",
-      "TCC",
-      "host-state",
       "LAF",
-      "peacekeeping-doctrine",
-      "civilian-protection"
+      "TCC",
+      "civilian-protection",
+      "host-state",
+      "peacekeeping-doctrine"
     ],
     "thematic_clusters": [
       "CIMIC & community relations",
@@ -2132,9 +2117,9 @@
       2022
     ],
     "actors": [
-      "Spain / Spanish Armed Forces",
+      "Spain",
       "LAF",
-      "Shi'a subnational elites",
+      "Lebanese Shi'a community",
       "UNIFIL Eastern Multinational Brigade"
     ],
     "abstract": "Drawing on 85 interviews and two focus groups conducted in Lebanon between 2010 and 2016, this article examines how the Spanish contingent within UNIFIL II built local legitimacy for the Lebanese state through material actions (645 QIPs, 200,000+ patrols) and non-material actions (cultural awareness, respect for local norms, management of subnational elite relationships). The authors argue that local legitimacy is built bottom-up through sustained interaction with communities, religious and political elites, and the LAF, and present the Spanish case as a model of soft-power military engagement.",
@@ -2147,23 +2132,25 @@
       "The LAF's post-2006 emergence as a neutral, non-sectarian institution with high local approval ratings is directly linked to UNIFIL II accompaniment and capacity support."
     ],
     "bias_flag": "Spanish university researchers with access facilitated by the Spanish Army General Staff and Training and Doctrine Command. Sampling and framing reflect close institutional proximity to the Spanish military. The study is sympathetic to the mission and the Spanish contingent's approach. Local elite perspectives are included but filtered through UNIFIL HQ contact channels. Use for CIMIC metrics and legitimacy-building framework; treat characterizations of overall mission effectiveness with awareness of this proximity.",
-    "analytical_notes": "Most granular empirical study in the corpus on UNIFIL II CIMIC and community engagement. Provides concrete metrics (645 QIPs, 99,000 beneficiaries, 54 villages) that can anchor LL claims about the mission's community footprint. The material vs. non-material legitimacy-building framework is analytically transferable to the legacy report. Cross-reference with Mattelaer (2009) on CIMIC as strategic asset and Nerguizian (2014) on UNIFIL as LAF model. The finding on subnational elite capture of QIP resources is a new analytical dimension not present in other sources.",
+    "analytical_notes": [
+      "Most granular empirical study in the corpus on UNIFIL IICI CIMI and community engagement. Provides concrete metrics (645 QIPs, 99,000 beneficiaries, 54 villages) that can anchor LL claims about the mission's community footprint. The material vs. non-material legitimacy-building framework is analytically transferable to the legacy report. Cross-reference with Mattellaer (2009) on CIMIC as strategic asset and Nerguizian (2014) on UNIFIL as LAF model. The finding on subnational elite capture of QIP resources is a new analytical dimension not present in other sources."
+    ],
     "lessons_learned": [
       {
         "text": "CIMIC effectiveness depends on sustained presence and relationship continuity; rotation cycles structurally undermine trust-building, but embedded institutional procedures and handover protocols can partially compensate.",
-        "type": "SOURCE-DERIVED"
+        "tag": "SOURCE-DERIVED"
       },
       {
         "text": "QIPs are most effective when implemented through local authorities who can publicly claim credit, strengthening host-state legitimacy rather than mission visibility.",
-        "type": "SOURCE-DERIVED"
+        "tag": "SOURCE-DERIVED"
       },
       {
         "text": "Peacekeeping missions operating in environments with strong non-state welfare providers face a structural competition for legitimacy; community-level engagement must be explicitly designed to channel credit toward state institutions rather than the mission itself.",
-        "type": "ANALYTICAL INFERENCE"
+        "tag": "SOURCE-DERIVED"
       },
       {
         "text": "Cultural mismatch between contingents and host communities is partially offsetable through deliberate cross-cultural training and empathic engagement; perceived cultural distance matters more than actual distance in shaping local acceptance.",
-        "type": "SOURCE-DERIVED"
+        "tag": "SOURCE-DERIVED"
       }
     ],
     "timeline_events": [
@@ -2175,10 +2162,11 @@
         "date": "2022",
         "event": "Spanish General assumes command of UNIFIL mission"
       }
-    ]
+    ],
+    "source_type": "Academic"
   },
   {
-    "id": 32,
+    "id": "saad_2021",
     "author": "Saad, Hassan",
     "title": "The Success of UNIFIL: An Important Role in Security and Development Despite The Doubts",
     "type": "Academic (undergraduate thesis)",
@@ -2208,8 +2196,8 @@
       "LAF",
       "Hezbollah",
       "IDF",
-      "Lebanese civilian population",
-      "Maritime Task Force"
+      "Lebanese communities",
+      "MTF"
     ],
     "abstract": "This undergraduate thesis argues that UNIFIL remains valuable and largely effective despite persistent violations of Resolution 1701. Drawing on official UNIFIL and UNSC documents, Saad examines CIMIC/QIP contributions, LAF partnership, and maritime monitoring, contending that mandate non-fulfilment reflects party non-compliance — particularly by the IDF — rather than mission failure.",
     "key_arguments": [
@@ -2247,10 +2235,10 @@
         "event": "UNIFIL-LAF MOU signed on de-mining south of Litani"
       }
     ],
-    "source_type": ""
+    "source_type": "Academic"
   },
   {
-    "id": 33,
+    "id": "calculli_2014",
     "author": "Calculli, Marina",
     "title": "National prerogatives in multilateral peacekeeping: Italy in Lebanese perception and Rome's role within UNIFIL II",
     "type": "Academic / Journal Article",
@@ -2258,11 +2246,11 @@
     "publisher": "Cahiers de la Mediterranee, no. 88",
     "tags": [
       "TCC",
-      "non-state-actors",
-      "political-dynamics",
       "host-state",
       "mandate",
-      "peacekeeping-doctrine"
+      "non-state-actors",
+      "peacekeeping-doctrine",
+      "political-dynamics"
     ],
     "thematic_clusters": [
       "TCC dynamics & command",
@@ -2276,12 +2264,11 @@
       2013
     ],
     "actors": [
-      "Italy / ITALCON",
+      "Italy",
       "Hezbollah",
       "Lebanese government",
       "UNIFIL",
-      "Shi'a communities",
-      "UN Security Council"
+      "Lebanese Shi'a community"
     ],
     "abstract": "Calculli argues that Italy's prominence in UNIFIL II was decisive in achieving the mission's legitimization -- bottom-up acceptance by Lebanese actors including Hezbollah -- as distinct from mere formal legitimacy. Two factors underpinned this: Italy's long-standing equivicinanza policy toward the Arab-Israeli conflict, and the positive historical memory of Italian troops (ITALCON) in Beirut in 1982-84. The article contends that the UN tacitly exploited Italian national prerogatives to circumvent its own liberal-order rhetoric and secure Hezbollah's acceptance of Resolution 1701.",
     "key_arguments": [
@@ -2292,19 +2279,21 @@
       "The UN acted on realist rather than liberal logic -- exploiting Italy's national prerogatives instrumentally to securitize the border -- revealing that institutional rhetoric about restoring liberal order can be pragmatically suspended when a higher strategic interest demands it."
     ],
     "bias_flag": "Calculli is an Italian academic (Oxford/Ca' Foscari/Catholic University Milan) writing in a French Mediterranean studies journal. The article draws heavily on interviews with Italian generals and is framed as a validation of Italian foreign policy success -- creating a structural pro-Italy bias. Hezbollah's acceptance of UNIFIL is treated largely as a product of Italian diplomacy with insufficient interrogation of Hezbollah's own strategic calculations. Use with awareness of this celebratory framing; cross-reference with Makdisi (2014) and Norton (1999) on Hezbollah's own acceptance logic.",
-    "analytical_notes": "Introduces the legitimacy vs. legitimization distinction -- analytically valuable for the TCC dynamics and mandate clusters. The Angioni pattern (1982-84) as a historical model for Italian peacekeeping is a useful precedent not covered elsewhere. Cross-reference with Al-Rfouh (2007) on cultural interoperability and Goksel (2007) on community relations. The finding that the UN exploited Italian national prerogatives to work around its own mandate rhetoric is a significant analytical point for the political dynamics cluster. The May 2013 EU blacklisting of Hezbollah's military wing and Italian FM opposition is a new event not in existing timeline.",
+    "analytical_notes": [
+      "Introduces the legitimacy vs. legitimization distinction -- analytically valuable for the TCC dynamics and mandate clusters. The Angioni pattern (1982-84) as a historical model for Italian peacekeeping is a useful precedent not covered elsewhere. Cross-reference with Al-Rfouh (2007) on cultural interoperability and Goksel (2007) on community relations. The finding that the UN exploited Italian national prerogatives to work around its own mandate rhetoric is a significant analytical point for the political dynamics cluster. The May 2013 EU blacklisting of Hezbollah's military wing and Italian FM opposition is a new event not in existing timeline."
+    ],
     "lessons_learned": [
       {
         "text": "TCC selection for force leadership should account for the legitimization assets a country brings -- historical relationships, political posture toward conflict parties, and community memory -- not only troop numbers or capabilities.",
-        "type": "ANALYTICAL INFERENCE"
+        "tag": "SOURCE-DERIVED"
       },
       {
         "text": "Pragmatic engagement with non-state armed actors formally excluded by mandate may be a prerequisite for mission sustainability; mission design should create protected space for this without requiring public acknowledgement.",
-        "type": "SOURCE-DERIVED"
+        "tag": "SOURCE-DERIVED"
       },
       {
         "text": "Command continuity within contingents materially affects civil-military trust; high rotation rates undermine the population-centred peacekeeping model.",
-        "type": "SOURCE-DERIVED"
+        "tag": "SOURCE-DERIVED"
       }
     ],
     "timeline_events": [
@@ -2324,10 +2313,11 @@
         "date": "May 2013",
         "event": "EU blacklists Hezbollah military wing; Italian FM Bonino publicly opposes; UNIFIL community relations strained"
       }
-    ]
+    ],
+    "source_type": "Academic"
   },
   {
-    "id": 34,
+    "id": "lawrence_2016",
     "author": "Lawrence, Tony; Jermalavičius, Tomas; Bulakh, Anna",
     "title": "Soldiers of Peace: Estonia, Finland and Ireland in UNIFIL",
     "type": "Think Tank Report",
@@ -2354,16 +2344,17 @@
       "Estonia",
       "Finland",
       "Ireland",
-      "Finnish/Irish Battalion",
       "European TCCs"
     ],
     "abstract": "This ICDS report examines small-state contributions to UN peacekeeping through Estonia, Finland, and Ireland in UNIFIL's Western Sector. Based on interviews with strategic-level decision-makers and peacekeepers in south Lebanon, it analyses TCC motivations, multinational operational partnership dynamics, and operational experience, culminating in recommendations on gender, CIMIC, pre-deployment training, and lessons learning.",
     "key_arguments": [
       "TCC motivations for joining UNIFIL are largely opportunistic rather than mission-specific: all three states re-committed when domestic deployment needs coincided with UN requests, making UNIFIL a target of opportunity rather than a deliberate foreign policy priority.",
-      "Small-state motivations exist on a transactional-to-values spectrum: Ireland frames peacekeeping as a values-based foreign policy identity; Finland combines values with military capability development; Estonia prioritises transactional returns including alliance signalling and bilateral relationship-building with Finland.",
+      "Small-state motivations exist on a transactional-to-values spectrum: Ireland frames peacekeeping as a values-based foreign policy identity; Finland combines values with strengthening its defence capability; Estonia prioritises transactional returns including alliance signalling and bilateral relationship-building with Finland.",
       "Operational partnership between Finland and Ireland works effectively at the strategic level but inter-contingent learning in the field is limited by siloed routines, short rotation cycles, and absence of formal knowledge-transfer mechanisms.",
       "Operational monotony is the primary challenge for individual peacekeepers: repetitive patrolling erodes military skills, creates complacency, and is poorly addressed by crisis-focused pre-deployment training.",
-      "UNIFIL's stabilising effect is acknowledged by all interviewees, but the security situation is characterised as fragile rather than durable - Lebanon has become dependent on UNIFIL without political progress, and the return of battle-hardened Hezbollah fighters from Syria was identified as a medium-term risk."
+      "UNIFIL's stabilising effect is acknowledged by all interviewees, but the security situation is characterised as fragile rather than durable - Lebanon has become dependent on UNIFIL without political progress, and the return of battle-hardened Hezbollah fighters from Syria was identified as a medium-term risk.",
+      "Two factors make operational partnerships work well: careful management of responsibilities, planning, and mission continuity (which states can control), and fundamental similarities in social backgrounds and military culture which are harder to change (e.g. shared political traditions, language, religion, etc.).",
+      "Recommends increasing female troop representation through flexible recruitment and personnel policies (addressing a cultural challenge), and expanding small CIMIC projects that can deliver large impacts while supporting long-term sustainable development (balancing short and long-term efforts)."
     ],
     "bias_flag": "Funded by Ireland's Department of Foreign Affairs and Trade with ICDS (Tallinn) as publisher. The framing is sympathetic to small-state contributions and Irish/Finnish peacekeeping traditions. Interviewees are anonymised, limiting independent verification. The report does not engage critically with UNIFIL's mandate implementation gaps. Use primarily for TCC motivations, training challenges, and operational culture.",
     "analytical_notes": [
@@ -2371,7 +2362,7 @@
     ],
     "lessons_learned": [
       {
-        "text": "Pre-deployment training focused on crisis scenarios systematically fails to prepare peacekeepers for UNIFIL's dominant operational challenge: managing prolonged monotony and the complacency and skill erosion it produces; expectation-setting and personal development planning should be integrated into pre-deployment preparation.",
+        "text": "Two factors make operational partnerships work well: careful management of responsibilities, planning, and mission continuity (which states can control), and fundamental similarities in social backgrounds and military culture which are harder to change (e.g. shared political traditions, language, religion, etc.). ",
         "tag": "SOURCE-DERIVED"
       },
       {
@@ -2397,10 +2388,10 @@
         "event": "Estonia joins Finnish contingent as platoon-sized unit in UNIFIL Western Sector"
       }
     ],
-    "source_type": ""
+    "source_type": "Academic"
   },
   {
-    "id": 35,
+    "id": "makdisi_2009",
     "author": "Makdisi, K.; Göksel, T.; Hauck, H.B.; Reigeluth, S.",
     "title": "UNIFIL II: Emerging and Evolving European Engagement in Lebanon and the Middle East",
     "type": "Think Tank Report (Euro Me SCo Paper 76)",
@@ -2472,10 +2463,10 @@
         "event": "UNSC Resolution 1701 adopted; UNIFIL II authorised up to 15,000 troops"
       }
     ],
-    "source_type": "Other"
+    "source_type": "Academic"
   },
   {
-    "id": 36,
+    "id": "beydoun_1992",
     "author": "Beydoun, A.",
     "title": "The South Lebanon Border Zone: A Local Perspective",
     "type": "Academic / Journal Article",
@@ -2500,7 +2491,7 @@
       1992
     ],
     "actors": [
-      "Southern Lebanese communities",
+      "Lebanese communities",
       "SLA",
       "Israel",
       "PLO"
@@ -2536,7 +2527,7 @@
     "source_type": "Academic"
   },
   {
-    "id": 37,
+    "id": "deeb_2024",
     "author": "Deeb, L.; Mikdashi, M.; Nalbantian, T.; Sbaiti, N.",
     "title": "A Primer on Lebanon: History, Palestine and Resistance to Israeli Violence",
     "type": "Opinion / Academic Overview",
@@ -2604,7 +2595,7 @@
     "source_type": "Academic"
   },
   {
-    "id": 38,
+    "id": "khayyat_2024",
     "author": "Khayyat, M.",
     "title": "Dispatch from South Lebanon: Life as Resistance at the End of the World",
     "type": "Opinion / Ethnographic Dispatch",
@@ -2629,11 +2620,9 @@
       2025
     ],
     "actors": [
-      "Southern Lebanese civilian population",
+      "Lebanese communities",
       "Israel",
-      "Hezbollah",
-      "UNIFIL",
-      "frontline border village communities"
+      "Hezbollah"
     ],
     "abstract": "An ethnographic dispatch written during the 2024 Israeli bombardment of south Lebanon, drawing on over two decades of fieldwork in frontline border villages. Khayyat documents the systematic destruction of agricultural livelihoods as a deliberate Israeli strategy targeting the civilian ecologies that sustain presence in the borderland, framing civilian persistence as a form of resistance distinct from armed struggle.",
     "key_arguments": [
@@ -2658,5 +2647,284 @@
       }
     ],
     "source_type": "Academic"
+  },
+  {
+    "id": "coespu_2020",
+    "author": "Unknown",
+    "title": "UNIFIL: Evolution of a Peacekeeping Mandate",
+    "source_type": "Academic",
+    "year": 2020,
+    "publisher": "Centre of Excellence for Stability Police Units (CoESPU)",
+    "tags": [
+      "1701",
+      "CIMIC",
+      "LAF",
+      "mandate",
+      "maritime",
+      "tripartite-mechanism"
+    ],
+    "thematic_clusters": [
+      "Mandate evolution",
+      "Host-state relations & LAF",
+      "Liaison & tripartite mechanism"
+    ],
+    "abstract": "A structured overview of UNIFIL's mandate evolution from 1978 to 2020, published by CoESPU. The article traces the three major mandate adjustments driven by the 1978 establishment, the 1982–2000 period of humanitarian presence behind Israeli lines, and the post-2006 enhanced force under SCR 1701. It describes current operational architecture including the MTF, tripartite mechanism, CIMIC, and LAF strategic dialogue, and closes with a forward-looking argument for transitioning UNIFIL toward a peace stability operation model incorporating gendarmerie-type peacekeepers.",
+    "key_arguments": [
+      "UNIFIL's mandate has evolved reactively through external shocks rather than planned adaptation, with each phase representing crisis-driven recalibration rather than strategic redesign.",
+      "The LAF is the central partner and primary focus of UNIFIL's operational framework: the 2013 joint Strategic Dialogue plan, joint patrols, and the MTF transition working group all reflect a deliberate long-term strategy of building LAF capacity to eventually assume UNIFIL's functions.",
+      "The tripartite forum is identified as a proven conflict management and confidence-building mechanism, contributing concretely to de-escalation and Blue Line marking through regular senior-level IDF-LAF-UNIFIL engagement.",
+      "The author argues that UNIFIL's actual operational profile more closely resembles a Peace Stability Operation than a traditional peacekeeping mission, and recommends formalizing this through gendarmerie-type peacekeepers better suited to civil-military transition environments."
+    ],
+    "bias_flag": "CoESPU is an Italian Carabinieri-affiliated centre specializing in stability policing. Its institutional interest in promoting gendarmerie-type peacekeeping directly shapes the policy recommendation — treat the PSO transition argument as advocacy rather than neutral analysis.",
+    "relevance_to_ll": "Useful as a concise baseline reference for the legacy report's mandate evolution sections, consolidating the full 1978–2020 arc in one document. The PSO transition argument and the LAF Strategic Dialogue detail offer added value for thematic papers on mission design and host-state relations. Notable as a rare source explicitly advocating for a formal doctrinal reclassification of UNIFIL's mission type.",
+    "timeline_events": [
+      {
+        "date": "1978-03-19",
+        "event": "SCR 425/426 adopted; UNIFIL established"
+      },
+      {
+        "date": "1982-06",
+        "event": "SCR 511 authorizes humanitarian/protection role for UNIFIL behind Israeli lines"
+      },
+      {
+        "date": "2000-05-25",
+        "event": "Israel completes withdrawal; Blue Line established"
+      },
+      {
+        "date": "2006-08-11",
+        "event": "SCR 1701 adopted; UNIFIL expanded to 15,000; mandate significantly enhanced"
+      },
+      {
+        "date": "2006-10",
+        "event": "MTF deployed — first maritime component in UN peacekeeping history"
+      },
+      {
+        "date": "2013",
+        "event": "UNIFIL-LAF joint Strategic Dialogue plan signed"
+      }
+    ],
+    "lessons_learned": [
+      {
+        "text": "UNIFIL's mandate has expanded reactively following military escalation rather than through anticipatory planning — a structural gap in proactive mandate design the legacy exercise should explicitly address.",
+        "tag": "SOURCE-DERIVED"
+      },
+      {
+        "text": "The gap between UNIFIL's formal peacekeeping classification and its actual operational profile suggests mandate language has consistently lagged behind practice, with implications for future mission design and reporting frameworks.",
+        "tag": "SOURCE-DERIVED"
+      }
+    ],
+    "actors": [
+      "UNIFIL"
+    ],
+    "key_actors": [
+      "UNIFIL",
+      "LAF"
+    ],
+    "analytical_notes": []
+  },
+  {
+    "id": "novosseloff_2014",
+    "author": "Novosseloff, Alexandra",
+    "title": "Expanded United Nations Interim Force in Lebanon (UNIFIL II)",
+    "source_type": "Academic",
+    "year": 2014,
+    "publisher": "The Oxford Handbook of United Nations Peacekeeping Operations, ed. Joachim A. Koops et al., Oxford University Press, Ch. 65, pp. 767–778",
+    "tags": [
+      "mandate",
+      "1701",
+      "TCC",
+      "command-control",
+      "tripartite-mechanism",
+      "force-protection"
+    ],
+    "thematic_clusters": [
+      "Mandate evolution",
+      "Political dynamics & P5",
+      "TCC dynamics & command",
+      "Liaison & tripartite mechanism",
+      "Operational adaptation & innovation",
+      "Relations with non-state armed actors",
+      "Force protection & safety"
+    ],
+    "abstract": "Novosseloff traces the political negotiation, mandate design, and operational evolution of the expanded UNIFIL following SCR 1701 (2006). She reconstructs the Council bargaining that produced an enhanced — but not Chapter VII — mandate, the conditional engagement of European TCCs (notably France and Italy), and the rapid shift from 'robust' posture to a UNIFIL-I-style grassroots approach after early friction with the local population and the June 2007 Khiam bombing. She analyses two structural peculiarities — the short-lived Strategic Military Cell (SMC) and the absence of an SRSG — and concludes that without a supporting political process, UNIFIL II manages but cannot resolve the conflict.",
+    "key_arguments": [
+      "The SCR 1701 mandate was a diplomatic compromise: Israel needed a credible security presence; Lebanon refused Chapter VII; the US dropped disarmament; France accepted a UN (not coalition) framework. The resulting mandate authorises 'all necessary action' within capabilities but excludes active disarmament of Hezbollah, leaving the political process (Taif, SCR 1559) outside UNIFIL's remit.",
+      "European TCC engagement was contingent on stringent conditions — robust ROE, force protection assets (Leclerc tanks, SHORAD), and a dedicated New York command structure (the SMC). This produced a Western-shaped command architecture that was politically contested (NAM critique) and ultimately dissolved into the Office of Military Affairs (2010).",
+      "UNIFIL's 'robust' posture eroded within months: stone-throwing, restricted searches, and the June 2007 Khiam bombing pushed the Force toward a low-key, grassroots posture. Both Israel and Hezbollah tested and found the limits of UNIFIL's resolve.",
+      "Stability rests on a three-dimensional presence (security buffer, de-escalation mechanism, local economic actor) and on the tripartite mechanism / Force Commander–IDF hotline — described by the SG as the only direct LAF–IDF forum.",
+      "The absence of an SRSG (replaced by UNSCOL in Beirut) and the persistence of an 'interim' mandate reflect Council reluctance to reopen SCR 1701, freezing the mission and precluding a credible exit strategy."
+    ],
+    "bias_flag": "Novosseloff is a French scholar-practitioner with extensive UN DPKO and French MoD interview access; her account is empirically rich on the French and Secretariat perspectives but comparatively thinner on Lebanese, Hezbollah, and TCC perspectives outside the European core. The chapter draws heavily on 2009–2010 interviews with UN, French, and US officials. The realist-skeptical framing ('manages conflict but does not make peace') is consistent with her broader work on robust peacekeeping — useful but not neutral.",
+    "relevance_to_ll": "Essential reference for mandate evolution, TCC dynamics, and the political architecture of UNIFIL II. The SMC analysis and the SRSG absence are directly relevant to institutional design lessons. Novosseloff's reconstruction of the SCR 1701 negotiations provides the most detailed account available of the political constraints shaping the expanded mandate.",
+    "timeline_events": [
+      {
+        "date": "2006-07-12",
+        "event": "Hezbollah cross-border raid; start of 2006 Lebanon War",
+        "category": "Israel-Lebanon",
+        "description": "Hezbollah captures two Israeli soldiers in a cross-border raid, triggering the 2006 Lebanon War."
+      },
+      {
+        "date": "2006-08-11",
+        "event": "UNSC adopts Resolution 1701",
+        "category": "UNIFIL",
+        "description": "Security Council adopts Resolution 1701, calling for cessation of hostilities and expanding UNIFIL."
+      },
+      {
+        "date": "2006-08-14",
+        "event": "Cessation of hostilities takes effect",
+        "category": "Israel-Lebanon",
+        "description": "Cessation of hostilities between Israel and Hezbollah takes effect under SCR 1701."
+      },
+      {
+        "date": "2006-08-24",
+        "event": "Chirac announces 2,000 French troops for UNIFIL II",
+        "category": "UNIFIL",
+        "description": "French President Chirac announces deployment of 2,000 French troops to the expanded UNIFIL force."
+      },
+      {
+        "date": "2007-02",
+        "event": "UNSCOL established",
+        "category": "UNIFIL",
+        "description": "UN Special Coordinator for Lebanon (UNSCOL) established, taking over political functions not assigned to UNIFIL."
+      },
+      {
+        "date": "2007-06-24",
+        "event": "Khiam bombing kills six Spanish peacekeepers",
+        "category": "UNIFIL",
+        "description": "Bombing near Khiam kills six Spanish UNIFIL peacekeepers, marking a turning point toward a lower-profile operational posture."
+      },
+      {
+        "date": "2010",
+        "event": "Strategic Military Cell dissolved into OMA",
+        "category": "UNIFIL",
+        "description": "The Strategic Military Cell, created to manage European TCC engagement, is dissolved and absorbed into the Office of Military Affairs."
+      },
+      {
+        "date": "2012-03",
+        "event": "UNIFIL Strategic Review (S/2012/151)",
+        "category": "UNIFIL",
+        "description": "Secretary-General submits strategic review of UNIFIL examining mandate implementation and future posture."
+      }
+    ],
+    "lessons_learned": [
+      {
+        "text": "Robust posture without political process erodes into observation; deterrence requires both military capability and sustained political investment by the Council.",
+        "tag": "source-derived",
+        "theme": "Mandate evolution"
+      },
+      {
+        "text": "TCC-driven command innovations (e.g. SMC) can secure Western contributions but generate friction with Secretariat structures and NAM political pushback — design choices have institutional half-lives.",
+        "tag": "source-derived",
+        "theme": "TCC dynamics & command"
+      },
+      {
+        "text": "The 'absence of SRSG' model, mitigated only by UNSCOL and a later civilian DHoM, may have constrained UNIFIL's political agency throughout the mission lifecycle and warrants targeted review for the legacy report.",
+        "tag": "analytical-inference",
+        "theme": "Political dynamics & P5"
+      },
+      {
+        "text": "Early TCC posture choices (overly militant patrolling) shape host-community trust for years; future missions deploying expanded forces should plan a deliberate posture-calibration phase.",
+        "tag": "analytical-inference",
+        "theme": "TCC dynamics & command"
+      }
+    ],
+    "actors": [
+      "UNIFIL",
+      "France",
+      "Italy",
+      "LAF",
+      "IDF",
+      "Hezbollah",
+      "UNSCOL",
+      "Security Council"
+    ],
+    "key_actors": [
+      "UNIFIL",
+      "France",
+      "Hezbollah"
+    ]
+  },
+  {
+    "id": "murphy_2012",
+    "author": "Murphy, Ray",
+    "title": "Peacekeeping in Lebanon and Civilian Protection",
+    "source_type": "Academic",
+    "year": 2012,
+    "publisher": "Journal of Conflict & Security Law, Vol. 17, No. 3, pp. 373–402, Oxford University Press",
+    "tags": [
+      "civilian-protection",
+      "1701",
+      "mandate",
+      "force-protection",
+      "non-state-actors",
+      "IDF"
+    ],
+    "thematic_clusters": [
+      "Civilian protection",
+      "Mandate evolution",
+      "Force protection & safety",
+      "Relations with non-state armed actors",
+      "TCC dynamics & command",
+      "Host-state relations & LAF",
+      "CIMIC & community relations"
+    ],
+    "abstract": "Murphy traces UNIFIL's evolving — and largely frustrated — engagement with civilian protection across three crisis periods: the 1978 deployment, the 1982 Israeli invasion and 'iron fist' occupation, and the post-2006 reconfiguration under SCR 1701. He argues that despite the explicit protection-of-civilians authorisation in paragraph 12, UNIFIL II remains conceptually a Chapter VI policing mission whose role is circumscribed by an ambiguous mandate, dependence on the LAF and tacit accommodation with Hezbollah for its own security. He concludes that effective civilian protection is structurally impossible in the context of Israel–Hezbollah hostilities, and that the Strategic Military Cell, while enabling European engagement, was a flawed and ultimately discarded innovation.",
+    "key_arguments": [
+      "The 1978 mandate (SCR 425/426) contained no civilian protection provision; the protection role emerged reactively after the 1982 invasion as an interim justification for UNIFIL's continued presence behind Israeli lines, not as a planned response — a pattern of policy improvisation that has shaped the mission ever since.",
+      "During the 1982–2000 occupation, UNIFIL's 'iron fist' period role was reduced to monitoring, reporting, and humanitarian assistance. Murphy documents specific instances (Kunin 1986, Qana 1996) where UNIFIL prevented expulsions or sheltered civilians, but argues these were marginal gains against systemic damage to credibility.",
+      "SCR 1701 created a 'Chapter VI½' mission: the preambular threat-to-peace language and paragraph 12's 'all necessary action' wording mimic Chapter VII without invoking it, producing a structural mismatch between European TCC expectations of robust operations and the consent-based reality.",
+      "The Strategic Military Cell was a concession to European TCCs that created a two-tier system (global North vs South), generated political resentment, and was terminated in 2010; Murphy is sceptical it could have managed a real crisis given multinational command frictions.",
+      "UNIFIL's protection role is fundamentally compromised by its own dependence on the LAF and tacit cooperation with Hezbollah for force security — a dependency that is 'not consistent with performing an effective protection role.'"
+    ],
+    "bias_flag": "Murphy is an Irish academic (NUI Galway) and former Irish UNIFIL officer (1981/82, 1989); his account draws heavily on personal experience, interviews with Irish and senior UN officers, and Irish-contingent incidents. This produces unusually granular field-level material but a perspective skewed toward the Irish/Nordic battalion experience and the IHL/legal framing. He is consistently critical of US and European partisan engagement in the region and of Israeli conduct — empirically grounded but normatively committed. The Hezbollah analysis is thinner than the IDF analysis.",
+    "relevance_to_ll": "The single most sustained legal-academic treatment of UNIFIL's civilian protection mandate across the mission's full arc, written by a former Irish UNIFIL officer with direct field experience. Essential for the civilian protection thematic cluster and provides a rigorous IHL framing (Qana, occupation law, Article 8 ICC Statute) that complements the political-operational accounts. Directly engages the question of what protection mandate 'effectiveness' can mean when host-state and non-state-armed-actor consent is the precondition for force security.",
+    "timeline_events": [
+      {
+        "date": "1982-06",
+        "event": "Israeli invasion of Lebanon; UNIFIL bypassed",
+        "category": "Israel-Lebanon",
+        "description": "Israel invades Lebanon in June 1982; UNIFIL positions are bypassed or overrun, reducing the mission to a humanitarian role behind Israeli lines."
+      },
+      {
+        "date": "1996-04-18",
+        "event": "Qana shelling: Israeli artillery hits UN compound, ~106 civilians killed",
+        "category": "Israel-Lebanon",
+        "description": "Israeli artillery strikes the UNIFIL compound at Qana where civilians had sought shelter, killing approximately 106 people in one of the mission's gravest protection failures."
+      }
+    ],
+    "lessons_learned": [
+      {
+        "text": "A POC mandate cannot be operationally effective when the force depends on the host-state and a non-state armed actor for its own security; this dependency must be named explicitly in any honest legacy assessment.",
+        "tag": "source-derived",
+        "theme": "Civilian protection"
+      },
+      {
+        "text": "Reactive, improvised mandate interpretation (e.g. the post-1982 protection role) can preserve a mission's utility short-term but corrodes credibility and creates expectations the mandate cannot deliver.",
+        "tag": "source-derived",
+        "theme": "Mandate evolution"
+      },
+      {
+        "text": "The 'Chapter VI½' framing of SCR 1701 — robust language without Chapter VII authorisation — should be examined as a recurring Council design pattern in the legacy report, with attention to the gap it creates between TCC expectations and operational reality.",
+        "tag": "analytical-inference",
+        "theme": "Mandate evolution"
+      },
+      {
+        "text": "Field-level POC interventions (preventing expulsions, sheltering civilians, witnessing IHL violations) generate genuine but under-documented protection value; the legacy exercise should attempt to capture this granular record before institutional memory is lost.",
+        "tag": "analytical-inference",
+        "theme": "Civilian protection"
+      }
+    ],
+    "actors": [
+      "UNIFIL",
+      "LAF",
+      "IDF",
+      "Hezbollah",
+      "Ireland"
+    ],
+    "key_actors": [
+      "UNIFIL",
+      "IDF",
+      "Hezbollah"
+    ]
   }
 ]

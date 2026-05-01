@@ -20,7 +20,7 @@ THEMATIC_CLUSTERS = [
     "DPKO-DPPA integration",
 ]
 
-SOURCE_TYPES = ["Academic", "Think Tank", "UN Document", "Opinion / Primary", "Media", "NGO", "Other"]
+SOURCE_TYPES = ["Academic", "Policy", "Think Tank", "UN Document", "Opinion / Primary", "Media", "NGO", "Other"]
 
 def load_sources():
     path = DATA_DIR / "sources.json"
@@ -45,6 +45,18 @@ def save_sources(sources):
     path = DATA_DIR / "sources.json"
     with open(path, "w", encoding="utf-8") as f:
         json.dump(sources, f, indent=2, ensure_ascii=False)
+
+def load_actor_meta():
+    path = DATA_DIR / "actors_meta.json"
+    if not path.exists():
+        return {}
+    with open(path, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+def save_actor_meta(meta):
+    path = DATA_DIR / "actors_meta.json"
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(meta, f, indent=2, ensure_ascii=False)
 
 def get_all_tags(sources):
     tags = set()

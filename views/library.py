@@ -898,12 +898,26 @@ def show():
     all_types    = sorted(_TYPE_CONFIG.keys())
 
     # Stats row
-    sc1, sc2, sc3, sc4 = st.columns(4)
-    sc1.metric("Sources",        len(sources))
-    sc2.metric("Themes Covered", len(set(c for s in sources for c in s.get("thematic_clusters", []))))
-    sc3.metric("LL Candidates",  sum(len(s.get("lessons_learned", [])) for s in sources))
-    sc4.metric("Actors Indexed", len(all_actors))
-
+    _stats = [
+        (len(sources),                                                              "Sources"),
+        (len(set(c for s in sources for c in s.get("thematic_clusters", []))),    "Themes Covered"),
+        (sum(len(s.get("lessons_learned", [])) for s in sources),                 "LL Candidates"),
+        (len(all_actors),                                                           "Actors Indexed"),
+    ]
+    _stat_cells = ""
+    for i, (v, lbl) in enumerate(_stats):
+        border = "" if i == len(_stats) - 1 else "border-right:1px solid #DDD9D0;"
+        _stat_cells += (
+            f'<div style="flex:1;padding:22px 0 18px 0;text-align:center;{border}">'
+            f'<div style="font-size:44px;font-weight:700;letter-spacing:-2px;color:#1a1a2e;line-height:1;">{v}</div>'
+            f'<div style="font-size:11px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:#8A8F99;margin-top:7px;">{lbl}</div>'
+            f'</div>'
+        )
+    st.markdown(
+        f'<div style="display:flex;margin:18px 0 20px 0;border:1px solid #DDD9D0;border-radius:10px;overflow:hidden;background:#FAFAF8;">'
+        f'{_stat_cells}</div>',
+        unsafe_allow_html=True,
+    )
     st.markdown("---")
 
     # Filters

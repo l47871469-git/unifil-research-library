@@ -2,7 +2,7 @@ import streamlit as st
 import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent))
-from utils.data_utils import load_sources
+from utils.data_utils import load_sources, save_sources, load_actor_meta, save_actor_meta
 
 ACTOR_PROFILES = {
     "Hezbollah": {
@@ -68,30 +68,40 @@ ACTOR_PROFILES = {
 }
 
 
+CATEGORY_COLORS = {
+    "UN":            "#1a3a5c",
+    "Armed groups":  "#dc2626",
+    "Israel":        "#0ea5e9",
+    "Member states": "#16a34a",
+    "Lebanon":       "#d97706",
+    "Other":         "#6b7c8d",
+}
+
 def get_actor_color(actor_name, actor_type):
-    """Color by category: UN=navy, armed groups=red, Israeli=bright blue, member states=green, other=grey."""
     name_lower = actor_name.lower()
     type_lower = actor_type.lower()
     if any(k in name_lower for k in ("israel", "idf")):
-        return "#0ea5e9"   # bright blue — Israeli actors
+        return "#0ea5e9"
+    if actor_name == "Lebanon" or "host state" in type_lower:
+        return "#d97706"
     if any(k in name_lower for k in ("unifil", "united nations")) or \
        any(k in type_lower for k in ("peacekeeping", "intergovernmental")):
-        return "#1a3a5c"   # UN navy
+        return "#1a3a5c"
     if "armed actor" in type_lower or any(k in name_lower for k in ("hezbollah", "hamas", "sla", "amal")):
-        return "#dc2626"   # red — armed groups
-    if any(k in type_lower for k in ("member state", "host state", "state armed")) or \
-       actor_name in ("TCCs", "Lebanon", "LAF"):
-        return "#16a34a"   # green — member states
-    return "#6b7c8d"       # grey
+        return "#dc2626"
+    if any(k in type_lower for k in ("member state", "state armed")) or actor_name == "TCCs" or actor_name == "LAF":
+        return "#16a34a"
+    return "#6b7c8d"
 
 
 def get_actor_category(actor_name, actor_type):
     color = get_actor_color(actor_name, actor_type)
     return {
-        "#0ea5e9": "Israeli actors",
+        "#0ea5e9": "Israel",
         "#1a3a5c": "UN",
         "#dc2626": "Armed groups",
         "#16a34a": "Member states",
+        "#d97706": "Lebanon",
         "#6b7c8d": "Other",
     }.get(color, "Other")
 
@@ -119,6 +129,10 @@ def show():
 
     if "selected_actor" not in st.session_state:
         st.session_state.selected_actor = None
+    if "actors_edit_sid" not in st.session_state:
+        st.session_state.actors_edit_sid = None
+    if "actors_cat_edit" not in st.session_state:
+        st.session_state.actors_cat_edit = False
 
     # ── Grid view ─────────────────────────────────────────────────────────────
     if st.session_state.selected_actor is None:
@@ -128,8 +142,9 @@ def show():
         <div style="display:flex; flex-wrap:wrap; gap:0.3rem 1rem; margin-bottom:1rem; font-size:0.73rem; color:#5a6a7a;">
             <span><span style="display:inline-block; width:9px; height:9px; border-radius:2px; background:#1a3a5c; margin-right:3px; vertical-align:middle;"></span>UN</span>
             <span><span style="display:inline-block; width:9px; height:9px; border-radius:2px; background:#dc2626; margin-right:3px; vertical-align:middle;"></span>Armed groups</span>
-            <span><span style="display:inline-block; width:9px; height:9px; border-radius:2px; background:#0ea5e9; margin-right:3px; vertical-align:middle;"></span>Israeli actors</span>
+            <span><span style="display:inline-block; width:9px; height:9px; border-radius:2px; background:#0ea5e9; margin-right:3px; vertical-align:middle;"></span>Israel</span>
             <span><span style="display:inline-block; width:9px; height:9px; border-radius:2px; background:#16a34a; margin-right:3px; vertical-align:middle;"></span>Member states</span>
+            <span><span style="display:inline-block; width:9px; height:9px; border-radius:2px; background:#d97706; margin-right:3px; vertical-align:middle;"></span>Lebanon</span>
             <span><span style="display:inline-block; width:9px; height:9px; border-radius:2px; background:#6b7c8d; margin-right:3px; vertical-align:middle;"></span>Other</span>
         </div>
         """, unsafe_allow_html=True)
@@ -137,13 +152,32 @@ def show():
         # Compute max source count for progress bar normalisation
         counts = {a: sum(1 for s in sources if a in s.get("actors", [])) for a in all_known}
         max_count = max(counts.values(), default=1)
+        actor_meta = load_actor_meta()
+
+        # Resolve each actor's effective category (respecting overrides)
+        actor_categories = {}
+        for a in all_known:
+            p = ACTOR_PROFILES.get(a, {})
+            t = p.get("type", "Other")
+            c = get_actor_category(a, t)
+            if a in actor_meta and actor_meta[a].get("category"):
+                c = actor_meta[a]["category"]
+            actor_categories[a] = c
+
+        # Category filter
+        sel_cats = st.multiselect(
+            "Filter by category",
+            options=list(CATEGORY_COLORS.keys()),
+            default=[],
+            label_visibility="collapsed",
+            placeholder="Filter by category…",
+        )
+        filtered_actors = [a for a in all_known if not sel_cats or actor_categories[a] in sel_cats]
 
         cols = st.columns(3)
-        for i, actor in enumerate(all_known):
-            profile = ACTOR_PROFILES.get(actor, {})
-            actor_type = profile.get("type", "Other")
-            color = get_actor_color(actor, actor_type)
-            category = get_actor_category(actor, actor_type)
+        for i, actor in enumerate(filtered_actors):
+            category = actor_categories[actor]
+            color = CATEGORY_COLORS.get(category, "#6b7c8d")
             n = counts[actor]
             bar_width = max(int((n / max_count) * 100), 4) if max_count else 4
 
@@ -172,6 +206,10 @@ def show():
         actor_type = profile.get("type", "Other")
         color = get_actor_color(actor, actor_type)
         category = get_actor_category(actor, actor_type)
+        actor_meta = load_actor_meta()
+        if actor in actor_meta and actor_meta[actor].get("category"):
+            category = actor_meta[actor]["category"]
+            color = CATEGORY_COLORS.get(category, color)
 
         if st.button("← Back to all actors"):
             st.session_state.selected_actor = None
@@ -208,6 +246,33 @@ def show():
                 co_html = "".join([f'<span class="tag tag-actor">{a}</span>' for a in co_actors])
                 st.markdown(f'<div style="margin-top:0.3rem;">{co_html}</div>', unsafe_allow_html=True)
 
+            st.markdown('<div style="margin-top:1.2rem;"></div>', unsafe_allow_html=True)
+            if not st.session_state.actors_cat_edit:
+                if st.button("Edit category", key="cat_edit_open"):
+                    st.session_state.actors_cat_edit = True
+                    st.rerun()
+            else:
+                new_cat = st.selectbox(
+                    "Category",
+                    options=list(CATEGORY_COLORS.keys()),
+                    index=list(CATEGORY_COLORS.keys()).index(category) if category in CATEGORY_COLORS else 4,
+                    key="cat_edit_select",
+                )
+                save_col, cancel_col = st.columns(2)
+                with save_col:
+                    if st.button("Save", key="cat_edit_save"):
+                        meta = load_actor_meta()
+                        if actor not in meta:
+                            meta[actor] = {}
+                        meta[actor]["category"] = new_cat
+                        save_actor_meta(meta)
+                        st.session_state.actors_cat_edit = False
+                        st.rerun()
+                with cancel_col:
+                    if st.button("Cancel", key="cat_edit_cancel"):
+                        st.session_state.actors_cat_edit = False
+                        st.rerun()
+
         with col_sources:
             st.markdown(f'<div style="font-family:\'Playfair Display\',serif; font-size:1rem; font-weight:600; color:#1a3a5c; margin-bottom:0.8rem;">Sources ({len(actor_sources)})</div>', unsafe_allow_html=True)
 
@@ -224,9 +289,10 @@ def show():
                         period_str = f"{cov[0]}–{cov[1]}"
                     else:
                         period_str = str(s.get("year", ""))
+                    sid = s["id"]
                     st.markdown(f"""
                     <div style="background:white; border:1px solid #ddd8cc; border-left:3px solid {color};
-                         border-radius:3px; padding:0.8rem 1rem; margin-bottom:0.6rem;">
+                         border-radius:3px; padding:0.8rem 1rem; margin-bottom:0.3rem;">
                         <div style="font-family:'Playfair Display',serif; font-size:0.9rem; font-weight:600;
                              color:#1a3a5c; margin-bottom:0.2rem;">{s['title']}</div>
                         <div style="font-size:0.78rem; color:#8a9ab0; margin-bottom:0.4rem;">{s['author']} · {s['year']} · covers {period_str}</div>
@@ -234,3 +300,34 @@ def show():
                         <div>{clusters_html}</div>
                     </div>
                     """, unsafe_allow_html=True)
+
+                    btn_col, _ = st.columns([1, 3])
+                    with btn_col:
+                        if st.session_state.actors_edit_sid != sid:
+                            if st.button("Edit actors", key=f"actors_edit_btn_{sid}"):
+                                st.session_state.actors_edit_sid = sid
+                                st.rerun()
+                        else:
+                            if st.button("Cancel", key=f"actors_cancel_{sid}"):
+                                st.session_state.actors_edit_sid = None
+                                st.rerun()
+
+                    if st.session_state.actors_edit_sid == sid:
+                        new_actors_raw = st.text_area(
+                            "Actors (comma-separated)",
+                            value=", ".join(s.get("actors", [])),
+                            height=68,
+                            key=f"actors_edit_ta_{sid}",
+                        )
+                        if st.button("Save", key=f"actors_save_{sid}"):
+                            new_actors = [a.strip() for a in new_actors_raw.split(",") if a.strip()]
+                            all_sources = load_sources()
+                            for src in all_sources:
+                                if src["id"] == sid:
+                                    src["actors"] = new_actors
+                                    break
+                            save_sources(all_sources)
+                            st.session_state.actors_edit_sid = None
+                            st.rerun()
+
+                    st.markdown('<div style="margin-bottom:0.6rem;"></div>', unsafe_allow_html=True)

@@ -1,0 +1,101 @@
+{
+  "Belgium": {
+    "category": "Member states"
+  },
+  "DPKO/DPO": {
+    "category": "UN"
+  },
+  "DPO/DPPA": {
+    "category": "UN"
+  },
+  "EU": {
+    "category": "Other"
+  },
+  "Estonia": {
+    "category": "Member states"
+  },
+  "Fiji": {
+    "category": "Member states"
+  },
+  "US": {
+    "category": "Member states"
+  },
+  "UNSCOL": {
+    "category": "UN"
+  },
+  "UN Secretary-General": {
+    "category": "UN"
+  },
+  "Ireland": {
+    "category": "Member states"
+  },
+  "France": {
+    "category": "Member states"
+  },
+  "Finland": {
+    "category": "Member states"
+  },
+  "ISIS": {
+    "category": "Armed groups"
+  },
+  "Iran": {
+    "category": "Member states"
+  },
+  "Italy": {
+    "category": "Member states"
+  },
+  "Jabhat al-Nusra": {
+    "category": "Armed groups"
+  },
+  "Lebanese Navy": {
+    "category": "Lebanon"
+  },
+  "Lebanese communities": {
+    "category": "Lebanon"
+  },
+  "Lebanese government": {
+    "category": "Lebanon"
+  },
+  "Major Saad Haddad": {
+    "category": "Armed groups"
+  },
+  "Quintet Committee": {
+    "category": "UN"
+  },
+  "Nasrallah": {
+    "category": "Armed groups"
+  },
+  "Quintet monitoring mechanism": {
+    "category": "UN"
+  },
+  "Security Council": {
+    "category": "UN"
+  },
+  "MTF": {
+    "category": "UN"
+  },
+  "PLO": {
+    "category": "Armed groups"
+  },
+  "Tufayli": {
+    "category": "Armed groups"
+  },
+  "Norway": {
+    "category": "Member states"
+  },
+  "Lebanese Shi'a community": {
+    "category": "Lebanon"
+  },
+  "Trilateral Military Committee": {
+    "category": "UN"
+  },
+  "Syria": {
+    "category": "Member states"
+  },
+  "Strategic Military Cell": {
+    "category": "UN"
+  },
+  "Spain": {
+    "category": "Member states"
+  }
+}

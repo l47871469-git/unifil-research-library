@@ -268,9 +268,9 @@ with st.sidebar:
                     <path d="M12 3c-2.5 2.5-2.5 15.5 0 18M12 3c2.5 2.5 2.5 15.5 0 18M3 12h18" stroke="white" stroke-width="1.5"/>
                 </svg>
             </div>
-            <span style="font-size:13px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; color:rgba(255,255,255,0.45); font-family:'IBM Plex Sans',sans-serif;">UNIFIL</span>
+            <span style="font-size:14px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:rgba(255,255,255,0.5); font-family:'IBM Plex Sans',sans-serif;">UNIFIL</span>
         </div>
-        <div style="font-size:15px; font-weight:600; color:#fff; margin-top:6px; font-family:'IBM Plex Sans',sans-serif;">Lessons Learned</div>
+        <div style="font-size:22px; font-weight:700; color:#fff; margin-top:8px; letter-spacing:-0.3px; font-family:'IBM Plex Sans',sans-serif;">Lessons Learned</div>
     </div>
     <div style="height:10px;"></div>
     """, unsafe_allow_html=True)
