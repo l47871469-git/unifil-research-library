@@ -4,6 +4,10 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 from utils.data_utils import load_sources, save_sources, THEMATIC_CLUSTERS
 
+
+def is_editor():
+    return st.session_state.get("editor_mode", False)
+
 def get_all_lessons(sources, clusters=None, tag_filter=None, search=None):
     lessons = []
     for s in sources:
@@ -82,44 +86,44 @@ def show():
     """, unsafe_allow_html=True)
 
     # ── Add lesson form ───────────────────────────────────────────────────────
-    with st.expander("+ Add new lesson learned"):
+    if is_editor():
         source_options = {s.get("id", ""): f"{s.get('author', 'Unknown')}, {s.get('year', '')} — {s.get('title', '')[:60]}" for s in sources}
         source_ids = list(source_options.keys())
         source_labels = list(source_options.values())
+        with st.expander("+ Add new lesson learned"):
+            with st.form("ll_add_form"):
+                add_source_idx = st.selectbox(
+                    "Source",
+                    range(len(source_labels)),
+                    format_func=lambda i: source_labels[i],
+                    key="ll_add_source",
+                )
+                add_text = st.text_area("Lesson text", height=100, key="ll_add_text", placeholder="Enter the lesson learned…")
+                add_tag = st.selectbox(
+                    "Type",
+                    ["SOURCE-DERIVED", "ANALYTICAL INFERENCE"],
+                    key="ll_add_tag",
+                )
+                col_add, col_cancel, _ = st.columns([1, 1, 4])
+                with col_add:
+                    add_clicked = st.form_submit_button("Add lesson")
+                with col_cancel:
+                    add_cancel = st.form_submit_button("Cancel")
 
-        with st.form("ll_add_form"):
-            add_source_idx = st.selectbox(
-                "Source",
-                range(len(source_labels)),
-                format_func=lambda i: source_labels[i],
-                key="ll_add_source",
-            )
-            add_text = st.text_area("Lesson text", height=100, key="ll_add_text", placeholder="Enter the lesson learned…")
-            add_tag = st.selectbox(
-                "Type",
-                ["SOURCE-DERIVED", "ANALYTICAL INFERENCE"],
-                key="ll_add_tag",
-            )
-            col_add, col_cancel, _ = st.columns([1, 1, 4])
-            with col_add:
-                add_clicked = st.form_submit_button("Add lesson")
-            with col_cancel:
-                add_cancel = st.form_submit_button("Cancel")
-
-        if add_clicked and add_text.strip():
-            sid = source_ids[add_source_idx]
-            for s in sources:
-                if s.get("id") == sid:
-                    if "lessons_learned" not in s:
-                        s["lessons_learned"] = []
-                    s["lessons_learned"].append({"text": add_text.strip(), "tag": add_tag})
-                    break
-            save_sources(sources)
-            for k in ("ll_add_source", "ll_add_text", "ll_add_tag"):
-                st.session_state.pop(k, None)
-            st.rerun()
-        elif add_clicked and not add_text.strip():
-            st.warning("Please enter a lesson text before saving.")
+            if add_clicked and add_text.strip():
+                sid = source_ids[add_source_idx]
+                for s in sources:
+                    if s.get("id") == sid:
+                        if "lessons_learned" not in s:
+                            s["lessons_learned"] = []
+                        s["lessons_learned"].append({"text": add_text.strip(), "tag": add_tag})
+                        break
+                save_sources(sources)
+                for k in ("ll_add_source", "ll_add_text", "ll_add_tag"):
+                    st.session_state.pop(k, None)
+                st.rerun()
+            elif add_clicked and not add_text.strip():
+                st.warning("Please enter a lesson text before saving.")
 
     st.markdown('<hr class="section-divider">', unsafe_allow_html=True)
 
@@ -260,7 +264,7 @@ def render_lesson_card(l, sources, render_idx: int = 0):
         if cancel_clicked:
             st.session_state[edit_key] = False
             st.rerun()
-    else:
+    elif is_editor():
         _, col_edit, col_del = st.columns([7, 1.2, 0.8])
         with col_edit:
             if st.button("Edit", key=f"ll_edit_btn_{card_key}"):

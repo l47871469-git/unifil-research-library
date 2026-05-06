@@ -2,6 +2,10 @@ import json
 import streamlit as st
 from pathlib import Path
 
+
+def is_editor():
+    return st.session_state.get("editor_mode", False)
+
 DATA_PATH = Path(__file__).parent.parent / "data" / "actors_profiles.json"
 
 ALPHABET = list("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
@@ -349,7 +353,8 @@ def _render_card(actor: dict, all_categories: list):
             f'</div></details>',
             unsafe_allow_html=True,
         )
-        st.markdown('<div class="ap-edit-row"></div>', unsafe_allow_html=True)
-        if st.button("Edit", key=f"ap_edit_btn_{name}"):
-            st.session_state[edit_key] = True
-            st.rerun()
+        if is_editor():
+            st.markdown('<div class="ap-edit-row"></div>', unsafe_allow_html=True)
+            if st.button("Edit", key=f"ap_edit_btn_{name}"):
+                st.session_state[edit_key] = True
+                st.rerun()

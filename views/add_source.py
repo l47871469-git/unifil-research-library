@@ -9,6 +9,10 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 from utils.data_utils import load_sources, save_sources, THEMATIC_CLUSTERS
 
+
+def is_editor():
+    return st.session_state.get("editor_mode", False)
+
 SOURCE_TYPES = [
     "Academic",
     "Think tank",
@@ -513,9 +517,7 @@ def _clear_review_state():
 
 
 def show():
-    _init_state()
-
-    # ── Page header ───────────────────────────────────────────────────────────
+    # ── Page header (always visible) ──────────────────────────────────────────
     col_hdr, col_export = st.columns([4, 1.4])
     with col_hdr:
         st.markdown("""
@@ -530,6 +532,17 @@ def show():
         st.markdown('<div style="margin-top:2.1rem;"></div>', unsafe_allow_html=True)
         _export_button()
 
+    if not is_editor():
+        st.markdown("""
+        <div style="background:#fff8ec;border:1px solid #e6c87a;border-left:3px solid #c8952a;
+             border-radius:4px;padding:1rem 1.2rem;margin-top:0.5rem;font-size:0.9rem;color:#374151;">
+            Editor access required to add sources. Use the <strong>🔒 Editor login</strong>
+            in the sidebar to unlock editing.
+        </div>
+        """, unsafe_allow_html=True)
+        return
+
+    _init_state()
     stage = st.session_state.add_src_stage
 
     if stage == "upload":

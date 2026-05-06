@@ -7,6 +7,18 @@ load_dotenv(Path(__file__).parent / ".env")
 
 sys.path.insert(0, str(Path(__file__).parent))
 
+
+def is_editor():
+    return st.session_state.get("editor_mode", False)
+
+
+def check_editor_password(pwd):
+    try:
+        correct = st.secrets["EDITOR_PASSWORD"]
+    except Exception:
+        correct = "unifil2026"  # local fallback
+    return pwd == correct
+
 st.set_page_config(
     page_title="UNIFIL Research Library",
     page_icon="🇺🇳",
@@ -297,6 +309,27 @@ with st.sidebar:
     )
 
     st.markdown('<div style="height:8px;"></div>', unsafe_allow_html=True)
+
+    st.sidebar.markdown("---")
+    if is_editor():
+        st.sidebar.markdown(
+            '<div style="font-size:0.72rem; color:#4a9a4a; padding:4px 0;">',
+            unsafe_allow_html=True,
+        )
+        st.sidebar.markdown("✓ Editor mode active")
+        st.sidebar.markdown('</div>', unsafe_allow_html=True)
+        if st.sidebar.button("Lock", key="lock_btn"):
+            st.session_state.editor_mode = False
+            st.rerun()
+    else:
+        with st.sidebar.expander("🔒 Editor login"):
+            pwd = st.text_input("Password", type="password", key="editor_pwd_input")
+            if st.button("Unlock", key="unlock_btn"):
+                if check_editor_password(pwd):
+                    st.session_state.editor_mode = True
+                    st.rerun()
+                else:
+                    st.error("Incorrect password")
 
 # ── Page routing ──────────────────────────────────────────────────────────────
 if page == "Sources":

@@ -6,6 +6,10 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 from utils.data_utils import load_sources, load_gaps, save_gaps, get_inferred_gaps, THEMATIC_CLUSTERS
 
+
+def is_editor():
+    return st.session_state.get("editor_mode", False)
+
 STATUS_COLORS = {
     "Open": "#c8952a",
     "Being addressed": "#1a5c9c",
@@ -138,11 +142,11 @@ def show():
                         save_gaps(manual_gaps)
                         st.rerun()
                 with col_edit:
-                    if st.button("Edit", key=f"gap_edit_btn_{gap_id}"):
+                    if is_editor() and st.button("Edit", key=f"gap_edit_btn_{gap_id}"):
                         st.session_state[edit_key] = True
                         st.rerun()
                 with col_del:
-                    if st.button("🗑", key=f"gap_del_btn_{gap_id}"):
+                    if is_editor() and st.button("🗑", key=f"gap_del_btn_{gap_id}"):
                         manual_gaps = [g for g in manual_gaps if g["id"] != gap_id]
                         save_gaps(manual_gaps)
                         st.rerun()
@@ -166,33 +170,34 @@ def show():
                 """, unsafe_allow_html=True)
 
     with col_add:
-        st.markdown("""
-        <div style="font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:600;
-             color:#1a3a5c; margin-bottom:0.8rem;">Add a Gap Manually</div>
-        """, unsafe_allow_html=True)
+        if is_editor():
+            st.markdown("""
+            <div style="font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:600;
+                 color:#1a3a5c; margin-bottom:0.8rem;">Add a Gap Manually</div>
+            """, unsafe_allow_html=True)
 
-        with st.form("add_gap_form", clear_on_submit=True):
-            gap_title = st.text_input("Gap title *", placeholder="e.g. Civilian perspectives from South Lebanon")
-            gap_desc = st.text_area("Description *", placeholder="Describe what is missing and why it matters…", height=100)
-            gap_clusters = st.multiselect("Related thematic clusters", THEMATIC_CLUSTERS)
-            gap_author = st.text_input("Added by", placeholder="Your name")
+            with st.form("add_gap_form", clear_on_submit=True):
+                gap_title = st.text_input("Gap title *", placeholder="e.g. Civilian perspectives from South Lebanon")
+                gap_desc = st.text_area("Description *", placeholder="Describe what is missing and why it matters…", height=100)
+                gap_clusters = st.multiselect("Related thematic clusters", THEMATIC_CLUSTERS)
+                gap_author = st.text_input("Added by", placeholder="Your name")
 
-            submitted = st.form_submit_button("Add to register")
-            if submitted:
-                if gap_title and gap_desc:
-                    new_gap = {
-                        "id": f"gap_{uuid.uuid4().hex[:8]}",
-                        "title": gap_title,
-                        "description": gap_desc,
-                        "thematic_clusters": gap_clusters,
-                        "status": "Open",
-                        "source": "Manual",
-                        "added_by": gap_author or "Anonymous",
-                        "date_added": str(date.today())
-                    }
-                    manual_gaps.append(new_gap)
-                    save_gaps(manual_gaps)
-                    st.success("Gap added to register.")
-                    st.rerun()
-                else:
-                    st.error("Please provide a title and description.")
+                submitted = st.form_submit_button("Add to register")
+                if submitted:
+                    if gap_title and gap_desc:
+                        new_gap = {
+                            "id": f"gap_{uuid.uuid4().hex[:8]}",
+                            "title": gap_title,
+                            "description": gap_desc,
+                            "thematic_clusters": gap_clusters,
+                            "status": "Open",
+                            "source": "Manual",
+                            "added_by": gap_author or "Anonymous",
+                            "date_added": str(date.today())
+                        }
+                        manual_gaps.append(new_gap)
+                        save_gaps(manual_gaps)
+                        st.success("Gap added to register.")
+                        st.rerun()
+                    else:
+                        st.error("Please provide a title and description.")

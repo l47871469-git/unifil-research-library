@@ -10,6 +10,10 @@ from utils.data_utils import (
     get_all_countries, THEMATIC_CLUSTERS, SOURCE_TYPES
 )
 
+
+def is_editor():
+    return st.session_state.get("editor_mode", False)
+
 MISSION_START = 1978
 MISSION_END   = 2026
 
@@ -918,16 +922,18 @@ def show():
                 st.session_state.editing_source_id = None
                 st.rerun()
 
-            if not is_editing:
+            if not is_editing and is_editor():
                 if st.button("✎ Edit", key="edit_detail"):
                     st.session_state.editing_source_id = selected["id"]
                     st.rerun()
 
             st.markdown('<hr style="border:none;border-top:1px solid #E8E5DE;margin:1rem 0;">', unsafe_allow_html=True)
 
-            if is_editing:
+            if is_editing and is_editor():
                 render_source_edit(selected, all_tags)
             else:
+                if is_editing:
+                    st.session_state.editing_source_id = None
                 render_source_detail(selected)
 
         return
