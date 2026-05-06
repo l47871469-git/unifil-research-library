@@ -356,8 +356,8 @@
   },
   {
     "name": "Abu Nidal",
-    "category": "Other",
-    "description": "Extremist Palestinian dissident and blood enemy of Arafat and the mainstream PLO. His followers shot Israeli Ambassador Argov in 1982, apparently under Iraqi orders, providing Israel's stated pretext for the invasion."
+    "category": "Palestine",
+    "description": "Palestinian dissident and enemy of Arafat and the mainstream PLO. His followers shot Israeli Ambassador Argov in 1982, apparently under Iraqi orders, providing Israel's stated pretext for the invasion."
   },
   {
     "name": "Mustafa Dirani",
@@ -376,7 +376,7 @@
   },
   {
     "name": "Caspar Weinberger",
-    "category": "Other",
+    "category": "Member states",
     "description": "U.S. Secretary of Defense who publicly criticized the May 17 Agreement, noting its secret side letter effectively gave Syrian President Assad veto power over any Israeli withdrawal from Lebanon."
   },
   {
@@ -393,5 +393,145 @@
     "name": "Jimmy Carter",
     "category": "Other",
     "description": "U.S. President whose plans for comprehensive Geneva Middle East peace talks collapsed in late 1977. Redirected efforts toward facilitating bilateral Egyptian-Israeli negotiations."
+  },
+  {
+    "name": "Belgium",
+    "category": "Member states",
+    "description": ""
+  },
+  {
+    "name": "DPKO/DPO",
+    "category": "UN / International",
+    "description": ""
+  },
+  {
+    "name": "DPO/DPPA",
+    "category": "UN / International",
+    "description": ""
+  },
+  {
+    "name": "EU",
+    "category": "Other",
+    "description": ""
+  },
+  {
+    "name": "Estonia",
+    "category": "Member states",
+    "description": ""
+  },
+  {
+    "name": "Fiji",
+    "category": "Member states",
+    "description": ""
+  },
+  {
+    "name": "Finland",
+    "category": "Member states",
+    "description": ""
+  },
+  {
+    "name": "ISIS",
+    "category": "Non-state armed actors",
+    "description": ""
+  },
+  {
+    "name": "Iran",
+    "category": "Member states",
+    "description": ""
+  },
+  {
+    "name": "Ireland",
+    "category": "Member states",
+    "description": ""
+  },
+  {
+    "name": "Jabhat al-Nusra",
+    "category": "Non-state armed actors",
+    "description": ""
+  },
+  {
+    "name": "Lebanese Navy",
+    "category": "Lebanese political",
+    "description": ""
+  },
+  {
+    "name": "Lebanese Shi'a community",
+    "category": "Lebanese political",
+    "description": ""
+  },
+  {
+    "name": "Lebanese communities",
+    "category": "Lebanese political",
+    "description": ""
+  },
+  {
+    "name": "Lebanese government",
+    "category": "Lebanese political",
+    "description": ""
+  },
+  {
+    "name": "MTF",
+    "category": "UN / International",
+    "description": ""
+  },
+  {
+    "name": "Major Saad Haddad",
+    "category": "Non-state armed actors",
+    "description": ""
+  },
+  {
+    "name": "Nasrallah",
+    "category": "Non-state armed actors",
+    "description": ""
+  },
+  {
+    "name": "Norway",
+    "category": "Member states",
+    "description": ""
+  },
+  {
+    "name": "PLO",
+    "category": "Non-state armed actors",
+    "description": ""
+  },
+  {
+    "name": "Quintet Committee",
+    "category": "UN / International",
+    "description": ""
+  },
+  {
+    "name": "Quintet monitoring mechanism",
+    "category": "UN / International",
+    "description": ""
+  },
+  {
+    "name": "Security Council",
+    "category": "UN / International",
+    "description": ""
+  },
+  {
+    "name": "Strategic Military Cell",
+    "category": "UN / International",
+    "description": ""
+  },
+  {
+    "name": "Trilateral Military Committee",
+    "category": "UN / International",
+    "description": ""
+  },
+  {
+    "name": "UN Secretary-General",
+    "category": "UN / International",
+    "description": ""
+  },
+  {
+    "name": "UNSCOL",
+    "category": "UN",
+    "description": "The political office of the UN that organizes the work of the UN in Lebanon. "
+  },
+  {
+    "name": "US",
+    "category": "Member states",
+    "description": ""
   }
 ]

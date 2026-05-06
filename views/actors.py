@@ -1,333 +1,490 @@
 import streamlit as st
-import sys
+import json
 from pathlib import Path
+import sys
 sys.path.insert(0, str(Path(__file__).parent.parent))
-from utils.data_utils import load_sources, save_sources, load_actor_meta, save_actor_meta
+from utils.data_utils import load_sources
 
-ACTOR_PROFILES = {
-    "Hezbollah": {
-        "full_name": "Hezbollah (Party of God)",
-        "type": "Non-state armed actor",
-        "description": "Lebanese Shia political party and armed movement founded in 1982 with Iranian support. Operates as both a social movement and a military organisation. Principal armed actor in UNIFIL's area of operations since 2000.",
-        "role_in_unifil": "Primary non-state armed actor in UNIFIL's area of operations. Central to UNIFIL's mandate constraints — the mission could not treat Hezbollah as a conventional military adversary given its dual civilian-military identity.",
-    },
-    "LAF": {
-        "full_name": "Lebanese Armed Forces (LAF)",
-        "type": "State armed forces",
-        "description": "The official military of Lebanon. Key partner in UNIFIL's mandate implementation under UNSCR 1701, responsible for deployment in southern Lebanon alongside UNIFIL.",
-        "role_in_unifil": "Primary host-state security partner. UNSCR 1701 mandates LAF deployment alongside UNIFIL in the south. LAF capacity constraints — financial, political, institutional — were a persistent limiting factor throughout the mission.",
-    },
-    "IDF": {
-        "full_name": "Israel Defense Forces (IDF)",
-        "type": "State armed forces",
-        "description": "Military forces of Israel. Party to the conflict managed by UNIFIL's mandate, responsible for withdrawals in 1985 and 2000, and military operations in 2006 and 2024.",
-        "role_in_unifil": "One of the two parties whose cessation of hostilities UNIFIL monitors. Israeli compliance with the Blue Line and UNSCR 1701 obligations is central to the mandate.",
-    },
-    "UNIFIL": {
-        "full_name": "United Nations Interim Force in Lebanon",
-        "type": "UN Peacekeeping Mission",
-        "description": "Established by UNSCR 425/426 in 1978. Mandate significantly expanded by UNSCR 1701 in 2006. Operates as the primary UN presence in southern Lebanon, with ground and maritime components.",
-        "role_in_unifil": "The subject of the lessons learned exercise itself.",
-    },
-    "UN Security Council": {
-        "full_name": "United Nations Security Council",
-        "type": "Intergovernmental body",
-        "description": "The principal UN body responsible for international peace and security. Established UNIFIL's mandate and renewed it annually. P5 dynamics shaped mandate language and political support.",
-        "role_in_unifil": "Mandate authority. Annual renewal debates reflect shifting P5 priorities and directly shaped UNIFIL's operational and political space.",
-    },
-    "TCCs": {
-        "full_name": "Troop Contributing Countries",
-        "type": "Member States",
-        "description": "Countries contributing military personnel to UNIFIL. Major contributors include France, Italy, Spain, India, Indonesia, and Ghana. European TCCs have been central since 2006.",
-        "role_in_unifil": "TCC cohesion, national caveats, and political will are critical variables in UNIFIL's operational effectiveness. TCC solidarity came under strain during the 2024 escalation.",
-    },
-    "Iran": {
-        "full_name": "Islamic Republic of Iran",
-        "type": "Regional power",
-        "description": "Principal external patron of Hezbollah. Iranian support — financial, military, ideological — is foundational to Hezbollah's capacity and durability.",
-        "role_in_unifil": "Indirect but significant actor. Iranian sponsorship of Hezbollah shapes the political-military environment UNIFIL operates in.",
-    },
-    "SLA": {
-        "full_name": "South Lebanon Army (SLA)",
-        "type": "Non-state armed actor (defunct)",
-        "description": "Israeli-backed Lebanese militia that controlled the southern Security Zone from 1985 to 2000. Collapsed with the Israeli withdrawal in May 2000.",
-        "role_in_unifil": "Controlled territory in UNIFIL's area of operations during 1985–2000. SLA collapse created a security vacuum that shaped the post-2000 environment.",
-    },
-    "Israel": {
-        "full_name": "State of Israel",
-        "type": "State actor",
-        "description": "Party to the conflict managed by UNIFIL's mandate. Conducted military operations in Lebanon in 1978, 1982, 1993, 1996, 2006, and 2024.",
-        "role_in_unifil": "One of the two primary parties to the cessation of hostilities framework under UNSCR 1701. Israeli compliance with Blue Line obligations has been persistently contested.",
-    },
-    "Lebanon": {
-        "full_name": "Republic of Lebanon",
-        "type": "Host state",
-        "description": "The host state for UNIFIL. Lebanese sovereignty, political fragmentation, and state capacity constraints fundamentally shaped UNIFIL's operating environment.",
-        "role_in_unifil": "Host state and primary partner. Political fragmentation and state weakness persistently limited what UNIFIL could achieve through the host-state channel.",
-    },
+DATA_PATH = Path(__file__).parent.parent / "data" / "actors_combined.json"
+
+CATEGORY_META = {
+    "UN":            {"label": "UN",            "color": "#1a3a5c"},
+    "Armed groups":  {"label": "Armed groups",  "color": "#c43838"},
+    "Israel":        {"label": "Israel",        "color": "#2196f3"},
+    "Member states": {"label": "Member states", "color": "#3a8a4a"},
+    "Lebanon":       {"label": "Lebanon",       "color": "#d97a1f"},
+    "Other":         {"label": "Other",         "color": "#78909c"},
 }
 
+_CSS = """<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
 
-CATEGORY_COLORS = {
-    "UN":            "#1a3a5c",
-    "Armed groups":  "#dc2626",
-    "Israel":        "#0ea5e9",
-    "Member states": "#16a34a",
-    "Lebanon":       "#d97706",
-    "Other":         "#6b7c8d",
+:root {
+  --bg:             #f5f4f0;
+  --surface:        #faf9f6;
+  --surface2:       #f0ede8;
+  --border:         rgba(0,0,0,0.07);
+  --border2:        rgba(0,0,0,0.12);
+  --text-primary:   #1a1916;
+  --text-secondary: #4a4740;
+  --text-muted:     #8a8680;
+  --accent:         #1a3a5c;
+  --font:           'IBM Plex Sans', sans-serif;
+  --serif:          'Playfair Display', Georgia, serif;
+  --mono:           'IBM Plex Mono', monospace;
 }
 
-def get_actor_color(actor_name, actor_type):
-    name_lower = actor_name.lower()
-    type_lower = actor_type.lower()
-    if any(k in name_lower for k in ("israel", "idf")):
-        return "#0ea5e9"
-    if actor_name == "Lebanon" or "host state" in type_lower:
-        return "#d97706"
-    if any(k in name_lower for k in ("unifil", "united nations")) or \
-       any(k in type_lower for k in ("peacekeeping", "intergovernmental")):
-        return "#1a3a5c"
-    if "armed actor" in type_lower or any(k in name_lower for k in ("hezbollah", "hamas", "sla", "amal")):
-        return "#dc2626"
-    if any(k in type_lower for k in ("member state", "state armed")) or actor_name == "TCCs" or actor_name == "LAF":
-        return "#16a34a"
-    return "#6b7c8d"
+/* Only target the main content area background, NOT the sidebar */
+section.main { background: var(--bg) !important; }
+.stApp { font-family: var(--font) !important; }
+
+/* ── Header ──────────────────────────────────────────────────── */
+.ap-eyebrow {
+  font-family: var(--mono); font-size: 10px; font-weight: 500;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--text-muted); margin-bottom: 4px;
+}
+.ap-h1 {
+  font-family: var(--serif); font-size: 32px; font-weight: 700;
+  color: var(--text-primary); letter-spacing: -0.02em; margin: 4px 0 12px 0;
+}
+.ap-desc {
+  font-size: 13px; color: var(--text-secondary); line-height: 1.5;
+  margin: 4px 0 12px 0; font-family: var(--font); max-width: 680px;
+}
+
+/* ── Legend ──────────────────────────────────────────────────── */
+.ap-legend {
+  display: flex; flex-wrap: wrap; gap: 18px;
+  padding-bottom: 14px; border-bottom: 1px solid var(--border2);
+  margin-bottom: 14px;
+}
+.ap-legend-item {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 12px; color: var(--text-secondary); font-family: var(--font);
+}
+
+/* ── Inputs ──────────────────────────────────────────────────── */
+.stTextInput > div > div > input,
+.stMultiSelect [data-baseweb="select"] > div:first-child {
+  background: var(--surface2) !important;
+  border: 1px solid var(--border2) !important;
+  border-radius: 5px !important;
+  font-family: var(--font) !important;
+  font-size: 13px !important;
+}
+.stTextInput > div > div > input:focus {
+  border-color: var(--accent) !important; box-shadow: none !important;
+}
+
+/* ── Ghost action buttons (primary) ─────────────────────────── */
+button[kind="primary"] {
+  background: transparent !important;
+  border: 1px solid var(--border2) !important;
+  color: var(--text-secondary) !important;
+  font-family: var(--font) !important;
+  font-size: 0.78rem !important;
+  font-weight: 500 !important;
+  padding: 0.28rem 0.75rem !important;
+  border-radius: 4px !important;
+  line-height: 1.4 !important;
+  min-height: unset !important;
+  box-shadow: none !important;
+}
+button[kind="primary"]:hover {
+  border-color: var(--accent) !important;
+  color: var(--accent) !important;
+  background: rgba(26,58,92,0.04) !important;
+}
+button[kind="primary"]:focus { box-shadow: none !important; }
+
+/* ── A-Z sidebar (HTML links — full control, no Streamlit buttons) ── */
+.ap-az-wrap {
+  display: flex; flex-direction: column; align-items: center;
+  padding-top: 8px;
+}
+.ap-az-all {
+  display: inline-block;
+  font-family: var(--mono); font-size: 11px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  background: var(--accent); color: white;
+  padding: 3px 10px; border-radius: 3px; margin-bottom: 14px;
+  text-decoration: none; cursor: pointer;
+}
+.ap-az-all-inactive {
+  background: transparent; color: var(--text-secondary);
+  border: 1px solid var(--border2);
+}
+.ap-az-letter {
+  display: block;
+  font-family: var(--mono); font-size: 12px; font-weight: 400;
+  color: var(--text-secondary);
+  padding: 1px 0; line-height: 1.55;
+  text-align: center; text-decoration: none;
+  cursor: pointer; transition: color 0.1s;
+}
+.ap-az-letter:hover { color: var(--accent); font-weight: 600; }
+.ap-az-letter.active {
+  color: var(--accent); font-weight: 700;
+}
+.ap-az-letter.dim {
+  color: var(--text-muted); opacity: 0.3;
+  cursor: default; pointer-events: none;
+}
+
+/* ── Letter section header ───────────────────────────────────── */
+.ap-lhdr {
+  display: flex; align-items: center; gap: 10px; padding: 18px 0 8px 0;
+}
+.ap-lhdr-lbl {
+  font-family: var(--serif); font-size: 22px; font-weight: 700;
+  color: var(--accent); letter-spacing: -0.02em; line-height: 1; min-width: 22px;
+}
+.ap-lhdr-rule { flex: 1; height: 1px; background: var(--border2); }
+.ap-lhdr-cnt {
+  font-family: var(--mono); font-size: 10px; color: var(--text-muted);
+  letter-spacing: 0.06em;
+}
+
+/* ── Actor row ───────────────────────────────────────────────── */
+.ap-row {
+  display: flex; align-items: stretch;
+  border-bottom: 1px solid var(--border);
+  background: transparent;
+}
+.ap-row-bar { width: 3px; flex-shrink: 0; margin: 8px 0; }
+.ap-row-inner {
+  flex: 1; display: flex; align-items: center;
+  gap: 12px; padding: 13px 16px 13px 12px;
+}
+.ap-row-name {
+  flex: 1; font-size: 14px; font-weight: 600; font-family: var(--font);
+  color: var(--text-primary); letter-spacing: 0.01em;
+}
+.ap-row-cat {
+  display: flex; align-items: center; gap: 6px;
+  font-family: var(--mono); font-size: 11px; color: var(--text-muted);
+  letter-spacing: 0.04em; white-space: nowrap;
+}
+.ap-row-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
+.ap-row-srcs {
+  font-family: var(--mono); font-size: 11px; color: var(--text-muted);
+  min-width: 56px; text-align: right; white-space: nowrap;
+}
+.ap-row-chev { color: var(--text-muted); flex-shrink: 0; font-size: 10px; margin-left: 4px; }
+
+/* ── Expanded body ───────────────────────────────────────────── */
+.ap-expand {
+  margin: 0 0 8px 13px; padding: 14px 18px;
+  background: var(--surface2); border-radius: 4px;
+  border: 1px solid var(--border2);
+}
+.ap-expand-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.ap-badge {
+  display: inline-flex; align-items: center; gap: 5px;
+  border-radius: 3px; padding: 2px 8px;
+  font-family: var(--mono); font-size: 10px; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase;
+}
+.ap-badge-dot { width: 6px; height: 6px; border-radius: 50%; display: inline-block; }
+.ap-badge-srcs { font-family: var(--mono); font-size: 11px; color: var(--text-muted); }
+.ap-expand-desc {
+  font-family: var(--font); font-size: 13px; color: var(--text-secondary);
+  line-height: 1.65; margin: 0;
+}
+
+/* ── Sources panel ───────────────────────────────────────────── */
+.ap-src-panel {
+  background: white; border: 1px solid var(--border2);
+  border-radius: 4px; padding: 12px 16px; margin-top: 8px;
+  margin-left: 13px;
+}
+.ap-src-hdr {
+  font-family: var(--mono); font-size: 9px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--text-muted); margin-bottom: 8px;
+}
+.ap-src-row {
+  display: flex; gap: 12px; align-items: baseline;
+  padding: 6px 0; border-bottom: 1px solid var(--border); font-family: var(--font);
+}
+.ap-src-row:last-child { border-bottom: none; }
+.ap-src-year { font-family: var(--mono); font-size: 11px; color: var(--text-muted); flex-shrink: 0; min-width: 36px; }
+.ap-src-name { font-size: 12px; color: var(--text-primary); flex: 1; }
+.ap-src-type { font-family: var(--mono); font-size: 10px; color: var(--text-muted); flex-shrink: 0; }
+
+/* ── Misc ────────────────────────────────────────────────────── */
+.ap-gap { margin-bottom: 0.5rem; }
+.ap-noactors {
+  font-family: var(--font); font-size: 14px; color: var(--text-muted);
+  padding: 60px 0; text-align: center;
+}
+</style>"""
 
 
-def get_actor_category(actor_name, actor_type):
-    color = get_actor_color(actor_name, actor_type)
-    return {
-        "#0ea5e9": "Israel",
-        "#1a3a5c": "UN",
-        "#dc2626": "Armed groups",
-        "#16a34a": "Member states",
-        "#d97706": "Lebanon",
-        "#6b7c8d": "Other",
-    }.get(color, "Other")
+def _load():
+    if not DATA_PATH.exists():
+        return []
+    return json.loads(DATA_PATH.read_text(encoding="utf-8"))
+
+
+def _save(actors):
+    DATA_PATH.write_text(json.dumps(actors, indent=2, ensure_ascii=False), encoding="utf-8")
+
+
+def _badge_html(category):
+    meta = CATEGORY_META.get(category, {"label": category, "color": "#78909c"})
+    c, lbl = meta["color"], meta["label"]
+    return (
+        f'<span class="ap-badge" style="background:{c}22;border:1px solid {c}55;color:{c};">'
+        f'<span class="ap-badge-dot" style="background:{c};"></span>{lbl}</span>'
+    )
 
 
 def show():
+    st.markdown(_CSS, unsafe_allow_html=True)
+
+    # Initialise session state
+    defaults = {
+        "actor_letter":   "All",
+        "actor_expanded": None,
+        "actor_src_open": None,
+        "actor_editing":  None,
+    }
+    for k, v in defaults.items():
+        if k not in st.session_state:
+            st.session_state[k] = v
+
+    # Read query param to set letter
+    qp = st.query_params
+    if "letter" in qp:
+        st.session_state.actor_letter = qp["letter"]
+        st.query_params.clear()
+        st.rerun()
+
+    # ── Header ─────────────────────────────────────────────────────
+    st.markdown("""
+    <div class="ap-eyebrow">Key Actors &amp; Entities</div>
+    <div class="ap-h1">Actors</div>
+    <div class="ap-desc">Browse all actors and entities in the UNIFIL operating environment. Click an actor to view the profile and linked sources.</div>
+    """, unsafe_allow_html=True)
+
+    actors  = _load()
     sources = load_sources()
-    all_actors = sorted(set(a for s in sources for a in s.get("actors", [])))
-    all_known = sorted(set(list(all_actors) + list(ACTOR_PROFILES.keys())))
 
-    st.markdown("""
-    <div class="library-header">
-        <div>
-            <p class="library-subtitle">Key Actors & Entities</p>
-            <h1 class="library-title">Actors Index</h1>
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
+    src_by_actor: dict = {}
+    for s in sources:
+        for a in s.get("actors", []):
+            src_by_actor.setdefault(a.lower(), []).append(s)
 
-    st.markdown("""
-    <div style="font-size:0.9rem; color:#5a6a7a; margin-bottom:1.5rem; max-width:680px;">
-        Browse key actors and entities in the UNIFIL operating environment.
-        Select an actor to see their profile and all sources in the corpus that reference them.
-    </div>
-    """, unsafe_allow_html=True)
+    ltr = st.session_state.actor_letter
 
-    if "selected_actor" not in st.session_state:
-        st.session_state.selected_actor = None
-    if "actors_edit_sid" not in st.session_state:
-        st.session_state.actors_edit_sid = None
-    if "actors_cat_edit" not in st.session_state:
-        st.session_state.actors_cat_edit = False
+    # ── Legend ────────────────────────────────────────────────────
+    items_html = "".join(
+        f'<span class="ap-legend-item">'
+        f'<span style="width:9px;height:9px;border-radius:50%;background:{m["color"]};'
+        f'display:inline-block;flex-shrink:0;"></span>{m["label"]}</span>'
+        for m in CATEGORY_META.values()
+    )
+    st.markdown(f'<div class="ap-legend">{items_html}</div>', unsafe_allow_html=True)
 
-    # ── Grid view ─────────────────────────────────────────────────────────────
-    if st.session_state.selected_actor is None:
+    # ── Search + category filter ───────────────────────────────────
+    fc1, fc2 = st.columns([3, 1])
+    with fc1:
+        search = st.text_input("Search", placeholder="Search by name or description…",
+                               label_visibility="collapsed")
+    with fc2:
+        sel_cats = st.multiselect("Category", list(CATEGORY_META.keys()),
+                                  label_visibility="collapsed", placeholder="Filter by category…")
 
-        # Colour legend
-        st.markdown("""
-        <div style="display:flex; flex-wrap:wrap; gap:0.3rem 1rem; margin-bottom:1rem; font-size:0.73rem; color:#5a6a7a;">
-            <span><span style="display:inline-block; width:9px; height:9px; border-radius:2px; background:#1a3a5c; margin-right:3px; vertical-align:middle;"></span>UN</span>
-            <span><span style="display:inline-block; width:9px; height:9px; border-radius:2px; background:#dc2626; margin-right:3px; vertical-align:middle;"></span>Armed groups</span>
-            <span><span style="display:inline-block; width:9px; height:9px; border-radius:2px; background:#0ea5e9; margin-right:3px; vertical-align:middle;"></span>Israel</span>
-            <span><span style="display:inline-block; width:9px; height:9px; border-radius:2px; background:#16a34a; margin-right:3px; vertical-align:middle;"></span>Member states</span>
-            <span><span style="display:inline-block; width:9px; height:9px; border-radius:2px; background:#d97706; margin-right:3px; vertical-align:middle;"></span>Lebanon</span>
-            <span><span style="display:inline-block; width:9px; height:9px; border-radius:2px; background:#6b7c8d; margin-right:3px; vertical-align:middle;"></span>Other</span>
-        </div>
-        """, unsafe_allow_html=True)
+    # ── Filter ────────────────────────────────────────────────────
+    filtered = list(actors)
+    if search:
+        q = search.lower()
+        filtered = [a for a in filtered
+                    if q in a["name"].lower() or q in a.get("description", "").lower()]
+    if sel_cats:
+        filtered = [a for a in filtered if a["category"] in sel_cats]
+    if ltr != "All":
+        filtered = [a for a in filtered if a["name"].upper().startswith(ltr)]
 
-        # Compute max source count for progress bar normalisation
-        counts = {a: sum(1 for s in sources if a in s.get("actors", [])) for a in all_known}
-        max_count = max(counts.values(), default=1)
-        actor_meta = load_actor_meta()
+    # ── Layout: A-Z column on left (narrow), actors on right ──────
+    az_col, main_col = st.columns([1, 14])
 
-        # Resolve each actor's effective category (respecting overrides)
-        actor_categories = {}
-        for a in all_known:
-            p = ACTOR_PROFILES.get(a, {})
-            t = p.get("type", "Other")
-            c = get_actor_category(a, t)
-            if a in actor_meta and actor_meta[a].get("category"):
-                c = actor_meta[a]["category"]
-            actor_categories[a] = c
+    # ── A-Z sidebar (HTML <a> links with query params, no buttons) ─
+    with az_col:
+        active_letters = {a["name"][0].upper() for a in actors if a["name"]}
 
-        # Category filter
-        sel_cats = st.multiselect(
-            "Filter by category",
-            options=list(CATEGORY_COLORS.keys()),
-            default=[],
-            label_visibility="collapsed",
-            placeholder="Filter by category…",
-        )
-        filtered_actors = [a for a in all_known if not sel_cats or actor_categories[a] in sel_cats]
+        # Build A-Z column entirely as HTML
+        all_class = "ap-az-all" if ltr == "All" else "ap-az-all ap-az-all-inactive"
+        az_html = f'<div class="ap-az-wrap"><a href="?letter=All" class="{all_class}" target="_self">All</a>'
 
-        cols = st.columns(3)
-        for i, actor in enumerate(filtered_actors):
-            category = actor_categories[actor]
-            color = CATEGORY_COLORS.get(category, "#6b7c8d")
-            n = counts[actor]
-            bar_width = max(int((n / max_count) * 100), 4) if max_count else 4
+        for ch in "ABCDEFGHIJKLMNOPQRSTUVWXYZ":
+            if ch in active_letters:
+                cls = "ap-az-letter active" if ch == ltr else "ap-az-letter"
+                az_html += f'<a href="?letter={ch}" class="{cls}" target="_self">{ch}</a>'
+            else:
+                az_html += f'<span class="ap-az-letter dim">{ch}</span>'
 
-            with cols[i % 3]:
+        az_html += '</div>'
+        st.markdown(az_html, unsafe_allow_html=True)
+
+    # ── Actor list ────────────────────────────────────────────────
+    with main_col:
+        if not filtered:
+            st.markdown('<div class="ap-noactors">No actors match the current filters.</div>',
+                        unsafe_allow_html=True)
+        else:
+            # Group by first letter
+            groups: dict = {}
+            for actor in filtered:
+                letter = actor["name"][0].upper() if actor["name"] else "#"
+                groups.setdefault(letter, []).append(actor)
+            groups = dict(sorted(groups.items()))
+
+            for letter, letter_actors in groups.items():
                 st.markdown(f"""
-                <div style="background:white; border:1px solid #ddd8cc; border-top:3px solid {color};
-                     border-radius:4px; padding:1rem; margin-bottom:0.8rem; min-height:110px;">
-                    <div style="font-family:'Playfair Display',serif; font-size:1rem; font-weight:600;
-                         color:#1a3a5c; line-height:1.3; margin-bottom:0.3rem;">{actor}</div>
-                    <div style="font-size:0.72rem; font-weight:600; color:{color}; letter-spacing:0.04em;
-                         text-transform:uppercase; margin-bottom:0.4rem;">{category}</div>
-                    <div style="font-size:0.78rem; color:#8a9ab0; margin-bottom:0.5rem;">{n} source{"s" if n!=1 else ""} in corpus</div>
-                    <div style="background:#eef2f7; border-radius:2px; height:4px; width:100%;">
-                        <div style="background:{color}; height:4px; border-radius:2px; width:{bar_width}%;"></div>
-                    </div>
+                <div class="ap-lhdr">
+                  <span class="ap-lhdr-lbl">{letter}</span>
+                  <div class="ap-lhdr-rule"></div>
+                  <span class="ap-lhdr-cnt">{len(letter_actors)}</span>
                 </div>
                 """, unsafe_allow_html=True)
-                if st.button("Explore →", key=f"actor_{actor}"):
-                    st.session_state.selected_actor = actor
-                    st.rerun()
 
-    # ── Detail view ───────────────────────────────────────────────────────────
-    else:
-        actor = st.session_state.selected_actor
-        profile = ACTOR_PROFILES.get(actor, {})
-        actor_type = profile.get("type", "Other")
-        color = get_actor_color(actor, actor_type)
-        category = get_actor_category(actor, actor_type)
-        actor_meta = load_actor_meta()
-        if actor in actor_meta and actor_meta[actor].get("category"):
-            category = actor_meta[actor]["category"]
-            color = CATEGORY_COLORS.get(category, color)
+                for actor in letter_actors:
+                    name        = actor["name"]
+                    category    = actor["category"]
+                    description = actor.get("description", "")
+                    meta        = CATEGORY_META.get(category, {"label": category, "color": "#78909c"})
+                    color       = meta["color"]
+                    label       = meta["label"]
+                    a_sources   = src_by_actor.get(name.lower(), [])
+                    n_src       = len(a_sources)
 
-        if st.button("← Back to all actors"):
-            st.session_state.selected_actor = None
-            st.rerun()
+                    is_expanded = st.session_state.actor_expanded == name
+                    src_open    = st.session_state.actor_src_open == name
+                    is_editing  = st.session_state.actor_editing  == name
 
-        st.markdown(f"""
-        <div style="margin:0.8rem 0 1.5rem 0;">
-            <div style="font-family:'Playfair Display',serif; font-size:1.8rem; font-weight:700;
-                 color:#1a3a5c; margin-bottom:0.3rem;">{actor}</div>
-            <div style="font-size:0.82rem; font-weight:600; color:{color}; letter-spacing:0.04em;
-                 text-transform:uppercase;">{category} · {actor_type}</div>
-        </div>
-        """, unsafe_allow_html=True)
+                    chev = "▲" if is_expanded else "▼"
 
-        actor_sources = [s for s in sources if actor in s.get("actors", [])]
-
-        col_profile, col_sources = st.columns([1, 1.6])
-
-        with col_profile:
-            if profile.get("full_name") and profile["full_name"] != actor:
-                st.markdown(f'<div style="font-size:0.85rem; color:#5a6a7a; margin-bottom:0.8rem;"><em>{profile["full_name"]}</em></div>', unsafe_allow_html=True)
-
-            if profile.get("description"):
-                st.markdown('<div class="detail-section-title">Background</div>', unsafe_allow_html=True)
-                st.markdown(f'<div class="detail-body">{profile["description"]}</div>', unsafe_allow_html=True)
-
-            if profile.get("role_in_unifil"):
-                st.markdown('<div class="detail-section-title">Role in UNIFIL Context</div>', unsafe_allow_html=True)
-                st.markdown(f'<div class="detail-body">{profile["role_in_unifil"]}</div>', unsafe_allow_html=True)
-
-            co_actors = sorted(set(a for s in actor_sources for a in s.get("actors", []) if a != actor))
-            if co_actors:
-                st.markdown('<div class="detail-section-title">Co-occurs with</div>', unsafe_allow_html=True)
-                co_html = "".join([f'<span class="tag tag-actor">{a}</span>' for a in co_actors])
-                st.markdown(f'<div style="margin-top:0.3rem;">{co_html}</div>', unsafe_allow_html=True)
-
-            st.markdown('<div style="margin-top:1.2rem;"></div>', unsafe_allow_html=True)
-            if not st.session_state.actors_cat_edit:
-                if st.button("Edit category", key="cat_edit_open"):
-                    st.session_state.actors_cat_edit = True
-                    st.rerun()
-            else:
-                new_cat = st.selectbox(
-                    "Category",
-                    options=list(CATEGORY_COLORS.keys()),
-                    index=list(CATEGORY_COLORS.keys()).index(category) if category in CATEGORY_COLORS else 4,
-                    key="cat_edit_select",
-                )
-                save_col, cancel_col = st.columns(2)
-                with save_col:
-                    if st.button("Save", key="cat_edit_save"):
-                        meta = load_actor_meta()
-                        if actor not in meta:
-                            meta[actor] = {}
-                        meta[actor]["category"] = new_cat
-                        save_actor_meta(meta)
-                        st.session_state.actors_cat_edit = False
-                        st.rerun()
-                with cancel_col:
-                    if st.button("Cancel", key="cat_edit_cancel"):
-                        st.session_state.actors_cat_edit = False
-                        st.rerun()
-
-        with col_sources:
-            st.markdown(f'<div style="font-family:\'Playfair Display\',serif; font-size:1rem; font-weight:600; color:#1a3a5c; margin-bottom:0.8rem;">Sources ({len(actor_sources)})</div>', unsafe_allow_html=True)
-
-            if not actor_sources:
-                st.markdown('<div style="font-size:0.85rem; color:#8a9ab0; padding:0.5rem 0;">No sources currently reference this actor directly.</div>', unsafe_allow_html=True)
-            else:
-                for s in actor_sources:
-                    clusters = s.get("thematic_clusters", [])[:2]
-                    clusters_html = "".join([f'<span class="tag tag-cluster" style="font-size:0.68rem;">{c}</span>' for c in clusters])
-                    cov = s.get("timeline_coverage", [])
-                    if isinstance(cov, dict):
-                        period_str = f"{cov.get('start','')}–{cov.get('end','')}"
-                    elif isinstance(cov, list) and len(cov) == 2:
-                        period_str = f"{cov[0]}–{cov[1]}"
-                    else:
-                        period_str = str(s.get("year", ""))
-                    sid = s["id"]
+                    # Visual row (HTML) — preserves coloured dots and styling
                     st.markdown(f"""
-                    <div style="background:white; border:1px solid #ddd8cc; border-left:3px solid {color};
-                         border-radius:3px; padding:0.8rem 1rem; margin-bottom:0.3rem;">
-                        <div style="font-family:'Playfair Display',serif; font-size:0.9rem; font-weight:600;
-                             color:#1a3a5c; margin-bottom:0.2rem;">{s['title']}</div>
-                        <div style="font-size:0.78rem; color:#8a9ab0; margin-bottom:0.4rem;">{s['author']} · {s['year']} · covers {period_str}</div>
-                        <div style="font-size:0.82rem; color:#3a3a3a; line-height:1.45; margin-bottom:0.5rem;">{s.get('abstract','')[:160]}{'…' if len(s.get('abstract',''))>160 else ''}</div>
-                        <div>{clusters_html}</div>
+                    <div class="ap-row">
+                      <div class="ap-row-bar" style="background:{color};"></div>
+                      <div class="ap-row-inner">
+                        <span class="ap-row-name">{name}</span>
+                        <span class="ap-row-cat">
+                          <span class="ap-row-dot" style="background:{color};"></span>
+                          {label}
+                        </span>
+                        <span class="ap-row-srcs">{n_src} src{"s" if n_src != 1 else ""}</span>
+                        <span class="ap-row-chev">{chev}</span>
+                      </div>
                     </div>
                     """, unsafe_allow_html=True)
 
-                    btn_col, _ = st.columns([1, 3])
-                    with btn_col:
-                        if st.session_state.actors_edit_sid != sid:
-                            if st.button("Edit actors", key=f"actors_edit_btn_{sid}"):
-                                st.session_state.actors_edit_sid = sid
-                                st.rerun()
+                    # Small subtle expand toggle below the row
+                    if st.button(
+                        ("▲ Hide" if is_expanded else "▼ Open"),
+                        key=f"toggle_{name}",
+                        type="primary",
+                    ):
+                        if is_expanded:
+                            st.session_state.actor_expanded = None
+                            st.session_state.actor_src_open = None
+                            st.session_state.actor_editing  = None
                         else:
-                            if st.button("Cancel", key=f"actors_cancel_{sid}"):
-                                st.session_state.actors_edit_sid = None
-                                st.rerun()
+                            st.session_state.actor_expanded = name
+                            st.session_state.actor_src_open = None
+                            st.session_state.actor_editing  = None
+                        st.rerun()
 
-                    if st.session_state.actors_edit_sid == sid:
-                        new_actors_raw = st.text_area(
-                            "Actors (comma-separated)",
-                            value=", ".join(s.get("actors", [])),
-                            height=68,
-                            key=f"actors_edit_ta_{sid}",
+                    if is_expanded:
+                        desc_html = (
+                            f'<p class="ap-expand-desc">{description}</p>'
+                            if description else
+                            '<p class="ap-expand-desc" style="color:var(--text-muted);">No description available.</p>'
                         )
-                        if st.button("Save", key=f"actors_save_{sid}"):
-                            new_actors = [a.strip() for a in new_actors_raw.split(",") if a.strip()]
-                            all_sources = load_sources()
-                            for src in all_sources:
-                                if src["id"] == sid:
-                                    src["actors"] = new_actors
-                                    break
-                            save_sources(all_sources)
-                            st.session_state.actors_edit_sid = None
-                            st.rerun()
+                        srcs_label = f'{n_src} source{"s" if n_src != 1 else ""} in corpus'
+                        st.markdown(f"""
+                        <div class="ap-expand">
+                          <div class="ap-expand-meta">
+                            {_badge_html(category)}
+                            <span class="ap-badge-srcs">{srcs_label}</span>
+                          </div>
+                          {desc_html}
+                        </div>
+                        """, unsafe_allow_html=True)
 
-                    st.markdown('<div style="margin-bottom:0.6rem;"></div>', unsafe_allow_html=True)
+                        if not src_open and not is_editing:
+                            arr_c, _ = st.columns([1, 8])
+                            with arr_c:
+                                if st.button("→ Sources", key=f"src_open_{name}", type="primary"):
+                                    st.session_state.actor_src_open = name
+                                    st.rerun()
+
+                        if src_open or is_editing:
+                            if not a_sources:
+                                rows_html = '<p style="font-size:0.82rem;color:var(--text-muted);margin:0;">No sources reference this actor.</p>'
+                            else:
+                                rows_html = "".join(
+                                    f'<div class="ap-src-row">'
+                                    f'<span class="ap-src-year">{s.get("year","")}</span>'
+                                    f'<span class="ap-src-name">{s.get("title","")}</span>'
+                                    f'<span class="ap-src-type">{s.get("source_type","")}</span>'
+                                    f'</div>'
+                                    for s in a_sources
+                                )
+
+                            st.markdown(f"""
+                            <div class="ap-src-panel">
+                              <div class="ap-src-hdr">Sources</div>
+                              {rows_html}
+                            </div>
+                            """, unsafe_allow_html=True)
+
+                            if not is_editing:
+                                ea_c, cl_c, _ = st.columns([1, 1, 7])
+                                with ea_c:
+                                    if st.button("Edit actor", key=f"edit_open_{name}", type="primary"):
+                                        st.session_state.actor_editing = name
+                                        st.rerun()
+                                with cl_c:
+                                    if st.button("✕ Close", key=f"src_close_{name}", type="primary"):
+                                        st.session_state.actor_src_open = None
+                                        st.rerun()
+
+                            if is_editing:
+                                st.markdown('<div style="margin-top:0.6rem;"></div>', unsafe_allow_html=True)
+                                new_name = st.text_input("Name",        value=name,        key=f"ed_name_{name}")
+                                new_cat  = st.selectbox(
+                                    "Category",
+                                    options=list(CATEGORY_META.keys()),
+                                    index=list(CATEGORY_META.keys()).index(category)
+                                          if category in CATEGORY_META else 5,
+                                    key=f"ed_cat_{name}",
+                                )
+                                new_desc = st.text_area("Description", value=description,
+                                                        height=100, key=f"ed_desc_{name}")
+
+                                sv_c, cn_c, _ = st.columns([1, 1, 7])
+                                with sv_c:
+                                    if st.button("Save", key=f"ed_save_{name}", type="primary"):
+                                        all_a = _load()
+                                        for a in all_a:
+                                            if a["name"] == name:
+                                                a["name"]        = new_name
+                                                a["category"]    = new_cat
+                                                a["description"] = new_desc
+                                                break
+                                        _save(all_a)
+                                        st.session_state.actor_expanded = new_name
+                                        st.session_state.actor_src_open = new_name
+                                        st.session_state.actor_editing  = None
+                                        st.rerun()
+                                with cn_c:
+                                    if st.button("Cancel", key=f"ed_cancel_{name}", type="primary"):
+                                        st.session_state.actor_editing = None
+                                        st.rerun()
+
+                    st.markdown('<div class="ap-gap"></div>', unsafe_allow_html=True)

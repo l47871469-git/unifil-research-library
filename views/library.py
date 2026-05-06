@@ -2,12 +2,51 @@ import json
 import streamlit as st
 import sys
 from pathlib import Path
+import plotly.graph_objects as go
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 from utils.data_utils import (
     load_sources, get_all_tags, get_all_actors,
     get_all_countries, THEMATIC_CLUSTERS, SOURCE_TYPES
 )
+
+MISSION_START = 1978
+MISSION_END   = 2026
+
+
+def _build_density_chart(sources):
+    """Bar chart: number of sources published in each 4-year bucket."""
+    bucket = 4
+    years, counts, colors = [], [], []
+    y = MISSION_START
+    while y < MISSION_END:
+        y_end = min(y + bucket, MISSION_END)
+        count = sum(1 for s in sources if y <= s.get("year", 0) < y_end)
+        years.append(y)
+        counts.append(max(count, 0.05))
+        colors.append("#1a3a5c" if count >= 2 else ("#9ab8d0" if count == 1 else "#e0dbd2"))
+        y += bucket
+
+    fig = go.Figure(go.Bar(
+        x=years, y=counts, marker_color=colors,
+        width=bucket * 0.85,
+        hovertemplate="%{x}: %{customdata} source(s)<extra></extra>",
+        customdata=[max(0, int(c)) for c in counts],
+    ))
+    fig.update_layout(
+        height=90,
+        margin=dict(l=0, r=0, t=0, b=0),
+        paper_bgcolor="rgba(0,0,0,0)",
+        plot_bgcolor="#f5f3ee",
+        xaxis=dict(
+            range=[MISSION_START - 1, MISSION_END + 1], showgrid=False,
+            tickmode="linear", tick0=1978, dtick=8,
+            tickfont=dict(size=10, color="#8a9ab0"), zeroline=False,
+        ),
+        yaxis=dict(visible=False),
+        showlegend=False,
+    )
+    return fig
 
 DATA_PATH = Path(__file__).parent.parent / "data" / "sources.json"
 
@@ -920,8 +959,17 @@ def show():
     )
     st.markdown("---")
 
+    # Actor list for filter (from actors_profiles.json)
+    _actors_path = Path(__file__).parent.parent / "data" / "actors_profiles.json"
+    _all_actor_names = []
+    if _actors_path.exists():
+        _all_actor_names = sorted(
+            {a["name"] for a in json.loads(_actors_path.read_text(encoding="utf-8")) if a.get("name")},
+            key=str.casefold,
+        )
+
     # Filters
-    fc1, fc2, fc3 = st.columns([2, 2, 1])
+    fc1, fc2, fc3, fc4 = st.columns([2, 2, 1, 1])
     with fc1:
         search = st.text_input("Search", placeholder="Title, author, tag…", label_visibility="collapsed")
     with fc2:
@@ -930,10 +978,38 @@ def show():
     with fc3:
         sel_types = st.multiselect("Types", all_types, label_visibility="collapsed",
                                    placeholder="Filter by type…")
+    with fc4:
+        sel_actors = st.multiselect("Actors", _all_actor_names, label_visibility="collapsed",
+                                    placeholder="Filter by actor…")
+
+    st.markdown("**Sources published per period**")
+    st.plotly_chart(_build_density_chart(sources), use_container_width=True,
+                    config={"displayModeBar": False})
+    st.markdown("""
+    <div style="display:flex; gap:1.5rem; font-size:0.75rem; color:#8a9ab0;
+         margin-bottom:1rem; margin-top:-1rem;">
+        <span><span style="display:inline-block;width:10px;height:10px;background:#1a3a5c;
+            border-radius:1px;margin-right:4px;vertical-align:middle;"></span>2+ sources</span>
+        <span><span style="display:inline-block;width:10px;height:10px;background:#9ab8d0;
+            border-radius:1px;margin-right:4px;vertical-align:middle;"></span>1 source</span>
+        <span><span style="display:inline-block;width:10px;height:10px;background:#e0dbd2;
+            border-radius:1px;margin-right:4px;vertical-align:middle;"></span>None published</span>
+    </div>
+    """, unsafe_allow_html=True)
+    year_range = st.slider(
+        "Publication year range",
+        min_value=MISSION_START, max_value=MISSION_END,
+        value=(MISSION_START, MISSION_END),
+        step=1, format="%d",
+        key="lib_year_range",
+    )
+    y_start, y_end = year_range
 
     # Filter sources
     filtered = []
     for s in sources:
+        if s.get("year", 0) < y_start or s.get("year", 0) > y_end:
+            continue
         if search:
             q = search.lower()
             haystack = (s.get("title", "") + s.get("author", "") +
@@ -944,6 +1020,10 @@ def show():
             continue
         if sel_types and normalize_source_type(s.get("source_type", "")) not in sel_types:
             continue
+        if sel_actors:
+            src_actors = [a.lower() for a in s.get("actors", [])]
+            if not any(a.lower() in src_actors for a in sel_actors):
+                continue
         filtered.append(s)
 
     st.markdown(f"**{len(filtered)}** source{'s' if len(filtered) != 1 else ''} found")

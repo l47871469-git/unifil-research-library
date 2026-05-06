@@ -1,8 +1,8 @@
 [
   {
     "id": "gap_001",
-    "title": "European TCC Perspectives",
-    "description": "No sources from European TCC national perspectives (France, Italy, Spain). Their motivations, constraints, and national caveats are undocumented in the current corpus.",
+    "title": "Non-Western TCC Perspectives",
+    "description": "No sources from Non-Western TCC national perspectives (France, Italy, Spain). Their motivations, constraints, and national caveats are undocumented in the current corpus.",
     "thematic_clusters": [
       "TCC dynamics & command"
     ],
@@ -38,19 +38,6 @@
     "date_added": "2026-04-01"
   },
   {
-    "id": "gap_004",
-    "title": "UNIFIL Internal Primary Sources",
-    "description": "SG reports, Force Commander assessments, and internal UNIFIL policy documents are largely absent. These would provide the institutional voice of the mission itself.",
-    "thematic_clusters": [
-      "Mandate evolution",
-      "DPKO-DPPA integration"
-    ],
-    "status": "Open",
-    "source": "Manual",
-    "added_by": "Leo",
-    "date_added": "2026-04-01"
-  },
-  {
     "id": "gap_8b1e6825",
     "title": "Freedom of Movement of UNIFIL ",
     "description": "Many sources mention lack of freedom of movement of the mission. Would be interesting to hear UN perspective on how this was handled and how much it affected mandate implementaiton ",
@@ -66,7 +53,7 @@
   {
     "id": "gap_04e3a1d2",
     "title": "Quality of Peacekeepers",
-    "description": "Assaf Orion (2016) points to diffence in quality of troops of UNIFIL I and UNIFIL II. \n\nWorth exploring more ",
+    "description": "Assaf Orion (2016) points to diffence in quality of troops of UNIFIL I and UNIFIL II. ",
     "thematic_clusters": [
       "TCC dynamics & command"
     ],

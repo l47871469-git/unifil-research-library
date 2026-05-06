@@ -2392,7 +2392,7 @@
   },
   {
     "id": "makdisi_2009",
-    "author": "Makdisi, K.; Göksel, T.; Hauck, H.B.; Reigeluth, S.",
+    "author": "Karim Makdisi, Timur Göksel, Hans Bastian Hauck, and Stuart Reigeluth",
     "title": "UNIFIL II: Emerging and Evolving European Engagement in Lebanon and the Middle East",
     "type": "Think Tank Report (Euro Me SCo Paper 76)",
     "year": 2009,
@@ -2425,7 +2425,8 @@
       "LAF",
       "Lebanese government",
       "MTF",
-      "Lebanese Navy"
+      "Lebanese Navy",
+      "EU"
     ],
     "abstract": "Drawing on fieldwork and interviews with UNIFIL, Lebanese, German, Spanish and Italian officials, this paper assesses UNIFIL I's three-decade record and the post-2006 UNIFIL II deployment. It argues that increased European troop contributions and a more robust mandate under Resolution 1701 have produced limited gains: structural political problems remain unaddressed. UNIFIL is characterised as a conflict-management tool, not a solution.",
     "key_arguments": [
@@ -2852,12 +2853,12 @@
     "year": 2012,
     "publisher": "Journal of Conflict & Security Law, Vol. 17, No. 3, pp. 373–402, Oxford University Press",
     "tags": [
-      "civilian-protection",
       "1701",
-      "mandate",
+      "IDF",
+      "civilian-protection",
       "force-protection",
-      "non-state-actors",
-      "IDF"
+      "mandate",
+      "non-state-actors"
     ],
     "thematic_clusters": [
       "Civilian protection",
@@ -2870,48 +2871,48 @@
     ],
     "abstract": "Murphy traces UNIFIL's evolving — and largely frustrated — engagement with civilian protection across three crisis periods: the 1978 deployment, the 1982 Israeli invasion and 'iron fist' occupation, and the post-2006 reconfiguration under SCR 1701. He argues that despite the explicit protection-of-civilians authorisation in paragraph 12, UNIFIL II remains conceptually a Chapter VI policing mission whose role is circumscribed by an ambiguous mandate, dependence on the LAF and tacit accommodation with Hezbollah for its own security. He concludes that effective civilian protection is structurally impossible in the context of Israel–Hezbollah hostilities, and that the Strategic Military Cell, while enabling European engagement, was a flawed and ultimately discarded innovation.",
     "key_arguments": [
-      "The 1978 mandate (SCR 425/426) contained no civilian protection provision; the protection role emerged reactively after the 1982 invasion as an interim justification for UNIFIL's continued presence behind Israeli lines, not as a planned response — a pattern of policy improvisation that has shaped the mission ever since.",
-      "During the 1982–2000 occupation, UNIFIL's 'iron fist' period role was reduced to monitoring, reporting, and humanitarian assistance. Murphy documents specific instances (Kunin 1986, Qana 1996) where UNIFIL prevented expulsions or sheltered civilians, but argues these were marginal gains against systemic damage to credibility.",
+      "The 1978 mandate (SCR 425/426) contained no civilian protection provision; the protection role emerged reactively after the 1982 invasion as an interim justification for UNIFIL's continued presence behind Israeli lines, not as a planned response,  a pattern of policy improvisation that has shaped the mission ever since.",
+      "During the 1982–2000 occupation and Israel's 'iron fist' policy, UNIFIL's role was reduced to monitoring, reporting, and humanitarian assistance. Murphy documents specific instances (Kunin 1986, Qana 1996) where UNIFIL prevented expulsions or sheltered civilians, but argues these were marginal gains against systemic damage to credibility.",
       "SCR 1701 created a 'Chapter VI½' mission: the preambular threat-to-peace language and paragraph 12's 'all necessary action' wording mimic Chapter VII without invoking it, producing a structural mismatch between European TCC expectations of robust operations and the consent-based reality.",
       "The Strategic Military Cell was a concession to European TCCs that created a two-tier system (global North vs South), generated political resentment, and was terminated in 2010; Murphy is sceptical it could have managed a real crisis given multinational command frictions.",
-      "UNIFIL's protection role is fundamentally compromised by its own dependence on the LAF and tacit cooperation with Hezbollah for force security — a dependency that is 'not consistent with performing an effective protection role.'"
+      "The credibility and perceived impartiality of the UN was affected by some comments and positions maintained by the EU and the US in 2006 (e.g. Germany) - those same countries that formed the backbone of UNIFIL II",
+      "In granting Israel the rights and privileges of an Occupying Power (UNIFIL had no mandate or firepower), while at the same time deliberately avoiding impeding acts of resistance, the peacekeeping Force made no progress in protecting civilians, confirming the Israeli withdrawal or bringing about a cessation of hostilities",
+      "UNIFIL's inability to prevent Israeli incursions, it's dependance on LAF and and tacit cooperation with Hezbollah for force security compromised it's protection role, and damaged both credibility and morale. The force should not have remained in what was effectively occupied territory, when it was unable to perform any of its original tasks. A UNIFIL withdrawal might have set the scene for another\npeacekeeping force to deploy at a later stage under a more realistic mandate in circumstances more conducive to effective peacekeeping.",
+      "When the initial UNIFIL mandate proved impractical, the de facto mission of the force became the provision of a secure environment for the local population. UNIFIL gave the local population support and protection by intervening to prevent, by non-violent means, the demolition of public and private property and the ill treatment of civilians. A major achievement during the period was the ability to hinder the Israeli consolidation of its occupation of Lebanon.",
+      "UNIFIL II sought more robust Rules of Engagement (ROE) in operations involving intra-state/transnational conflicts and bigger and better equipped forces.  It did not seem to take full cognisance of the fact that the use of force must be accompanied by political will, a clear mandate and strategy, a willingness to accept casualties, and a need for an effective command and control mechanism\nto ensure cohesion and uniform application. The Strategic Mission Cell did not resolve the problems of multi-national command and deciding on a clear policy for dealing with unauthorized armed elements such as Hizbollah remained problematic."
     ],
     "bias_flag": "Murphy is an Irish academic (NUI Galway) and former Irish UNIFIL officer (1981/82, 1989); his account draws heavily on personal experience, interviews with Irish and senior UN officers, and Irish-contingent incidents. This produces unusually granular field-level material but a perspective skewed toward the Irish/Nordic battalion experience and the IHL/legal framing. He is consistently critical of US and European partisan engagement in the region and of Israeli conduct — empirically grounded but normatively committed. The Hezbollah analysis is thinner than the IDF analysis.",
     "relevance_to_ll": "The single most sustained legal-academic treatment of UNIFIL's civilian protection mandate across the mission's full arc, written by a former Irish UNIFIL officer with direct field experience. Essential for the civilian protection thematic cluster and provides a rigorous IHL framing (Qana, occupation law, Article 8 ICC Statute) that complements the political-operational accounts. Directly engages the question of what protection mandate 'effectiveness' can mean when host-state and non-state-armed-actor consent is the precondition for force security.",
     "timeline_events": [
       {
         "date": "1982-06",
-        "event": "Israeli invasion of Lebanon; UNIFIL bypassed",
-        "category": "Israel-Lebanon",
-        "description": "Israel invades Lebanon in June 1982; UNIFIL positions are bypassed or overrun, reducing the mission to a humanitarian role behind Israeli lines."
+        "event": "Israeli invasion of Lebanon; UNIFIL bypassed"
       },
       {
         "date": "1996-04-18",
-        "event": "Qana shelling: Israeli artillery hits UN compound, ~106 civilians killed",
-        "category": "Israel-Lebanon",
-        "description": "Israeli artillery strikes the UNIFIL compound at Qana where civilians had sought shelter, killing approximately 106 people in one of the mission's gravest protection failures."
+        "event": "Qana shelling: Israeli artillery hits UN compound, ~106 civilians killed"
       }
     ],
     "lessons_learned": [
       {
         "text": "A POC mandate cannot be operationally effective when the force depends on the host-state and a non-state armed actor for its own security; this dependency must be named explicitly in any honest legacy assessment.",
-        "tag": "source-derived",
-        "theme": "Civilian protection"
+        "tag": "SOURCE-DERIVED"
       },
       {
         "text": "Reactive, improvised mandate interpretation (e.g. the post-1982 protection role) can preserve a mission's utility short-term but corrodes credibility and creates expectations the mandate cannot deliver.",
-        "tag": "source-derived",
-        "theme": "Mandate evolution"
+        "tag": "SOURCE-DERIVED"
       },
       {
         "text": "The 'Chapter VI½' framing of SCR 1701 — robust language without Chapter VII authorisation — should be examined as a recurring Council design pattern in the legacy report, with attention to the gap it creates between TCC expectations and operational reality.",
-        "tag": "analytical-inference",
-        "theme": "Mandate evolution"
+        "tag": "SOURCE-DERIVED"
       },
       {
-        "text": "Field-level POC interventions (preventing expulsions, sheltering civilians, witnessing IHL violations) generate genuine but under-documented protection value; the legacy exercise should attempt to capture this granular record before institutional memory is lost.",
-        "tag": "analytical-inference",
-        "theme": "Civilian protection"
+        "text": "Enhanced size and capabilities has not led to a corresponding increase in projected deterrence. All parties to the conflict are prepared to risk confrontation with the UN when they deem it in their best interest.",
+        "tag": "SOURCE-DERIVED"
+      },
+      {
+        "text": "UN peacekeeping relies more on diplomatic deterrence than military capabilities. Peacekeepers must be sensitive to the political context",
+        "tag": "SOURCE-DERIVED"
       }
     ],
     "actors": [
@@ -2925,6 +2926,7 @@
       "UNIFIL",
       "IDF",
       "Hezbollah"
-    ]
+    ],
+    "analytical_notes": []
   }
 ]

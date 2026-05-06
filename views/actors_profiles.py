@@ -8,6 +8,20 @@ ALPHABET = list("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
 
 BASE_CATEGORIES = ["Palestine", "UN", "Israel", "Lebanon", "Non-state armed actors", "Other"]
 
+CATEGORY_COLORS = {
+    "UN":                     "#1a3a5c",
+    "UN / International":     "#1a3a5c",
+    "Israeli actors":         "#64b5f6",
+    "Israel":                 "#64b5f6",
+    "Non-state armed actors": "#dc2626",
+    "Armed groups":           "#dc2626",
+    "Palestine":              "#dc2626",
+    "Lebanese political":     "#d97706",
+    "Lebanon":                "#d97706",
+    "Member states":          "#16a34a",
+    "Other":                  "#78909c",
+}
+
 
 def first_sentence(text):
     if not text:
@@ -27,7 +41,48 @@ def show():
     # ── Page-scoped CSS ───────────────────────────────────────────────────────
     st.markdown("""
     <style>
-    /* Expanders styled as minimal cards */
+    /* ── Custom HTML accordion card ─────────────────────────────── */
+    details.ap-card {
+        background: white;
+        border: 1px solid #ddd8cc;
+        /* border-left is set per-card via inline style */
+        border-radius: 4px;
+        margin-bottom: 0.55rem;
+        box-shadow: none;
+        overflow: hidden;
+    }
+    details.ap-card summary {
+        padding: 0.72rem 1rem;
+        cursor: pointer;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        font-family: 'Playfair Display', serif;
+        font-size: 0.95rem;
+        font-weight: 700;
+        color: #1a3a5c;
+        user-select: none;
+        line-height: 1.3;
+    }
+    details.ap-card summary:hover { background: #fafaf7; }
+    details.ap-card summary::marker,
+    details.ap-card summary::-webkit-details-marker { display: none; }
+    details.ap-card summary::before {
+        content: '›';
+        font-size: 1.25rem;
+        color: #8a9ab0;
+        transition: transform 0.15s ease;
+        flex-shrink: 0;
+        line-height: 1;
+    }
+    details.ap-card[open] summary::before { transform: rotate(90deg); }
+    details.ap-card > .ap-card-body {
+        padding: 0.1rem 1rem 0.9rem 1rem;
+        border-top: 1px solid #eeebe4;
+    }
+
+    /* Expander for edit mode — keep existing style */
     div[data-testid="stExpander"] {
         background: white !important;
         border: 1px solid #ddd8cc !important;
@@ -35,21 +90,10 @@ def show():
         border-radius: 4px !important;
         margin-bottom: 0.55rem !important;
         box-shadow: none !important;
-        transition: border-left-color 0.12s ease;
     }
-    div[data-testid="stExpander"]:has(details[open]) {
-        border-left-color: #1a3a5c !important;
-    }
-    /* Expander summary row */
     div[data-testid="stExpander"] summary {
         padding: 0.75rem 1rem !important;
-        gap: 0.5rem !important;
     }
-    div[data-testid="stExpander"] summary:hover {
-        background: #fafaf7 !important;
-    }
-    /* Expander label text — actor name */
-    div[data-testid="stExpander"] summary span[data-testid="stExpanderToggleIcon"] ~ p,
     div[data-testid="stExpander"] summary p {
         font-family: 'Playfair Display', serif !important;
         font-size: 0.95rem !important;
@@ -57,10 +101,10 @@ def show():
         color: #1a3a5c !important;
         margin: 0 !important;
     }
-    /* Expander body padding */
     div[data-testid="stExpander"] > details > div[data-testid="stExpanderDetails"] {
         padding: 0 1rem 0.9rem 1rem !important;
     }
+
     /* Letter divider */
     .ap-letter {
         font-family: 'Playfair Display', serif;
@@ -99,9 +143,7 @@ def show():
         letter-spacing: 0.02em;
         line-height: 1.4;
     }
-    .ap-index a:hover {
-        background: rgba(26,58,92,0.08);
-    }
+    .ap-index a:hover { background: rgba(26,58,92,0.08); }
     .ap-index .ap-dim {
         display: block;
         text-align: center;
@@ -112,29 +154,22 @@ def show():
         cursor: default;
         user-select: none;
     }
-    /* Snippet inside expander */
-    .ap-snippet {
-        font-size: 0.83rem;
-        color: #5a6a7a;
-        line-height: 1.5;
-        font-style: italic;
-        margin-bottom: 0.75rem;
-        padding-bottom: 0.75rem;
-        border-bottom: 1px solid #eeebe4;
-    }
+    /* Card internals */
     .ap-cat-label {
         font-size: 0.72rem;
         text-transform: uppercase;
         letter-spacing: 0.07em;
         color: #8a9ab0;
         font-weight: 600;
-        margin-bottom: 0.4rem;
+        margin: 0.6rem 0 0.35rem 0;
     }
     .ap-full-desc {
         font-size: 0.88rem;
         color: #2a2a2a;
         line-height: 1.6;
     }
+    /* Tighten Edit button spacing */
+    .ap-edit-row { margin-top: -0.3rem; margin-bottom: 0.25rem; }
     </style>
     """, unsafe_allow_html=True)
 
@@ -180,7 +215,6 @@ def show():
             placeholder="Filter by category…",
         )
 
-    # Apply category filter first, then build A-Z grouping from result
     actors_base = [a for a in actors_sorted if a.get("category") in cat_filter] if cat_filter else actors_sorted
 
     by_letter: dict[str, list] = {}
@@ -191,10 +225,8 @@ def show():
 
     st.markdown('<div style="margin-top:0.5rem;"></div>', unsafe_allow_html=True)
 
-    # ── Two-column layout: index | content ────────────────────────────────────
     col_index, col_main = st.columns([0.65, 5.35])
 
-    # ── A–Z sticky index ──────────────────────────────────────────────────────
     with col_index:
         index_html = '<div class="ap-index"><div class="ap-index-label">A–Z</div>'
         for letter in ALPHABET:
@@ -205,7 +237,6 @@ def show():
         index_html += "</div>"
         st.markdown(index_html, unsafe_allow_html=True)
 
-    # ── Main content ──────────────────────────────────────────────────────────
     with col_main:
         is_searching = bool(search.strip())
 
@@ -258,7 +289,6 @@ def save_actors(actors):
 
 
 def _render_grid(actor_list: list, all_categories: list):
-    """Render actors in a 2-column expander grid."""
     for i in range(0, len(actor_list), 2):
         pair = actor_list[i: i + 2]
         cols = st.columns(2, gap="small")
@@ -268,14 +298,15 @@ def _render_grid(actor_list: list, all_categories: list):
 
 
 def _render_card(actor: dict, all_categories: list):
-    """Single actor card as a styled expander with inline edit."""
     name = actor["name"]
     cat = actor.get("category", "")
     full = actor.get("description", "")
+    color = CATEGORY_COLORS.get(cat, "#78909c")
     edit_key = f"ap_editing_{name}"
 
-    with st.expander(name):
-        if st.session_state.get(edit_key):
+    if st.session_state.get(edit_key):
+        # Edit mode: Streamlit expander + form
+        with st.expander(name, expanded=True):
             cat_options = sorted(set(all_categories + ([cat] if cat and cat not in all_categories else [])))
             with st.form(f"ap_edit_form_{name}"):
                 new_desc = st.text_area("Description", value=full, height=130, key=f"ap_desc_{name}")
@@ -304,12 +335,21 @@ def _render_card(actor: dict, all_categories: list):
             if cancel_clicked:
                 st.session_state[edit_key] = False
                 st.rerun()
-        else:
-            st.markdown(
-                f'<div class="ap-cat-label">{cat}</div>'
-                f'<div class="ap-full-desc">{full}</div>',
-                unsafe_allow_html=True,
-            )
-            if st.button("Edit", key=f"ap_edit_btn_{name}"):
-                st.session_state[edit_key] = True
-                st.rerun()
+    else:
+        # View mode: pure HTML <details> card — border color baked into inline style
+        safe_name = name.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot;")
+        safe_cat = cat.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+        safe_full = full.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+        st.markdown(
+            f'<details class="ap-card" style="border-left: 3px solid {color};">'
+            f'<summary>{safe_name}</summary>'
+            f'<div class="ap-card-body">'
+            f'<div class="ap-cat-label">{safe_cat}</div>'
+            f'<div class="ap-full-desc">{safe_full}</div>'
+            f'</div></details>',
+            unsafe_allow_html=True,
+        )
+        st.markdown('<div class="ap-edit-row"></div>', unsafe_allow_html=True)
+        if st.button("Edit", key=f"ap_edit_btn_{name}"):
+            st.session_state[edit_key] = True
+            st.rerun()

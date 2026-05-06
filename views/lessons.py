@@ -32,6 +32,7 @@ def get_all_lessons(sources, clusters=None, tag_filter=None, search=None):
             })
     return lessons
 
+
 def show():
     sources = load_sources()
     all_lessons = get_all_lessons(sources)
@@ -80,6 +81,48 @@ def show():
     </div>
     """, unsafe_allow_html=True)
 
+    # ── Add lesson form ───────────────────────────────────────────────────────
+    with st.expander("+ Add new lesson learned"):
+        source_options = {s.get("id", ""): f"{s.get('author', 'Unknown')}, {s.get('year', '')} — {s.get('title', '')[:60]}" for s in sources}
+        source_ids = list(source_options.keys())
+        source_labels = list(source_options.values())
+
+        with st.form("ll_add_form"):
+            add_source_idx = st.selectbox(
+                "Source",
+                range(len(source_labels)),
+                format_func=lambda i: source_labels[i],
+                key="ll_add_source",
+            )
+            add_text = st.text_area("Lesson text", height=100, key="ll_add_text", placeholder="Enter the lesson learned…")
+            add_tag = st.selectbox(
+                "Type",
+                ["SOURCE-DERIVED", "ANALYTICAL INFERENCE"],
+                key="ll_add_tag",
+            )
+            col_add, col_cancel, _ = st.columns([1, 1, 4])
+            with col_add:
+                add_clicked = st.form_submit_button("Add lesson")
+            with col_cancel:
+                add_cancel = st.form_submit_button("Cancel")
+
+        if add_clicked and add_text.strip():
+            sid = source_ids[add_source_idx]
+            for s in sources:
+                if s.get("id") == sid:
+                    if "lessons_learned" not in s:
+                        s["lessons_learned"] = []
+                    s["lessons_learned"].append({"text": add_text.strip(), "tag": add_tag})
+                    break
+            save_sources(sources)
+            for k in ("ll_add_source", "ll_add_text", "ll_add_tag"):
+                st.session_state.pop(k, None)
+            st.rerun()
+        elif add_clicked and not add_text.strip():
+            st.warning("Please enter a lesson text before saving.")
+
+    st.markdown('<hr class="section-divider">', unsafe_allow_html=True)
+
     # ── Filters ───────────────────────────────────────────────────────────────
     col_f1, col_f2, col_f3 = st.columns([2, 1, 1.5])
     with col_f1:
@@ -106,9 +149,7 @@ def show():
 
     st.markdown(f'<div style="font-size:0.82rem; color:#6b7c8d; margin: 0.8rem 0; letter-spacing:0.04em; text-transform:uppercase;">{len(filtered)} lesson{"s" if len(filtered)!=1 else ""} shown</div>', unsafe_allow_html=True)
 
-    st.markdown('<hr class="section-divider">', unsafe_allow_html=True)
-
-    # ── View toggle: by theme or flat list ───────────────────────────────────
+    # ── View toggle ───────────────────────────────────────────────────────────
     view_mode = st.radio(
         "View as",
         ["By theme", "Flat list"],
@@ -128,10 +169,11 @@ def show():
             if not placed:
                 untagged.append(l)
 
+        # Use a global render counter so duplicate lessons across clusters get unique keys
+        render_idx = 0
         for cluster, lessons in cluster_lessons.items():
             if not lessons:
                 continue
-
             st.markdown(f"""
             <div style="font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:600;
                  color:#1a3a5c; margin: 1.5rem 0 0.8rem 0; padding-bottom:0.3rem;
@@ -139,23 +181,24 @@ def show():
                  <span style="font-size:0.8rem; font-weight:400; color:#8a9ab0; margin-left:0.5rem;">{len(lessons)}</span>
             </div>
             """, unsafe_allow_html=True)
-
             for l in lessons:
-                render_lesson_card(l, sources)
+                render_lesson_card(l, sources, render_idx)
+                render_idx += 1
 
         if untagged:
             st.markdown('<div style="font-family:\'Playfair Display\',serif; font-size:1rem; font-weight:600; color:#8a9ab0; margin:1.5rem 0 0.8rem 0;">Other</div>', unsafe_allow_html=True)
             for l in untagged:
-                render_lesson_card(l, sources)
+                render_lesson_card(l, sources, render_idx)
+                render_idx += 1
 
     else:
         if not filtered:
             st.markdown('<div style="font-size:0.9rem; color:#8a9ab0; padding:2rem 0;">No lessons match the current filters.</div>', unsafe_allow_html=True)
-        for l in filtered:
-            render_lesson_card(l, sources)
+        for i, l in enumerate(filtered):
+            render_lesson_card(l, sources, i)
 
 
-def render_lesson_card(l, sources):
+def render_lesson_card(l, sources, render_idx: int = 0):
     tag = l.get("tag", "")
     is_sd = tag == "SOURCE-DERIVED"
     tag_class = "tag-lesson-sd" if is_sd else "tag-lesson-ai"
@@ -163,8 +206,9 @@ def render_lesson_card(l, sources):
     bg_color = "#f8fdf8" if is_sd else "#fdf8f6"
     source_id = l.get("source_id", "")
     lesson_idx = l.get("lesson_idx", 0)
-    card_key = f"{source_id}_{lesson_idx}"
-    edit_key = f"ll_editing_{card_key}"
+    # Include render_idx so a lesson shown under multiple themes gets unique widget keys
+    card_key = f"{source_id}_{lesson_idx}_{render_idx}"
+    edit_key = f"ll_editing_{source_id}_{lesson_idx}"
 
     clusters_html = "".join([
         f'<span class="tag tag-cluster" style="font-size:0.68rem;">{c}</span>'

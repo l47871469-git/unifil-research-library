@@ -1,6 +1,9 @@
 import streamlit as st
 import sys
 from pathlib import Path
+from dotenv import load_dotenv
+
+load_dotenv(Path(__file__).parent / ".env")
 
 sys.path.insert(0, str(Path(__file__).parent))
 
@@ -280,50 +283,46 @@ with st.sidebar:
     page = st.radio(
         "Navigate",
         [
-            "Source Library",
-            "Thematic Navigator",
-            "Actors Index",
-            "Actor Profiles",
-            "Mind Map",
-            "Historical Timeline",
-            "Sources Timeline",
-            "Lessons Log",
-            "Gaps Register",
+            "Sources",
+            "➕ Add Source",
             "UNIFIL Mandates",
+            "Thematic Navigator",
+            "Historical Timeline",
+            "Actor Profiles",
+            "Lessons Learned Candidates",
+            "Research Gaps",
+            "Mind Map",
         ],
         label_visibility="collapsed"
     )
-    
+
     st.markdown('<div style="height:8px;"></div>', unsafe_allow_html=True)
 
 # ── Page routing ──────────────────────────────────────────────────────────────
-if page == "Source Library":
+if page == "Sources":
     from views.library import show
+    show()
+elif page == "➕ Add Source":
+    from views.add_source import show
+    show()
+elif page == "UNIFIL Mandates":
+    from views.mandates import show
     show()
 elif page == "Thematic Navigator":
     from views.thematic import show
     show()
-elif page == "Actors Index":
-    from views.actors import show
+elif page == "Historical Timeline":
+    from views.timeline import show
     show()
 elif page == "Actor Profiles":
     from views.actors_profiles import show
     show()
-elif page == "Mind Map":
-    from views.mindmap import show
-    show()
-elif page == "Historical Timeline":
-    from views.timeline import show
-    show()
-elif page == "Sources Timeline":
-    from views.timeline_events import show
-    show()
-elif page == "Lessons Log":
+elif page == "Lessons Learned Candidates":
     from views.lessons import show
     show()
-elif page == "Gaps Register":
+elif page == "Research Gaps":
     from views.gaps import show
     show()
-elif page == "UNIFIL Mandates":
-    from views.mandates import show
+elif page == "Mind Map":
+    from views.mindmap import show
     show()
